@@ -1,24 +1,20 @@
 # TODO: Before deploying this worker you must:
 # 1. Run: npx wrangler d1 create ceolmhor-enquiries
 #    and paste the returned database_id in place of TODO_D1_DATABASE_ID
-# 2. Replace TODO_RESEND_API_KEY with your actual Resend API key
-#    Run: npx wrangler secret put RESEND_API_KEY
-#    and paste your key when prompted (do NOT hardcode it in this file)
-# 3. Run: npx wrangler d1 execute ceolmhor-enquiries --file=worker/schema.sql
+# 2. Run: npx wrangler d1 execute ceolmhor-enquiries --file=schema.sql
 #    to create the database table
-# 4. Run: npx wrangler deploy
+# 3. Run: npx wrangler deploy
 
 name = "ceolmhor-contact"
-main = "worker/index.js"
+main = "index.js"
 compatibility_date = "2024-01-01"
 
 [[d1_databases]]
 binding = "DB"
 database_name = "ceolmhor-enquiries"
-database_id = "TODO_D1_DATABASE_ID"
+database_id = "8ca96454-1cdf-4970-a327-48f66e437da8"
 
 [vars]
-RESEND_API_KEY = "TODO_RESEND_API_KEY"
 FROM_EMAIL = "contact@ceolmhor.scot"
 TO_EMAIL = "contact@ceolmhor.scot"
 

@@ -209,6 +209,20 @@ p {
 .nav__home:hover { color: var(--accent-gold); }
 .nav__home.active { color: var(--accent-gold); }
 
+.nav__faq {
+  font-size: inherit;
+  letter-spacing: inherit;
+  color: var(--silver, #b0b0b0);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-right: 0.5rem;
+}
+
+.nav__faq:hover,
+.nav__faq.active {
+  color: var(--white, #f5f5f0);
+}
+
 .nav__links {
   display: flex;
   align-items: center;
@@ -332,6 +346,14 @@ p {
   padding: calc(var(--nav-h) + 4rem) 0 3rem;
   position: relative;
   z-index: 1;
+}
+
+.hero__gaelic-gloss {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--silver, #b0b0b0);
+  margin-top: 0.4rem;
+  font-style: normal;
 }
 
 .hero__label {
@@ -1515,6 +1537,15 @@ p {
   margin-bottom: 3rem;
 }
 
+.performance-location-note {
+  font-size: 0.9rem;
+  color: var(--silver, #b0b0b0);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 2px solid var(--gold, #c9a84c);
+}
+
 .booking-step {
   padding: 2.5rem 2rem;
   border-right: 1px solid var(--rule);
@@ -1716,6 +1747,14 @@ p {
   background: rgba(15, 35, 20, 0.8);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+}
+
+.enquiry-context-note {
+  font-size: 0.82rem;
+  color: var(--silver, #b0b0b0);
+  line-height: 1.6;
+  margin: 0.75rem 0 0;
+  letter-spacing: 0.01em;
 }
 
 /* Separator between primary and sub-options */
