@@ -3009,3 +3009,57 @@ body::after {
   .tuition-photo-grid { grid-template-columns: 1fr; }
   .audio-clip-info { min-width: 120px; }
 }
+
+/* ── Credentials blocks ───────────────────────────────── */
+.credentials-block__title {
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  color: var(--gold, #c9a84c);
+}
+.credentials-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.credentials-list li {
+  padding: 0.4rem 0 0.4rem 1.25rem;
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  text-align: left;
+}
+.credentials-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold, #c9a84c);
+  font-size: 0.85rem;
+}
+.credentials-list li:last-child {
+  border-bottom: none;
+}
+
+/* ── Testimonial launch block ─────────────────────────── */
+.testimonial-launch {
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+  padding: 1.5rem 2rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 2px;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--silver, #b0b0b0);
+}
+.testimonial-launch a {
+  color: var(--gold, #c9a84c);
+  text-decoration: none;
+}
+.testimonial-launch a:hover {
+  text-decoration: underline;
+}

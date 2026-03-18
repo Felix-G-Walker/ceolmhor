@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Ceòlmhor</title>
-  <meta name="description" content="Learn about Ceòlmhor — an Edinburgh-based piping institution offering structured four-tier tuition and professional performance. PVG member, PRS affiliated, insured.">
+  <meta name="description" content="Learn about Ceòlmhor — an Edinburgh-based piping institution offering structured four-tier tuition and professional performance services, based in Edinburgh and available worldwide.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ceòlmhor">
+  <meta property="og:title" content="About — Ceòlmhor">
+  <meta property="og:description" content="Learn about Ceòlmhor — an Edinburgh-based piping institution offering structured four-tier tuition and professional performance services, based in Edinburgh and available worldwide.">
+  <meta property="og:image" content="https://www.ceolmhor.scot/images/Ceolmhor_logo_transparent.png">
+  <meta property="og:image:alt" content="Ceòlmhor — Scottish piping tuition and performance, Edinburgh">
+  <meta property="og:url" content="https://www.ceolmhor.scot/about.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About — Ceòlmhor">
+  <meta name="twitter:description" content="Learn about Ceòlmhor — an Edinburgh-based piping institution offering structured four-tier tuition and professional performance services, based in Edinburgh and available worldwide.">
+  <meta name="twitter:image" content="https://www.ceolmhor.scot/images/Ceolmhor_logo_transparent.png">
+  <link rel="canonical" href="https://www.ceolmhor.scot/about.html">
+  <meta name="theme-color" content="#0d0d0d">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
@@ -12,6 +25,20 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
   <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.ceolmhor.scot/#felix-walker",
+  "name": "Felix Walker",
+  "jobTitle": "Piping Instructor and Professional Piper",
+  "url": "https://www.ceolmhor.scot/about.html",
+  "worksFor": { "@id": "https://www.ceolmhor.scot/#business" },
+  "description": "Edinburgh-based professional piper trained through Fèis Dhùn Èideann, taught under Andrew Macintyre of Curmudgeon. Royal Edinburgh Military Tattoo performer.",
+  "alumniOf": { "@type": "Organization", "name": "Fèis Dhùn Èideann" },
+  "knowsAbout": ["Highland Bagpipes", "Pìobaireachd", "Gàidhlig", "Piping Tuition"]
+}
+</script>
 </head>
 <body>
 
@@ -90,7 +117,11 @@
       <!-- Portrait + personal story split -->
       <div class="about-piper-grid" data-reveal>
         <div class="about-portrait-col">
-          <img src="images/about-new-york.jfif" alt="Felix Walker in full dress uniform, New York parade" class="about-portrait" loading="lazy">
+          <!-- TODO: convert about-new-york.jfif to .webp -->
+          <picture>
+            <source srcset="images/about-new-york.webp" type="image/webp">
+            <img src="images/about-new-york.jfif" alt="Felix Walker in full dress uniform, New York parade" class="about-portrait" loading="lazy">
+          </picture>
         </div>
         <div class="about-story-col">
           <p>Hello! My name is Felix Walker, and I have been playing the pipes for most of my life.</p>
@@ -105,13 +136,31 @@
         <h3 class="credentials-heading">Credentials</h3>
         <div class="credentials-grid">
           <div class="credentials-block">
-            <p class="credentials-placeholder">Credentials, history, and achievements — to be populated.</p>
+            <h4 class="credentials-block__title">Performance</h4>
+            <ul class="credentials-list">
+              <li>Royal Edinburgh Military Tattoo — two consecutive years, including the 2026 international tour to Australia and New Zealand</li>
+              <li>Lone Piper, Armistice Day Service — Scottish National War Memorial, Edinburgh Castle</li>
+              <li>NYC Tartan Day Parade, New York</li>
+              <li>Inaugural Edinburgh Tartan Day Parade</li>
+            </ul>
           </div>
           <div class="credentials-block">
-            <p class="credentials-placeholder">Credentials, history, and achievements — to be populated.</p>
+            <h4 class="credentials-block__title">Formation</h4>
+            <ul class="credentials-list">
+              <li>Began piping through Fèis Dhùn Èideann, Edinburgh's Gaelic arts tuition organisation</li>
+              <li>Educated at Gaelic Medium primary school, Edinburgh — the language and the music arrived together</li>
+              <li>Studied under Andrew Macintyre of Curmudgeon, one of Scotland's foremost traditional piping ensembles</li>
+              <li>Dual grounding in pipe band tradition and Gàidhlig-rooted solo piping</li>
+            </ul>
           </div>
           <div class="credentials-block">
-            <p class="credentials-placeholder">Credentials, history, and achievements — to be populated.</p>
+            <h4 class="credentials-block__title">Teaching</h4>
+            <ul class="credentials-list">
+              <li>Three years of structured tuition delivery</li>
+              <li>Originator of the Ceòlmhor four-tier curriculum — from first chanter to competition-standard Pìobaireachd</li>
+              <li>Lessons available in Edinburgh and online via Zoom, with students across Scotland and internationally</li>
+              <li>Committed to teaching the cultural and linguistic context of the tradition alongside the instrument</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -153,6 +202,8 @@
         <span class="footer__col-title">Contact &amp; Social</span>
         <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
         <p>Edinburgh, Scotland</p>
+        <!-- TODO: Replace with business number when set up -->
+        <p><a href="tel:+447305613875">07305 613 875</a></p>
         <div class="footer__social">
           <a href="https://www.instagram.com/ceolmhorofficial" aria-label="Ceòlmhor on Instagram" target="_blank" rel="noopener noreferrer"><svg class="ig-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>@ceolmhorofficial</a>
         </div>
@@ -168,7 +219,7 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js" defer></script>
   <script src="main.js"></script>
 </body>
 </html>

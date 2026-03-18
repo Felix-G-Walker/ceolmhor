@@ -104,20 +104,7 @@
     toggleDateField(); // Set initial state
   }
 
-  /* ── 7. Contact Form: submission ─────────────────────────────── */
-  const contactForm = document.getElementById('contact-form');
-
-  if (contactForm) {
-    var formSuccess = document.getElementById('form-success');
-
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (formSuccess) formSuccess.classList.add('visible');
-      contactForm.style.display = 'none';
-    });
-  }
-
-  /* ── 8. Smooth scroll — same-page anchors only ───────────────── */
+  /* ── 7. Smooth scroll — same-page anchors only ───────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       var targetId = anchor.getAttribute('href');
@@ -130,6 +117,7 @@
   });
 
   /* ── 9. Particle Background ──────────────────────────────────── */
+  document.addEventListener('DOMContentLoaded', function () {
   if (
     !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
     typeof tsParticles !== 'undefined'
@@ -166,6 +154,7 @@
       detectRetina: true
     });
   }
+  }); // end DOMContentLoaded
 
   /* ── 10. Particle speed — scroll velocity with inertia ───────────── */
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

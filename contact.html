@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enquiries — Ceòlmhor</title>
   <meta name="description" content="Enquire about piping tuition, a trial lesson, or an events booking. Ceòlmhor responds within 24 hours. Based in Edinburgh, teaching online worldwide.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ceòlmhor">
+  <meta property="og:title" content="Enquiries — Ceòlmhor">
+  <meta property="og:description" content="Enquire about piping tuition, a trial lesson, or an events booking. Ceòlmhor responds within 24 hours. Based in Edinburgh, teaching online worldwide.">
+  <meta property="og:image" content="https://www.ceolmhor.scot/images/Ceolmhor_logo_transparent.png">
+  <meta property="og:image:alt" content="Ceòlmhor — Scottish piping tuition and performance, Edinburgh">
+  <meta property="og:url" content="https://www.ceolmhor.scot/contact.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Enquiries — Ceòlmhor">
+  <meta name="twitter:description" content="Enquire about piping tuition, a trial lesson, or an events booking. Ceòlmhor responds within 24 hours. Based in Edinburgh, teaching online worldwide.">
+  <meta name="twitter:image" content="https://www.ceolmhor.scot/images/Ceolmhor_logo_transparent.png">
+  <link rel="canonical" href="https://www.ceolmhor.scot/contact.html">
+  <meta name="theme-color" content="#0d0d0d">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
@@ -75,6 +88,10 @@
             <dt>Response time</dt>
             <dd>Within 24 hours</dd>
 
+            <dt>Phone</dt>
+            <!-- TODO: Replace with business number when set up -->
+            <dd><a href="tel:+447305613875">07305 613 875</a></dd>
+
             <dt>Common questions</dt>
             <dd><a href="faq.html" class="contact-faq-link">View FAQ</a></dd>
           </dl>
@@ -86,8 +103,14 @@
           <form
             id="contact-form"
             name="contact-form"
+            data-worker="true"
             novalidate
           >
+
+            <!-- Honeypot — do not remove, do not make visible -->
+            <div style="display:none" aria-hidden="true">
+              <input type="text" name="_honeypot" tabindex="-1" autocomplete="off">
+            </div>
 
             <div class="form-row">
               <div class="form-group">
@@ -129,17 +152,17 @@
 
               <!-- Primary: Tuition / Performance / Other -->
               <div class="enquiry-type-grid enquiry-primary-grid" role="group" aria-labelledby="enquiry-type-label">
-                <button type="button" class="enquiry-type-btn" data-primary="tuition">Tuition</button>
-                <button type="button" class="enquiry-type-btn" data-primary="performance">Performance</button>
-                <button type="button" class="enquiry-type-btn" data-primary="other">Other</button>
+                <button type="button" class="enquiry-type-btn" data-primary="tuition" aria-pressed="false">Tuition</button>
+                <button type="button" class="enquiry-type-btn" data-primary="performance" aria-pressed="false">Performance</button>
+                <button type="button" class="enquiry-type-btn" data-primary="other" aria-pressed="false">Other</button>
               </div>
 
               <!-- Tuition sub-options -->
               <div class="sub-options" id="sub-tuition">
                 <hr class="enquiry-separator">
                 <div class="enquiry-type-grid" role="group" aria-label="Tuition type">
-                  <button type="button" class="enquiry-type-btn" data-sub="trial">Trial Lesson</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="regular">Regular Tuition</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="trial" aria-pressed="false">Trial Lesson</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="regular" aria-pressed="false">Regular Tuition</button>
                 </div>
                 <label class="child-enquiry-checkbox">
                   <input type="checkbox" id="child-enquiry-check" name="child-enquiry" value="yes">
@@ -151,15 +174,15 @@
               <div class="sub-options" id="sub-performance">
                 <hr class="enquiry-separator">
                 <div class="performance-grid" aria-label="Performance type">
-                  <button type="button" class="enquiry-type-btn" data-sub="wedding">Wedding &amp; Civil Ceremony</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="funeral">Funeral &amp; Memorial</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="burns">Burns Suppers &amp; Traditional Gatherings</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="corporate">Corporate &amp; Business Dinner</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="festival">Ceilidh &amp; Cultural Events</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="graduation">Graduation &amp; Civic Ceremony</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="wedding" aria-pressed="false">Wedding &amp; Civil Ceremony</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="funeral" aria-pressed="false">Funeral &amp; Memorial</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="burns" aria-pressed="false">Burns Suppers &amp; Traditional Gatherings</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="corporate" aria-pressed="false">Corporate &amp; Business Dinner</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="festival" aria-pressed="false">Ceilidh &amp; Cultural Events</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="graduation" aria-pressed="false">Graduation &amp; Civic Ceremony</button>
                 </div>
                 <div class="performance-custom-row">
-                  <button type="button" class="enquiry-type-btn performance-custom-btn" data-sub="custom">Custom Engagement</button>
+                  <button type="button" class="enquiry-type-btn performance-custom-btn" data-sub="custom" aria-pressed="false">Custom Engagement</button>
                 </div>
               </div>
 
@@ -170,7 +193,8 @@
 
             <!-- Event Date — conditionally shown -->
             <div class="form-group hidden" id="event-date-group">
-              <label>Event Date</label>
+              <fieldset style="border:none;padding:0;margin:0;">
+              <legend class="form-label" style="float:none;width:100%;margin-bottom:0.5rem;">Event Date</legend>
               <div class="date-input-group">
                 <input type="text" inputmode="numeric" placeholder="DD" maxlength="2" id="event-day" name="event-day" class="date-field">
                 <span class="date-separator">/</span>
@@ -178,6 +202,7 @@
                 <span class="date-separator">/</span>
                 <input type="text" inputmode="numeric" placeholder="YYYY" maxlength="4" id="event-year" name="event-year" class="date-field date-field-year">
               </div>
+              </fieldset>
             </div>
 
             <div class="form-group" id="message-group">
@@ -200,6 +225,12 @@
           <div class="form-success" id="form-success" role="status" aria-live="polite">
             <p>Your enquiry has been received.</p>
             <p>You will hear back within 24 hours.</p>
+          </div>
+
+          <div class="form-error" id="form-error" role="alert" aria-live="assertive" style="display:none;">
+            <p>Something went wrong sending your enquiry. Please email us directly at
+            <a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a> and we will
+            respond within 24 hours.</p>
           </div>
 
         </div>
@@ -236,6 +267,8 @@
         <span class="footer__col-title">Contact &amp; Social</span>
         <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
         <p>Edinburgh, Scotland</p>
+        <!-- TODO: Replace with business number when set up -->
+        <p><a href="tel:+447305613875">07305 613 875</a></p>
         <div class="footer__social">
           <a href="https://www.instagram.com/ceolmhorofficial" aria-label="Ceòlmhor on Instagram" target="_blank" rel="noopener noreferrer"><svg class="ig-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>@ceolmhorofficial</a>
         </div>
@@ -251,7 +284,7 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js" defer></script>
   <script src="main.js"></script>
   <script>
     (function () {
@@ -332,8 +365,9 @@
       primaryBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
           var val = btn.dataset.primary;
-          primaryBtns.forEach(function (b) { b.classList.remove('selected'); });
+          primaryBtns.forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
           btn.classList.add('selected');
+          btn.setAttribute('aria-pressed', 'true');
           primaryHidden.value = val;
           resetSubs();
           subSections.forEach(function (s) { s.classList.remove('visible'); });
@@ -354,8 +388,9 @@
       subBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
           var parentSection = btn.closest('.sub-options');
-          parentSection.querySelectorAll('[data-sub]').forEach(function (b) { b.classList.remove('selected'); });
+          parentSection.querySelectorAll('[data-sub]').forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
           btn.classList.add('selected');
+          btn.setAttribute('aria-pressed', 'true');
           typeHidden.value = btn.dataset.sub;
           typeHidden.dispatchEvent(new Event('change'));
           /* Tuition sub-types flash message immediately; performance waits for date completion */
@@ -363,6 +398,70 @@
             flashMessage();
           }
         });
+      });
+
+      /* ── Worker submit handler ────────────────────────────────── */
+      var WORKER_URL = 'https://ceolmhor.scot/api/contact';
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        /* Validation */
+        var required = ['first-name', 'last-name', 'email'];
+        var valid = true;
+        required.forEach(function (name) {
+          var field = contactForm.elements[name];
+          var group = field ? field.closest('.form-group') : null;
+          if (!field || !field.value.trim()) {
+            if (field) field.setAttribute('aria-invalid', 'true');
+            if (group) group.classList.add('field-error');
+            if (valid && field) field.focus();
+            valid = false;
+          } else {
+            field.removeAttribute('aria-invalid');
+            if (group) group.classList.remove('field-error');
+          }
+        });
+        if (!valid) return;
+
+        /* Disable submit */
+        var btn = contactForm.querySelector('[type="submit"]');
+        var originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Sending\u2026';
+
+        /* Build FormData */
+        var formData = new FormData(contactForm);
+
+        fetch(WORKER_URL, {
+          method: 'POST',
+          body: formData,
+        })
+          .then(function (res) { return res.json().then(function (json) { return { res: res, json: json }; }); })
+          .then(function (data) {
+            if (data.res.ok && data.json.ok) {
+              contactForm.style.display = 'none';
+              var success = document.getElementById('form-success');
+              if (success) {
+                success.style.display = 'block';
+                success.setAttribute('tabindex', '-1');
+                success.focus();
+              }
+            } else {
+              throw new Error(data.json.error || 'Worker returned error');
+            }
+          })
+          .catch(function (err) {
+            console.error('Submission error:', err);
+            btn.disabled = false;
+            btn.textContent = originalText;
+            var errDiv = document.getElementById('form-error');
+            if (errDiv) {
+              errDiv.style.display = 'block';
+              errDiv.setAttribute('tabindex', '-1');
+              errDiv.focus();
+            }
+          });
       });
     }());
   </script>
