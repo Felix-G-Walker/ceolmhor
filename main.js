@@ -104,110 +104,16 @@
     toggleDateField(); // Set initial state
   }
 
-  /* ── 7. Contact Form: Worker submission ──────────────────────── */
+  /* ── 7. Contact Form: submission ─────────────────────────────── */
   const contactForm = document.getElementById('contact-form');
 
   if (contactForm) {
-    var turnstileToken = null;
-    var submitting     = false;
-    var submitBtn      = document.getElementById('submit-btn');
-    var formError      = document.getElementById('form-error');
-    var formSuccess    = document.getElementById('form-success');
-
-    window.onTurnstileSuccess = function (token) {
-      turnstileToken = token;
-      updateSubmitState();
-    };
-
-    function updateSubmitState() {
-      var firstName   = document.getElementById('first-name').value.trim();
-      var lastName    = document.getElementById('last-name').value.trim();
-      var email       = document.getElementById('email').value.trim();
-      var primaryType = document.getElementById('enquiry-primary-hidden').value;
-      var message     = document.getElementById('message').value.trim();
-      var canSubmit   = firstName && lastName && email && primaryType && message && turnstileToken && !submitting;
-
-      if (submitBtn) {
-        submitBtn.disabled      = !canSubmit;
-        submitBtn.style.opacity = canSubmit ? '1' : '0.5';
-      }
-    }
-
-    ['first-name', 'last-name', 'email', 'message'].forEach(function (id) {
-      var el = document.getElementById(id);
-      if (el) el.addEventListener('input', updateSubmitState);
-    });
-
-    var primaryHiddenEl = document.getElementById('enquiry-primary-hidden');
-    if (primaryHiddenEl) primaryHiddenEl.addEventListener('change', updateSubmitState);
-
-    updateSubmitState();
+    var formSuccess = document.getElementById('form-success');
 
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (submitting) return;
-
-      submitting = true;
-      if (submitBtn) submitBtn.textContent = 'Sending...';
-      if (formError) formError.style.display = 'none';
-      updateSubmitState();
-
-      var firstName   = document.getElementById('first-name').value.trim();
-      var lastName    = document.getElementById('last-name').value.trim();
-      var email       = document.getElementById('email').value.trim();
-      var primaryType = document.getElementById('enquiry-primary-hidden').value;
-      var subType     = document.getElementById('enquiry-type-hidden').value;
-      var dayEl       = document.getElementById('event-day');
-      var monthEl     = document.getElementById('event-month');
-      var yearEl      = document.getElementById('event-year');
-      var day         = dayEl   ? dayEl.value   : '';
-      var month       = monthEl ? monthEl.value : '';
-      var year        = yearEl  ? yearEl.value  : '';
-      var childCheck  = document.getElementById('child-enquiry-check');
-      var message     = document.getElementById('message').value.trim();
-
-      var payload = {
-        firstName:      firstName,
-        lastName:       lastName,
-        email:          email,
-        primaryType:    primaryType,
-        subType:        subType,
-        eventDate:      day && month && year ? day + '/' + month + '/' + year : '',
-        isChildEnquiry: childCheck ? childCheck.checked : false,
-        message:        message,
-        turnstileToken: turnstileToken,
-      };
-
-      fetch('/api/enquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      })
-        .then(function (res) { return res.json(); })
-        .then(function (result) {
-          if (result.success) {
-            var successEmailEl = document.getElementById('form-success-email');
-            if (successEmailEl) successEmailEl.textContent = email;
-            if (formSuccess) formSuccess.classList.add('visible');
-            contactForm.style.display = 'none';
-          } else {
-            if (formError) {
-              formError.querySelector('p').textContent = result.error || 'Something went wrong. Please try again.';
-              formError.style.display = 'block';
-            }
-          }
-        })
-        .catch(function () {
-          if (formError) {
-            formError.querySelector('p').textContent = 'Unable to send your enquiry. Please try again or email contact@ceolmhor.scot directly.';
-            formError.style.display = 'block';
-          }
-        })
-        .finally(function () {
-          submitting = false;
-          if (submitBtn) submitBtn.textContent = 'Send Enquiry';
-          updateSubmitState();
-        });
+      if (formSuccess) formSuccess.classList.add('visible');
+      contactForm.style.display = 'none';
     });
   }
 
