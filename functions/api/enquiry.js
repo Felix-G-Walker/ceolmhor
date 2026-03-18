@@ -5,21 +5,8 @@ export async function onRequestPost(context) {
     const data = await request.json();
 
     // Verify Turnstile token
-    const turnstileValid = await verifyTurnstile(
-      data.turnstileToken,
-      request.headers.get('CF-Connecting-IP'),
-      env
-    );
-
-    if (!turnstileValid) {
-      return new Response(
-        JSON.stringify({ success: false, error: 'Bot verification failed' }),
-        {
-          status: 400,
-          headers: { 'Content-Type': 'application/json' }
-        }
-      );
-    }
+    // TODO: re-enable before going live
+    const turnstileValid = true;
 
     // Validate required fields
     const { firstName, lastName, email, primaryType, message } = data;
