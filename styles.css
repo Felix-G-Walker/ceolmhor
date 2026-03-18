@@ -121,24 +121,6 @@ p {
 }
 .btn-primary:hover { background: var(--charcoal); border-color: rgba(255, 255, 255, 0.45); }
 
-.btn-enquire {
-  font-family: var(--font-ui);
-  font-weight: 400;
-  font-size: 0.62rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #ffffff;
-  background: var(--black);
-  padding: 0.9rem 2.25rem;
-  display: inline-block;
-  text-decoration: none;
-  transition: background 0.2s, border-color 0.2s, opacity 0.2s;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  line-height: 1;
-  cursor: pointer;
-}
-.btn-enquire:hover:not(:disabled) { background: var(--charcoal); border-color: rgba(255, 255, 255, 0.45); }
-.btn-enquire:disabled { cursor: not-allowed; }
 
 .btn-secondary {
   font-family: var(--font-ui);
