@@ -3020,6 +3020,12 @@ body::after {
   margin-bottom: 0.75rem;
   color: var(--gold, #c9a84c);
 }
+.credentials-block__body {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--silver, #b0b0b0);
+  margin: 0;
+}
 .credentials-list {
   list-style: none;
   padding: 0;
