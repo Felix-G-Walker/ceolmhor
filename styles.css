@@ -1557,9 +1557,11 @@ p {
   font-size: 0.9rem;
   color: var(--silver, #b0b0b0);
   line-height: 1.7;
-  margin-bottom: 2.5rem;
-  padding: 1rem 1.25rem;
-  border-left: 2px solid var(--gold, #c9a84c);
+  margin: 0 auto 2.5rem;
+  padding: 1.25rem;
+  border-top: 1px solid var(--gold, #c9a84c);
+  text-align: center;
+  max-width: 640px;
 }
 
 .booking-step {
