@@ -1119,6 +1119,18 @@ p {
   line-height: 1.6;
 }
 
+.tier--beyond {
+  border-style: dashed;
+  opacity: 0.85;
+  cursor: default;
+  pointer-events: none;
+}
+
+.tier--beyond:hover {
+  transform: none;
+  opacity: 0.85;
+}
+
 /* ── Tuition: Tier pages ──────────────────────────────────────────── */
 .tier-page-content {
   max-width: 760px;
