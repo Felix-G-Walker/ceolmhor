@@ -157,24 +157,20 @@ IP: ${ip}
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: `Ceòlmhor Enquiries <${env.FROM_EMAIL}>`,
-          to: [env.TO_EMAIL],
+          from: 'contact@ceolmhor.scot',
+          to: ['contact@ceolmhor.scot'],
           reply_to: email.trim(),
-          subject: `New ${enquiryType} Enquiry — ${firstName.trim()} ${lastName.trim()}`,
+          subject: `New Enquiry — ${firstName.trim()} ${lastName.trim()}`,
           text: emailText,
           html: emailHtml,
         }),
       });
-
       if (!resendRes.ok) {
-        const errBody = await resendRes.text();
-        console.error('Resend error:', resendRes.status, errBody);
-        /* Submission is already stored in D1 — return success to user
-           even if email notification fails. Log for manual follow-up. */
+        console.error('Resend error:', resendRes.status, await resendRes.text());
       }
     } catch (err) {
       console.error('Resend fetch error:', err);
-      /* Same as above — D1 record exists, user gets success response */
+      /* D1 record exists, user gets success response */
     }
 
     return jsonSuccess('Enquiry received');
