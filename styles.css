@@ -356,14 +356,15 @@ p {
 }
 
 .hero__gaelic-gloss {
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  color: var(--silver, #b0b0b0);
-  margin-top: 0.3rem;
-  font-style: normal;
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
   text-align: center;
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-weight: 300;
+  margin-top: 0.3rem;
 }
 
 .hero__label {
