@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquiries — Ceòlmhor</title>
+  <meta name="description" content="Enquire about piping tuition, a trial lesson, or an events booking. Ceòlmhor responds within 24 hours. Based in Edinburgh, teaching online worldwide.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+
+  <div id="tsparticles"></div>
+  <div class="particles-green-tint"></div>
+
+  <!-- ── Navigation ─────────────────────────────────────────────── -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <div class="nav__left">
+        <a href="index.html" class="nav__logo" aria-label="Ceòlmhor — home"><img src="images/Ceolmhor_logo_transparent.png" alt="Ceòlmhor" class="site-logo"></a>
+        <a href="index.html" class="nav__home">Home</a>
+      </div>
+      <div class="nav__links">
+        <a href="about.html">About</a>
+        <a href="tuition.html">Tuition</a>
+        <a href="performance.html">Performance</a>
+        <a href="preview.html">Preview</a>
+      </div>
+      <a href="contact.html" class="nav__cta">Enquire</a>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav__overlay" role="dialog" aria-label="Navigation menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="tuition.html">Tuition</a>
+    <a href="performance.html">Performance</a>
+    <a href="preview.html">Preview</a>
+    <a href="contact.html" class="nav__overlay-cta">Enquire</a>
+  </div>
+
+  <!-- ── Page Header ────────────────────────────────────────────── -->
+  <header class="page-header page-header--charcoal">
+    <div class="container">
+      <h1 class="page-header__title">Enquire</h1>
+      <p class="gaelic-subtitle">Faighnich</p>
+      <hr class="rule">
+    </div>
+  </header>
+
+  <!-- ── Contact Section ────────────────────────────────────────── -->
+  <section class="section section--black">
+    <div class="container">
+
+      <div class="contact-grid">
+
+        <!-- Contact Details -->
+        <aside data-reveal>
+          <dl class="contact-details">
+            <dt>Email</dt>
+            <dd><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></dd>
+
+            <dt>Location</dt>
+            <dd>Edinburgh, Scotland</dd>
+
+            <dt>Response time</dt>
+            <dd>Within 24 hours</dd>
+
+            <dt>Common questions</dt>
+            <dd><a href="faq.html" class="contact-faq-link">View FAQ</a></dd>
+          </dl>
+        </aside>
+
+        <!-- Enquiry Form -->
+        <div data-reveal data-delay="2">
+
+          <form
+            id="contact-form"
+            name="contact-form"
+            novalidate
+          >
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first-name"
+                  autocomplete="given-name"
+                  required
+                >
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  name="last-name"
+                  autocomplete="family-name"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                placeholder="your@email.com"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label id="enquiry-type-label">Enquiry Type</label>
+
+              <!-- Primary: Tuition / Performance / Other -->
+              <div class="enquiry-type-grid enquiry-primary-grid" role="group" aria-labelledby="enquiry-type-label">
+                <button type="button" class="enquiry-type-btn" data-primary="tuition">Tuition</button>
+                <button type="button" class="enquiry-type-btn" data-primary="performance">Performance</button>
+                <button type="button" class="enquiry-type-btn" data-primary="other">Other</button>
+              </div>
+
+              <!-- Tuition sub-options -->
+              <div class="sub-options" id="sub-tuition">
+                <hr class="enquiry-separator">
+                <div class="enquiry-type-grid" role="group" aria-label="Tuition type">
+                  <button type="button" class="enquiry-type-btn" data-sub="trial">Trial Lesson</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="regular">Regular Tuition</button>
+                </div>
+                <label class="child-enquiry-checkbox">
+                  <input type="checkbox" id="child-enquiry-check" name="child-enquiry" value="yes">
+                  I am applying on behalf of a child
+                </label>
+              </div>
+
+              <!-- Performance sub-options -->
+              <div class="sub-options" id="sub-performance">
+                <hr class="enquiry-separator">
+                <div class="performance-grid" aria-label="Performance type">
+                  <button type="button" class="enquiry-type-btn" data-sub="wedding">Wedding &amp; Civil Ceremony</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="funeral">Funeral &amp; Memorial</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="burns">Burns Suppers &amp; Traditional Gatherings</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="corporate">Corporate &amp; Business Dinner</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="festival">Ceilidh &amp; Cultural Events</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="graduation">Graduation &amp; Civic Ceremony</button>
+                </div>
+                <div class="performance-custom-row">
+                  <button type="button" class="enquiry-type-btn performance-custom-btn" data-sub="custom">Custom Engagement</button>
+                </div>
+              </div>
+
+              <!-- Hidden fields for form submission -->
+              <input type="hidden" name="enquiry-primary" id="enquiry-primary-hidden">
+              <input type="hidden" name="enquiry-type" id="enquiry-type-hidden">
+            </div>
+
+            <!-- Event Date — conditionally shown -->
+            <div class="form-group hidden" id="event-date-group">
+              <label>Event Date</label>
+              <div class="date-input-group">
+                <input type="text" inputmode="numeric" placeholder="DD" maxlength="2" id="event-day" name="event-day" class="date-field">
+                <span class="date-separator">/</span>
+                <input type="text" inputmode="numeric" placeholder="MM" maxlength="2" id="event-month" name="event-month" class="date-field">
+                <span class="date-separator">/</span>
+                <input type="text" inputmode="numeric" placeholder="YYYY" maxlength="4" id="event-year" name="event-year" class="date-field date-field-year">
+              </div>
+            </div>
+
+            <div class="form-group" id="message-group">
+              <label for="message">Message / Additional Details</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Please include any relevant details — location, time, level of experience, or specific requirements."
+              ></textarea>
+            </div>
+
+            <div
+              class="cf-turnstile"
+              data-sitekey="0x4AAAAAACsuNVweXmoHMgJS"
+              data-callback="onTurnstileSuccess"
+            ></div>
+
+            <div class="form-submit">
+              <button type="submit" id="submit-btn" class="btn-enquire" disabled>Send Enquiry</button>
+            </div>
+
+            <div class="form-error" id="form-error" role="alert" aria-live="polite">
+              <p></p>
+            </div>
+
+          </form>
+
+          <!-- Inline success message -->
+          <div class="form-success" id="form-success" role="status" aria-live="polite">
+            <p>Your enquiry has been received.</p>
+            <p>You will hear back within 24 hours at <span id="form-success-email"></span>.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────── -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="footer__inner">
+
+      <div class="footer__brand">
+        <img src="images/Ceolmhor_logo_transparent.png" alt="" class="footer__brand-img" aria-hidden="true">
+        <div class="footer__brand-text">
+          <span class="footer__logo">Ceòlmhor</span>
+          <p class="footer__tagline">Scottish Excellence · Sàr-mhathais Albannach</p>
+        </div>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <span class="footer__col-title">Navigation</span>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="tuition.html">Tuition</a></li>
+          <li><a href="performance.html">Performance</a></li>
+          <li><a href="preview.html">Preview</a></li>
+          <li><a href="contact.html">Enquire</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__contact">
+        <span class="footer__col-title">Contact &amp; Social</span>
+        <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
+        <p>Edinburgh, Scotland</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/ceolmhorofficial" aria-label="Ceòlmhor on Instagram" target="_blank" rel="noopener noreferrer"><svg class="ig-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>@ceolmhorofficial</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer__bottom">
+      <p>© Ceòlmhor 2026. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="faq.html">FAQ</a>
+        <a href="privacy.html">Privacy Notice</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    (function () {
+      var primaryBtns   = document.querySelectorAll('[data-primary]');
+      var subBtns       = document.querySelectorAll('[data-sub]');
+      var subSections   = document.querySelectorAll('.sub-options');
+      var primaryHidden = document.getElementById('enquiry-primary-hidden');
+      var typeHidden    = document.getElementById('enquiry-type-hidden');
+      var childCheck    = document.getElementById('child-enquiry-check');
+      var messageGroup  = document.getElementById('message-group');
+      var dateGroup     = document.getElementById('event-date-group');
+      var contactForm   = document.getElementById('contact-form');
+      var flashTimer = null;
+
+      /* ── Date field auto-advance + completion trigger ────────── */
+      var dayField   = document.getElementById('event-day');
+      var monthField = document.getElementById('event-month');
+      var yearField  = document.getElementById('event-year');
+
+      function isDateComplete(d, m, y) {
+        var thisYear = new Date().getFullYear();
+        var dayOk   = d.length === 2 && parseInt(d, 10) >= 1  && parseInt(d, 10) <= 31;
+        var monOk   = m.length === 2 && parseInt(m, 10) >= 1  && parseInt(m, 10) <= 12;
+        var yrOk    = y.length === 4 && parseInt(y, 10) >= thisYear && parseInt(y, 10) <= thisYear + 10;
+        return dayOk && monOk && yrOk;
+      }
+
+      function handleDateInput(changedField, nextField) {
+        return function () {
+          this.value = this.value.replace(/\D/g, '');
+          if (nextField && this.value.length >= parseInt(this.getAttribute('maxlength'), 10)) {
+            nextField.focus();
+          }
+          /* Flash message only for performance enquiries once date is complete */
+          if (primaryHidden.value === 'performance') {
+            var d = dayField   ? dayField.value   : '';
+            var m = monthField ? monthField.value : '';
+            var y = yearField  ? yearField.value  : '';
+            if (isDateComplete(d, m, y)) {
+              flashMessage();
+            }
+          }
+        };
+      }
+
+      if (dayField)   dayField.addEventListener('input',   handleDateInput(dayField,   monthField));
+      if (monthField) monthField.addEventListener('input', handleDateInput(monthField, yearField));
+      if (yearField)  yearField.addEventListener('input',  handleDateInput(yearField,  null));
+
+      /* ── Auto-expanding textarea ──────────────────────────────── */
+      var textarea = document.getElementById('message');
+      if (textarea) {
+        textarea.addEventListener('input', function () {
+          this.style.height = 'auto';
+          this.style.height = this.scrollHeight + 'px';
+        });
+      }
+
+      /* ── Message flash ────────────────────────────────────────── */
+      function flashMessage() {
+        if (!messageGroup) return;
+        clearTimeout(flashTimer);
+        messageGroup.classList.remove('message-flash');
+        void messageGroup.offsetWidth;
+        messageGroup.classList.add('message-flash');
+        flashTimer = setTimeout(function () {
+          messageGroup.classList.remove('message-flash');
+        }, 1800);
+      }
+
+      function resetSubs() {
+        subBtns.forEach(function (b) { b.classList.remove('selected'); });
+        if (childCheck) childCheck.checked = false;
+        typeHidden.value = '';
+        typeHidden.dispatchEvent(new Event('change'));
+      }
+
+      primaryBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var val = btn.dataset.primary;
+          primaryBtns.forEach(function (b) { b.classList.remove('selected'); });
+          btn.classList.add('selected');
+          primaryHidden.value = val;
+          resetSubs();
+          subSections.forEach(function (s) { s.classList.remove('visible'); });
+
+          if (val === 'tuition') {
+            document.getElementById('sub-tuition').classList.add('visible');
+          } else if (val === 'performance') {
+            document.getElementById('sub-performance').classList.add('visible');
+          } else if (val === 'other') {
+            typeHidden.value = 'other';
+            typeHidden.dispatchEvent(new Event('change'));
+            flashMessage();
+          }
+
+        });
+      });
+
+      subBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var parentSection = btn.closest('.sub-options');
+          parentSection.querySelectorAll('[data-sub]').forEach(function (b) { b.classList.remove('selected'); });
+          btn.classList.add('selected');
+          typeHidden.value = btn.dataset.sub;
+          typeHidden.dispatchEvent(new Event('change'));
+          /* Tuition sub-types flash message immediately; performance waits for date completion */
+          if (parentSection.id !== 'sub-performance') {
+            flashMessage();
+          }
+        });
+      });
+    }());
+  </script>
+</body>
+</html>

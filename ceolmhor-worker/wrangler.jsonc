@@ -1,0 +1,14 @@
+{
+  "name": "ceolmhor-worker",
+  "main": "src/index.js",
+  "compatibility_date": "2025-03-18",
+  "vars": {
+    "ADMIN_EMAIL": "contact@ceolmhor.scot"
+  },
+  "routes": [
+    {
+      "pattern": "ceolmhor.scot/api/*",
+      "zone_name": "ceolmhor.scot"
+    }
+  ]
+}

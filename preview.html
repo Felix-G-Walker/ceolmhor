@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Ceòlmhor</title>
+  <meta name="description" content="See and hear Ceòlmhor in action — live performance footage, tuition audio clips, and photography from events across Edinburgh and beyond.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="tsparticles"></div>
+  <div class="particles-green-tint"></div>
+
+  <!-- ── Navigation ─────────────────────────────────────────────── -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <div class="nav__left">
+        <a href="index.html" class="nav__logo" aria-label="Ceòlmhor — home"><img src="images/Ceolmhor_logo_transparent.png" alt="Ceòlmhor" class="site-logo"></a>
+        <a href="index.html" class="nav__home">Home</a>
+      </div>
+      <div class="nav__links">
+        <a href="about.html">About</a>
+        <a href="tuition.html">Tuition</a>
+        <a href="performance.html">Performance</a>
+        <a href="preview.html" class="active">Preview</a>
+      </div>
+      <a href="contact.html" class="nav__cta">Enquire</a>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav__overlay" role="dialog" aria-label="Navigation menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="tuition.html">Tuition</a>
+    <a href="performance.html">Performance</a>
+    <a href="preview.html" class="active">Preview</a>
+    <a href="contact.html" class="nav__overlay-cta">Enquire</a>
+  </div>
+
+  <!-- ── Page Header ────────────────────────────────────────────── -->
+  <header class="page-header page-header--charcoal">
+    <div class="container">
+      <h1 class="page-header__title">Preview</h1>
+      <p class="gaelic-subtitle">Ro-shealladh</p>
+      <hr class="rule">
+    </div>
+  </header>
+
+  <!-- ── Full-bleed video — outside container ─────────────────── -->
+  <div class="preview-video-block">
+    <div class="video-placeholder-hero">
+      <div class="video-placeholder-inner">
+        <span class="video-placeholder-icon">&#9654;</span>
+        <p class="video-placeholder-label">Lead Performance Clip</p>
+        <p class="video-placeholder-sub">Full-width hero video — autoplay mute</p>
+      </div>
+    </div>
+    <button class="sound-toggle">&#128263; Sound off</button>
+  </div>
+
+  <!-- ── Content ────────────────────────────────────────────────── -->
+  <div class="container" style="padding-top: 2rem;">
+
+    <!-- ── Gallery & Film ─────────────────────────────────────────── -->
+    <div class="preview-content-section">
+      <span class="preview-section-label">Gallery &amp; Film</span>
+
+      <!-- Video thumbnails -->
+      <div class="video-grid">
+        <div class="video-thumb-card">
+          <div class="video-thumb-placeholder">
+            <span class="video-thumb-icon">&#9654;</span>
+          </div>
+          <p class="video-thumb-title">Royal Edinburgh Military Tattoo</p>
+        </div>
+        <div class="video-thumb-card">
+          <div class="video-thumb-placeholder">
+            <span class="video-thumb-icon">&#9654;</span>
+          </div>
+          <p class="video-thumb-title">Live Performance — Edinburgh</p>
+        </div>
+      </div>
+
+      <!-- Unified photo masonry — all images and placeholders -->
+      <div class="photo-masonry" id="galleryMasonry">
+        <div class="photo-masonry-item" data-src="images/about-new-york.jfif">
+          <img src="images/about-new-york.jfif" alt="Felix Walker in full dress uniform, New York parade" loading="lazy">
+        </div>
+        <div class="photo-masonry-item" data-src="images/about-castle-steps.jfif">
+          <img src="images/about-castle-steps.jfif" alt="Felix Walker on steps at Edinburgh Castle War Memorial" loading="lazy">
+        </div>
+        <div class="photo-masonry-item" data-src="images/about-tattoo-massed.jfif">
+          <img src="images/about-tattoo-massed.jfif" alt="Massed pipes and drums at the Royal Edinburgh Military Tattoo" loading="lazy">
+        </div>
+        <div class="photo-masonry-item" data-src="images/about-band-marching.jfif">
+          <img src="images/about-band-marching.jfif" alt="Pipe band marching outdoors in sunlight" loading="lazy">
+        </div>
+        <div class="photo-masonry-item" data-src="images/about-golf-course.jfif">
+          <img src="images/about-golf-course.jfif" alt="Piper performing on a golf course overlooking the sea" loading="lazy">
+        </div>
+        <div class="photo-masonry-item" data-src="images/about-hero.jpg">
+          <img src="images/about-hero.jpg" alt="Felix Walker walking through arched doorway at Edinburgh Castle">
+        </div>
+        <div class="photo-masonry-item" data-src="images/about-pipes-home.jfif">
+          <img src="images/about-pipes-home.jfif" alt="Felix Walker holding pipes with Scottish and North Irish Yeomanry bag" loading="lazy">
+        </div>
+        <div class="photo-placeholder">Wedding Ceremony — Edinburgh</div>
+        <div class="photo-placeholder">Funeral &amp; Memorial</div>
+        <div class="photo-placeholder">Corporate Dinner</div>
+        <div class="photo-placeholder">Outdoor Performance</div>
+        <div class="photo-placeholder">Practice Chanter Lesson</div>
+        <div class="photo-placeholder">Full Instrument Tuition</div>
+        <div class="photo-placeholder">Student Progression</div>
+        <div class="photo-placeholder">Highland Culture &amp; Ceremony</div>
+        <div class="photo-placeholder">Gàidhlig Tradition</div>
+        <div class="photo-placeholder">The Living Repertoire</div>
+      </div>
+    </div>
+
+    <!-- ── Divider ─────────────────────────────────────────────────── -->
+    <hr class="preview-section-divider">
+
+    <!-- ── Recordings ─────────────────────────────────────────────── -->
+    <div class="preview-content-section">
+      <span class="preview-section-label">Recordings</span>
+
+      <div class="audio-clips">
+
+        <div class="audio-clip-row">
+          <button class="audio-play-btn" aria-label="Play Lament for the Children">&#9654;</button>
+          <div class="audio-clip-info">
+            <span class="audio-clip-title">Lament for the Children</span>
+            <span class="audio-clip-category">Pìobaireachd</span>
+          </div>
+          <div class="audio-waveform-placeholder" aria-hidden="true">
+            <div class="waveform-bar" style="height:35%"></div>
+            <div class="waveform-bar" style="height:55%"></div>
+            <div class="waveform-bar" style="height:45%"></div>
+            <div class="waveform-bar" style="height:72%"></div>
+            <div class="waveform-bar" style="height:38%"></div>
+            <div class="waveform-bar" style="height:61%"></div>
+            <div class="waveform-bar" style="height:48%"></div>
+            <div class="waveform-bar" style="height:79%"></div>
+            <div class="waveform-bar" style="height:42%"></div>
+            <div class="waveform-bar" style="height:58%"></div>
+            <div class="waveform-bar" style="height:33%"></div>
+            <div class="waveform-bar" style="height:67%"></div>
+            <div class="waveform-bar" style="height:51%"></div>
+            <div class="waveform-bar" style="height:44%"></div>
+            <div class="waveform-bar" style="height:76%"></div>
+            <div class="waveform-bar" style="height:39%"></div>
+            <div class="waveform-bar" style="height:63%"></div>
+            <div class="waveform-bar" style="height:47%"></div>
+            <div class="waveform-bar" style="height:82%"></div>
+            <div class="waveform-bar" style="height:36%"></div>
+            <div class="waveform-bar" style="height:59%"></div>
+            <div class="waveform-bar" style="height:43%"></div>
+            <div class="waveform-bar" style="height:71%"></div>
+            <div class="waveform-bar" style="height:38%"></div>
+            <div class="waveform-bar" style="height:65%"></div>
+            <div class="waveform-bar" style="height:49%"></div>
+            <div class="waveform-bar" style="height:77%"></div>
+            <div class="waveform-bar" style="height:41%"></div>
+            <div class="waveform-bar" style="height:56%"></div>
+            <div class="waveform-bar" style="height:34%"></div>
+            <div class="waveform-bar" style="height:68%"></div>
+            <div class="waveform-bar" style="height:52%"></div>
+            <div class="waveform-bar" style="height:46%"></div>
+            <div class="waveform-bar" style="height:74%"></div>
+            <div class="waveform-bar" style="height:37%"></div>
+            <div class="waveform-bar" style="height:62%"></div>
+            <div class="waveform-bar" style="height:48%"></div>
+            <div class="waveform-bar" style="height:81%"></div>
+            <div class="waveform-bar" style="height:40%"></div>
+            <div class="waveform-bar" style="height:57%"></div>
+          </div>
+          <span class="audio-duration">—:——</span>
+        </div>
+
+        <div class="audio-clip-row">
+          <button class="audio-play-btn" aria-label="Play The Green Hills of Tyrol">&#9654;</button>
+          <div class="audio-clip-info">
+            <span class="audio-clip-title">The Green Hills of Tyrol</span>
+            <span class="audio-clip-category">March</span>
+          </div>
+          <div class="audio-waveform-placeholder" aria-hidden="true">
+            <div class="waveform-bar" style="height:62%"></div>
+            <div class="waveform-bar" style="height:41%"></div>
+            <div class="waveform-bar" style="height:75%"></div>
+            <div class="waveform-bar" style="height:33%"></div>
+            <div class="waveform-bar" style="height:58%"></div>
+            <div class="waveform-bar" style="height:47%"></div>
+            <div class="waveform-bar" style="height:80%"></div>
+            <div class="waveform-bar" style="height:37%"></div>
+            <div class="waveform-bar" style="height:64%"></div>
+            <div class="waveform-bar" style="height:52%"></div>
+            <div class="waveform-bar" style="height:43%"></div>
+            <div class="waveform-bar" style="height:70%"></div>
+            <div class="waveform-bar" style="height:36%"></div>
+            <div class="waveform-bar" style="height:60%"></div>
+            <div class="waveform-bar" style="height:48%"></div>
+            <div class="waveform-bar" style="height:78%"></div>
+            <div class="waveform-bar" style="height:42%"></div>
+            <div class="waveform-bar" style="height:55%"></div>
+            <div class="waveform-bar" style="height:39%"></div>
+            <div class="waveform-bar" style="height:73%"></div>
+            <div class="waveform-bar" style="height:46%"></div>
+            <div class="waveform-bar" style="height:66%"></div>
+            <div class="waveform-bar" style="height:35%"></div>
+            <div class="waveform-bar" style="height:57%"></div>
+            <div class="waveform-bar" style="height:44%"></div>
+            <div class="waveform-bar" style="height:76%"></div>
+            <div class="waveform-bar" style="height:40%"></div>
+            <div class="waveform-bar" style="height:61%"></div>
+            <div class="waveform-bar" style="height:50%"></div>
+            <div class="waveform-bar" style="height:34%"></div>
+            <div class="waveform-bar" style="height:69%"></div>
+            <div class="waveform-bar" style="height:45%"></div>
+            <div class="waveform-bar" style="height:79%"></div>
+            <div class="waveform-bar" style="height:38%"></div>
+            <div class="waveform-bar" style="height:54%"></div>
+            <div class="waveform-bar" style="height:67%"></div>
+            <div class="waveform-bar" style="height:43%"></div>
+            <div class="waveform-bar" style="height:72%"></div>
+            <div class="waveform-bar" style="height:36%"></div>
+            <div class="waveform-bar" style="height:58%"></div>
+          </div>
+          <span class="audio-duration">—:——</span>
+        </div>
+
+        <div class="audio-clip-row">
+          <button class="audio-play-btn" aria-label="Play Shoals of Herring">&#9654;</button>
+          <div class="audio-clip-info">
+            <span class="audio-clip-title">Shoals of Herring</span>
+            <span class="audio-clip-category">Air</span>
+          </div>
+          <div class="audio-waveform-placeholder" aria-hidden="true">
+            <div class="waveform-bar" style="height:28%"></div>
+            <div class="waveform-bar" style="height:44%"></div>
+            <div class="waveform-bar" style="height:36%"></div>
+            <div class="waveform-bar" style="height:56%"></div>
+            <div class="waveform-bar" style="height:30%"></div>
+            <div class="waveform-bar" style="height:48%"></div>
+            <div class="waveform-bar" style="height:38%"></div>
+            <div class="waveform-bar" style="height:62%"></div>
+            <div class="waveform-bar" style="height:34%"></div>
+            <div class="waveform-bar" style="height:52%"></div>
+            <div class="waveform-bar" style="height:27%"></div>
+            <div class="waveform-bar" style="height:46%"></div>
+            <div class="waveform-bar" style="height:40%"></div>
+            <div class="waveform-bar" style="height:33%"></div>
+            <div class="waveform-bar" style="height:58%"></div>
+            <div class="waveform-bar" style="height:29%"></div>
+            <div class="waveform-bar" style="height:51%"></div>
+            <div class="waveform-bar" style="height:37%"></div>
+            <div class="waveform-bar" style="height:65%"></div>
+            <div class="waveform-bar" style="height:31%"></div>
+            <div class="waveform-bar" style="height:47%"></div>
+            <div class="waveform-bar" style="height:35%"></div>
+            <div class="waveform-bar" style="height:55%"></div>
+            <div class="waveform-bar" style="height:28%"></div>
+            <div class="waveform-bar" style="height:50%"></div>
+            <div class="waveform-bar" style="height:39%"></div>
+            <div class="waveform-bar" style="height:60%"></div>
+            <div class="waveform-bar" style="height:32%"></div>
+            <div class="waveform-bar" style="height:44%"></div>
+            <div class="waveform-bar" style="height:26%"></div>
+            <div class="waveform-bar" style="height:54%"></div>
+            <div class="waveform-bar" style="height:42%"></div>
+            <div class="waveform-bar" style="height:36%"></div>
+            <div class="waveform-bar" style="height:59%"></div>
+            <div class="waveform-bar" style="height:30%"></div>
+            <div class="waveform-bar" style="height:49%"></div>
+            <div class="waveform-bar" style="height:38%"></div>
+            <div class="waveform-bar" style="height:63%"></div>
+            <div class="waveform-bar" style="height:33%"></div>
+            <div class="waveform-bar" style="height:45%"></div>
+          </div>
+          <span class="audio-duration">—:——</span>
+        </div>
+
+        <div class="audio-clip-row">
+          <button class="audio-play-btn" aria-label="Play 79th Farewell to Gibraltar">&#9654;</button>
+          <div class="audio-clip-info">
+            <span class="audio-clip-title">79th Farewell to Gibraltar</span>
+            <span class="audio-clip-category">Strathspey &amp; Reel</span>
+          </div>
+          <div class="audio-waveform-placeholder" aria-hidden="true">
+            <div class="waveform-bar" style="height:70%"></div>
+            <div class="waveform-bar" style="height:45%"></div>
+            <div class="waveform-bar" style="height:82%"></div>
+            <div class="waveform-bar" style="height:38%"></div>
+            <div class="waveform-bar" style="height:66%"></div>
+            <div class="waveform-bar" style="height:54%"></div>
+            <div class="waveform-bar" style="height:77%"></div>
+            <div class="waveform-bar" style="height:42%"></div>
+            <div class="waveform-bar" style="height:60%"></div>
+            <div class="waveform-bar" style="height:35%"></div>
+            <div class="waveform-bar" style="height:74%"></div>
+            <div class="waveform-bar" style="height:50%"></div>
+            <div class="waveform-bar" style="height:88%"></div>
+            <div class="waveform-bar" style="height:40%"></div>
+            <div class="waveform-bar" style="height:68%"></div>
+            <div class="waveform-bar" style="height:55%"></div>
+            <div class="waveform-bar" style="height:79%"></div>
+            <div class="waveform-bar" style="height:44%"></div>
+            <div class="waveform-bar" style="height:62%"></div>
+            <div class="waveform-bar" style="height:37%"></div>
+            <div class="waveform-bar" style="height:72%"></div>
+            <div class="waveform-bar" style="height:48%"></div>
+            <div class="waveform-bar" style="height:85%"></div>
+            <div class="waveform-bar" style="height:41%"></div>
+            <div class="waveform-bar" style="height:64%"></div>
+            <div class="waveform-bar" style="height:52%"></div>
+            <div class="waveform-bar" style="height:76%"></div>
+            <div class="waveform-bar" style="height:36%"></div>
+            <div class="waveform-bar" style="height:58%"></div>
+            <div class="waveform-bar" style="height:46%"></div>
+            <div class="waveform-bar" style="height:80%"></div>
+            <div class="waveform-bar" style="height:43%"></div>
+            <div class="waveform-bar" style="height:71%"></div>
+            <div class="waveform-bar" style="height:38%"></div>
+            <div class="waveform-bar" style="height:90%"></div>
+            <div class="waveform-bar" style="height:53%"></div>
+            <div class="waveform-bar" style="height:67%"></div>
+            <div class="waveform-bar" style="height:39%"></div>
+            <div class="waveform-bar" style="height:78%"></div>
+            <div class="waveform-bar" style="height:47%"></div>
+          </div>
+          <span class="audio-duration">—:——</span>
+        </div>
+
+      </div><!-- /.audio-clips -->
+    </div>
+
+    <!-- ── Closing CTA ─────────────────────────────────────────────── -->
+    <div class="experience-cta">
+      <a href="contact.html" class="btn-primary">Enquire</a>
+    </div>
+
+  </div><!-- /.container -->
+
+  <!-- ── Footer ─────────────────────────────────────────────────── -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="footer__inner">
+
+      <div class="footer__brand">
+        <img src="images/Ceolmhor_logo_transparent.png" alt="" class="footer__brand-img" aria-hidden="true">
+        <div class="footer__brand-text">
+          <span class="footer__logo">Ceòlmhor</span>
+          <p class="footer__tagline">Scottish Excellence · Sàr-mhathais Albannach</p>
+        </div>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <span class="footer__col-title">Navigation</span>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="tuition.html">Tuition</a></li>
+          <li><a href="performance.html">Performance</a></li>
+          <li><a href="preview.html">Preview</a></li>
+          <li><a href="contact.html">Enquire</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__contact">
+        <span class="footer__col-title">Contact &amp; Social</span>
+        <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
+        <p>Edinburgh, Scotland</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/ceolmhorofficial" aria-label="Ceòlmhor on Instagram" target="_blank" rel="noopener noreferrer"><svg class="ig-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>@ceolmhorofficial</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer__bottom">
+      <p>© Ceòlmhor 2026. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="faq.html">FAQ</a>
+        <a href="privacy.html">Privacy Notice</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    (function () {
+      /* ── Image lightbox ─────────────────────────────────────────── */
+      var lightbox = document.createElement('div');
+      lightbox.id = 'preview-lightbox';
+      lightbox.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;justify-content:center;align-items:center;cursor:zoom-out;opacity:0;transition:opacity 0.4s ease;';
+
+      var lightboxImg = document.createElement('img');
+      lightboxImg.style.cssText = 'max-width:80vw;max-height:90vh;object-fit:contain;box-shadow:0 0 60px rgba(0,0,0,0.8);transition:opacity 0.2s ease;';
+
+      var lbPrev = document.createElement('button');
+      lbPrev.textContent = '‹';
+      lbPrev.className = 'lightbox-btn-prev';
+
+      var lbNext = document.createElement('button');
+      lbNext.textContent = '›';
+      lbNext.className = 'lightbox-btn-next';
+
+      lightbox.appendChild(lbPrev);
+      lightbox.appendChild(lightboxImg);
+      lightbox.appendChild(lbNext);
+      document.body.appendChild(lightbox);
+
+      var imageItems = Array.from(document.querySelectorAll('.photo-masonry-item[data-src]'));
+      var imageSrcs  = imageItems.map(function (el) { return el.dataset.src; });
+      var currentIdx = 0;
+
+      function isOpen() { return lightbox.style.display !== 'none'; }
+
+      function openAt(idx) {
+        currentIdx = idx;
+        lightboxImg.src = imageSrcs[currentIdx];
+        lightbox.style.display = 'flex';
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            lightbox.style.opacity = '1';
+          });
+        });
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.style.opacity = '0';
+        setTimeout(function () {
+          lightbox.style.display = 'none';
+          document.body.style.overflow = '';
+        }, 400);
+      }
+
+      function goTo(n) {
+        currentIdx = (n + imageSrcs.length) % imageSrcs.length;
+        lightboxImg.style.opacity = '0';
+        setTimeout(function () {
+          lightboxImg.src = imageSrcs[currentIdx];
+          lightboxImg.style.opacity = '1';
+        }, 200);
+      }
+
+      imageItems.forEach(function (item, i) {
+        item.addEventListener('click', function () { openAt(i); });
+      });
+
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      lbPrev.addEventListener('click', function (e) { e.stopPropagation(); goTo(currentIdx - 1); });
+      lbNext.addEventListener('click', function (e) { e.stopPropagation(); goTo(currentIdx + 1); });
+
+      document.addEventListener('keydown', function (e) {
+        if (!isOpen()) return;
+        if (e.key === 'Escape')     { closeLightbox(); }
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(currentIdx - 1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); goTo(currentIdx + 1); }
+      });
+    }());
+  </script>
+</body>
+</html>

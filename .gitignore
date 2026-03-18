@@ -1,0 +1,11 @@
+# Claude Code memory — never commit
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.swp
