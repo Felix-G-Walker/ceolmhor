@@ -117,7 +117,6 @@
   });
 
   /* ── 9. Particle Background ──────────────────────────────────── */
-  document.addEventListener('DOMContentLoaded', function () {
   if (
     !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
     typeof tsParticles !== 'undefined'
@@ -154,7 +153,6 @@
       detectRetina: true
     });
   }
-  }); // end DOMContentLoaded
 
   /* ── 10. Particle speed — scroll velocity with inertia ───────────── */
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
