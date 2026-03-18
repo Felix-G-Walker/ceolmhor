@@ -9,3 +9,6 @@ desktop.ini
 # Editor
 .vscode/
 *.swp
+
+# Wrangler local state
+worker/.wrangler/
