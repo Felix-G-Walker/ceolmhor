@@ -2727,24 +2727,6 @@ body::after {
 }
 
 
-.photo-placeholder {
-  width: 100%;
-  height: 280px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.2);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-align: center;
-  padding: 1rem;
-  font-family: var(--font-ui);
-  break-inside: avoid;
-  margin-bottom: 1rem;
-}
-
 /* Experience CTA */
 .experience-cta {
   display: flex;
