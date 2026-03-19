@@ -154,15 +154,18 @@
               >
             </div>
 
-            <div class="form-group">
+            <div class="form-group" id="phone-group">
               <label for="phone">Phone Number <span style="font-size:0.82em;opacity:0.55;font-weight:300;">(optional)</span></label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
                 autocomplete="tel"
-                placeholder="+44 7xxx xxxxxx"
+                inputmode="tel"
+                placeholder="optional"
               >
+              <input type="hidden" name="phone-cleaned" id="phone-cleaned">
+              <span class="field-error-msg" id="phone-error" role="alert" aria-live="polite">Please enter a valid UK or international phone number</span>
             </div>
 
             <div class="form-group">
@@ -440,6 +443,131 @@
         flashTimer = setTimeout(function () {
           messageGroup.classList.remove('message-flash');
         }, 1800);
+      }
+
+      /* ── Phone number formatting & validation ─────────────────── */
+      var phoneField   = document.getElementById('phone');
+      var phoneCleaned = document.getElementById('phone-cleaned');
+      var phoneError   = document.getElementById('phone-error');
+
+      function digitsOnly(s) { return s.replace(/\D/g, ''); }
+
+      function fmtUK44(rest) {
+        if (!rest) return '';
+        if (rest.charAt(0) === '7') {
+          var a = rest.slice(0, 4), b = rest.slice(4, 7), c = rest.slice(7, 10);
+          return a + (b ? ' ' + b : '') + (c ? ' ' + c : '');
+        }
+        if (rest.charAt(0) === '2') {
+          var a = rest.slice(0, 2), b = rest.slice(2, 6), c = rest.slice(6, 10);
+          return a + (b ? ' ' + b : '') + (c ? ' ' + c : '');
+        }
+        var a = rest.slice(0, 4), b = rest.slice(4, 7), c = rest.slice(7, 10);
+        return a + (b ? ' ' + b : '') + (c ? ' ' + c : '');
+      }
+
+      function fmtDomestic(digits) {
+        if (!digits) return '';
+        if (digits.slice(0, 2) === '02') {
+          var a = digits.slice(0, 3), b = digits.slice(3, 7), c = digits.slice(7, 11);
+          return a + (b ? ' ' + b : '') + (c ? ' ' + c : '');
+        }
+        var a = digits.slice(0, 5), b = digits.slice(5, 8), c = digits.slice(8, 11);
+        return a + (b ? ' ' + b : '') + (c ? ' ' + c : '');
+      }
+
+      function fmtIntl(raw) {
+        var digits = digitsOnly(raw.slice(1));
+        if (!digits) return '+';
+        var rest;
+        if (digits.charAt(0) === '1') {
+          rest = digits.slice(1);
+          var a = rest.slice(0, 3), b = rest.slice(3, 6), c = rest.slice(6, 10);
+          return '+1' + (a ? ' ' + a : '') + (b ? ' ' + b : '') + (c ? ' ' + c : '');
+        }
+        if (digits.slice(0, 2) === '44') {
+          rest = digits.slice(2);
+          if (rest.charAt(0) === '0') rest = rest.slice(1);
+          return '+44' + (rest ? ' ' + fmtUK44(rest) : '');
+        }
+        var cc = digits.slice(0, 2);
+        rest = digits.slice(2);
+        var grouped = rest.replace(/(\d{3})(?=\d)/g, '$1 ');
+        return '+' + cc + (rest ? ' ' + grouped : '');
+      }
+
+      function fmtPhone(raw) {
+        if (!raw) return '';
+        if (raw.charAt(0) === '+') return fmtIntl(raw);
+        return fmtDomestic(raw);
+      }
+
+      function phoneCleanVal(display) {
+        var v = display.trim();
+        if (!v) return '';
+        if (v.charAt(0) === '+') return '+' + digitsOnly(v.slice(1));
+        return digitsOnly(v);
+      }
+
+      function normalisePhone(v) {
+        if (!v) return '';
+        var stripped = v.charAt(0) === '+' ? '+' + digitsOnly(v.slice(1)) : digitsOnly(v);
+        if (!stripped) return '';
+        if (stripped.slice(0, 2) === '00') stripped = '+' + stripped.slice(2);
+        if (/^0[1-9]/.test(stripped)) stripped = '+44' + stripped.slice(1);
+        if (stripped.slice(0, 3) === '+44' && stripped.charAt(3) === '0') stripped = '+44' + stripped.slice(4);
+        return fmtIntl(stripped);
+      }
+
+      function isPhoneValid(display) {
+        var v = display.trim();
+        if (!v) return true;
+        var cl = phoneCleanVal(v);
+        if (!cl) return true;
+        if (/^\+447\d{9}$/.test(cl) || /^07\d{9}$/.test(cl)) return true;
+        if (/^\+44[123]\d{8,9}$/.test(cl) || /^0[123]\d{8,9}$/.test(cl)) return true;
+        if (/^\+\d{7,15}$/.test(cl)) return true;
+        if (/^00\d{7,15}$/.test(cl)) return true;
+        return false;
+      }
+
+      if (phoneField) {
+        phoneField.addEventListener('input', function () {
+          var raw = this.value;
+          var cl = raw.charAt(0) === '+' ? '+' + digitsOnly(raw.slice(1)) : digitsOnly(raw);
+          var formatted = fmtPhone(cl);
+          this.value = formatted;
+          if (phoneCleaned) phoneCleaned.value = phoneCleanVal(formatted);
+          if (phoneError) phoneError.style.display = 'none';
+          this.removeAttribute('aria-invalid');
+        });
+
+        phoneField.addEventListener('focus', function () {
+          if (!this.value.trim()) {
+            this.value = '+44 ';
+            var len = this.value.length;
+            this.setSelectionRange(len, len);
+          }
+        });
+
+        phoneField.addEventListener('blur', function () {
+          var v = this.value.trim();
+          if (!v || v === '+' || v === '+44' || v === '+44 ') {
+            this.value = '';
+            if (phoneCleaned) phoneCleaned.value = '';
+            if (phoneError) phoneError.style.display = 'none';
+            this.removeAttribute('aria-invalid');
+            return;
+          }
+          var norm = normalisePhone(v);
+          this.value = norm;
+          var cl = phoneCleanVal(norm);
+          if (phoneCleaned) phoneCleaned.value = cl;
+          var valid = isPhoneValid(norm);
+          if (phoneError) phoneError.style.display = valid ? 'none' : '';
+          if (valid) this.removeAttribute('aria-invalid');
+          else this.setAttribute('aria-invalid', 'true');
+        });
       }
 
       /* ── Primary buttons ──────────────────────────────────────── */

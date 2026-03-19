@@ -87,7 +87,7 @@ export default {
         data['event-month'] || '',
         data['event-year'] || '',
         data['child-enquiry'] || 'no',
-        data['phone'] || '',
+        data['phone-cleaned'] || data['phone'] || '',
         data['message'] || '',
         userAgent,
         ip

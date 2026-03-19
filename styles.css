@@ -1867,6 +1867,21 @@ p {
 
 .form-group.hidden { display: none; }
 
+.form-group input[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+  border-color: rgba(220, 80, 80, 0.7);
+}
+
+.field-error-msg {
+  display: none;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: rgba(220, 80, 80, 0.9);
+  margin-top: 0.4rem;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
 .form-submit {
   display: flex;
   justify-content: center;
