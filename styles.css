@@ -233,7 +233,7 @@ p {
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.75rem;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
