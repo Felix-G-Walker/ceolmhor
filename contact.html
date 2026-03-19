@@ -157,10 +157,11 @@
             <div class="form-group">
               <label id="enquiry-type-label">Enquiry Type</label>
 
-              <!-- Primary: Tuition / Performance / Other -->
+              <!-- Primary: Tuition / Performance / Composition / Other -->
               <div class="enquiry-type-grid enquiry-primary-grid" role="group" aria-labelledby="enquiry-type-label">
                 <button type="button" class="enquiry-type-btn" data-primary="tuition" aria-pressed="false">Tuition</button>
                 <button type="button" class="enquiry-type-btn" data-primary="performance" aria-pressed="false">Performance</button>
+                <button type="button" class="enquiry-type-btn" data-primary="composition" aria-pressed="false">Composition</button>
                 <button type="button" class="enquiry-type-btn" data-primary="other" aria-pressed="false">Other</button>
               </div>
 
@@ -171,6 +172,27 @@
                   <button type="button" class="enquiry-type-btn" data-sub="trial" aria-pressed="false">Trial Lesson</button>
                   <button type="button" class="enquiry-type-btn" data-sub="regular" aria-pressed="false">Regular Tuition</button>
                 </div>
+
+                <!-- Tier — shown when Regular is selected -->
+                <div class="sub-options" id="sub-tier">
+                  <hr class="enquiry-separator">
+                  <div class="enquiry-type-grid" role="group" aria-label="Tuition tier">
+                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="beginner" aria-pressed="false"><span class="tier-tag">Tier 1</span>Beginner</button>
+                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="intermediate" aria-pressed="false"><span class="tier-tag">Tier 2</span>Intermediate</button>
+                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="advanced" aria-pressed="false"><span class="tier-tag">Tier 3</span>Advanced</button>
+                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="piobaireachd" aria-pressed="false"><span class="tier-tag">Tier 4</span>Pìobaireachd</button>
+                  </div>
+                </div>
+
+                <!-- Delivery — shown when any tuition type is selected -->
+                <div class="sub-options" id="sub-delivery">
+                  <hr class="enquiry-separator">
+                  <div class="enquiry-type-grid" role="group" aria-label="Lesson delivery">
+                    <button type="button" class="enquiry-type-btn" data-delivery="in-person" aria-pressed="false">In-Person (Edinburgh)</button>
+                    <button type="button" class="enquiry-type-btn" data-delivery="online" aria-pressed="false">Online</button>
+                  </div>
+                </div>
+
                 <label class="child-enquiry-checkbox">
                   <input type="checkbox" id="child-enquiry-check" name="child-enquiry" value="yes">
                   I am applying on behalf of a child
@@ -196,9 +218,32 @@
                 </div>
               </div>
 
+              <!-- Composition sub-options -->
+              <div class="sub-options" id="sub-composition">
+                <hr class="enquiry-separator">
+                <div class="enquiry-type-grid" role="group" aria-label="Commission type">
+                  <button type="button" class="enquiry-type-btn" data-comp-type="private" aria-pressed="false">Private Commission</button>
+                  <button type="button" class="enquiry-type-btn" data-comp-type="media" aria-pressed="false">Media &amp; Commercial</button>
+                  <button type="button" class="enquiry-type-btn" data-comp-type="institutional" aria-pressed="false">Heritage &amp; Institutional</button>
+                </div>
+
+                <!-- Format — shown when commission type is selected -->
+                <div class="sub-options" id="sub-comp-format">
+                  <hr class="enquiry-separator">
+                  <div class="enquiry-type-grid" role="group" aria-label="Composition format">
+                    <button type="button" class="enquiry-type-btn" data-comp-format="solo" aria-pressed="false">Solo Pipe</button>
+                    <button type="button" class="enquiry-type-btn" data-comp-format="band" aria-pressed="false">Pipe Band</button>
+                  </div>
+                </div>
+              </div>
+
               <!-- Hidden fields for form submission -->
               <input type="hidden" name="enquiry-primary" id="enquiry-primary-hidden">
               <input type="hidden" name="enquiry-type" id="enquiry-type-hidden">
+              <input type="hidden" name="enquiry-tier" id="enquiry-tier-hidden">
+              <input type="hidden" name="enquiry-delivery" id="enquiry-delivery-hidden">
+              <input type="hidden" name="enquiry-comp-type" id="enquiry-comp-type-hidden">
+              <input type="hidden" name="enquiry-comp-format" id="enquiry-comp-format-hidden">
             </div>
 
             <!-- Event Date — conditionally shown -->
@@ -298,16 +343,40 @@
   <script src="main.js" defer></script>
   <script>
     (function () {
-      var primaryBtns   = document.querySelectorAll('[data-primary]');
-      var subBtns       = document.querySelectorAll('[data-sub]');
-      var subSections   = document.querySelectorAll('.sub-options');
-      var primaryHidden = document.getElementById('enquiry-primary-hidden');
-      var typeHidden    = document.getElementById('enquiry-type-hidden');
-      var childCheck    = document.getElementById('child-enquiry-check');
-      var messageGroup  = document.getElementById('message-group');
-      var dateGroup     = document.getElementById('event-date-group');
-      var contactForm   = document.getElementById('contact-form');
-      var flashTimer = null;
+      var primaryHidden    = document.getElementById('enquiry-primary-hidden');
+      var typeHidden       = document.getElementById('enquiry-type-hidden');
+      var tierHidden       = document.getElementById('enquiry-tier-hidden');
+      var deliveryHidden   = document.getElementById('enquiry-delivery-hidden');
+      var compTypeHidden   = document.getElementById('enquiry-comp-type-hidden');
+      var compFormatHidden = document.getElementById('enquiry-comp-format-hidden');
+      var childCheck       = document.getElementById('child-enquiry-check');
+      var messageGroup     = document.getElementById('message-group');
+      var dateGroup        = document.getElementById('event-date-group');
+      var contactForm      = document.getElementById('contact-form');
+      var flashTimer       = null;
+
+      /* ── Helpers ──────────────────────────────────────────────── */
+      function deselect(scope, selector) {
+        scope.querySelectorAll(selector).forEach(function (b) {
+          b.classList.remove('selected');
+          b.setAttribute('aria-pressed', 'false');
+        });
+      }
+
+      function hideAllSubs() {
+        document.querySelectorAll('.sub-options').forEach(function (s) {
+          s.classList.remove('visible');
+        });
+      }
+
+      function resetHidden() {
+        typeHidden.value = '';
+        tierHidden.value = '';
+        deliveryHidden.value = '';
+        compTypeHidden.value = '';
+        compFormatHidden.value = '';
+        if (childCheck) childCheck.checked = false;
+      }
 
       /* ── Date field auto-advance + completion trigger ────────── */
       var dayField   = document.getElementById('event-day');
@@ -316,33 +385,30 @@
 
       function isDateComplete(d, m, y) {
         var thisYear = new Date().getFullYear();
-        var dayOk   = d.length === 2 && parseInt(d, 10) >= 1  && parseInt(d, 10) <= 31;
-        var monOk   = m.length === 2 && parseInt(m, 10) >= 1  && parseInt(m, 10) <= 12;
-        var yrOk    = y.length === 4 && parseInt(y, 10) >= thisYear && parseInt(y, 10) <= thisYear + 10;
+        var dayOk = d.length === 2 && parseInt(d, 10) >= 1  && parseInt(d, 10) <= 31;
+        var monOk = m.length === 2 && parseInt(m, 10) >= 1  && parseInt(m, 10) <= 12;
+        var yrOk  = y.length === 4 && parseInt(y, 10) >= thisYear && parseInt(y, 10) <= thisYear + 10;
         return dayOk && monOk && yrOk;
       }
 
-      function handleDateInput(changedField, nextField) {
+      function handleDateInput(nextField) {
         return function () {
           this.value = this.value.replace(/\D/g, '');
           if (nextField && this.value.length >= parseInt(this.getAttribute('maxlength'), 10)) {
             nextField.focus();
           }
-          /* Flash message only for performance enquiries once date is complete */
           if (primaryHidden.value === 'performance') {
             var d = dayField   ? dayField.value   : '';
             var m = monthField ? monthField.value : '';
             var y = yearField  ? yearField.value  : '';
-            if (isDateComplete(d, m, y)) {
-              flashMessage();
-            }
+            if (isDateComplete(d, m, y)) { flashMessage(); }
           }
         };
       }
 
-      if (dayField)   dayField.addEventListener('input',   handleDateInput(dayField,   monthField));
-      if (monthField) monthField.addEventListener('input', handleDateInput(monthField, yearField));
-      if (yearField)  yearField.addEventListener('input',  handleDateInput(yearField,  null));
+      if (dayField)   dayField.addEventListener('input',   handleDateInput(monthField));
+      if (monthField) monthField.addEventListener('input', handleDateInput(yearField));
+      if (yearField)  yearField.addEventListener('input',  handleDateInput(null));
 
       /* ── Auto-expanding textarea ──────────────────────────────── */
       var textarea = document.getElementById('message');
@@ -365,48 +431,101 @@
         }, 1800);
       }
 
-      function resetSubs() {
-        subBtns.forEach(function (b) { b.classList.remove('selected'); });
-        if (childCheck) childCheck.checked = false;
-        typeHidden.value = '';
-        typeHidden.dispatchEvent(new Event('change'));
-      }
-
-      primaryBtns.forEach(function (btn) {
+      /* ── Primary buttons ──────────────────────────────────────── */
+      document.querySelectorAll('[data-primary]').forEach(function (btn) {
         btn.addEventListener('click', function () {
           var val = btn.dataset.primary;
-          primaryBtns.forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
+          deselect(document, '[data-primary]');
           btn.classList.add('selected');
           btn.setAttribute('aria-pressed', 'true');
           primaryHidden.value = val;
-          resetSubs();
-          subSections.forEach(function (s) { s.classList.remove('visible'); });
+          resetHidden();
+          hideAllSubs();
+          if (dateGroup) dateGroup.classList.toggle('hidden', val !== 'performance');
 
           if (val === 'tuition') {
             document.getElementById('sub-tuition').classList.add('visible');
           } else if (val === 'performance') {
             document.getElementById('sub-performance').classList.add('visible');
+          } else if (val === 'composition') {
+            document.getElementById('sub-composition').classList.add('visible');
           } else if (val === 'other') {
             typeHidden.value = 'other';
-            typeHidden.dispatchEvent(new Event('change'));
             flashMessage();
           }
-
         });
       });
 
-      subBtns.forEach(function (btn) {
+      /* ── Tuition type (trial / regular) ───────────────────────── */
+      document.querySelectorAll('#sub-tuition [data-sub]').forEach(function (btn) {
         btn.addEventListener('click', function () {
-          var parentSection = btn.closest('.sub-options');
-          parentSection.querySelectorAll('[data-sub]').forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
+          deselect(document.getElementById('sub-tuition'), '[data-sub]');
           btn.classList.add('selected');
           btn.setAttribute('aria-pressed', 'true');
           typeHidden.value = btn.dataset.sub;
-          typeHidden.dispatchEvent(new Event('change'));
-          /* Tuition sub-types flash message immediately; performance waits for date completion */
-          if (parentSection.id !== 'sub-performance') {
-            flashMessage();
-          }
+          tierHidden.value = '';
+          deliveryHidden.value = '';
+          deselect(document, '[data-tier], [data-delivery]');
+          /* Tier only for regular tuition */
+          document.getElementById('sub-tier').classList.toggle('visible', btn.dataset.sub === 'regular');
+          document.getElementById('sub-delivery').classList.add('visible');
+        });
+      });
+
+      /* ── Tier buttons ─────────────────────────────────────────── */
+      document.querySelectorAll('[data-tier]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          deselect(document.getElementById('sub-tier'), '[data-tier]');
+          btn.classList.add('selected');
+          btn.setAttribute('aria-pressed', 'true');
+          tierHidden.value = btn.dataset.tier;
+          if (deliveryHidden.value) { flashMessage(); }
+        });
+      });
+
+      /* ── Delivery buttons ─────────────────────────────────────── */
+      document.querySelectorAll('[data-delivery]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          deselect(document.getElementById('sub-delivery'), '[data-delivery]');
+          btn.classList.add('selected');
+          btn.setAttribute('aria-pressed', 'true');
+          deliveryHidden.value = btn.dataset.delivery;
+          flashMessage();
+        });
+      });
+
+      /* ── Performance sub-type buttons ─────────────────────────── */
+      document.querySelectorAll('#sub-performance [data-sub]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          deselect(document.getElementById('sub-performance'), '[data-sub]');
+          btn.classList.add('selected');
+          btn.setAttribute('aria-pressed', 'true');
+          typeHidden.value = btn.dataset.sub;
+          /* Performance path: flash after date is complete */
+        });
+      });
+
+      /* ── Composition type buttons ─────────────────────────────── */
+      document.querySelectorAll('[data-comp-type]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          deselect(document.getElementById('sub-composition'), '[data-comp-type]');
+          btn.classList.add('selected');
+          btn.setAttribute('aria-pressed', 'true');
+          compTypeHidden.value = btn.dataset.compType;
+          compFormatHidden.value = '';
+          deselect(document.getElementById('sub-comp-format'), '[data-comp-format]');
+          document.getElementById('sub-comp-format').classList.add('visible');
+        });
+      });
+
+      /* ── Composition format buttons ───────────────────────────── */
+      document.querySelectorAll('[data-comp-format]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          deselect(document.getElementById('sub-comp-format'), '[data-comp-format]');
+          btn.classList.add('selected');
+          btn.setAttribute('aria-pressed', 'true');
+          compFormatHidden.value = btn.dataset.compFormat;
+          flashMessage();
         });
       });
 
@@ -416,7 +535,6 @@
       contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        /* Validation */
         var required = ['first-name', 'last-name', 'email'];
         var valid = true;
         required.forEach(function (name) {
@@ -434,18 +552,14 @@
         });
         if (!valid) return;
 
-        /* Disable submit */
         var btn = contactForm.querySelector('[type="submit"]');
         var originalText = btn.textContent;
         btn.disabled = true;
         btn.textContent = 'Sending\u2026';
 
-        /* Build FormData */
-        var formData = new FormData(contactForm);
-
         fetch(WORKER_URL, {
           method: 'POST',
-          body: formData,
+          body: new FormData(contactForm),
         })
           .then(function (res) { return res.json().then(function (json) { return { res: res, json: json }; }); })
           .then(function (data) {
