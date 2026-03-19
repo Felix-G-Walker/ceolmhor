@@ -70,14 +70,19 @@ export default {
       await env.DB.prepare(`
         INSERT INTO enquiries
           (first_name, last_name, email, enquiry_primary, enquiry_type,
+           enquiry_tier, enquiry_delivery, enquiry_comp_type, enquiry_comp_format,
            event_day, event_month, event_year, child_enquiry, message, user_agent, ip)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `).bind(
         firstName.trim(),
         lastName.trim(),
         email.trim(),
         data['enquiry-primary'] || '',
         data['enquiry-type'] || '',
+        data['enquiry-tier'] || '',
+        data['enquiry-delivery'] || '',
+        data['enquiry-comp-type'] || '',
+        data['enquiry-comp-format'] || '',
         data['event-day'] || '',
         data['event-month'] || '',
         data['event-year'] || '',
@@ -92,9 +97,17 @@ export default {
     }
 
     /* ── Build email content ────────────────────────────────────────── */
-    const enquiryType = formatEnquiryType(data['enquiry-primary'], data['enquiry-type']);
-    const eventDate = formatEventDate(data['event-day'], data['event-month'], data['event-year']);
-    const childNote = data['child-enquiry'] === 'yes' ? '\n⚠️  Enquiry on behalf of a child.' : '';
+    const primary      = data['enquiry-primary'] || '';
+    const enquiryType  = formatEnquiryType(primary, data['enquiry-type'], data['enquiry-comp-type']);
+    const eventDate    = formatEventDate(data['event-day'], data['event-month'], data['event-year']);
+    const tier         = formatTier(data['enquiry-tier']);
+    const delivery     = formatDelivery(data['enquiry-delivery']);
+    const compFormat   = formatCompFormat(data['enquiry-comp-format']);
+    const childNote    = data['child-enquiry'] === 'yes' ? '\n⚠️  Enquiry on behalf of a child.' : '';
+
+    const tierLine     = tier     ? `\nTier:     ${tier}`     : '';
+    const deliveryLine = delivery ? `\nDelivery: ${delivery}` : '';
+    const formatLine   = compFormat ? `\nFormat:   ${compFormat}` : '';
 
     const emailText = `
 New Ceòlmhor Enquiry
@@ -102,7 +115,7 @@ ${'─'.repeat(40)}
 
 Name:     ${firstName.trim()} ${lastName.trim()}
 Email:    ${email.trim()}
-Type:     ${enquiryType}${eventDate ? `\nDate:     ${eventDate}` : ''}${childNote}
+Type:     ${enquiryType}${tierLine}${deliveryLine}${formatLine}${eventDate ? `\nDate:     ${eventDate}` : ''}${childNote}
 
 Message:
 ${data['message']?.trim() || '(none provided)'}
@@ -135,7 +148,10 @@ IP: ${ip}
   <div class="field"><span class="label">Name</span><span class="value">${escHtml(firstName.trim())} ${escHtml(lastName.trim())}</span></div>
   <div class="field"><span class="label">Email</span><span class="value"><a href="mailto:${escHtml(email.trim())}">${escHtml(email.trim())}</a></span></div>
   <div class="field"><span class="label">Enquiry Type</span><span class="value">${escHtml(enquiryType)}</span></div>
-  ${eventDate ? `<div class="field"><span class="label">Event Date</span><span class="value">${escHtml(eventDate)}</span></div>` : ''}
+  ${tier     ? `<div class="field"><span class="label">Tier</span><span class="value">${escHtml(tier)}</span></div>` : ''}
+  ${delivery ? `<div class="field"><span class="label">Delivery</span><span class="value">${escHtml(delivery)}</span></div>` : ''}
+  ${compFormat ? `<div class="field"><span class="label">Format</span><span class="value">${escHtml(compFormat)}</span></div>` : ''}
+  ${eventDate  ? `<div class="field"><span class="label">Event Date</span><span class="value">${escHtml(eventDate)}</span></div>` : ''}
   ${data['child-enquiry'] === 'yes' ? '<div class="child-note">⚠️ This enquiry is on behalf of a child.</div>' : ''}
   <hr>
   <div class="message-box">
@@ -201,8 +217,16 @@ function escHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-function formatEnquiryType(primary, sub) {
+function formatEnquiryType(primary, sub, compType) {
   if (!primary) return 'General';
+  if (primary === 'composition') {
+    const compLabels = {
+      private: 'Private Commission',
+      media: 'Media & Commercial Commission',
+      institutional: 'Heritage & Institutional Commission',
+    };
+    return compLabels[compType] || 'Composition';
+  }
   const labels = {
     tuition: { trial: 'Trial Lesson', regular: 'Regular Tuition' },
     performance: {
@@ -221,6 +245,28 @@ function formatEnquiryType(primary, sub) {
   if (primary === 'tuition') return 'Tuition';
   if (primary === 'performance') return 'Performance';
   return 'Other';
+}
+
+function formatTier(tier) {
+  const labels = {
+    beginner: 'Tier 1 — Beginner',
+    intermediate: 'Tier 2 — Intermediate',
+    advanced: 'Tier 3 — Advanced',
+    piobaireachd: 'Tier 4 — Pìobaireachd',
+  };
+  return labels[tier] || '';
+}
+
+function formatDelivery(delivery) {
+  if (delivery === 'in-person') return 'In-Person (Edinburgh)';
+  if (delivery === 'online') return 'Online';
+  return '';
+}
+
+function formatCompFormat(format) {
+  if (format === 'solo') return 'Solo Pipe';
+  if (format === 'band') return 'Pipe Band';
+  return '';
 }
 
 function formatEventDate(day, month, year) {
