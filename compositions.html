@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compositions — Ceòlmhor</title>
+  <meta name="description" content="Original compositions for the Highland bagpipe by Ceòlmhor. Scores available for download. Commission a piece for your occasion. Edinburgh.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ceòlmhor">
+  <meta property="og:title" content="Compositions — Ceòlmhor">
+  <meta property="og:description" content="Original compositions for the Highland bagpipe by Ceòlmhor. Scores available for download. Commission a piece for your occasion. Edinburgh.">
+  <meta property="og:image" content="https://www.ceolmhor.scot/images/Ceolmhor_logo_transparent.png">
+  <meta property="og:image:alt" content="Ceòlmhor — Scottish piping tuition and performance, Edinburgh">
+  <meta property="og:url" content="https://www.ceolmhor.scot/compositions.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Compositions — Ceòlmhor">
+  <meta name="twitter:description" content="Original compositions for the Highland bagpipe by Ceòlmhor. Scores available for download. Commission a piece for your occasion. Edinburgh.">
+  <meta name="twitter:image" content="https://www.ceolmhor.scot/images/Ceolmhor_logo_transparent.png">
+  <link rel="canonical" href="https://www.ceolmhor.scot/compositions.html">
+  <meta name="theme-color" content="#0d0d0d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="tsparticles"></div>
+  <div class="particles-green-tint"></div>
+
+  <!-- ── Navigation ─────────────────────────────────────────────── -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <div class="nav__left">
+        <a href="index.html" class="nav__logo" aria-label="Ceòlmhor — home"><img src="images/Ceolmhor_logo_transparent.png" alt="Ceòlmhor" class="site-logo"></a>
+        <a href="index.html" class="nav__home">Home</a>
+      </div>
+      <div class="nav__links">
+        <a href="about.html">About</a>
+        <a href="tuition.html">Tuition</a>
+        <a href="performance.html">Performance</a>
+        <a href="compositions.html" class="active">Compositions</a>
+        <a href="preview.html">Preview</a>
+      </div>
+      <div class="nav__right">
+        <a href="faq.html" class="nav__faq">FAQ</a>
+        <a href="contact.html" class="nav__cta">Enquire</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav__overlay" role="dialog" aria-label="Navigation menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="tuition.html">Tuition</a>
+    <a href="performance.html">Performance</a>
+    <a href="compositions.html" class="active">Compositions</a>
+    <a href="preview.html">Preview</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="nav__overlay-cta">Enquire</a>
+  </div>
+
+  <!-- ── Page Header ────────────────────────────────────────────── -->
+  <header class="page-header page-header--charcoal">
+    <div class="container">
+      <h1 class="page-header__title">Compositions</h1>
+      <p class="gaelic-subtitle">Sgrìobhaidhean</p>
+      <hr class="rule">
+      <p class="page-header__strapline">Original works for the Highland bagpipe — a catalogue of pieces available for performance and download, and a commission service for those who require something composed for a specific occasion.</p>
+    </div>
+  </header>
+
+  <!-- ── The Catalogue ──────────────────────────────────────────── -->
+  <section class="section section--charcoal" id="catalogue">
+    <div class="container">
+
+      <header class="section-header" data-reveal>
+        <span class="section-label">Works</span>
+        <h2>The Catalogue</h2>
+      </header>
+
+      <div class="pkg-intro" data-reveal>
+        <p>The following pieces are original compositions for the Highland bagpipe. Each is available as a typeset score. Audio references are provided where available. All works are protected by copyright — performance for personal and private use is permitted; commercial recording, broadcast, competitive performance, and any other public use requires a licence. Enquire to discuss terms.</p>
+      </div>
+
+      <!-- Filter bar -->
+      <div class="comp-filter" role="group" aria-label="Filter by type" data-reveal>
+        <button class="comp-filter__btn active" data-filter="all">All</button>
+        <button class="comp-filter__btn" data-filter="march">Marches</button>
+        <button class="comp-filter__btn" data-filter="slow-air">Slow Airs</button>
+        <button class="comp-filter__btn" data-filter="reel">Reels</button>
+        <button class="comp-filter__btn" data-filter="jig">Jigs</button>
+        <button class="comp-filter__btn" data-filter="contemporary">Contemporary</button>
+      </div>
+
+      <!-- Catalogue grid -->
+      <div class="comp-grid" id="comp-grid" data-reveal>
+
+        <!--
+          COMPOSITION 1
+          [Felix to supply: title, type (march/slow-air/reel/jig/contemporary),
+          year, description (2–3 sentences with the story or origin of the piece),
+          audio file (filename and format), PDF score (filename), price per piece]
+        -->
+        <div class="comp-card" data-type="march">
+          <div class="comp-card__meta">
+            <span class="comp-card__type">March</span>
+            <!-- [Felix to supply: year composed] -->
+            <span class="comp-card__year">[YEAR]</span>
+          </div>
+          <!-- [Felix to supply: piece title] -->
+          <h3 class="comp-card__title">[PIECE TITLE 1]</h3>
+          <hr class="comp-card__rule">
+          <!-- [Felix to supply: 2–3 sentence description — the story or origin of the piece, written with specificity] -->
+          <p class="comp-card__description">[DESCRIPTION — Felix to supply: the story or origin of the piece in 2–3 sentences.]</p>
+          <!--
+            AUDIO — [Felix to supply: filename and format]
+            If no audio is available for this piece, remove the comp-card__audio block entirely.
+          -->
+          <div class="comp-card__audio">
+            <audio controls>
+              <source src="audio/[FILENAME].[FORMAT]" type="audio/[FORMAT]">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div class="comp-card__actions">
+            <!-- [Felix to supply: PDF filename — update the href below] -->
+            <a href="scores/[FILENAME].pdf" class="btn-primary" download>Download Score</a>
+            <!-- [Felix to supply: price per piece] -->
+            <span class="comp-card__price">£[PRICE]</span>
+          </div>
+        </div>
+
+        <!--
+          COMPOSITION 2
+          [Felix to supply: title, type, year, description, audio, PDF, price]
+        -->
+        <div class="comp-card" data-type="slow-air">
+          <div class="comp-card__meta">
+            <span class="comp-card__type">Slow Air</span>
+            <!-- [Felix to supply: year composed] -->
+            <span class="comp-card__year">[YEAR]</span>
+          </div>
+          <!-- [Felix to supply: piece title] -->
+          <h3 class="comp-card__title">[PIECE TITLE 2]</h3>
+          <hr class="comp-card__rule">
+          <!-- [Felix to supply: 2–3 sentence description] -->
+          <p class="comp-card__description">[DESCRIPTION — Felix to supply: the story or origin of the piece in 2–3 sentences.]</p>
+          <!--
+            AUDIO — [Felix to supply: filename and format]
+            If no audio is available for this piece, remove the comp-card__audio block entirely.
+          -->
+          <div class="comp-card__audio">
+            <audio controls>
+              <source src="audio/[FILENAME].[FORMAT]" type="audio/[FORMAT]">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div class="comp-card__actions">
+            <!-- [Felix to supply: PDF filename] -->
+            <a href="scores/[FILENAME].pdf" class="btn-primary" download>Download Score</a>
+            <!-- [Felix to supply: price per piece] -->
+            <span class="comp-card__price">£[PRICE]</span>
+          </div>
+        </div>
+
+        <!--
+          COMPOSITION 3 — CONTEMPORARY COMPOSITION
+          This piece does not receive a traditional genre classification.
+          [Felix to supply: title, year, description, audio (if available), PDF, price]
+        -->
+        <div class="comp-card" data-type="contemporary">
+          <div class="comp-card__meta">
+            <span class="comp-card__type">Contemporary Composition</span>
+            <!-- [Felix to supply: year composed] -->
+            <span class="comp-card__year">[YEAR]</span>
+          </div>
+          <!-- [Felix to supply: piece title] -->
+          <h3 class="comp-card__title">[PIECE TITLE 3]</h3>
+          <hr class="comp-card__rule">
+          <!-- [Felix to supply: 2–3 sentence description] -->
+          <p class="comp-card__description">[DESCRIPTION — Felix to supply: the story or origin of the piece in 2–3 sentences.]</p>
+          <!--
+            AUDIO — [Felix to supply: filename and format]
+            If no audio is available for this piece, omit the comp-card__audio block entirely.
+          -->
+          <div class="comp-card__actions">
+            <!-- [Felix to supply: PDF filename] -->
+            <a href="scores/[FILENAME].pdf" class="btn-primary" download>Download Score</a>
+            <!-- [Felix to supply: price per piece] -->
+            <span class="comp-card__price">£[PRICE]</span>
+          </div>
+        </div>
+
+      </div><!-- /.comp-grid -->
+
+      <p class="comp-copyright" data-reveal>All compositions © Ceòlmhor. All rights reserved. Sheet music is licensed for personal and private performance use only. For commercial recording, broadcast, competitive performance, or any other use, contact Ceòlmhor to discuss licensing terms.</p>
+
+    </div>
+  </section>
+
+  <!-- ── Commission a Piece ──────────────────────────────────────── -->
+  <section class="section section--charcoal" id="commission">
+    <div class="container">
+
+      <header class="section-header" data-reveal>
+        <span class="section-label">Commissions</span>
+        <h2>Commission a Piece</h2>
+      </header>
+
+      <div class="pkg-intro" data-reveal>
+        <p>Ceòlmhor accepts commissions for original compositions across all types — marches, slow airs, reels, jigs, and contemporary works that draw on the Highland tradition without being constrained by its formal conventions. Each commission begins with a conversation about the occasion, the intended mood, and the purpose the piece will serve. Copyright is retained by Ceòlmhor in all cases; licensing terms are agreed individually based on intended use.</p>
+      </div>
+
+      <div class="pkg-grid" data-reveal>
+
+        <!-- Personal Commission -->
+        <div class="pkg-card">
+          <span class="pkg-card__label">Personal Commission</span>
+          <h3 class="pkg-card__title">Personal Commission</h3>
+          <p class="pkg-card__price">From £250</p>
+          <ul class="pkg-card__includes">
+            <li>Composed for a private occasion — wedding, memorial, significant anniversary, family celebration</li>
+            <li>One revision round incorporated</li>
+            <li>Final typeset score delivered as PDF</li>
+            <li>Reference audio recording included</li>
+            <li>Licensed for personal and private family use</li>
+          </ul>
+          <p class="pkg-card__note">For individuals and families who want a piece composed specifically for their occasion and kept as a lasting personal keepsake. Intended use is private — the piece is yours to perform and share within a personal context. Commercial recording, broadcast, or competitive performance requires a separate licence.</p>
+        </div>
+
+        <!-- Performance Commission -->
+        <div class="pkg-card">
+          <span class="pkg-card__label">Performance Commission</span>
+          <h3 class="pkg-card__title">Performance Commission</h3>
+          <p class="pkg-card__price">From £350</p>
+          <ul class="pkg-card__includes">
+            <li>Composed for a band, ensemble, or individual intending to perform the piece publicly or competitively</li>
+            <li>Consultation on musical requirements, intended context, and performance setting</li>
+            <li>One revision round incorporated</li>
+            <li>Final typeset score delivered as PDF</li>
+            <li>Reference audio recording included</li>
+            <li>Performance licence for the commissioning body included</li>
+            <li>Commercial recording rights negotiated separately</li>
+          </ul>
+          <p class="pkg-card__note">For pipe bands, ensembles, and individual performers requiring new repertoire for public or competitive performance. A performance licence for the commissioning body is included. Commercial recording, broadcast, and any use beyond the agreed performance context requires a separate arrangement.</p>
+        </div>
+
+        <!-- Institutional Commission -->
+        <div class="pkg-card">
+          <span class="pkg-card__label">Institutional Commission</span>
+          <h3 class="pkg-card__title">Institutional Commission</h3>
+          <p class="pkg-card__price">Individually agreed</p>
+          <ul class="pkg-card__includes">
+            <li>Composed for a civic, corporate, or cultural occasion of institutional significance</li>
+            <li>Full consultation on the occasion, its traditions, and the intended role of the piece</li>
+            <li>Revision incorporated within agreed scope</li>
+            <li>Final typeset score and reference recording delivered</li>
+            <li>Licensing individually agreed based on intended use and context</li>
+          </ul>
+          <p class="pkg-card__note">For institutions, civic bodies, and organisations commissioning a piece for a ceremony, anniversary, or occasion of cultural significance. Pricing and licensing are agreed individually following an initial consultation. Enquire to begin the conversation.</p>
+        </div>
+
+      </div>
+
+      <!-- How It Works -->
+      <header class="section-header" data-reveal>
+        <span class="section-label">Process</span>
+        <h2>How It Works</h2>
+      </header>
+
+      <div class="booking-steps" data-reveal>
+
+        <div class="booking-step">
+          <p class="booking-step__num" aria-hidden="true">1</p>
+          <p class="booking-step__name">Enquire</p>
+          <p class="booking-step__desc">Describe your occasion, the type of piece you have in mind, and how you intend to use it. Use the form below.</p>
+        </div>
+
+        <div class="booking-step">
+          <p class="booking-step__num" aria-hidden="true">2</p>
+          <p class="booking-step__name">Consultation</p>
+          <p class="booking-step__desc">A brief conversation by phone or email to understand the occasion, the mood, any cultural or personal references, and the intended use.</p>
+        </div>
+
+        <div class="booking-step">
+          <p class="booking-step__num" aria-hidden="true">3</p>
+          <p class="booking-step__name">Composition</p>
+          <p class="booking-step__desc">The piece is composed to the agreed brief. A reference recording is shared for feedback. One round of revisions is incorporated.</p>
+        </div>
+
+        <div class="booking-step">
+          <p class="booking-step__num" aria-hidden="true">4</p>
+          <p class="booking-step__name">Delivery</p>
+          <p class="booking-step__desc">The final typeset score is delivered as a PDF, accompanied by an audio reference recording. Licensing terms are confirmed in writing.</p>
+        </div>
+
+      </div>
+
+      <p class="comp-timeline-note" data-reveal>Standard commissions are completed within four to six weeks of confirmed brief and payment of the commission fee. Timeline for institutional commissions is agreed individually.</p>
+
+    </div>
+  </section>
+
+  <!-- ── Composed for Your Occasion ─────────────────────────────── -->
+  <section class="section section--charcoal" id="occasion">
+    <div class="container">
+
+      <header class="section-header" data-reveal>
+        <span class="section-label">Event Commissions</span>
+        <h2>Composed for Your Occasion</h2>
+      </header>
+
+      <div class="pkg-intro" data-reveal>
+        <p>Clients booking a premium performance package may commission a piece composed and premiered specifically for their event. The piece is researched and written for the occasion, performed at the event as its world premiere, and delivered to the client as a typeset score and audio recording afterwards. No two clients receive the same piece.</p>
+      </div>
+
+      <div class="comp-event-card" data-reveal>
+        <div>
+          <div class="comp-event-card__meta">
+            <span class="pkg-card__label">Bespoke Event Commission</span>
+            <h3 class="pkg-card__title">A Piece Composed for Your Occasion</h3>
+            <p class="pkg-card__price">From £225 — added to any premium performance package</p>
+          </div>
+          <ul class="pkg-card__includes">
+            <li>Pre-event consultation to understand the occasion, the people, and the mood</li>
+            <li>Original piece composed specifically for the event</li>
+            <li>Premiered at the event as part of the performance</li>
+            <li>Typeset score delivered as PDF after the event</li>
+            <li>Reference audio recording delivered after the event</li>
+            <li>Licensed for personal and private use — broader licensing agreed individually</li>
+          </ul>
+        </div>
+        <div>
+          <p class="pkg-card__note">Available as an addition to any premium performance package — Highland Package, The Grand Supper, The Hogmanay Engagement, The Full Engagement, or Ceilidh &amp; Dance Evening. The commission fee is in addition to the performance package fee. Enquire at the time of booking or through the performance enquiry process.</p>
+        </div>
+      </div>
+
+      <div class="text-center" data-reveal>
+        <a href="contact.html" class="btn-primary">Enquire About a Performance Package</a>
+      </div>
+      <p class="comp-commission-note" data-reveal>To commission a piece as part of a performance booking, indicate this in your performance enquiry. The commission will be confirmed and scoped as part of the booking process.</p>
+
+    </div>
+  </section>
+
+  <!-- ── Commission Enquiry Form ────────────────────────────────── -->
+  <section class="section section--black" id="enquiry">
+    <div class="container">
+
+      <header class="section-header" data-reveal>
+        <span class="section-label">Get in Touch</span>
+        <h2>Commission Enquiry</h2>
+      </header>
+
+      <div class="contact-grid" data-reveal>
+
+        <aside>
+          <p style="font-size:0.9rem;line-height:1.75;color:var(--text-muted);margin-bottom:1.75rem;">This form is for standalone commission enquiries — personal, performance, and institutional. To enquire about a piece as part of a performance package booking, use the button above or the main enquiry form.</p>
+          <dl class="contact-details">
+            <dt>Email</dt>
+            <dd><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></dd>
+            <dt>Response time</dt>
+            <dd>Within 48 hours</dd>
+          </dl>
+        </aside>
+
+        <div>
+
+          <form id="commission-form" name="commission-form" novalidate>
+
+            <!-- Honeypot — do not remove, do not make visible -->
+            <div style="display:none" aria-hidden="true">
+              <input type="text" name="_honeypot" tabindex="-1" autocomplete="off">
+            </div>
+
+            <input type="hidden" name="form_name" value="commission-enquiry">
+
+            <div class="form-group">
+              <label for="c-name">Full Name</label>
+              <input type="text" id="c-name" name="name" autocomplete="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="c-email">Email Address</label>
+              <input type="email" id="c-email" name="email" autocomplete="email" placeholder="your@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="c-commission-type">Commission Type</label>
+              <select id="c-commission-type" name="commission-type" required>
+                <option value="" disabled selected>Select…</option>
+                <option value="personal">Personal Commission</option>
+                <option value="performance">Performance Commission</option>
+                <option value="institutional">Institutional Commission</option>
+                <option value="unsure">Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="c-piece-type">Piece Type</label>
+              <select id="c-piece-type" name="piece-type" required>
+                <option value="" disabled selected>Select…</option>
+                <option value="march">March</option>
+                <option value="slow-air">Slow Air</option>
+                <option value="reel">Reel</option>
+                <option value="jig">Jig</option>
+                <option value="contemporary">Contemporary Composition</option>
+                <option value="open">Not sure — open to suggestion</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="c-occasion">Occasion or Intended Use</label>
+              <textarea id="c-occasion" name="occasion" rows="4" placeholder="Describe the occasion, event, or context the piece is intended for." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="c-use">Intended Use Beyond the Occasion <span style="font-style:italic;text-transform:none;letter-spacing:0;font-size:0.8em;">(optional)</span></label>
+              <textarea id="c-use" name="intended-use" rows="3" placeholder="Will the piece be performed publicly, recorded commercially, used competitively, or broadcast? Please describe any use beyond private performance."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="c-timeline">Approximate Timeline <span style="font-style:italic;text-transform:none;letter-spacing:0;font-size:0.8em;">(optional)</span></label>
+              <input type="text" id="c-timeline" name="timeline" placeholder="When do you need the piece by, if applicable?">
+            </div>
+
+            <div class="form-group">
+              <label for="c-notes">Additional Notes <span style="font-style:italic;text-transform:none;letter-spacing:0;font-size:0.8em;">(optional)</span></label>
+              <textarea id="c-notes" name="notes" rows="3"></textarea>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn-primary">Send Enquiry</button>
+            </div>
+
+          </form>
+
+          <div class="form-success" id="commission-success" role="status" aria-live="polite">
+            <p>Your commission enquiry has been received.</p>
+            <p>Ceòlmhor will respond within 48 hours to discuss your project.</p>
+          </div>
+
+          <div class="form-error" id="commission-error" role="alert" aria-live="assertive" style="display:none;">
+            <p>Something went wrong sending your enquiry. Please email us directly at <a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a> and we will respond within 48 hours.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────── -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="footer__inner">
+
+      <div class="footer__brand">
+        <img src="images/Ceolmhor_logo_transparent.png" alt="" class="footer__brand-img" aria-hidden="true">
+        <div class="footer__brand-text">
+          <span class="footer__logo">Ceòlmhor</span>
+          <p class="footer__tagline">Scottish Excellence · Sàr-mhathais Albannach</p>
+        </div>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <span class="footer__col-title">Navigation</span>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="tuition.html">Tuition</a></li>
+          <li><a href="performance.html">Performance</a></li>
+          <li><a href="compositions.html">Compositions</a></li>
+          <li><a href="preview.html">Preview</a></li>
+          <li><a href="contact.html">Enquire</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__contact">
+        <span class="footer__col-title">Contact &amp; Social</span>
+        <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
+        <p>Edinburgh, Scotland</p>
+        <p><a href="tel:+447305613875">07305 613 875</a></p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/ceolmhorofficial" aria-label="Ceòlmhor on Instagram" target="_blank" rel="noopener noreferrer"><svg class="ig-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg> @ceolmhorofficial</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer__bottom">
+      <p>© Ceòlmhor 2026. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="faq.html">FAQ</a>
+        <a href="privacy.html">Privacy Notice</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js" defer></script>
+  <script src="main.js" defer></script>
+  <script>
+    (function () {
+
+      /* ── Catalogue filter ─────────────────────────────────────── */
+      var filterBtns = document.querySelectorAll('.comp-filter__btn');
+      var compCards  = document.querySelectorAll('.comp-card');
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var filter = btn.dataset.filter;
+          filterBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          compCards.forEach(function (card) {
+            if (filter === 'all' || card.dataset.type === filter) {
+              card.removeAttribute('hidden');
+            } else {
+              card.setAttribute('hidden', '');
+            }
+          });
+        });
+      });
+
+      /* ── Commission form ──────────────────────────────────────── */
+      var WORKER_URL = 'https://ceolmhor.scot/api/contact';
+      var form       = document.getElementById('commission-form');
+      var successEl  = document.getElementById('commission-success');
+      var errorEl    = document.getElementById('commission-error');
+
+      /* Auto-expand textareas */
+      form.querySelectorAll('textarea').forEach(function (ta) {
+        ta.addEventListener('input', function () {
+          this.style.height = 'auto';
+          this.style.height = this.scrollHeight + 'px';
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        /* Validation */
+        var requiredIds = ['c-name', 'c-email', 'c-commission-type', 'c-piece-type', 'c-occasion'];
+        var valid = true;
+        requiredIds.forEach(function (id) {
+          var field = document.getElementById(id);
+          var group = field ? field.closest('.form-group') : null;
+          if (!field || !field.value.trim()) {
+            if (field) field.setAttribute('aria-invalid', 'true');
+            if (group) group.classList.add('field-error');
+            if (valid && field) field.focus();
+            valid = false;
+          } else {
+            if (field) field.removeAttribute('aria-invalid');
+            if (group) group.classList.remove('field-error');
+          }
+        });
+        if (!valid) return;
+
+        var btn = form.querySelector('[type="submit"]');
+        var originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Sending\u2026';
+
+        fetch(WORKER_URL, { method: 'POST', body: new FormData(form) })
+          .then(function (res) { return res.json().then(function (json) { return { res: res, json: json }; }); })
+          .then(function (data) {
+            if (data.res.ok && data.json.ok) {
+              form.style.display = 'none';
+              if (successEl) {
+                successEl.style.display = 'block';
+                successEl.setAttribute('tabindex', '-1');
+                successEl.focus();
+              }
+            } else {
+              throw new Error(data.json.error || 'Worker returned error');
+            }
+          })
+          .catch(function (err) {
+            console.error('Commission form error:', err);
+            btn.disabled = false;
+            btn.textContent = originalText;
+            if (errorEl) {
+              errorEl.style.display = 'block';
+              errorEl.setAttribute('tabindex', '-1');
+              errorEl.focus();
+            }
+          });
+      });
+
+    }());
+  </script>
+</body>
+</html>
