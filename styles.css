@@ -2682,17 +2682,40 @@ body::after {
   margin-bottom: 1rem;
   cursor: pointer;
   overflow: hidden;
+  position: relative;
 }
 
 .photo-masonry-item img {
   width: 100%;
   display: block;
   object-fit: cover;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .photo-masonry-item:hover img {
-  opacity: 0.85;
+  opacity: 0.35;
+  transform: scale(1.04);
+}
+
+.photo-masonry-caption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  text-align: center;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.photo-masonry-item:hover .photo-masonry-caption {
+  opacity: 1;
 }
 
 .photo-placeholder {
