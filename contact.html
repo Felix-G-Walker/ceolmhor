@@ -570,19 +570,16 @@
 
         fetch(WORKER_URL, {
           method: 'POST',
+          mode: 'no-cors',
           body: new FormData(contactForm),
         })
-          .then(function (res) {
-            if (res.ok) {
-              contactForm.style.display = 'none';
-              var success = document.getElementById('form-success');
-              if (success) {
-                success.style.display = 'block';
-                success.setAttribute('tabindex', '-1');
-                success.focus();
-              }
-            } else {
-              throw new Error('Server error ' + res.status);
+          .then(function () {
+            contactForm.style.display = 'none';
+            var success = document.getElementById('form-success');
+            if (success) {
+              success.style.display = 'block';
+              success.setAttribute('tabindex', '-1');
+              success.focus();
             }
           })
           .catch(function (err) {
