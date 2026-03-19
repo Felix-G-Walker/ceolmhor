@@ -53,7 +53,7 @@ html {
 }
 
 body {
-  background: linear-gradient(180deg, #3a3a3a 0%, #000000 100%);
+  background: linear-gradient(180deg, #181818 0%, #000000 100%);
   background-attachment: fixed;
   min-height: 100vh;
   color: var(--text-body);
