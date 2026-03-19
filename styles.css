@@ -2704,21 +2704,21 @@ body::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.58);
+  background: rgba(0, 0, 0, 0.82);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1.75rem;
   box-sizing: border-box;
   text-align: center;
   font-family: 'EB Garamond', serif;
   font-style: italic;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.1rem;
+  line-height: 1.6;
   color: #fff;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
   pointer-events: none;
 }
 
