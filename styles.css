@@ -362,10 +362,8 @@ p {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-muted);
-  display: block;
-  text-align: center;
+  display: table;
   margin: 0.3rem auto 0;
-  width: 100%;
 }
 
 .hero__label {
