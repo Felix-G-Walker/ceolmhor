@@ -3013,7 +3013,7 @@ body::after {
 
 .features--two {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 440px));
+  grid-template-columns: repeat(2, minmax(0, 280px));
   justify-content: center;
   gap: 0;
   margin-top: 2.5rem;
@@ -3023,9 +3023,30 @@ body::after {
   border: 1px solid var(--rule);
   text-decoration: none;
   color: inherit;
+  padding: 1.5rem 1.75rem;
 }
 
-@media (max-width: 680px) {
+.features--two .feature__num {
+  font-size: 0.65rem;
+}
+
+.features--two .feature h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.features--two .feature p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.features--two .feature .feature__link {
+  font-size: 0.7rem;
+  margin-top: auto;
+}
+
+@media (max-width: 600px) {
   .features--two {
     grid-template-columns: 1fr;
   }
