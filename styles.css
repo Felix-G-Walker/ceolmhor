@@ -364,7 +364,8 @@ p {
   color: var(--text-muted);
   display: block;
   text-align: center;
-  margin-top: 0.3rem;
+  margin: 0.3rem auto 0;
+  width: 100%;
 }
 
 .hero__label {
@@ -435,7 +436,7 @@ p {
   justify-content: center;
 }
 .hero__ctas a {
-  min-width: 200px;
+  width: 220px;
   text-align: center;
 }
 
