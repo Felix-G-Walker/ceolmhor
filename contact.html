@@ -155,6 +155,17 @@
             </div>
 
             <div class="form-group">
+              <label for="phone">Phone Number <span style="font-size:0.82em;opacity:0.55;font-weight:300;">(optional)</span></label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                autocomplete="tel"
+                placeholder="+44 7xxx xxxxxx"
+              >
+            </div>
+
+            <div class="form-group">
               <label id="enquiry-type-label">Enquiry Type</label>
 
               <!-- Primary: Tuition / Performance / Composition / Other -->
@@ -530,7 +541,7 @@
       });
 
       /* ── Worker submit handler ────────────────────────────────── */
-      var WORKER_URL = 'https://ceolmhor.scot/api/contact';
+      var WORKER_URL = '/api/contact';
 
       contactForm.addEventListener('submit', function (e) {
         e.preventDefault();

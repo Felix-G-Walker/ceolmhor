@@ -21,3 +21,7 @@ TO_EMAIL = "contact@ceolmhor.scot"
 [[routes]]
 pattern = "ceolmhor.scot/api/contact"
 zone_name = "ceolmhor.scot"
+
+[[routes]]
+pattern = "www.ceolmhor.scot/api/contact"
+zone_name = "ceolmhor.scot"

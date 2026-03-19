@@ -71,8 +71,8 @@ export default {
         INSERT INTO enquiries
           (first_name, last_name, email, enquiry_primary, enquiry_type,
            enquiry_tier, enquiry_delivery, enquiry_comp_type, enquiry_comp_format,
-           event_day, event_month, event_year, child_enquiry, message, user_agent, ip)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+           event_day, event_month, event_year, child_enquiry, phone, message, user_agent, ip)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `).bind(
         firstName.trim(),
         lastName.trim(),
@@ -87,6 +87,7 @@ export default {
         data['event-month'] || '',
         data['event-year'] || '',
         data['child-enquiry'] || 'no',
+        data['phone'] || '',
         data['message'] || '',
         userAgent,
         ip
@@ -114,7 +115,7 @@ New Ceòlmhor Enquiry
 ${'─'.repeat(40)}
 
 Name:     ${firstName.trim()} ${lastName.trim()}
-Email:    ${email.trim()}
+Email:    ${email.trim()}${data['phone']?.trim() ? `\nPhone:    ${data['phone'].trim()}` : ''}
 Type:     ${enquiryType}${tierLine}${deliveryLine}${formatLine}${eventDate ? `\nDate:     ${eventDate}` : ''}${childNote}
 
 Message:
@@ -147,6 +148,7 @@ IP: ${ip}
   <h1>New Ceòlmhor Enquiry</h1>
   <div class="field"><span class="label">Name</span><span class="value">${escHtml(firstName.trim())} ${escHtml(lastName.trim())}</span></div>
   <div class="field"><span class="label">Email</span><span class="value"><a href="mailto:${escHtml(email.trim())}">${escHtml(email.trim())}</a></span></div>
+  ${data['phone']?.trim() ? `<div class="field"><span class="label">Phone</span><span class="value"><a href="tel:${escHtml(data['phone'].trim())}">${escHtml(data['phone'].trim())}</a></span></div>` : ''}
   <div class="field"><span class="label">Enquiry Type</span><span class="value">${escHtml(enquiryType)}</span></div>
   ${tier     ? `<div class="field"><span class="label">Tier</span><span class="value">${escHtml(tier)}</span></div>` : ''}
   ${delivery ? `<div class="field"><span class="label">Delivery</span><span class="value">${escHtml(delivery)}</span></div>` : ''}

@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS enquiries (
   event_month TEXT,
   event_year TEXT,
   child_enquiry TEXT,
+  phone TEXT,
   message TEXT,
   user_agent TEXT,
   ip TEXT
