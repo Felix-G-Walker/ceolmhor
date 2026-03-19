@@ -420,12 +420,14 @@ p {
 
 .hero__ctas {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  max-width: 480px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .hero__ctas a {
-  width: 220px;
+  width: 210px;
   text-align: center;
 }
 
