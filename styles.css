@@ -355,16 +355,6 @@ p {
   z-index: 1;
 }
 
-.hero__gaelic-gloss {
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: 0.95rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  display: table;
-  margin: 0.3rem auto 0;
-}
 
 .hero__label {
   font-family: var(--font-ui);
