@@ -2343,32 +2343,6 @@ p {
   margin-top: auto;
 }
 
-.pkg-card__timing {
-  font-family: var(--font-ui);
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  letter-spacing: 0.04em;
-  margin-top: -0.5rem;
-  margin-bottom: 1.25rem;
-}
-
-.pkg-card__best-for-label {
-  font-family: var(--font-ui);
-  font-size: 0.7rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-gold);
-  margin-bottom: 0.4rem;
-}
-
-.pkg-card__best-for {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 1.25rem;
-}
-
 .pkg-card--addon {
   grid-column: 1 / -1;
   grid-template-columns: 1fr 1fr;
