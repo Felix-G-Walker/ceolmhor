@@ -12,3 +12,11 @@ desktop.ini
 
 # Wrangler local state
 worker/.wrangler/
+
+# Video files — too large for Cloudflare Pages, host externally
+*.mov
+*.MOV
+*.mp4
+*.avi
+*.mkv
+*.webm
