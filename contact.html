@@ -541,7 +541,7 @@
       });
 
       /* ── Worker submit handler ────────────────────────────────── */
-      var WORKER_URL = '/api/contact';
+      var WORKER_URL = 'https://ceolmhor.scot/api/contact';
 
       contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -572,9 +572,8 @@
           method: 'POST',
           body: new FormData(contactForm),
         })
-          .then(function (res) { return res.json().then(function (json) { return { res: res, json: json }; }); })
-          .then(function (data) {
-            if (data.res.ok && data.json.ok) {
+          .then(function (res) {
+            if (res.ok) {
               contactForm.style.display = 'none';
               var success = document.getElementById('form-success');
               if (success) {
@@ -583,7 +582,7 @@
                 success.focus();
               }
             } else {
-              throw new Error(data.json.error || 'Worker returned error');
+              throw new Error('Server error ' + res.status);
             }
           })
           .catch(function (err) {
