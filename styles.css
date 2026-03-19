@@ -3091,3 +3091,140 @@ body::after {
     padding: 1.75rem;
   }
 }
+
+/* ── App Waitlist Page ──────────────────────────────────────────── */
+
+.app-proposition {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.app-device-frame {
+  background: var(--charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  aspect-ratio: 9 / 16;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.app-device-frame img {
+  width: 55%;
+  opacity: 0.45;
+}
+
+.app-device-note {
+  font-family: var(--font-ui);
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0 1.5rem;
+  line-height: 1.6;
+}
+
+.app-features {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+}
+
+.app-features li {
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.app-features li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.app-features__label {
+  font-family: var(--font-ui);
+  font-size: 0.52rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  display: block;
+}
+
+.app-waitlist-wrap {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.app-waitlist-wrap .form-group {
+  text-align: left;
+}
+
+.app-waitlist-wrap .form-submit {
+  justify-content: center;
+}
+
+.app-founding {
+  background: var(--charcoal);
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.app-founding h2 {
+  margin-bottom: 1.25rem;
+}
+
+.app-founding p {
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  max-width: 680px;
+}
+
+.app-founding-note {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: 0.55rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  line-height: 1.7;
+}
+
+.app-transition-wrap {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.app-transition-wrap p {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .app-proposition {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .app-device-frame {
+    max-width: 180px;
+  }
+}
