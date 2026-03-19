@@ -3022,9 +3022,10 @@ body::after {
 .hero__path {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding: 2rem;
-  border: 1px solid rgba(168, 169, 173, 0.25);
+  gap: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  background: var(--card-bg-green);
   text-decoration: none;
   color: inherit;
   transition: border-color 0.3s ease, background 0.3s ease;
@@ -3032,8 +3033,8 @@ body::after {
 }
 
 .hero__path:hover {
-  border-color: rgba(168, 169, 173, 0.6);
-  background: rgba(168, 169, 173, 0.04);
+  border-color: rgba(201, 168, 76, 0.5);
+  background: rgba(15, 35, 20, 0.8);
 }
 
 .hero__path-label {
@@ -3048,7 +3049,7 @@ body::after {
 .hero__path-title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(1.3rem, 2.2vw, 1.65rem);
   color: var(--off-white, #F5F5F3);
   margin: 0;
   line-height: 1.1;
