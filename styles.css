@@ -2518,6 +2518,12 @@ p {
   margin-bottom: 3.5rem;
 }
 
+.section-intro {
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
 .pkg-intro h2 {
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.5vw, 2rem);
