@@ -3090,6 +3090,24 @@ body::after {
 
 /* ── Homepage two-path rewrite additions ──────────────────────────── */
 
+.hero__intro {
+  max-width: 640px;
+  margin: 2.5rem auto 0;
+  text-align: center;
+}
+
+.hero__intro-text {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 1.5rem;
+}
+
+.hero__intro-link {
+  display: inline-block;
+}
+
 .features--two {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 280px));
