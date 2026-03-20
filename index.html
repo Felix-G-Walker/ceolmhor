@@ -185,7 +185,18 @@
   </section>
 
   <!-- ── About Teaser ──────────────────────────────────────────────── -->
-  <section class="section section--charcoal" aria-label="About Felix Walker">
+  <section class="section about-teaser-section" aria-label="About Felix Walker">
+
+    <!-- Video background — replace inner content with <video autoplay muted loop playsinline src="..."> when available -->
+    <div class="section-video-bg" aria-hidden="true">
+      <div class="section-video-bg__placeholder">
+        <div class="video-placeholder__play">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="section-video-overlay" aria-hidden="true"></div>
+
     <div class="container">
       <div class="about-teaser" data-reveal>
 
@@ -209,24 +220,6 @@
           <a href="about.html" class="feature__link">About Felix</a>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Video ──────────────────────────────────────────────────────── -->
-  <section class="section section--black" aria-label="In performance">
-    <div class="container">
-      <header class="section-header" data-reveal>
-        <span class="section-label">In Performance</span>
-      </header>
-      <!-- Replace the div below with an <iframe> or <video> embed when available -->
-      <div class="video-placeholder" data-reveal data-delay="2">
-        <div class="video-placeholder__inner">
-          <div class="video-placeholder__play" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-          <span>Video coming soon</span>
-        </div>
       </div>
     </div>
   </section>
