@@ -450,73 +450,104 @@
       var phoneCleaned = document.getElementById('phone-cleaned');
       var phoneError   = document.getElementById('phone-error');
 
+      /* Country calling code → its digit length (1, 2, or 3) */
+      var CC_LEN = {
+        '1':1,'7':1,
+        '20':2,'27':2,'30':2,'31':2,'32':2,'33':2,'34':2,'36':2,'39':2,
+        '40':2,'41':2,'43':2,'44':2,'45':2,'46':2,'47':2,'48':2,'49':2,
+        '51':2,'52':2,'53':2,'54':2,'55':2,'56':2,'57':2,'58':2,
+        '60':2,'61':2,'62':2,'63':2,'64':2,'65':2,'66':2,
+        '81':2,'82':2,'84':2,'86':2,
+        '90':2,'91':2,'92':2,'93':2,'94':2,'95':2,'98':2,
+        '212':3,'213':3,'216':3,'218':3,'220':3,'221':3,'222':3,'223':3,
+        '224':3,'225':3,'226':3,'227':3,'228':3,'229':3,'230':3,'231':3,
+        '232':3,'233':3,'234':3,'235':3,'236':3,'237':3,'238':3,'239':3,
+        '240':3,'241':3,'242':3,'243':3,'244':3,'245':3,'246':3,'247':3,
+        '248':3,'249':3,'250':3,'251':3,'252':3,'253':3,'254':3,'255':3,
+        '256':3,'257':3,'258':3,'260':3,'261':3,'262':3,'263':3,'264':3,
+        '265':3,'266':3,'267':3,'268':3,'269':3,'290':3,'291':3,'297':3,
+        '298':3,'299':3,
+        '350':3,'351':3,'352':3,'353':3,'354':3,'355':3,'356':3,'357':3,
+        '358':3,'359':3,'370':3,'371':3,'372':3,'373':3,'374':3,'375':3,
+        '376':3,'377':3,'378':3,'380':3,'381':3,'382':3,'385':3,'386':3,
+        '387':3,'389':3,'420':3,'421':3,'423':3,
+        '500':3,'501':3,'502':3,'503':3,'504':3,'505':3,'506':3,'507':3,
+        '508':3,'509':3,'590':3,'591':3,'592':3,'593':3,'594':3,'595':3,
+        '596':3,'597':3,'598':3,'599':3,
+        '670':3,'672':3,'673':3,'674':3,'675':3,'676':3,'677':3,'678':3,
+        '679':3,'680':3,'681':3,'682':3,'683':3,'685':3,'686':3,'687':3,
+        '688':3,'689':3,'690':3,'691':3,'692':3,
+        '850':3,'852':3,'853':3,'855':3,'856':3,'880':3,'886':3,
+        '960':3,'961':3,'962':3,'963':3,'964':3,'965':3,'966':3,'967':3,
+        '968':3,'970':3,'971':3,'972':3,'973':3,'974':3,'975':3,'976':3,
+        '977':3,'992':3,'993':3,'994':3,'995':3,'996':3,'998':3
+      };
+
       function digitsOnly(s) { return s.replace(/\D/g, ''); }
 
-      function fmtUK44(rest) {
-        if (!rest) return '';
-        if (rest.charAt(0) === '7') {
-          var a = rest.slice(0, 4), b = rest.slice(4, 7), c = rest.slice(7, 10);
-          return a + (b ? ' ' + b : '') + (c ? ' ' + c : '');
-        }
-        if (rest.charAt(0) === '2') {
-          var a = rest.slice(0, 2), b = rest.slice(2, 6), c = rest.slice(6, 10);
-          return a + (b ? ' ' + b : '') + (c ? ' ' + c : '');
-        }
-        var a = rest.slice(0, 4), b = rest.slice(4, 7), c = rest.slice(7, 10);
-        return a + (b ? ' ' + b : '') + (c ? ' ' + c : '');
+      function detectCC(digits) {
+        var s3 = digits.slice(0, 3), s2 = digits.slice(0, 2), s1 = digits.charAt(0);
+        if (CC_LEN[s3]) return s3;
+        if (CC_LEN[s2]) return s2;
+        if (CC_LEN[s1]) return s1;
+        return s2; /* fallback: treat first 2 digits as CC */
       }
 
-      function fmtDomestic(digits) {
-        if (!digits) return '';
-        if (digits.slice(0, 2) === '02') {
-          var a = digits.slice(0, 3), b = digits.slice(3, 7), c = digits.slice(7, 11);
-          return a + (b ? ' ' + b : '') + (c ? ' ' + c : '');
-        }
-        var a = digits.slice(0, 5), b = digits.slice(5, 8), c = digits.slice(8, 11);
-        return a + (b ? ' ' + b : '') + (c ? ' ' + c : '');
+      function fmtUKSub(s) {
+        if (!s) return '';
+        if (s.charAt(0) === '7')
+          return s.slice(0,4)+(s.length>4?' '+s.slice(4,7):'')+(s.length>7?' '+s.slice(7,10):'');
+        if (s.charAt(0) === '2')
+          return s.slice(0,2)+(s.length>2?' '+s.slice(2,6):'')+(s.length>6?' '+s.slice(6,10):'');
+        return s.slice(0,4)+(s.length>4?' '+s.slice(4,7):'')+(s.length>7?' '+s.slice(7,10):'');
+      }
+
+      function fmtSub(s, cc) {
+        if (!s) return '';
+        if (cc === '44') return fmtUKSub(s);
+        if (cc === '1')
+          return s.slice(0,3)+(s.length>3?' '+s.slice(3,6):'')+(s.length>6?' '+s.slice(6,10):'');
+        /* Generic: groups of 3 */
+        var out = [], i = 0;
+        while (i < s.length) { out.push(s.slice(i, i + 3)); i += 3; }
+        return out.join(' ');
       }
 
       function fmtIntl(raw) {
-        var digits = digitsOnly(raw.slice(1));
-        if (!digits) return '+';
-        var rest;
-        if (digits.charAt(0) === '1') {
-          rest = digits.slice(1);
-          var a = rest.slice(0, 3), b = rest.slice(3, 6), c = rest.slice(6, 10);
-          return '+1' + (a ? ' ' + a : '') + (b ? ' ' + b : '') + (c ? ' ' + c : '');
-        }
-        if (digits.slice(0, 2) === '44') {
-          rest = digits.slice(2);
-          if (rest.charAt(0) === '0') rest = rest.slice(1);
-          return '+44' + (rest ? ' ' + fmtUK44(rest) : '');
-        }
-        var cc = digits.slice(0, 2);
-        rest = digits.slice(2);
-        var grouped = rest.replace(/(\d{3})(?=\d)/g, '$1 ');
-        return '+' + cc + (rest ? ' ' + grouped : '');
+        var d = digitsOnly(raw.slice(1));
+        if (!d) return '+';
+        var cc  = detectCC(d);
+        var sub = d.slice(cc.length);
+        if (cc === '44' && sub.charAt(0) === '0') sub = sub.slice(1);
+        return '+' + cc + (sub ? ' ' + fmtSub(sub, cc) : '');
+      }
+
+      function fmtDomestic(d) {
+        if (!d) return '';
+        if (d.slice(0, 2) === '02')
+          return d.slice(0,3)+(d.length>3?' '+d.slice(3,7):'')+(d.length>7?' '+d.slice(7,11):'');
+        return d.slice(0,5)+(d.length>5?' '+d.slice(5,8):'')+(d.length>8?' '+d.slice(8,11):'');
       }
 
       function fmtPhone(raw) {
         if (!raw) return '';
-        if (raw.charAt(0) === '+') return fmtIntl(raw);
-        return fmtDomestic(raw);
+        return raw.charAt(0) === '+' ? fmtIntl(raw) : fmtDomestic(raw);
       }
 
       function phoneCleanVal(display) {
         var v = display.trim();
         if (!v) return '';
-        if (v.charAt(0) === '+') return '+' + digitsOnly(v.slice(1));
-        return digitsOnly(v);
+        return v.charAt(0) === '+' ? '+' + digitsOnly(v.slice(1)) : digitsOnly(v);
       }
 
       function normalisePhone(v) {
         if (!v) return '';
-        var stripped = v.charAt(0) === '+' ? '+' + digitsOnly(v.slice(1)) : digitsOnly(v);
-        if (!stripped) return '';
-        if (stripped.slice(0, 2) === '00') stripped = '+' + stripped.slice(2);
-        if (/^0[1-9]/.test(stripped)) stripped = '+44' + stripped.slice(1);
-        if (stripped.slice(0, 3) === '+44' && stripped.charAt(3) === '0') stripped = '+44' + stripped.slice(4);
-        return fmtIntl(stripped);
+        var s = v.charAt(0) === '+' ? '+' + digitsOnly(v.slice(1)) : digitsOnly(v);
+        if (!s) return '';
+        if (s.slice(0, 2) === '00') s = '+' + s.slice(2);
+        if (/^0[1-9]/.test(s)) s = '+44' + s.slice(1);
+        if (s.slice(0, 3) === '+44' && s.charAt(3) === '0') s = '+44' + s.slice(4);
+        return fmtIntl(s);
       }
 
       function isPhoneValid(display) {
@@ -524,10 +555,8 @@
         if (!v) return true;
         var cl = phoneCleanVal(v);
         if (!cl) return true;
-        if (/^\+447\d{9}$/.test(cl) || /^07\d{9}$/.test(cl)) return true;
-        if (/^\+44[123]\d{8,9}$/.test(cl) || /^0[123]\d{8,9}$/.test(cl)) return true;
         if (/^\+\d{7,15}$/.test(cl)) return true;
-        if (/^00\d{7,15}$/.test(cl)) return true;
+        if (/^0[0-9]\d{6,13}$/.test(cl)) return true;
         return false;
       }
 
@@ -535,9 +564,8 @@
         phoneField.addEventListener('input', function () {
           var raw = this.value;
           var cl = raw.charAt(0) === '+' ? '+' + digitsOnly(raw.slice(1)) : digitsOnly(raw);
-          var formatted = fmtPhone(cl);
-          this.value = formatted;
-          if (phoneCleaned) phoneCleaned.value = phoneCleanVal(formatted);
+          this.value = fmtPhone(cl);
+          if (phoneCleaned) phoneCleaned.value = phoneCleanVal(this.value);
           if (phoneError) phoneError.style.display = 'none';
           this.removeAttribute('aria-invalid');
         });
@@ -552,7 +580,7 @@
 
         phoneField.addEventListener('blur', function () {
           var v = this.value.trim();
-          if (!v || v === '+' || v === '+44' || v === '+44 ') {
+          if (!v || /^\+\d{0,2}\s?$/.test(v) || v === '+') {
             this.value = '';
             if (phoneCleaned) phoneCleaned.value = '';
             if (phoneError) phoneError.style.display = 'none';
