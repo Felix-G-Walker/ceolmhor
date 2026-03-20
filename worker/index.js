@@ -148,7 +148,7 @@ IP: ${ip}
   <h1>New Ceòlmhor Enquiry</h1>
   <div class="field"><span class="label">Name</span><span class="value">${escHtml(firstName.trim())} ${escHtml(lastName.trim())}</span></div>
   <div class="field"><span class="label">Email</span><span class="value"><a href="mailto:${escHtml(email.trim())}">${escHtml(email.trim())}</a></span></div>
-  ${data['phone']?.trim() ? `<div class="field"><span class="label">Phone</span><span class="value"><a href="tel:${escHtml(data['phone'].trim())}">${escHtml(data['phone'].trim())}</a></span></div>` : ''}
+  ${data['phone']?.trim() ? `<div class="field"><span class="label">Phone</span><span class="value"><a href="tel:${escHtml((data['phone-cleaned'] || data['phone']).trim())}">${escHtml(data['phone'].trim())}</a></span></div>` : ''}
   <div class="field"><span class="label">Enquiry Type</span><span class="value">${escHtml(enquiryType)}</span></div>
   ${tier     ? `<div class="field"><span class="label">Tier</span><span class="value">${escHtml(tier)}</span></div>` : ''}
   ${delivery ? `<div class="field"><span class="label">Delivery</span><span class="value">${escHtml(delivery)}</span></div>` : ''}
