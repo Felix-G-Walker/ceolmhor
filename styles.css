@@ -406,7 +406,6 @@ p {
   font-weight: 500;
   font-size: 1.125rem;
   color: var(--text-body);
-  max-width: none;
   line-height: 1.85;
   margin: 2.5rem auto 0;
   text-align: center;
@@ -3342,8 +3341,6 @@ body::after {
   line-height: 1.75;
   color: rgba(255,255,255,0.82);
   margin-bottom: 1.5rem;
-  max-width: none;
-  width: 100%;
   text-align: center;
 }
 
