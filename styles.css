@@ -1873,23 +1873,10 @@ p {
 }
 
 /* ── Closing CTA ──────────────────────────────────────────────────── */
-.closing-cta {
-  display: flex;
-  align-items: center;
-  min-height: 360px;
-}
-
-.closing-cta .container {
-  width: 100%;
-}
-
 .closing-cta__inner {
   text-align: center;
   max-width: 560px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .closing-cta__heading {
@@ -1917,13 +1904,6 @@ p {
 .about-teaser-section {
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  min-height: 420px;
-}
-
-.about-teaser-section .container {
-  width: 100%;
 }
 
 .section-video-bg {
@@ -1957,6 +1937,16 @@ p {
 .about-teaser-section .container {
   position: relative;
   z-index: 2;
+  text-align: center;
+}
+
+/* ── Centred link overrides ───────────────────────────────────────── */
+.about-teaser .feature__link,
+.closing-cta__inner .nav__cta,
+.closing-cta__inner .closing-cta__btn {
+  align-self: auto;
+  margin-top: 0;
+  display: inline-block;
 }
 
 /* ── About Teaser (homepage) ──────────────────────────────────────── */
