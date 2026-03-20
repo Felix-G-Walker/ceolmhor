@@ -1152,10 +1152,43 @@ p {
 /* ── 15. Tuition: Pricing ─────────────────────────────────────────── */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border-left: 1px solid var(--rule);
   border-top: 1px solid var(--rule);
   margin-bottom: 4rem;
+}
+
+.tuition-delivery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-left: 1px solid var(--rule);
+  border-top: 1px solid var(--rule);
+  margin-bottom: 4rem;
+}
+
+.tuition-delivery__item {
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 1.75rem 2rem;
+}
+
+.tuition-delivery__label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  opacity: 0.85;
+  margin-bottom: 0.6rem;
+}
+
+.tuition-delivery__item p {
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.6;
 }
 
 .pricing-item {
@@ -2415,6 +2448,7 @@ p {
   .about-hero-img { position: absolute; }
   .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; }
   .pricing-grid { grid-template-columns: 1fr; }
+  .tuition-delivery { grid-template-columns: 1fr; }
 
   .footer__inner {
     grid-template-columns: 1fr 1fr;
@@ -2455,6 +2489,7 @@ p {
   .form-row { grid-template-columns: 1fr; gap: 0; }
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   .pricing-grid { grid-template-columns: 1fr; }
+  .tuition-delivery { grid-template-columns: 1fr; }
   .about-split { grid-template-columns: 1fr; }
   .about-split__image { min-height: 70vw; }
   .about-split__content { padding: var(--pad-v) var(--pad-h); }
