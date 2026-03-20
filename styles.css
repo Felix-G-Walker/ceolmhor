@@ -405,11 +405,10 @@ p {
   font-weight: 500;
   font-size: 1.125rem;
   color: var(--text-body);
-  max-width: 50ch;
+  max-width: none;
   line-height: 1.85;
-  margin-bottom: 3rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2.5rem auto 0;
+  text-align: center;
 }
 
 .hero__enquire {
@@ -3335,12 +3334,6 @@ body::after {
 }
 
 /* ── Homepage two-path rewrite additions ──────────────────────────── */
-
-.hero__intro {
-  max-width: none;
-  margin: 2.5rem auto 0;
-  text-align: center;
-}
 
 .hero__intro-text {
   font-family: 'EB Garamond', serif;
