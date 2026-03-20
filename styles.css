@@ -834,6 +834,12 @@ p {
   text-align: center;
 }
 
+.about-cta-enquire {
+  flex-basis: 100%;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
 .lightbox-btn-prev,
 .lightbox-btn-next {
   position: absolute;
