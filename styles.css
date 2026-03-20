@@ -1876,6 +1876,13 @@ p {
 .about-teaser-section {
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 420px;
+}
+
+.about-teaser-section .container {
+  width: 100%;
 }
 
 .section-video-bg {
