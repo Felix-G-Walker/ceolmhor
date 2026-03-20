@@ -1158,20 +1158,15 @@ p {
   margin-bottom: 4rem;
 }
 
-.pricing-item--wide {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  align-items: center;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
 .tuition-delivery {
-  text-align: center;
   max-width: 600px;
   margin: 0 auto 4rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
 }
 
 .pricing-item {
@@ -1211,6 +1206,16 @@ p {
   font-weight: 500;
   color: var(--text-mid);
   max-width: 52ch;
+}
+
+.pricing-item--wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 /* ── 16. Tuition: Includes ────────────────────────────────────────── */
