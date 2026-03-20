@@ -3094,19 +3094,11 @@ body::after {
   margin: 0;
 }
 .credentials-list li {
-  padding: 0.4rem 0 0.4rem 1.25rem;
-  position: relative;
+  padding: 0.4rem 0;
   font-size: 0.95rem;
   line-height: 1.6;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   text-align: left;
-}
-.credentials-list li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--gold, #c9a84c);
-  font-size: 0.85rem;
 }
 .credentials-list li:last-child {
   border-bottom: none;
