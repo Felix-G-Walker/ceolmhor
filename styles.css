@@ -829,7 +829,7 @@ p {
   margin-top: 5rem;
   margin-bottom: 4rem;
 }
-.about-cta-buttons a {
+.about-cta-buttons > a {
   min-width: 200px;
   text-align: center;
 }
