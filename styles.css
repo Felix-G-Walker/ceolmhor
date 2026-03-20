@@ -2597,6 +2597,13 @@ p {
   border-bottom: 1px solid var(--rule);
 }
 
+.pkg-card__price--addon {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
 .pkg-card__includes {
   list-style: none;
   padding: 0;
