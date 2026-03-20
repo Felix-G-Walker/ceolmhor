@@ -3330,7 +3330,7 @@ body::after {
 /* ── Homepage two-path rewrite additions ──────────────────────────── */
 
 .hero__intro {
-  max-width: 640px;
+  max-width: none;
   margin: 2.5rem auto 0;
   text-align: center;
 }
