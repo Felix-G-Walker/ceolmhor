@@ -1920,8 +1920,13 @@ p {
 
 /* ── About Teaser (homepage) ──────────────────────────────────────── */
 .about-teaser {
-  max-width: 620px;
+  max-width: 560px;
   margin: 0 auto;
+  padding: 3rem 3.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 10, 10, 0.62);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .about-teaser__photo-placeholder {
