@@ -3342,6 +3342,7 @@ body::after {
   color: rgba(255,255,255,0.82);
   margin-bottom: 1.5rem;
   max-width: none;
+  width: 100%;
   text-align: center;
 }
 
