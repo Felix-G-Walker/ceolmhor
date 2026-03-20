@@ -1155,7 +1155,7 @@ p {
   grid-template-columns: repeat(2, 1fr);
   border-left: 1px solid var(--rule);
   border-top: 1px solid var(--rule);
-  margin-bottom: 4rem;
+  margin-bottom: 0;
 }
 
 .tuition-delivery {
@@ -1210,13 +1210,8 @@ p {
   grid-template-columns: 1fr 2fr;
   gap: 3rem;
   align-items: center;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-.pricing-grid > .pricing-item--wide {
-  grid-column: 1 / -1;
-  display: grid;
+  border-left: 1px solid var(--rule);
+  margin-bottom: 4rem;
 }
 
 /* ── 16. Tuition: Includes ────────────────────────────────────────── */
