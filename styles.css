@@ -727,6 +727,17 @@ p {
   padding: 0 2rem;
 }
 
+.about-pull-quote__attr {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
 .about-gaelic-para {
   max-width: 780px;
   margin: 0 auto 3rem;
