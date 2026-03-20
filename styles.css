@@ -266,6 +266,7 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 .nav__cta:hover { background: var(--charcoal); }
+.nav__cta.active { color: var(--accent-gold); border-color: var(--accent-gold); }
 
 /* Hamburger */
 .nav__hamburger {
