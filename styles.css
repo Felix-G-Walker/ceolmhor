@@ -3354,6 +3354,8 @@ body::after {
   line-height: 1.75;
   color: rgba(255,255,255,0.82);
   margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero__intro-link {
