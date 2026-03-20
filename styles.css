@@ -1879,6 +1879,10 @@ p {
   min-height: 360px;
 }
 
+.closing-cta .container {
+  width: 100%;
+}
+
 .closing-cta__inner {
   text-align: center;
   max-width: 560px;
@@ -1964,6 +1968,7 @@ p {
   background: rgba(10, 10, 10, 0.62);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  text-align: center;
 }
 
 .about-teaser__photo-placeholder {
@@ -2014,16 +2019,17 @@ p {
   font-size: 1rem;
   color: var(--text-mid);
   line-height: 1.5;
-  padding-left: 1.1rem;
-  position: relative;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .about-teaser__credentials li::before {
   content: '—';
-  position: absolute;
-  left: 0;
   color: var(--accent-gold);
   opacity: 0.6;
+  flex-shrink: 0;
 }
 
 @media (max-width: 680px) {
