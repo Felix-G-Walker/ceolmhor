@@ -764,21 +764,6 @@
             }
           });
       });
-
-      /* ── URL parameter pre-selection ──────────────────────────── */
-      (function () {
-        var params = new URLSearchParams(window.location.search);
-        var type = params.get('enquiry');
-        if (!type) return;
-        var btn = document.querySelector('[data-primary="' + type + '"]');
-        if (!btn) return;
-        btn.click();
-        setTimeout(function () {
-          var form = document.getElementById('contact-form');
-          if (form) form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 200);
-      }());
-
     }());
   </script>
 </body>
