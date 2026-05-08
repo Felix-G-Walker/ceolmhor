@@ -37,20 +37,19 @@
       el.placeholder = isGd ? el.dataset.gdPlaceholder : el.dataset.enPlaceholder;
     });
 
-    /* Sync all pill buttons on this page */
-    document.querySelectorAll('.lang-pill__opt').forEach(function (btn) {
-      var active = btn.dataset.langOpt === lang;
-      btn.classList.toggle('active', active);
-      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    /* Sync all toggle pills on this page */
+    document.querySelectorAll('.lang-toggle').forEach(function (btn) {
+      btn.classList.toggle('gd-active', isGd);
+      btn.setAttribute('aria-checked', isGd ? 'true' : 'false');
     });
 
     localStorage.setItem(LANG_KEY, lang);
   }
 
   function init() {
-    document.querySelectorAll('.lang-pill__opt').forEach(function (btn) {
+    document.querySelectorAll('.lang-toggle').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        applyLang(btn.dataset.langOpt);
+        applyLang(btn.classList.contains('gd-active') ? 'en' : 'gd');
       });
     });
     applyLang(getLang());

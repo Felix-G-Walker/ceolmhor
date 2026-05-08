@@ -289,50 +289,66 @@ p {
 .nav__hamburger.open span:nth-child(2) { opacity: 0; }
 .nav__hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── Language Pill ───────────────────────────────────────────────── */
-.lang-pill {
-  display: flex;
+/* ── Language Toggle Pill ────────────────────────────────────────── */
+.lang-toggle {
+  position: relative;
+  display: inline-flex;
   align-items: center;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.13);
   border-radius: 100px;
   padding: 2px;
+  cursor: pointer;
   flex-shrink: 0;
   margin-right: 0.5rem;
+  overflow: hidden;
 }
-.lang-pill__opt {
+.lang-toggle::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(50% - 2px);
+  height: calc(100% - 4px);
+  background: rgba(255,255,255,0.82);
+  border-radius: 100px;
+  transition: transform 0.2s ease;
+  pointer-events: none;
+}
+.lang-toggle.gd-active::before {
+  transform: translateX(100%);
+}
+.lang-toggle__en,
+.lang-toggle__gd {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-ui);
   font-size: 0.6rem;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
-  background: transparent;
-  border: none;
-  border-radius: 100px;
   padding: 4px 8px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: color 0.2s;
   line-height: 1;
+  pointer-events: none;
+  user-select: none;
 }
-.lang-pill__opt.active {
-  background: rgba(255,255,255,0.82);
-  color: #0d0d0d;
-}
-.lang-pill__opt:hover:not(.active) {
-  color: var(--text);
-}
+.lang-toggle .lang-toggle__en { color: #0d0d0d; }
+.lang-toggle.gd-active .lang-toggle__en { color: var(--text-muted); }
+.lang-toggle.gd-active .lang-toggle__gd { color: #0d0d0d; }
 .nav__overlay-lang {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-top: 1rem;
 }
-.nav__overlay-lang .lang-pill {
+.nav__overlay-lang .lang-toggle {
   background: rgba(255,255,255,0.08);
   border-color: rgba(255,255,255,0.18);
 }
-.nav__overlay-lang .lang-pill__opt {
+.nav__overlay-lang .lang-toggle__en,
+.nav__overlay-lang .lang-toggle__gd {
   font-size: 0.7rem;
   padding: 6px 14px;
 }
