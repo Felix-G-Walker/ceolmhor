@@ -3495,6 +3495,10 @@ body::after {
   color: var(--text);
   margin-bottom: 1.25rem;
 }
+.venues-block__body {
+  max-width: 640px;
+  margin: 0 auto;
+}
 .venues-block p { margin-bottom: 1.25rem; }
 .venues-block a { display: inline-block; margin-top: 0.5rem; }
 
