@@ -942,6 +942,38 @@ html[lang="gd"] .nav__right {
 .lightbox-btn-next:hover { background: rgba(255, 255, 255, 0.2); }
 .lightbox-btn-prev { left: 1.5rem; }
 .lightbox-btn-next { right: 1.5rem; }
+.lightbox-btn-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 1.4rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  z-index: 10001;
+  transition: background 0.2s ease, transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  line-height: 1;
+}
+.lightbox-btn-close:hover { background: rgba(255, 255, 255, 0.22); transform: scale(1.1); }
+.lightbox-zoom-hint {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
 
 .carousel-hint {
   font-size: 0.75rem;

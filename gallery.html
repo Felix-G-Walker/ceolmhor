@@ -248,10 +248,10 @@
     (function () {
       var lightbox = document.createElement('div');
       lightbox.id = 'preview-lightbox';
-      lightbox.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;justify-content:center;align-items:center;cursor:default;opacity:0;transition:opacity 0.4s ease;';
+      lightbox.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;justify-content:center;align-items:center;cursor:default;opacity:0;transition:opacity 0.4s ease;overflow:hidden;';
 
       var lightboxImg = document.createElement('img');
-      lightboxImg.style.cssText = 'max-width:80vw;max-height:90vh;object-fit:contain;box-shadow:0 0 60px rgba(0,0,0,0.8);transition:opacity 0.2s ease;';
+      lightboxImg.style.cssText = 'max-width:80vw;max-height:85vh;object-fit:contain;box-shadow:0 0 60px rgba(0,0,0,0.8);transition:opacity 0.2s ease,transform 0.25s ease;cursor:zoom-in;user-select:none;transform-origin:center center;';
 
       var lbPrev = document.createElement('button');
       lbPrev.textContent = '‹';
@@ -261,19 +261,111 @@
       lbNext.textContent = '›';
       lbNext.className = 'lightbox-btn-next';
 
+      var lbClose = document.createElement('button');
+      lbClose.innerHTML = '&times;';
+      lbClose.className = 'lightbox-btn-close';
+      lbClose.setAttribute('aria-label', 'Close gallery');
+
+      var lbZoomHint = document.createElement('p');
+      lbZoomHint.className = 'lightbox-zoom-hint';
+      lbZoomHint.textContent = 'Click image to zoom · drag to pan · Esc to close';
+
+      lightbox.appendChild(lbClose);
       lightbox.appendChild(lbPrev);
       lightbox.appendChild(lightboxImg);
       lightbox.appendChild(lbNext);
+      lightbox.appendChild(lbZoomHint);
       document.body.appendChild(lightbox);
 
       var imageItems = Array.from(document.querySelectorAll('.photo-masonry-item[data-src]'));
       var imageSrcs  = imageItems.map(function (el) { return el.dataset.src; });
       var currentIdx = 0;
 
+      // ── zoom / pan state ───────────────────────────────────────────
+      var zoomLevel  = 1;
+      var translateX = 0;
+      var translateY = 0;
+      var isDragging = false;
+      var dragStartX = 0;
+      var dragStartY = 0;
+      var dragOriginX = 0;
+      var dragOriginY = 0;
+
+      function applyTransform(animate) {
+        lightboxImg.style.transition = animate
+          ? 'opacity 0.2s ease, transform 0.25s ease'
+          : 'opacity 0.2s ease, transform 0s';
+        lightboxImg.style.transform = 'translate(' + translateX + 'px,' + translateY + 'px) scale(' + zoomLevel + ')';
+      }
+
+      function resetZoom(animate) {
+        zoomLevel  = 1;
+        translateX = 0;
+        translateY = 0;
+        lightboxImg.style.cursor = 'zoom-in';
+        applyTransform(animate !== false);
+        lbZoomHint.style.opacity = '1';
+      }
+
+      function clampPan() {
+        var halfW = lightboxImg.offsetWidth  * (zoomLevel - 1) / 2;
+        var halfH = lightboxImg.offsetHeight * (zoomLevel - 1) / 2;
+        translateX = Math.max(-halfW, Math.min(halfW, translateX));
+        translateY = Math.max(-halfH, Math.min(halfH, translateY));
+      }
+
+      // click on image: toggle zoom
+      lightboxImg.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (isDragging) return;
+        if (zoomLevel === 1) {
+          zoomLevel  = 2.5;
+          translateX = 0;
+          translateY = 0;
+          lightboxImg.style.cursor = 'zoom-out';
+          applyTransform(true);
+          lbZoomHint.style.opacity = '0';
+        } else {
+          resetZoom(true);
+        }
+      });
+
+      // drag-to-pan when zoomed
+      lightboxImg.addEventListener('mousedown', function (e) {
+        if (zoomLevel === 1) return;
+        e.preventDefault();
+        isDragging = false;
+        dragStartX = e.clientX;
+        dragStartY = e.clientY;
+        dragOriginX = translateX;
+        dragOriginY = translateY;
+
+        function onMove(ev) {
+          var dx = ev.clientX - dragStartX;
+          var dy = ev.clientY - dragStartY;
+          if (Math.abs(dx) > 3 || Math.abs(dy) > 3) isDragging = true;
+          translateX = dragOriginX + dx;
+          translateY = dragOriginY + dy;
+          clampPan();
+          applyTransform(false);
+        }
+
+        function onUp() {
+          document.removeEventListener('mousemove', onMove);
+          document.removeEventListener('mouseup', onUp);
+          setTimeout(function () { isDragging = false; }, 10);
+        }
+
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup', onUp);
+      });
+
+      // ── open / close ───────────────────────────────────────────────
       function isOpen() { return lightbox.style.display !== 'none'; }
 
       function openAt(idx) {
         currentIdx = idx;
+        resetZoom(false);
         lightboxImg.src = imageSrcs[currentIdx];
         lightbox.style.display = 'flex';
         requestAnimationFrame(function () {
@@ -289,10 +381,12 @@
         setTimeout(function () {
           lightbox.style.display = 'none';
           document.body.style.overflow = '';
+          resetZoom(false);
         }, 400);
       }
 
       function goTo(n) {
+        resetZoom(false);
         currentIdx = (n + imageSrcs.length) % imageSrcs.length;
         lightboxImg.style.opacity = '0';
         setTimeout(function () {
@@ -301,6 +395,7 @@
         }, 200);
       }
 
+      // ── event wiring ───────────────────────────────────────────────
       imageItems.forEach(function (item, i) {
         item.addEventListener('click', function () { openAt(i); });
       });
@@ -309,6 +404,7 @@
         if (e.target === lightbox) closeLightbox();
       });
 
+      lbClose.addEventListener('click', function (e) { e.stopPropagation(); closeLightbox(); });
       lbPrev.addEventListener('click', function (e) { e.stopPropagation(); goTo(currentIdx - 1); });
       lbNext.addEventListener('click', function (e) { e.stopPropagation(); goTo(currentIdx + 1); });
 
