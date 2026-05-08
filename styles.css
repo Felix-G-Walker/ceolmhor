@@ -357,6 +357,18 @@ p {
 .lang-toggle.gd-active .lang-toggle__en { color: rgba(255, 255, 255, 0.35); }
 .lang-toggle.gd-active .lang-toggle__gd { color: #0d0d0d; }
 
+/* ── Gaelic nav: tighten spacing to prevent centre-links overlapping right group ── */
+html[lang="gd"] .nav__links {
+  gap: 1rem;
+}
+html[lang="gd"] .nav__links a,
+html[lang="gd"] .nav__faq {
+  letter-spacing: 0.06em;
+}
+html[lang="gd"] .nav__right {
+  gap: 1.5rem;
+}
+
 /* Mobile overlay variant */
 .nav__overlay-lang {
   display: flex;
