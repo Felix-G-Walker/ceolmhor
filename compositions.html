@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
@@ -51,19 +51,23 @@
   <nav class="nav" aria-label="Main navigation">
     <div class="nav__inner">
       <div class="nav__left">
+        <div class="lang-pill" role="group" aria-label="Language / Cànan">
+          <button class="lang-pill__opt active" data-lang-opt="en" aria-pressed="true">EN</button>
+          <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+        </div>
         <a href="index.html" class="nav__logo" aria-label="Ceòlmhor — home"><img src="images/Ceolmhor_logo_transparent.png" alt="Ceòlmhor" class="site-logo"></a>
-        <a href="index.html" class="nav__home">Home</a>
+        <a href="index.html" class="nav__home" data-gd="Dachaigh">Home</a>
       </div>
       <div class="nav__links">
-        <a href="about.html">About</a>
-        <a href="tuition.html">Tuition</a>
-        <a href="performance.html">Performance</a>
-        <a href="compositions.html" class="active">Compositions</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+        <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+        <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+        <a href="compositions.html" class="active" data-gd="Sgrìobhaidhean">Compositions</a>
+        <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
       </div>
       <div class="nav__right">
-        <a href="faq.html" class="nav__faq">FAQ</a>
-        <a href="contact.html" class="nav__cta">Enquire</a>
+        <a href="faq.html" class="nav__faq" data-gd="Ceistean">FAQ</a>
+        <a href="contact.html" class="nav__cta" data-gd="Feòraich">Enquire</a>
       </div>
       <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -73,20 +77,26 @@
 
   <!-- Mobile overlay -->
   <div class="nav__overlay" role="dialog" aria-label="Navigation menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="tuition.html">Tuition</a>
-    <a href="performance.html">Performance</a>
-    <a href="compositions.html" class="active">Compositions</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html" class="nav__overlay-cta">Enquire</a>
+    <a href="index.html" data-gd="Dachaigh">Home</a>
+    <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+    <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+    <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+    <a href="compositions.html" class="active" data-gd="Sgrìobhaidhean">Compositions</a>
+    <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
+    <a href="faq.html" data-gd="Ceistean">FAQ</a>
+    <a href="contact.html" class="nav__overlay-cta" data-gd="Feòraich">Enquire</a>
+    <div class="nav__overlay-lang">
+      <div class="lang-pill" role="group" aria-label="Language / Cànan">
+        <button class="lang-pill__opt" data-lang-opt="en" aria-pressed="false">EN</button>
+        <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+      </div>
+    </div>
   </div>
 
   <!-- ── Page Header ────────────────────────────────────────────── -->
   <header class="page-header page-header--charcoal">
     <div class="container">
-      <h1 class="page-header__title">Compositions</h1>
+      <h1 class="page-header__title" data-gd="Sgrìobhaidhean">Compositions</h1>
       <p class="gaelic-subtitle">Sgrìobhaidhean</p>
       <hr class="rule">
     </div>
@@ -97,25 +107,25 @@
     <div class="container">
 
       <div class="section-intro" data-reveal>
-        <p>Ceòlmhor's catalogue of original works spans the traditional compositional frameworks, and the modern approaches too — available for personal performance. Commissions are accepted for private, civic, and institutional occasions.</p>
+        <p data-gd="Tha catalog Ceòlmhor de dh'obraichean tùsail a' còmhdach nan cruitheachdan-sgrìobhaidh traidiseanta, agus na dòighean-obrach ùra cuideachd — ri fhaighinn airson taisbeantas pearsanta. Thathar a' gabhail ri coimiseanan airson amannan prìobhaideach, sìobhalta, agus institiùideach.">Ceòlmhor's catalogue of original works spans the traditional compositional frameworks, and the modern approaches too — available for personal performance. Commissions are accepted for private, civic, and institutional occasions.</p>
       </div>
 
       <header class="section-header" data-reveal>
-        <span class="section-label">Works</span>
-        <h2>The Catalogue</h2>
+        <span class="section-label" data-gd="Obraichean">Works</span>
+        <h2 data-gd="An Catalog">The Catalogue</h2>
       </header>
 
       <!-- Filter bar -->
       <div class="comp-filter" role="group" aria-label="Filter by type" data-reveal>
-        <button class="comp-filter__btn active" data-filter="all">All</button>
-        <button class="comp-filter__btn" data-filter="march">Marches</button>
-        <button class="comp-filter__btn" data-filter="slow-air">Slow Airs</button>
-        <button class="comp-filter__btn" data-filter="reel">Reels</button>
-        <button class="comp-filter__btn" data-filter="jig">Jigs</button>
-        <button class="comp-filter__btn" data-filter="strathspey">Strathspeys</button>
-        <button class="comp-filter__btn" data-filter="hornpipe">Hornpipes</button>
-        <button class="comp-filter__btn" data-filter="piobaireachd">Pìobaireachd</button>
-        <button class="comp-filter__btn" data-filter="contemporary">Contemporary</button>
+        <button class="comp-filter__btn active" data-filter="all" data-gd="Uile">All</button>
+        <button class="comp-filter__btn" data-filter="march" data-gd="Màrsaichean">Marches</button>
+        <button class="comp-filter__btn" data-filter="slow-air" data-gd="Aidhrichean Slaodach">Slow Airs</button>
+        <button class="comp-filter__btn" data-filter="reel" data-gd="Ruidhlean">Reels</button>
+        <button class="comp-filter__btn" data-filter="jig" data-gd="Siogaichean">Jigs</button>
+        <button class="comp-filter__btn" data-filter="strathspey" data-gd="Strathspeys">Strathspeys</button>
+        <button class="comp-filter__btn" data-filter="hornpipe" data-gd="Hornpipes">Hornpipes</button>
+        <button class="comp-filter__btn" data-filter="piobaireachd" data-gd="Pìobaireachd">Pìobaireachd</button>
+        <button class="comp-filter__btn" data-filter="contemporary" data-gd="Co-aimsireil">Contemporary</button>
       </div>
 
       <!-- Catalogue grid -->
@@ -123,77 +133,148 @@
 
         <div class="comp-card" data-type="slow-air">
           <div class="comp-card__meta">
-            <span class="comp-card__type">Slow Air</span>
+            <span class="comp-card__type" data-gd="Uidh Slaodach">Slow Air</span>
             <span class="comp-card__year">2025</span>
           </div>
           <h3 class="comp-card__title">The Stromness Air</h3>
           <hr class="comp-card__rule">
-          <p class="comp-card__description">Named for the port town on the west Mainland of Orkney — a place of narrow flagstone streets, grey Atlantic light, and a musical tradition rooted in the far north. The piece is written in the slow, unhurried character of the air form, reflecting the contemplative quality of the Orcadian seaboard.</p>
+          <p class="comp-card__description" data-gd="Air ainmeachadh air am baile-puirt air taobh an iar Mòr-thìr Arcaibh — àite de shràidean cloiche cumhang, solas glas an Atlantaig, agus traidisean ciùil freumhaichte anns an àird a tuath chèin. Tha am pìos sgrìobhte ann an caractar slaodach, neo-chabhagach na h-uidhe, a' nochdadh càileachd mheòrachail oirthir Arcaibh.">Named for the port town on the west Mainland of Orkney — a place of narrow flagstone streets, grey Atlantic light, and a musical tradition rooted in the far north. The piece is written in the slow, unhurried character of the air form, reflecting the contemplative quality of the Orcadian seaboard.</p>
           <div class="comp-card__actions">
             <!-- [Felix to supply: PDF score and price when ready] -->
-            <a href="contact.html" class="btn-primary">Enquire about Score</a>
+            <a href="contact.html" class="btn-primary" data-gd="Faighnich mu Sgòr">Enquire about Score</a>
           </div>
         </div>
 
         <div class="comp-card" data-type="jig">
           <div class="comp-card__meta">
-            <span class="comp-card__type">Jig</span>
+            <span class="comp-card__type" data-gd="Siog">Jig</span>
             <span class="comp-card__year">2025</span>
           </div>
           <h3 class="comp-card__title">Trip o' the Trows</h3>
           <hr class="comp-card__rule">
-          <p class="comp-card__description">The trows are the small, mischievous fairy folk of Orcadian and Shetlandic tradition — fond of music, dancing, and leading travellers astray after dark. This jig is written to capture their nimble, unsettled character: quick, irregular, and not quite to be trusted.</p>
+          <p class="comp-card__description" data-gd="Is e na trows na daoine-sìth beaga, mischiefeil de thraidisean Arcaibh agus Sealtainn — measail air ceòl, dannsa, agus siubhlaichean a thoirt air seacharan an dèidh dorcha. Tha an siog seo sgrìobhte gus an caractar lùthmhor, neo-sheasmhach aca a ghlacadh: luath, mi-riaghailteach, agus chan eil cus earbsa ri cur às a leth.">The trows are the small, mischievous fairy folk of Orcadian and Shetlandic tradition — fond of music, dancing, and leading travellers astray after dark. This jig is written to capture their nimble, unsettled character: quick, irregular, and not quite to be trusted.</p>
           <div class="comp-card__actions">
             <!-- [Felix to supply: PDF score and price when ready] -->
-            <a href="contact.html" class="btn-primary">Enquire about Score</a>
+            <a href="contact.html" class="btn-primary" data-gd="Faighnich mu Sgòr">Enquire about Score</a>
           </div>
         </div>
 
         <div class="comp-card" data-type="contemporary">
           <div class="comp-card__meta">
-            <span class="comp-card__type">Contemporary</span>
+            <span class="comp-card__type" data-gd="Co-aimsireil">Contemporary</span>
             <span class="comp-card__year">2026</span>
           </div>
           <h3 class="comp-card__title">Mons Meg</h3>
           <hr class="comp-card__rule">
-          <p class="comp-card__description">Mons Meg is the great fifteenth-century bombard that still stands on the battlements of Edinburgh Castle — six tonnes of wrought iron, silent since 1681, overlooking a city that has grown around it for six hundred years. This contemporary piece is written to reflect both the mass and the stillness of the gun: slow-moving, deliberate, and rooted in place.</p>
+          <p class="comp-card__description" data-gd="Is e Mons Meg am bombard mòr on còigeamh linn deug a tha fhathast na sheasamh air beulaichean Caisteal Dhùn Èideann — sia tunna de iarann-oibrichte, sàmhach bhon bhliadhna 1681, a' coimhead thar baile a dh'fhàs mun cuairt air fad sia ceud bliadhna. Tha am pìos co-aimsireil seo sgrìobhte gus an dà chuid meud agus sàmhchair na gunna a nochdadh: slaodach, dlùth-bheachdail, agus freumhaichte an àite.">Mons Meg is the great fifteenth-century bombard that still stands on the battlements of Edinburgh Castle — six tonnes of wrought iron, silent since 1681, overlooking a city that has grown around it for six hundred years. This contemporary piece is written to reflect both the mass and the stillness of the gun: slow-moving, deliberate, and rooted in place.</p>
           <div class="comp-card__actions">
             <!-- [Felix to supply: PDF score and price when ready] -->
-            <a href="contact.html" class="btn-primary">Enquire about Score</a>
+            <a href="contact.html" class="btn-primary" data-gd="Faighnich mu Sgòr">Enquire about Score</a>
           </div>
         </div>
 
         <div class="comp-card" data-type="slow-air">
           <div class="comp-card__meta">
-            <span class="comp-card__type">Slow Air</span>
+            <span class="comp-card__type" data-gd="Uidh Slaodach">Slow Air</span>
             <span class="comp-card__year">2024</span>
           </div>
           <h3 class="comp-card__title">Líonnir</h3>
           <hr class="comp-card__rule">
-          <p class="comp-card__description">The title draws on the Gaelic root <em>lìon</em> — to fill, to flood, to brim. The piece moves with the unhurried weight of incoming water: a long, sustained melody that builds and recedes without urgency, written in the character of the classical Gaelic air form.</p>
+          <p class="comp-card__description" data-gd-html="Tha an tiotal a' tarraing air freumh Gàidhlig &lt;em&gt;lìon&lt;/em&gt; — a lìonadh, a thuiltinn, a bhith gu h-iomlan. Tha am pìos a' gluasad le cudrom neo-chabhagach uisge a' tighinn a-steach: fonn fada, seasmhach a tha a' togail agus a' traonadh gun èiginn, sgrìobhte ann an caractar na cruth-uidhe Gàidhlig clasaigeach.">The title draws on the Gaelic root <em>lìon</em> — to fill, to flood, to brim. The piece moves with the unhurried weight of incoming water: a long, sustained melody that builds and recedes without urgency, written in the character of the classical Gaelic air form.</p>
           <div class="comp-card__actions">
             <!-- [Felix to supply: PDF score and price when ready] -->
-            <a href="contact.html" class="btn-primary">Enquire about Score</a>
+            <a href="contact.html" class="btn-primary" data-gd="Faighnich mu Sgòr">Enquire about Score</a>
           </div>
         </div>
 
         <div class="comp-card" data-type="jig">
           <div class="comp-card__meta">
-            <span class="comp-card__type">Jig</span>
+            <span class="comp-card__type" data-gd="Siog">Jig</span>
             <span class="comp-card__year">2026</span>
           </div>
           <h3 class="comp-card__title">Bill's Missing Brogues</h3>
           <hr class="comp-card__rule">
-          <p class="comp-card__description">Written in the long tradition of pipe tunes that immortalise small disasters and cheerful misfortunes. Brogues — the sturdy leather shoes of the Celtic tradition — appear frequently in the folklore of Scotland and Ireland, and their disappearance here is treated with appropriate alarm. The piece is quick-footed and lively, in the spirit of the dance.</p>
+          <p class="comp-card__description" data-gd="Sgrìobhte ann an traidisean fada de phuirt pìoba a bhios ag neo-bhàsachadh tubaistean beaga agus mi-fhortan aighearach. Tha na brògan — brògan leathair tapaidh an traidisein Cheilteach — a' nochdadh gu tric ann am beul-aithris Alba agus Èirinn, agus thathar a' dèiligeadh ris an dol à sealladh aca an seo le uamhann iomchaidh. Tha am pìos luath-chasach agus beothail, ann an spiorad an dannsa.">Written in the long tradition of pipe tunes that immortalise small disasters and cheerful misfortunes. Brogues — the sturdy leather shoes of the Celtic tradition — appear frequently in the folklore of Scotland and Ireland, and their disappearance here is treated with appropriate alarm. The piece is quick-footed and lively, in the spirit of the dance.</p>
           <div class="comp-card__actions">
             <!-- [Felix to supply: PDF score and price when ready] -->
-            <a href="contact.html" class="btn-primary">Enquire about Score</a>
+            <a href="contact.html" class="btn-primary" data-gd="Faighnich mu Sgòr">Enquire about Score</a>
+          </div>
+        </div>
+
+
+        <div class="comp-card" data-type="march">
+          <div class="comp-card__meta">
+            <span class="comp-card__type" data-gd="Màrsaidh">March</span>
+            <span class="comp-card__year">2024</span>
+          </div>
+          <h3 class="comp-card__title">The Leith Dockmaster</h3>
+          <hr class="comp-card__rule">
+          <p class="comp-card__description" data-gd="Air ainmeachadh air maor-cala Leith — port aosta Dhùn Èideann, air ath-ghabhadh a-nis le gailearaidhean agus longa-dìona maireannach Banca Rìoghail Bhreatainn, ach uaireigin geata malairteach na prìomh-bhaile. Sgrìobhte ann an caractar dìreach, ceàrnagach a' mhàrsaidh 4/4: adhartach, a' gluasad air adhart, agus freagarrach airson cuairt-phàraid no co-fharpais.">Named for the figure of authority at Leith harbour — Edinburgh's old port, now reclaimed by galleries and the permanent berth of the Royal Yacht Britannia, but once the commercial gateway of the capital. Written in the direct, square-cut character of the 4/4 march: purposeful, forward-moving, and suited to parade or competition.</p>
+          <div class="comp-card__actions">
+            <!-- [Felix to supply: PDF score and price when ready] -->
+            <a href="contact.html" class="btn-primary" data-gd="Faighnich mu Sgòr">Enquire about Score</a>
+          </div>
+        </div>
+
+        <div class="comp-card" data-type="reel">
+          <div class="comp-card__meta">
+            <span class="comp-card__type" data-gd="Ruidhle">Reel</span>
+            <span class="comp-card__year">2025</span>
+          </div>
+          <h3 class="comp-card__title">The Lass of Kintyre</h3>
+          <hr class="comp-card__rule">
+          <p class="comp-card__description" data-gd="Air ainmeachadh air an leth-eilean fhada, caol a tha a' ruighinn deas bho Ceann Loch Chille Chiarain a dh'ionnsaigh cladach na h-Èireann. Air latha soilleir, chithear Èirinn a Tuath bho Rubha Cinn Tìre — tha dlùthachd thar an uisge nach eil a' chòrr de dh'Alba ach gann a' toirt fa-near. Tha an ruidhle sgrìobhte le an sealladh sin de chòmhaltachd: luath, fosgailte, agus air a ghiùlan leis a' ghaoith.">Named for the long, narrow peninsula that reaches south from Campbeltown toward the Irish coast. On a clear day, Northern Ireland is visible from the Mull of Kintyre — there is a closeness across the water that the rest of Scotland barely registers. The reel is written with that sense of proximity: quick, open, and carried on the wind.</p>
+          <div class="comp-card__actions">
+            <!-- [Felix to supply: PDF score and price when ready] -->
+            <a href="contact.html" class="btn-primary" data-gd="Faighnich mu Sgòr">Enquire about Score</a>
+          </div>
+        </div>
+
+        <div class="comp-card" data-type="strathspey">
+          <div class="comp-card__meta">
+            <span class="comp-card__type" data-gd="Strathspey">Strathspey</span>
+            <span class="comp-card__year">2025</span>
+          </div>
+          <h3 class="comp-card__title">The Braes of Balquhidder</h3>
+          <hr class="comp-card__rule">
+          <p class="comp-card__description" data-gd="Air ainmeachadh air an dùthaich àrd os cionn baile Bhaillidh Bhuidheadair ann an Sruighlea — àite fois Raibeart Ruaidh MacGriogair agus aon de chùilteagan nas sàmhaiche, nas lugha a chithear de Throssachs. Tha breaban dotted sònraichte an strathspey a' ruith tro gach bàr: daingneach, pròiseil, agus freumhaichte ann am bruthach fraoch oir na Gàidhealtachd.">Named for the upland country above the village of Balquhidder in Stirling — resting place of Rob Roy MacGregor and one of the quieter, less-visited corners of the Trossachs. The strathspey's characteristic dotted snap carries through every bar: assertive, proud, and rooted in the heather-covered braes of the Highland boundary.</p>
+          <div class="comp-card__actions">
+            <!-- [Felix to supply: PDF score and price when ready] -->
+            <a href="contact.html" class="btn-primary" data-gd="Faighnich mu Sgòr">Enquire about Score</a>
+          </div>
+        </div>
+
+        <div class="comp-card" data-type="hornpipe">
+          <div class="comp-card__meta">
+            <span class="comp-card__type" data-gd="Hornpipe">Hornpipe</span>
+            <span class="comp-card__year">2026</span>
+          </div>
+          <h3 class="comp-card__title">The Customs House, Greenock</h3>
+          <hr class="comp-card__rule">
+          <p class="comp-card__description" data-gd="Sheas taigh-cusbainn Greenock aig cridhe aon de phuirt thrangaile an ochdamh linn deug ann an Alba, a' dèiligeadh ri tombaca, siùcar, agus malairt Atlantaig a bha a' sruthadh ann an dà rathad. Tha am hornpipe sgrìobhte ann an caractar luaineach, muireach na cruthaich — togta airson gluasad, agus freumhaichte anns an t-saoghal mara a chruthaich e.">Greenock's customs house stood at the heart of one of Scotland's busiest eighteenth-century ports, processing tobacco, sugar, and an Atlantic trade that flowed in both directions. The hornpipe is written in the rolling, seafaring character of the form — built for movement, and rooted in the maritime world that produced it.</p>
+          <div class="comp-card__actions">
+            <!-- [Felix to supply: PDF score and price when ready] -->
+            <a href="contact.html" class="btn-primary" data-gd="Faighnich mu Sgòr">Enquire about Score</a>
+          </div>
+        </div>
+
+        <div class="comp-card" data-type="piobaireachd">
+          <div class="comp-card__meta">
+            <span class="comp-card__type" data-gd="Pìobaireachd">Pìobaireachd</span>
+            <span class="comp-card__year">2024</span>
+          </div>
+          <h3 class="comp-card__title">Cumha na Coille</h3>
+          <hr class="comp-card__rule">
+          <p class="comp-card__description" data-gd="Sgrìobhadh ceòl mòr clasaigeach ann an cruth cumha. Tha an tiotal a' ciallachadh 'Cumha na Coille' — iomradh air dol à sealladh coille dùthchasach Chaillteinneach na h-Alba, air a glanadh an toiseach airson crodh agus an uair sin airson caoraich bho ghleanntan a bha uaireigin tiugh le giuthas Albannach agus beith. Tha an grunnd air a thogail bho theama gann, a' tuiteam; tha na h-atharrachaidhean a' cumail ri gnàthasan structarach na cruthaich clasaigeach.">A classical ceòl mòr composition in the form of a lament. The title means "Lament for the Wood" — a reference to the disappearance of Scotland's native Caledonian forest, cleared first for cattle and later for sheep from glens once thick with Scots pine and birch. The ground is built from a sparse, falling theme; the variations observe the structural conventions of the classical form.</p>
+          <div class="comp-card__actions">
+            <!-- [Felix to supply: PDF score and price when ready] -->
+            <a href="contact.html" class="btn-primary" data-gd="Faighnich mu Sgòr">Enquire about Score</a>
           </div>
         </div>
 
       </div><!-- /.comp-grid -->
 
-      <p class="comp-copyright" data-reveal style="text-align:center;max-width:600px;margin:3rem auto 0;">All compositions © Ceòlmhor. All rights reserved. Sheet music is licensed for personal and private performance use only. For commercial recording, broadcast, competitive performance, or any other use, contact Ceòlmhor to discuss licensing terms.</p>
+      <p class="comp-copyright" data-reveal style="text-align:center;max-width:600px;margin:3rem auto 0;" data-gd="Gach sgrìobhadh © Ceòlmhor. Gach còir glèidhte. Tha ceòl-sgrìobhte ceadaichte airson cluich pearsanta agus prìobhaideach a-mhàin. Airson clàradh malairteach, craolaidh, cluich co-fharpais, no cleachdadh sam bith eile, cuir fios air Ceòlmhor airson bruidhinn mu chumhaichean ceadachaidh.">All compositions © Ceòlmhor. All rights reserved. Sheet music is licensed for personal and private performance use only. For commercial recording, broadcast, competitive performance, or any other use, contact Ceòlmhor to discuss licensing terms.</p>
 
     </div>
   </section>
@@ -203,67 +284,67 @@
     <div class="container">
 
       <div class="section-intro" data-reveal>
-        <p>A commission produces an original piece written specifically for your occasion — premiered at the event or delivered as a finished score, depending on the nature of the engagement.</p>
+        <p data-gd="Bidh coimisean a' toirt pìos tùsail a chaidh a sgrìobhadh gu sònraichte airson do thachartas — air a chiad-chluich aig an tachartas no air a lìbhrigeadh mar sgòr deiseil, a rèir nàdar a' choimiseain.">A commission produces an original piece written specifically for your occasion — premiered at the event or delivered as a finished score, depending on the nature of the engagement.</p>
       </div>
 
       <header class="section-header" data-reveal>
-        <span class="section-label">Commissions</span>
-        <h2>Commission a Piece</h2>
+        <span class="section-label" data-gd="Coimiseanan">Commissions</span>
+        <h2 data-gd="Coimisean Pìos">Commission a Piece</h2>
       </header>
 
       <div class="pkg-grid" data-reveal>
 
         <!-- Private Commission -->
         <div class="pkg-card">
-          <span class="pkg-card__label">Private &amp; Family</span>
-          <h3 class="pkg-card__title">Private Commission</h3>
+          <span class="pkg-card__label" data-gd="Prìobhaideach &amp; Teaghlaich">Private &amp; Family</span>
+          <h3 class="pkg-card__title" data-gd="Coimisean Prìobhaideach">Private Commission</h3>
           <p class="pkg-card__price">From £250</p>
-          <p class="pkg-card__timing">Fixed fee agreed before work begins</p>
-          <p class="pkg-card__best-for-label">Best for</p>
-          <p class="pkg-card__best-for">Individuals and families commissioning a piece for a personal occasion — wedding, memorial, anniversary, or family celebration.</p>
+          <p class="pkg-card__timing" data-gd="Cìs stèidhichte air aontachadh mus tòisich an obair">Fixed fee agreed before work begins</p>
+          <p class="pkg-card__best-for-label" data-gd="As fheàrr airson">Best for</p>
+          <p class="pkg-card__best-for" data-gd="Daoine fa leth agus teaghlaichean a' coimiseanadh pìos airson tachartas pearsanta — banais, cuimhneachan, ceann-bliadhna, no ceiliúradh teaghlaich.">Individuals and families commissioning a piece for a personal occasion — wedding, memorial, anniversary, or family celebration.</p>
           <ul class="pkg-card__includes">
-            <li>Composed for a private occasion of your choosing</li>
-            <li>One revision round included</li>
-            <li>Final typeset score delivered as PDF</li>
-            <li>Reference audio recording included</li>
-            <li><strong>Licence:</strong> Personal and private family use. Public performance, commercial recording, or broadcast requires a separate arrangement.</li>
+            <li data-gd="Air a dhèanamh airson tachartas prìobhaideach de do thaghadh">Composed for a private occasion of your choosing</li>
+            <li data-gd="Aon chuairt ath-sgrùdaidh air a ghabhail a-steach">One revision round included</li>
+            <li data-gd="Sgòr deiseil air a lìbhrigeadh mar PDF">Final typeset score delivered as PDF</li>
+            <li data-gd="Clàradh fuaime iomraidh air a ghabhail a-steach">Reference audio recording included</li>
+            <li data-gd-html="&lt;strong&gt;Cead:&lt;/strong&gt; Cleachdadh pearsanta agus prìobhaideach teaghlaich. Tha taisbeantas poblach, clàradh malairteach, no craolaidh ag iarraidh sòcair fa leth."><strong>Licence:</strong> Personal and private family use. Public performance, commercial recording, or broadcast requires a separate arrangement.</li>
           </ul>
         </div>
 
         <!-- Media & Commercial Commission -->
         <div class="pkg-card">
-          <span class="pkg-card__label">Film, Screen &amp; Brand</span>
-          <h3 class="pkg-card__title">Media &amp; Commercial Commission</h3>
-          <p class="pkg-card__price">Individually agreed</p>
-          <p class="pkg-card__timing">Following initial brief</p>
-          <p class="pkg-card__best-for-label">Best for</p>
-          <p class="pkg-card__best-for">Directors, producers, advertisers, and brands requiring original piping music for film, television, documentary, podcast, or commercial use.</p>
+          <span class="pkg-card__label" data-gd="Film, Sgrìn &amp; Brand">Film, Screen &amp; Brand</span>
+          <h3 class="pkg-card__title" data-gd="Coimisean Meadhanan &amp; Malairteach">Media &amp; Commercial Commission</h3>
+          <p class="pkg-card__price" data-gd="Air aontachadh gu pearsanta">Individually agreed</p>
+          <p class="pkg-card__timing" data-gd="Às dèidh briog tùsail">Following initial brief</p>
+          <p class="pkg-card__best-for-label" data-gd="As fheàrr airson">Best for</p>
+          <p class="pkg-card__best-for" data-gd="Stiùirichean, riochdairean, luchd-sanasachd, agus brandaichean a dh'fheumas ceòl pìoba tùsail airson film, telebhisean, clàr-naidheachd, podcast, no cleachdadh malairteach.">Directors, producers, advertisers, and brands requiring original piping music for film, television, documentary, podcast, or commercial use.</p>
           <ul class="pkg-card__includes">
-            <li>Original composition written to brief — mood, duration, instrumentation</li>
-            <li>Suitable for film, short film, documentary, advertising, and branded content</li>
-            <li>Revisions within agreed scope</li>
-            <li>High-quality reference recording delivered</li>
-            <li>Score delivered as PDF where required</li>
-            <li>Sync, broadcast, and commercial rights negotiated per project</li>
-            <li><strong>Licence:</strong> Sync, broadcast, and commercial rights agreed individually based on the nature, reach, and duration of use.</li>
+            <li data-gd="Sgrìobhadh tùsail air a sgrìobhadh a rèir briog — giùlan, fad, ionnsramaid">Original composition written to brief — mood, duration, instrumentation</li>
+            <li data-gd="Freagarrach airson film, film goirid, clàr-naidheachd, sanasachd, agus susbaint brandaichte">Suitable for film, short film, documentary, advertising, and branded content</li>
+            <li data-gd="Ath-sgrùdaidhean taobh a-staigh raon aontaichte">Revisions within agreed scope</li>
+            <li data-gd="Clàradh iomraidh àrd-inbhe air a lìbhrigeadh">High-quality reference recording delivered</li>
+            <li data-gd="Sgòr air a lìbhrigeadh mar PDF far a bheil feum air">Score delivered as PDF where required</li>
+            <li data-gd="Còirichean sync, craolaidh, agus malairteach air an còrdadh airson gach pròiseact">Sync, broadcast, and commercial rights negotiated per project</li>
+            <li data-gd-html="&lt;strong&gt;Cead:&lt;/strong&gt; Còirichean sync, craolaidh, agus malairteach air an aontachadh gu pearsanta stèidhichte air nàdar, ruigheachd, agus fad a' chleachdaidh."><strong>Licence:</strong> Sync, broadcast, and commercial rights agreed individually based on the nature, reach, and duration of use.</li>
           </ul>
         </div>
 
         <!-- Heritage & Institutional -->
         <div class="pkg-card">
-          <span class="pkg-card__label">Civic, Military &amp; Cultural</span>
-          <h3 class="pkg-card__title">Heritage &amp; Institutional</h3>
-          <p class="pkg-card__price">Individually agreed</p>
-          <p class="pkg-card__timing">Following initial consultation</p>
-          <p class="pkg-card__best-for-label">Best for</p>
-          <p class="pkg-card__best-for">Civic bodies, military units, cultural institutions, and organisations commissioning a piece of ceremony, heritage, or lasting cultural significance.</p>
+          <span class="pkg-card__label" data-gd="Sìobhalta, Armailteach &amp; Cultarail">Civic, Military &amp; Cultural</span>
+          <h3 class="pkg-card__title" data-gd="Dualchas &amp; Institiùideach">Heritage &amp; Institutional</h3>
+          <p class="pkg-card__price" data-gd="Air aontachadh gu pearsanta">Individually agreed</p>
+          <p class="pkg-card__timing" data-gd="Às dèidh co-chomhairle tùsail">Following initial consultation</p>
+          <p class="pkg-card__best-for-label" data-gd="As fheàrr airson">Best for</p>
+          <p class="pkg-card__best-for" data-gd="Buidhnean sìobhalta, aonadan armailteach, institiùidean cultarail, agus buidhnean a' coimiseanadh pìos de choimeas ceilidh, dualchas, no brìgh chultarail mhaireannach.">Civic bodies, military units, cultural institutions, and organisations commissioning a piece of ceremony, heritage, or lasting cultural significance.</p>
           <ul class="pkg-card__includes">
-            <li>Composed for an occasion or body of civic, military, or cultural significance</li>
-            <li>Suitable for regimental commissions, military ceremonies, civic occasions, Burns clubs, and cultural events</li>
-            <li>Full consultation on the occasion, its traditions, and the intended role of the piece</li>
-            <li>Revisions incorporated within agreed scope</li>
-            <li>Final typeset score and reference recording delivered</li>
-            <li><strong>Licence:</strong> Agreed individually following consultation, based on the intended use, audience, and context of the piece.</li>
+            <li data-gd="Air a dhèanamh airson tachartas no buidheann de choimeas sìobhalta, armailteach, no cultarail">Composed for an occasion or body of civic, military, or cultural significance</li>
+            <li data-gd="Freagarrach airson coimiseanan rèiseamaid, ceilidh armailteach, amannan sìobhalta, clubaichean Burns, agus tachartasan cultarail">Suitable for regimental commissions, military ceremonies, civic occasions, Burns clubs, and cultural events</li>
+            <li data-gd="Co-chomhairle iomlan air an tachartas, a thraidiseanan, agus dreuchd san amharc a' phìos">Full consultation on the occasion, its traditions, and the intended role of the piece</li>
+            <li data-gd="Ath-sgrùdaidhean air an gabhail a-steach taobh a-staigh raon aontaichte">Revisions incorporated within agreed scope</li>
+            <li data-gd="Sgòr deiseil agus clàradh iomraidh air an lìbhrigeadh">Final typeset score and reference recording delivered</li>
+            <li data-gd-html="&lt;strong&gt;Cead:&lt;/strong&gt; Air aontachadh gu pearsanta às dèidh co-chomhairle, stèidhichte air cleachdadh san amharc, luchd-èisteachd, agus co-theacsa a' phìos."><strong>Licence:</strong> Agreed individually following consultation, based on the intended use, audience, and context of the piece.</li>
           </ul>
         </div>
 
@@ -271,39 +352,39 @@
 
       <!-- How It Works -->
       <header class="section-header" data-reveal>
-        <span class="section-label">Process</span>
-        <h2>How It Works</h2>
+        <span class="section-label" data-gd="Pròiseas">Process</span>
+        <h2 data-gd="Mar a Obraicheas e">How It Works</h2>
       </header>
 
       <div class="booking-steps" data-reveal>
 
         <div class="booking-step">
           <p class="booking-step__num" aria-hidden="true">1</p>
-          <p class="booking-step__name">Enquire</p>
-          <p class="booking-step__desc">Describe your occasion, the type of piece you have in mind, and how you intend to use it. Use the form below.</p>
+          <p class="booking-step__name" data-gd="Faighnich">Enquire</p>
+          <p class="booking-step__desc" data-gd="Dèan cunntas air do thachartas, an seòrsa pìos a tha thu a' smaoineachadh air, agus mar a tha thu an dùil a chleachdadh. Cleachd am foirm gu h-ìosal.">Describe your occasion, the type of piece you have in mind, and how you intend to use it. Use the form below.</p>
         </div>
 
         <div class="booking-step">
           <p class="booking-step__num" aria-hidden="true">2</p>
-          <p class="booking-step__name">Consultation</p>
-          <p class="booking-step__desc">A brief conversation by phone or email to understand the occasion, the mood, any cultural or personal references, and the intended use.</p>
+          <p class="booking-step__name" data-gd="Co-chomhairle">Consultation</p>
+          <p class="booking-step__desc" data-gd="Còmhradh goirid air fòn no post-d gus an tachartas, an giùlan, iomraidhean cultarail no pearsanta sam bith, agus an cleachdadh san amharc a thuigsinn.">A brief conversation by phone or email to understand the occasion, the mood, any cultural or personal references, and the intended use.</p>
         </div>
 
         <div class="booking-step">
           <p class="booking-step__num" aria-hidden="true">3</p>
-          <p class="booking-step__name">Composition</p>
-          <p class="booking-step__desc">The piece is composed to the agreed brief. A reference recording is shared for feedback. One round of revisions is incorporated.</p>
+          <p class="booking-step__name" data-gd="Sgrìobhadh">Composition</p>
+          <p class="booking-step__desc" data-gd="Tha am pìos air a dhèanamh a rèir a' bhriog aontaichte. Thathar a' roinn clàradh iomraidh airson beachd-ath-ghairm. Tha aon chuairt de dh'ath-sgrùdaidhean air a ghabhail a-steach.">The piece is composed to the agreed brief. A reference recording is shared for feedback. One round of revisions is incorporated.</p>
         </div>
 
         <div class="booking-step">
           <p class="booking-step__num" aria-hidden="true">4</p>
-          <p class="booking-step__name">Delivery</p>
-          <p class="booking-step__desc">The final typeset score is delivered as a PDF, accompanied by an audio reference recording. Licensing terms are confirmed in writing.</p>
+          <p class="booking-step__name" data-gd="Lìbhrigeadh">Delivery</p>
+          <p class="booking-step__desc" data-gd="Tha an sgòr deiseil air a lìbhrigeadh mar PDF, maille ri clàradh iomraidh fuaime. Tha cumhaichean ceadachaidh air an dearbhadh ann an sgrìobhadh.">The final typeset score is delivered as a PDF, accompanied by an audio reference recording. Licensing terms are confirmed in writing.</p>
         </div>
 
       </div>
 
-      <p class="comp-timeline-note" data-reveal>Standard commissions are completed within four to six weeks of confirmed brief and payment of the commission fee. Timeline for institutional commissions is agreed individually.</p>
+      <p class="comp-timeline-note" data-reveal data-gd="Tha coimiseanan àbhaisteach air an crìochnachadh taobh a-staigh ceithir gu sia seachdainean bho bhriog dearbhte agus pàigheadh cìs a' choimisein. Tha clàr-ama airson coimiseanan institiùideach air aontachadh gu pearsanta.">Standard commissions are completed within four to six weeks of confirmed brief and payment of the commission fee. Timeline for institutional commissions is agreed individually.</p>
 
     </div>
   </section>
@@ -313,34 +394,34 @@
     <div class="container">
 
       <header class="section-header" data-reveal>
-        <span class="section-label">Event Commissions</span>
-        <h2>Composed for Your Occasion</h2>
+        <span class="section-label" data-gd="Coimiseanan Tachartais">Event Commissions</span>
+        <h2 data-gd="Air a Dhèanamh airson do Thachartas">Composed for Your Occasion</h2>
       </header>
 
       <div class="comp-event-card" data-reveal>
         <div>
           <div class="comp-event-card__meta">
-            <span class="pkg-card__label">Bespoke Event Commission</span>
-            <h3 class="pkg-card__title">A Piece Composed for Your Occasion</h3>
-            <p class="pkg-card__price">From £200 — added to any premium performance package</p>
+            <span class="pkg-card__label" data-gd="Coimisean Tachartas Air Mhiadh">Bespoke Event Commission</span>
+            <h3 class="pkg-card__title" data-gd="Pìos Air a Dhèanamh airson do Thachartas">A Piece Composed for Your Occasion</h3>
+            <p class="pkg-card__price" data-gd="Bho £200 — air a chur ri pacaid taisbeantas sam bith a bharrachd">From £200 — added to any premium performance package</p>
           </div>
           <ul class="pkg-card__includes">
-            <li>Pre-event consultation to understand the occasion, the people, and the mood</li>
-            <li>Original piece composed specifically for the event</li>
-            <li>Premiered at the event as part of the performance</li>
-            <li>Typeset score delivered as PDF after the event</li>
-            <li>Reference audio recording delivered after the event</li>
-            <li>Licensed for personal and private use — broader licensing agreed individually</li>
+            <li data-gd="Co-chomhairle ro-thachartas gus an tachartas, na daoine, agus an giùlan a thuigsinn">Pre-event consultation to understand the occasion, the people, and the mood</li>
+            <li data-gd="Pìos tùsail air a dhèanamh gu sònraichte airson an tachartais">Original piece composed specifically for the event</li>
+            <li data-gd="Air a chiad-chluich aig an tachartas mar phàirt dhen taisbeantas">Premiered at the event as part of the performance</li>
+            <li data-gd="Sgòr air a lìbhrigeadh mar PDF às dèidh an tachartais">Typeset score delivered as PDF after the event</li>
+            <li data-gd="Clàradh iomraidh fuaime air a lìbhrigeadh às dèidh an tachartais">Reference audio recording delivered after the event</li>
+            <li data-gd="Ceadaichte airson cleachdadh pearsanta agus prìobhaideach — ceadachadh nas fharsainge air aontachadh gu pearsanta">Licensed for personal and private use — broader licensing agreed individually</li>
           </ul>
         </div>
         <div>
-          <p class="pkg-card__note">Available as an addition to any premium performance package — Highland Package, The Grand Supper, The Hogmanay Engagement, The Full Engagement, or Ceilidh &amp; Dance Evening. The commission fee is in addition to the performance package fee. Enquire at the time of booking or through the performance enquiry process.</p>
+          <p class="pkg-card__note" data-gd="Ri fhaighinn mar leasachadh air pacaid taisbeantas sam bith a bharrachd — Pacaid Ghàidhealachd, An Suipear Mòr, An Gabhail-Ris Oidhche Challainn, An Oidhche Slàn, no Oidhche Cèilidh & Dannsa. Tha cìs a' choimisein a bharrachd air cìs a' phacaid taisbeantas. Faighnich aig àm a' leabharaidh no tron phròiseas iarraidh taisbeantas.">Available as an addition to any premium performance package — Highland Package, The Grand Supper, The Hogmanay Engagement, The Full Engagement, or Ceilidh &amp; Dance Evening. The commission fee is in addition to the performance package fee. Enquire at the time of booking or through the performance enquiry process.</p>
         </div>
       </div>
 
-      <p class="comp-commission-note" data-reveal style="text-align:center;max-width:560px;margin:2.5rem auto;">To commission a piece as part of a performance booking, indicate this in your performance enquiry. The commission will be confirmed and scoped as part of the booking process.</p>
+      <p class="comp-commission-note" data-reveal style="text-align:center;max-width:560px;margin:2.5rem auto;" data-gd="Gus pìos a choimiseanadh mar phàirt de leabharadh taisbeantas, comharraich seo nad iarraidh taisbeantas. Bithidh an coimisean air a dhearbhadh agus air a scoping mar phàirt dhen phròiseas leabharaidh.">To commission a piece as part of a performance booking, indicate this in your performance enquiry. The commission will be confirmed and scoped as part of the booking process.</p>
       <div class="text-center" data-reveal>
-        <a href="contact.html" class="btn-primary">Enquire About a Performance Package</a>
+        <a href="contact.html" class="btn-primary" data-gd="Faighnich mu Phacaid Taisbeantas">Enquire About a Performance Package</a>
       </div>
 
     </div>
@@ -351,23 +432,23 @@
     <div class="container">
 
       <div class="faq-link-prompt" data-reveal>
-        <a href="faq.html" class="faq-link">Common questions — view FAQ</a>
+        <a href="faq.html" class="faq-link" data-gd="Ceistean cumanta — faic na Ceistean">Common questions — view FAQ</a>
       </div>
 
       <header class="section-header" data-reveal>
-        <span class="section-label">Get in Touch</span>
-        <h2>Commission Enquiry</h2>
+        <span class="section-label" data-gd="Cuir Fios">Get in Touch</span>
+        <h2 data-gd="Ceist Coimisein">Commission Enquiry</h2>
       </header>
 
       <div class="contact-grid" data-reveal>
 
         <aside>
-          <p style="font-size:0.9rem;line-height:1.75;color:var(--text-muted);margin-bottom:1.75rem;">This form is for standalone commission enquiries — personal, performance, and institutional. To enquire about a piece as part of a performance package booking, use the button above or the main enquiry form.</p>
+          <p style="font-size:0.9rem;line-height:1.75;color:var(--text-muted);margin-bottom:1.75rem;" data-gd="Tha am foirm seo airson ceistean coimisein fa leth — pearsanta, taisbeantas, agus institiùideach. Gus faighneachd mu phìos mar phàirt de leabharadh pacaid taisbeantas, cleachd a' phutan gu h-àrd no am prìomh fhoirm ceiste.">This form is for standalone commission enquiries — personal, performance, and institutional. To enquire about a piece as part of a performance package booking, use the button above or the main enquiry form.</p>
           <dl class="contact-details">
-            <dt>Email</dt>
+            <dt data-gd="Post-d">Email</dt>
             <dd><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></dd>
-            <dt>Response time</dt>
-            <dd>Within 48 hours</dd>
+            <dt data-gd="Àm freagairt">Response time</dt>
+            <dd data-gd="Taobh a-staigh 48 uairean">Within 48 hours</dd>
           </dl>
         </aside>
 
@@ -384,77 +465,78 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label for="c-first-name">First Name</label>
+                <label for="c-first-name" data-gd="Ainm Toisich">First Name</label>
                 <input type="text" id="c-first-name" name="first-name" autocomplete="given-name" required>
               </div>
               <div class="form-group">
-                <label for="c-last-name">Last Name</label>
+                <label for="c-last-name" data-gd="Sloinneadh">Last Name</label>
                 <input type="text" id="c-last-name" name="last-name" autocomplete="family-name" required>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="c-email">Email Address</label>
+              <label for="c-email" data-gd="Seòladh Post-d">Email Address</label>
               <input type="email" id="c-email" name="email" autocomplete="email" placeholder="your@email.com" required>
             </div>
 
             <div class="form-group">
-              <label for="c-commission-type">Commission Type</label>
+              <label for="c-commission-type" data-gd="Seòrsa Coimisein">Commission Type</label>
               <select id="c-commission-type" name="commission-type" required>
-                <option value="" disabled selected>Select…</option>
-                <option value="personal">Personal Commission</option>
-                <option value="performance">Performance Commission</option>
-                <option value="institutional">Institutional Commission</option>
-                <option value="unsure">Not sure yet</option>
+                <option value="" disabled selected data-gd="Tagh…">Select…</option>
+                <option value="personal" data-gd="Coimisean Pearsanta">Personal Commission</option>
+                <option value="performance" data-gd="Coimisean Taisbeantas">Performance Commission</option>
+                <option value="institutional" data-gd="Coimisean Institiùideach">Institutional Commission</option>
+                <option value="unsure" data-gd="Chan eil mi cinnteach fhathast">Not sure yet</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="c-piece-type">Piece Type</label>
+              <label for="c-piece-type" data-gd="Seòrsa Pìos">Piece Type</label>
               <select id="c-piece-type" name="piece-type" required>
-                <option value="" disabled selected>Select…</option>
-                <option value="march">March</option>
-                <option value="slow-air">Slow Air</option>
-                <option value="reel">Reel</option>
-                <option value="jig">Jig</option>
-                <option value="contemporary">Contemporary Composition</option>
-                <option value="open">Not sure — open to suggestion</option>
+                <option value="" disabled selected data-gd="Tagh…">Select…</option>
+                <option value="march" data-gd="Màrsaidh">March</option>
+                <option value="slow-air" data-gd="Uidh Slaodach">Slow Air</option>
+                <option value="reel" data-gd="Ruidhle">Reel</option>
+                <option value="jig" data-gd="Siog">Jig</option>
+                <option value="contemporary" data-gd="Sgrìobhadh Co-aimsireil">Contemporary Composition</option>
+                <option value="open" data-gd="Chan eil mi cinnteach — fosgailte do mholadh">Not sure — open to suggestion</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="c-occasion">Occasion or Intended Use</label>
-              <textarea id="c-occasion" name="occasion" rows="4" placeholder="Describe the occasion, event, or context the piece is intended for." required></textarea>
+              <label for="c-occasion" data-gd="Tachartas no Cleachdadh San Amharc">Occasion or Intended Use</label>
+              <textarea id="c-occasion" name="occasion" rows="4" placeholder="Describe the occasion, event, or context the piece is intended for." data-gd-placeholder="Dèan cunntas air an tachartas, tachartas, no co-theacsa a tha am pìos an dùil airson." required></textarea>
             </div>
 
             <div class="form-group">
-              <label for="c-use">Intended Use Beyond the Occasion <span style="font-style:italic;text-transform:none;letter-spacing:0;font-size:0.8em;">(optional)</span></label>
-              <textarea id="c-use" name="intended-use" rows="3" placeholder="Will the piece be performed publicly, recorded commercially, used competitively, or broadcast? Please describe any use beyond private performance."></textarea>
+              <label for="c-use"><span data-gd="Cleachdadh San Amharc Thar an Tachartais">Intended Use Beyond the Occasion</span> <span style="font-style:italic;text-transform:none;letter-spacing:0;font-size:0.8em;" data-gd="(roghainneil)">(optional)</span></label>
+              <textarea id="c-use" name="intended-use" rows="3" placeholder="Will the piece be performed publicly, recorded commercially, used competitively, or broadcast? Please describe any use beyond private performance." data-gd-placeholder="Am bi am pìos air a thaisbeanadh gu poblach, air a chlàradh gu malairteach, air a chleachdadh gu co-fharpais, no air a chraolaidh? Dèan cunntas air cleachdadh sam bith seach taisbeantas prìobhaideach."></textarea>
             </div>
 
             <div class="form-group">
-              <label for="c-timeline">Approximate Timeline <span style="font-style:italic;text-transform:none;letter-spacing:0;font-size:0.8em;">(optional)</span></label>
-              <input type="text" id="c-timeline" name="timeline" placeholder="When do you need the piece by, if applicable?">
+              <label for="c-timeline"><span data-gd="Clàr-ama Timcheall air">Approximate Timeline</span> <span style="font-style:italic;text-transform:none;letter-spacing:0;font-size:0.8em;" data-gd="(roghainneil)">(optional)</span></label>
+              <input type="text" id="c-timeline" name="timeline" placeholder="When do you need the piece by, if applicable?" data-gd-placeholder="Cuin a tha feum agad air a' phìos, ma tha?">
             </div>
 
             <div class="form-group">
-              <label for="c-notes">Additional Notes <span style="font-style:italic;text-transform:none;letter-spacing:0;font-size:0.8em;">(optional)</span></label>
+              <label for="c-notes"><span data-gd="Nòtaichean a Bharrachd">Additional Notes</span> <span style="font-style:italic;text-transform:none;letter-spacing:0;font-size:0.8em;" data-gd="(roghainneil)">(optional)</span></label>
               <textarea id="c-notes" name="notes" rows="3"></textarea>
             </div>
 
             <div class="form-submit">
-              <button type="submit" class="btn-primary">Send Enquiry</button>
+              <button type="submit" class="btn-primary" data-gd="Cuir Ceist a-steach">Send Enquiry</button>
             </div>
 
           </form>
 
           <div class="form-success" id="commission-success" role="status" aria-live="polite">
-            <p>Your commission enquiry has been received.</p>
-            <p>Ceòlmhor will respond within 48 hours to discuss your project.</p>
+            <p data-gd="Chaidh do cheist coimisein fhaighinn.">Your commission enquiry has been received.</p>
+            <p data-gd="Freaghraidh Ceòlmhor taobh a-staigh 48 uairean gus do phròiseact a cheasnachadh.">Ceòlmhor will respond within 48 hours to discuss your project.</p>
           </div>
 
           <div class="form-error" id="commission-error" role="alert" aria-live="assertive" style="display:none;">
-            <p>Something went wrong sending your enquiry. Please email us directly at <a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a> and we will respond within 48 hours.</p>
+            <p data-gd="Chaidh rudeigin ceàrr le bhith a' cur do cheist.">Something went wrong sending your enquiry.</p>
+            <p>Please email us directly at <a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a> and we will respond within 48 hours.</p>
           </div>
 
         </div>
@@ -471,41 +553,41 @@
         <img src="images/Ceolmhor_logo_transparent.png" alt="" class="footer__brand-img" aria-hidden="true">
         <div class="footer__brand-text">
           <span class="footer__logo">Ceòlmhor</span>
-          <p class="footer__tagline">Scottish Excellence · Piping Tuition and Performance</p>
+          <p class="footer__tagline" data-gd="Sàr-mhathais na h-Alba · Oideachd is Taisbeantas Pìobaireachd">Scottish Excellence · Piping Tuition and Performance</p>
         </div>
       </div>
 
       <nav class="footer__nav" aria-label="Footer navigation">
-        <span class="footer__col-title">Navigation</span>
+        <span class="footer__col-title" data-gd="Seòladh">Navigation</span>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="tuition.html">Tuition</a></li>
-          <li><a href="performance.html">Performance</a></li>
-          <li><a href="compositions.html">Compositions</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Enquire</a></li>
+          <li><a href="index.html" data-gd="Dachaigh">Home</a></li>
+          <li><a href="about.html" data-gd="Mu Dhèidhinn">About</a></li>
+          <li><a href="tuition.html" data-gd="Oideachd">Tuition</a></li>
+          <li><a href="performance.html" data-gd="Taisbeantas">Performance</a></li>
+          <li><a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a></li>
+          <li><a href="gallery.html" data-gd="Gailearaidh">Gallery</a></li>
+          <li><a href="contact.html" data-gd="Feòraich">Enquire</a></li>
         </ul>
       </nav>
 
       <div class="footer__contact">
-        <span class="footer__col-title">Contact &amp; Social</span>
+        <span class="footer__col-title" data-gd="Conaltradh &amp; Meadhanan Sòisealta">Contact &amp; Social</span>
         <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
-        <p>Edinburgh, Scotland</p>
-
-              </div>
+        <p data-gd="Dùn Èideann, Alba">Edinburgh, Scotland</p>
+      </div>
 
     </div>
     <div class="footer__bottom">
-      <p>© Ceòlmhor 2026. All rights reserved.</p>
+      <p data-gd="© Ceòlmhor 2026. Gach còir glèidhte.">© Ceòlmhor 2026. All rights reserved.</p>
       <div class="footer__bottom-links">
-        <a href="faq.html">FAQ</a>
-        <a href="privacy.html">Privacy Notice</a>
+        <a href="faq.html" data-gd="Ceistean">FAQ</a>
+        <a href="privacy.html" data-gd="Brath Dìomhaireachd">Privacy Notice</a>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js" defer></script>
+  <script src="lang.js" defer></script>
   <script src="main.js" defer></script>
   <script>
     (function () {
@@ -567,7 +649,7 @@
         var btn = form.querySelector('[type="submit"]');
         var originalText = btn.textContent;
         btn.disabled = true;
-        btn.textContent = 'Sending\u2026';
+        btn.textContent = 'Sending…';
 
         fetch(WORKER_URL, { method: 'POST', body: new FormData(form) })
           .then(function (res) { return res.json().then(function (json) { return { res: res, json: json }; }); })

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
@@ -48,19 +48,23 @@
   <nav class="nav" aria-label="Main navigation">
     <div class="nav__inner">
       <div class="nav__left">
+        <div class="lang-pill" role="group" aria-label="Language / Cànan">
+          <button class="lang-pill__opt active" data-lang-opt="en" aria-pressed="true">EN</button>
+          <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+        </div>
         <a href="../index.html" class="nav__logo" aria-label="Ceòlmhor — home"><img src="../images/Ceolmhor_logo_transparent.png" alt="Ceòlmhor" class="site-logo"></a>
-        <a href="../index.html" class="nav__home">Home</a>
+        <a href="../index.html" class="nav__home" data-gd="Dachaigh">Home</a>
       </div>
       <div class="nav__links">
-        <a href="../about.html">About</a>
-        <a href="../tuition.html" class="active">Tuition</a>
-        <a href="../performance.html">Performance</a>
-        <a href="../compositions.html">Compositions</a>
-        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html" data-gd="Mu Dhèidhinn">About</a>
+        <a href="../tuition.html" class="active" data-gd="Oideachd">Tuition</a>
+        <a href="../performance.html" data-gd="Taisbeantas">Performance</a>
+        <a href="../compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+        <a href="../gallery.html" data-gd="Gailearaidh">Gallery</a>
       </div>
       <div class="nav__right">
-        <a href="../faq.html" class="nav__faq">FAQ</a>
-        <a href="../contact.html" class="nav__cta">Enquire</a>
+        <a href="../faq.html" class="nav__faq" data-gd="Ceistean">FAQ</a>
+        <a href="../contact.html" class="nav__cta" data-gd="Feòraich">Enquire</a>
       </div>
       <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -70,21 +74,27 @@
 
   <!-- Mobile overlay -->
   <div class="nav__overlay" role="dialog" aria-label="Navigation menu">
-    <a href="../index.html">Home</a>
-    <a href="../about.html">About</a>
-    <a href="../tuition.html" class="active">Tuition</a>
-    <a href="../performance.html">Performance</a>
-    <a href="../compositions.html">Compositions</a>
-    <a href="../gallery.html">Gallery</a>
-    <a href="../faq.html">FAQ</a>
-    <a href="../contact.html" class="nav__overlay-cta">Enquire</a>
+    <a href="../index.html" data-gd="Dachaigh">Home</a>
+    <a href="../about.html" data-gd="Mu Dhèidhinn">About</a>
+    <a href="../tuition.html" class="active" data-gd="Oideachd">Tuition</a>
+    <a href="../performance.html" data-gd="Taisbeantas">Performance</a>
+    <a href="../compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+    <a href="../gallery.html" data-gd="Gailearaidh">Gallery</a>
+    <a href="../faq.html" data-gd="Ceistean">FAQ</a>
+    <a href="../contact.html" class="nav__overlay-cta" data-gd="Feòraich">Enquire</a>
+    <div class="nav__overlay-lang">
+      <div class="lang-pill" role="group" aria-label="Language / Cànan">
+        <button class="lang-pill__opt" data-lang-opt="en" aria-pressed="false">EN</button>
+        <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+      </div>
+    </div>
   </div>
 
   <!-- ── Page Header ────────────────────────────────────────────── -->
   <header class="page-header performance-page">
     <div class="container">
-      <p class="page-header__label"><a href="../tuition.html" class="breadcrumb-back">&#8592; Tuition</a></p>
-      <h1 class="page-header__title">Tier IV — Advanced</h1>
+      <p class="page-header__label"><a href="../tuition.html" class="breadcrumb-back" data-gd="← Oideachd">&#8592; Tuition</a></p>
+      <h1 class="page-header__title" data-gd="Ìre IV — Àrd-ìre">Tier IV — Advanced</h1>
       <hr class="rule">
     </div>
   </header>
@@ -94,44 +104,44 @@
     <div class="container tier-page-content">
 
       <div data-reveal>
-        <p class="tier__instrument">Instrument: Bagpipes</p>
-        <p>Tier IV is the highest level of the Ceòlmhor curriculum. The student at this stage is no longer learning to play — they are deepening their engagement with the tradition itself. MSR (March, Strathspey, and Reel) sets, Pìobaireachd, and competition-ready performance are the focus. This is the tier at which the full weight of the Highland piping tradition becomes present in every lesson.</p>
+        <p class="tier__instrument" data-gd="Inneal: Pìob-mhòr">Instrument: Bagpipes</p>
+        <p data-gd="Is e Ìre IV an ìre as àirde de churraicealam Ceòlmhor. Chan eil an t-oileanach aig an ìre seo ag ionnsachadh cluich tuilleadh — tha iad a' doimhneachadh an còmhnaidheachd ris an traidisean fhèin. Is e seataichean MSR (Màrsaich, Strathspey, agus Ruidhle), Pìobaireachd, agus taisbeantas deiseil airson co-fharpais am fòcas. Is e seo an ìre aig a bheil cuideam iomlan traidisean pìobaireachd Gàidhealach a' nochdadh anns gach leasain.">Tier IV is the highest level of the Ceòlmhor curriculum. The student at this stage is no longer learning to play — they are deepening their engagement with the tradition itself. MSR (March, Strathspey, and Reel) sets, Pìobaireachd, and competition-ready performance are the focus. This is the tier at which the full weight of the Highland piping tradition becomes present in every lesson.</p>
       </div>
 
       <div data-reveal>
-        <h2>What you will learn</h2>
+        <h2 data-gd="Dè a dh'ionnsaicheas tu">What you will learn</h2>
         <ul>
-          <li>March, Strathspey, and Reel sets prepared to competition standard</li>
-          <li>Introduction to Pìobaireachd — the great music of the Highland bagpipe</li>
-          <li>The Gàidhlig cultural and historical context of the ceòl mór repertoire</li>
-          <li>Competition preparation and performance strategy</li>
-          <li>Teaching readiness, for students who wish to develop instructional skills</li>
+          <li data-gd="Seataichean Màrsaich, Strathspey, agus Ruidhle air an ullachadh gu ìre co-fharpais">March, Strathspey, and Reel sets prepared to competition standard</li>
+          <li data-gd="Ro-eòlas air Pìobaireachd — ceòl mòr na pìoba Gàidhealach">Introduction to Pìobaireachd — the great music of the Highland bagpipe</li>
+          <li data-gd="Co-theacsa cultarail agus eachdraidheil Gàidhlig de chlàr-puing a' cheòil mhòir">The Gàidhlig cultural and historical context of the ceòl mór repertoire</li>
+          <li data-gd="Ullachadh co-fharpais agus ro-innleachd taisbeantas">Competition preparation and performance strategy</li>
+          <li data-gd="Deisealachd teagaisg, airson oileanaich a tha ag iarraidh sgilean teagaisg a leasachadh">Teaching readiness, for students who wish to develop instructional skills</li>
         </ul>
       </div>
 
       <div data-reveal>
-        <h2>Approach</h2>
-        <p>Lessons at Tier IV follow a Masterclass format. Sessions are more intensive, more discursive, and more demanding than at earlier tiers. The student is expected to arrive with prepared material and a clear account of what they have worked on. Extended sessions of 90 minutes are available and recommended in the run-up to competitions or significant performances.</p>
+        <h2 data-gd="Dòigh-obrach">Approach</h2>
+        <p data-gd="Tha leasain aig Ìre IV a' leantainn cruth Masterclass. Tha seiseanan nas dian, nas bruidhneach, agus nas èiginneach na aig ìrean tràithe. Thathar an dùil ris an oileanach tighinn le stuthan deiseil agus cuntas soilleir air na tha iad air obair air. Tha seiseanan fharsaing de 90 mionaid rim faotainn agus air am moladh ann an run-up gu co-fharpaisean no taisbeantasan cudromach.">Lessons at Tier IV follow a Masterclass format. Sessions are more intensive, more discursive, and more demanding than at earlier tiers. The student is expected to arrive with prepared material and a clear account of what they have worked on. Extended sessions of 90 minutes are available and recommended in the run-up to competitions or significant performances.</p>
       </div>
 
       <div class="tier-completion" data-reveal>
-        <span class="tier-completion__label">Completion</span>
-        <p>Competes independently. Begins teaching readiness if desired.</p>
+        <span class="tier-completion__label" data-gd="Crìochnachadh">Completion</span>
+        <p data-gd="A' farpais gu neo-eisimeileach. A' tòiseachadh deisealachd teagaisg ma tha sin ag iarraidh.">Competes independently. Begins teaching readiness if desired.</p>
       </div>
 
       <div class="mt-3" data-reveal>
-        <a href="../contact.html" class="btn-primary">Enquire</a>
+        <a href="../contact.html" class="btn-primary" data-gd="Feòraich">Enquire</a>
       </div>
 
       <div class="tier-nav" data-reveal>
-        <a href="tier-3.html" class="breadcrumb-prev">&#8592; Tier III — Proficient</a>
+        <a href="tier-3.html" class="breadcrumb-prev" data-gd="← Ìre III — Comasach">&#8592; Tier III — Proficient</a>
         <span></span>
       </div>
 
       <div class="tier-beyond-section" data-reveal>
         <hr class="about-divider">
-        <h2 class="tier-beyond__heading">What Comes After</h2>
-        <p class="tier-beyond__body">
+        <h2 class="tier-beyond__heading" data-gd="Dè a thig às Dèidh">What Comes After</h2>
+        <p class="tier-beyond__body" data-gd="Chan eil an traidisean a' crìochnachadh aig ìre co-fharpais — bidh e a' doimhneachadh. Tha Ìre IV a' comharrachadh an àite aig a bheil pìobaire a' tòiseachadh ri ceòl a ghabhail mar oighreachd beò seach tòrachd teicnigeach. Tha na thig às a dhèidh aig gach neach: bidh cuid a' leantainn air le Pìobaireachd aig an ìre as àirde, bidh cuid a' dol dhan chuairt co-fharpais, bidh cuid a' tòiseachadh a' teagasg, agus bidh cuid a' toirt a' chiùil dha na tachartasan as motha a tha feum air. Tha Ceòlmhor a' cuideachadh le ceum-ath sin — ge bith dè an cruth a ghabhas e.">
           The tradition does not end at competition standard — it deepens. Tier IV marks the point
           at which a piper begins to engage with the music as a living inheritance rather than a
           technical pursuit. What follows is individual: some pursue Pìobaireachd at the highest
@@ -139,11 +149,11 @@
           to the occasions that demand it most. Ceòlmhor supports that next step — whatever form
           it takes.
         </p>
-        <blockquote class="about-pull-quote">
+        <blockquote class="about-pull-quote" data-gd="&ldquo;Is leat-sa an traidisean a ghiùlan air adhart.&rdquo;">
           "The tradition is yours to carry forward."
         </blockquote>
         <div class="text-center" style="margin-top: 2rem;">
-          <a href="../contact.html" class="btn-primary">Discuss Your Next Step</a>
+          <a href="../contact.html" class="btn-primary" data-gd="Bruidhinn air do Cheum-ath">Discuss Your Next Step</a>
         </div>
       </div>
 
@@ -157,38 +167,38 @@
         <img src="../images/Ceolmhor_logo_transparent.png" alt="" class="footer__brand-img" aria-hidden="true">
         <div class="footer__brand-text">
           <span class="footer__logo">Ceòlmhor</span>
-          <p class="footer__tagline">Scottish Excellence · Piping Tuition and Performance</p>
+          <p class="footer__tagline" data-gd="Sàr-mhathais na h-Alba · Oideachd is Taisbeantas Pìobaireachd">Scottish Excellence · Piping Tuition and Performance</p>
         </div>
       </div>
       <nav class="footer__nav" aria-label="Footer navigation">
-        <span class="footer__col-title">Navigation</span>
+        <span class="footer__col-title" data-gd="Seòladh">Navigation</span>
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../tuition.html">Tuition</a></li>
-          <li><a href="../performance.html">Performance</a></li>
-          <li><a href="../compositions.html">Compositions</a></li>
-          <li><a href="../gallery.html">Gallery</a></li>
-          <li><a href="../contact.html">Enquire</a></li>
+          <li><a href="../index.html" data-gd="Dachaigh">Home</a></li>
+          <li><a href="../about.html" data-gd="Mu Dhèidhinn">About</a></li>
+          <li><a href="../tuition.html" data-gd="Oideachd">Tuition</a></li>
+          <li><a href="../performance.html" data-gd="Taisbeantas">Performance</a></li>
+          <li><a href="../compositions.html" data-gd="Sgrìobhaidhean">Compositions</a></li>
+          <li><a href="../gallery.html" data-gd="Gailearaidh">Gallery</a></li>
+          <li><a href="../contact.html" data-gd="Feòraich">Enquire</a></li>
         </ul>
       </nav>
       <div class="footer__contact">
-        <span class="footer__col-title">Contact &amp; Social</span>
+        <span class="footer__col-title" data-gd="Conaltradh &amp; Meadhanan Sòisealta">Contact &amp; Social</span>
         <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
-        <p>Edinburgh, Scotland</p>
-
-              </div>
+        <p data-gd="Dùn Èideann, Alba">Edinburgh, Scotland</p>
+      </div>
     </div>
     <div class="footer__bottom">
-      <p>© Ceòlmhor 2026. All rights reserved.</p>
+      <p data-gd="© Ceòlmhor 2026. Gach còir glèidhte.">© Ceòlmhor 2026. All rights reserved.</p>
       <div class="footer__bottom-links">
-        <a href="../faq.html">FAQ</a>
-        <a href="../privacy.html">Privacy Notice</a>
+        <a href="../faq.html" data-gd="Ceistean">FAQ</a>
+        <a href="../privacy.html" data-gd="Brath Dìomhaireachd">Privacy Notice</a>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js" defer></script>
+  <script src="../lang.js" defer></script>
   <script src="../main.js" defer></script>
 </body>
 </html>

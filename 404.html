@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
@@ -24,19 +24,23 @@
   <nav class="nav" aria-label="Main navigation">
     <div class="nav__inner">
       <div class="nav__left">
+        <div class="lang-pill" role="group" aria-label="Language / Cànan">
+          <button class="lang-pill__opt active" data-lang-opt="en" aria-pressed="true">EN</button>
+          <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+        </div>
         <a href="index.html" class="nav__logo" aria-label="Ceòlmhor — home"><img src="images/Ceolmhor_logo_transparent.png" alt="Ceòlmhor" class="site-logo"></a>
-        <a href="index.html" class="nav__home">Home</a>
+        <a href="index.html" class="nav__home" data-gd="Dachaigh">Home</a>
       </div>
       <div class="nav__links">
-        <a href="about.html">About</a>
-        <a href="tuition.html">Tuition</a>
-        <a href="performance.html">Performance</a>
-        <a href="compositions.html">Compositions</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+        <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+        <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+        <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+        <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
       </div>
       <div class="nav__right">
-        <a href="faq.html" class="nav__faq">FAQ</a>
-        <a href="contact.html" class="nav__cta">Enquire</a>
+        <a href="faq.html" class="nav__faq" data-gd="Ceistean">FAQ</a>
+        <a href="contact.html" class="nav__cta" data-gd="Feòraich">Enquire</a>
       </div>
       <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -46,20 +50,26 @@
 
   <!-- Mobile overlay -->
   <div class="nav__overlay" role="dialog" aria-label="Navigation menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="tuition.html">Tuition</a>
-    <a href="performance.html">Performance</a>
-    <a href="compositions.html">Compositions</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html" class="nav__overlay-cta">Enquire</a>
+    <a href="index.html" data-gd="Dachaigh">Home</a>
+    <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+    <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+    <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+    <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+    <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
+    <a href="faq.html" data-gd="Ceistean">FAQ</a>
+    <a href="contact.html" class="nav__overlay-cta" data-gd="Feòraich">Enquire</a>
+    <div class="nav__overlay-lang">
+      <div class="lang-pill" role="group" aria-label="Language / Cànan">
+        <button class="lang-pill__opt" data-lang-opt="en" aria-pressed="false">EN</button>
+        <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+      </div>
+    </div>
   </div>
 
   <!-- ── Page Header ────────────────────────────────────────────── -->
   <header class="page-header page-header--charcoal">
     <div class="container">
-      <h1 class="page-header__title">Page Not Found</h1>
+      <h1 class="page-header__title" data-gd="Duilleag Gun Lorg">Page Not Found</h1>
       <p class="gaelic-subtitle">404</p>
       <hr class="rule">
     </div>
@@ -69,8 +79,8 @@
   <section class="section section--black">
     <div class="container">
       <div style="max-width: 520px; margin: 0 auto; text-align: center; padding: 3rem 0;">
-        <p style="font-size: 1.15rem; margin-bottom: 2rem;">The page you are looking for does not exist or has been moved.</p>
-        <a href="index.html" class="btn-primary">Return Home</a>
+        <p style="font-size: 1.15rem; margin-bottom: 2rem;" data-gd="Chan eil an duilleag a tha thu a' lorg ann no chaidh a ghluasad.">The page you are looking for does not exist or has been moved.</p>
+        <a href="index.html" class="btn-primary" data-gd="Till Dhachaigh">Return Home</a>
       </div>
     </div>
   </section>
@@ -83,41 +93,41 @@
         <img src="images/Ceolmhor_logo_transparent.png" alt="" class="footer__brand-img" aria-hidden="true">
         <div class="footer__brand-text">
           <span class="footer__logo">Ceòlmhor</span>
-          <p class="footer__tagline">Scottish Excellence · Piping Tuition and Performance</p>
+          <p class="footer__tagline" data-gd="Sàr-mhathais na h-Alba · Oideachd is Taisbeantas Pìobaireachd">Scottish Excellence · Piping Tuition and Performance</p>
         </div>
       </div>
 
       <nav class="footer__nav" aria-label="Footer navigation">
-        <span class="footer__col-title">Navigation</span>
+        <span class="footer__col-title" data-gd="Seòladh">Navigation</span>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="tuition.html">Tuition</a></li>
-          <li><a href="performance.html">Performance</a></li>
-          <li><a href="compositions.html">Compositions</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Enquire</a></li>
+          <li><a href="index.html" data-gd="Dachaigh">Home</a></li>
+          <li><a href="about.html" data-gd="Mu Dhèidhinn">About</a></li>
+          <li><a href="tuition.html" data-gd="Oideachd">Tuition</a></li>
+          <li><a href="performance.html" data-gd="Taisbeantas">Performance</a></li>
+          <li><a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a></li>
+          <li><a href="gallery.html" data-gd="Gailearaidh">Gallery</a></li>
+          <li><a href="contact.html" data-gd="Feòraich">Enquire</a></li>
         </ul>
       </nav>
 
       <div class="footer__contact">
-        <span class="footer__col-title">Contact &amp; Social</span>
+        <span class="footer__col-title" data-gd="Conaltradh &amp; Meadhanan Sòisealta">Contact &amp; Social</span>
         <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
-        <p>Edinburgh, Scotland</p>
-
-              </div>
+        <p data-gd="Dùn Èideann, Alba">Edinburgh, Scotland</p>
+      </div>
 
     </div>
     <div class="footer__bottom">
-      <p>© Ceòlmhor 2026. All rights reserved.</p>
+      <p data-gd="© Ceòlmhor 2026. Gach còir glèidhte.">© Ceòlmhor 2026. All rights reserved.</p>
       <div class="footer__bottom-links">
-        <a href="faq.html">FAQ</a>
-        <a href="privacy.html">Privacy Notice</a>
+        <a href="faq.html" data-gd="Ceistean">FAQ</a>
+        <a href="privacy.html" data-gd="Brath Dìomhaireachd">Privacy Notice</a>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js" defer></script>
+  <script src="lang.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>

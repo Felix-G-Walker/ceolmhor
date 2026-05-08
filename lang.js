@@ -1,0 +1,64 @@
+/* ═══════════════════════════════════════════════════════════════════
+   CEÒLMHOR — LANG.JS
+   Language toggle: English ↔ Gàidhlig
+   Persists via localStorage('ceolmhor-lang').
+   Elements with data-gd="…"      → textContent swap
+   Elements with data-gd-html="…" → innerHTML swap (decoded from HTML entities)
+   ═══════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  var LANG_KEY = 'ceolmhor-lang';
+
+  function getLang() {
+    return localStorage.getItem(LANG_KEY) || 'en';
+  }
+
+  function applyLang(lang) {
+    var isGd = lang === 'gd';
+
+    document.documentElement.lang = isGd ? 'gd' : 'en-GB';
+
+    /* Text content */
+    document.querySelectorAll('[data-gd]').forEach(function (el) {
+      if (!el.dataset.en) el.dataset.en = el.textContent.trim();
+      el.textContent = isGd ? el.dataset.gd : el.dataset.en;
+    });
+
+    /* Inner HTML (paragraphs with inline markup) */
+    document.querySelectorAll('[data-gd-html]').forEach(function (el) {
+      if (!el.dataset.enHtml) el.dataset.enHtml = el.innerHTML;
+      el.innerHTML = isGd ? el.dataset.gdHtml : el.dataset.enHtml;
+    });
+
+    /* Placeholder attributes */
+    document.querySelectorAll('[data-gd-placeholder]').forEach(function (el) {
+      if (!el.dataset.enPlaceholder) el.dataset.enPlaceholder = el.placeholder;
+      el.placeholder = isGd ? el.dataset.gdPlaceholder : el.dataset.enPlaceholder;
+    });
+
+    /* Sync all pill buttons on this page */
+    document.querySelectorAll('.lang-pill__opt').forEach(function (btn) {
+      var active = btn.dataset.langOpt === lang;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+
+    localStorage.setItem(LANG_KEY, lang);
+  }
+
+  function init() {
+    document.querySelectorAll('.lang-pill__opt').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        applyLang(btn.dataset.langOpt);
+      });
+    });
+    applyLang(getLang());
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+}());

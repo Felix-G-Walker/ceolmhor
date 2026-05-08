@@ -289,6 +289,54 @@ p {
 .nav__hamburger.open span:nth-child(2) { opacity: 0; }
 .nav__hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* ── Language Pill ───────────────────────────────────────────────── */
+.lang-pill {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 100px;
+  padding: 2px;
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+}
+.lang-pill__opt {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-radius: 100px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  line-height: 1;
+}
+.lang-pill__opt.active {
+  background: rgba(255,255,255,0.82);
+  color: #0d0d0d;
+}
+.lang-pill__opt:hover:not(.active) {
+  color: var(--text);
+}
+.nav__overlay-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.nav__overlay-lang .lang-pill {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.18);
+}
+.nav__overlay-lang .lang-pill__opt {
+  font-size: 0.7rem;
+  padding: 6px 14px;
+}
+
 /* Full-screen overlay menu */
 .nav__overlay {
   display: none;

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
@@ -51,19 +51,23 @@
   <nav class="nav" aria-label="Main navigation">
     <div class="nav__inner">
       <div class="nav__left">
+        <div class="lang-pill" role="group" aria-label="Language / Cànan">
+          <button class="lang-pill__opt active" data-lang-opt="en" aria-pressed="true">EN</button>
+          <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+        </div>
         <a href="index.html" class="nav__logo" aria-label="Ceòlmhor — home"><img src="images/Ceolmhor_logo_transparent.png" alt="Ceòlmhor" class="site-logo"></a>
-        <a href="index.html" class="nav__home">Home</a>
+        <a href="index.html" class="nav__home" data-gd="Dachaigh">Home</a>
       </div>
       <div class="nav__links">
-        <a href="about.html">About</a>
-        <a href="tuition.html" class="active">Tuition</a>
-        <a href="performance.html">Performance</a>
-        <a href="compositions.html">Compositions</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+        <a href="tuition.html" class="active" data-gd="Oideachd">Tuition</a>
+        <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+        <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+        <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
       </div>
       <div class="nav__right">
-        <a href="faq.html" class="nav__faq">FAQ</a>
-        <a href="contact.html" class="nav__cta">Enquire</a>
+        <a href="faq.html" class="nav__faq" data-gd="Ceistean">FAQ</a>
+        <a href="contact.html" class="nav__cta" data-gd="Feòraich">Enquire</a>
       </div>
       <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -73,20 +77,26 @@
 
   <!-- Mobile overlay -->
   <div class="nav__overlay" role="dialog" aria-label="Navigation menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="tuition.html" class="active">Tuition</a>
-    <a href="performance.html">Performance</a>
-    <a href="compositions.html">Compositions</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html" class="nav__overlay-cta">Enquire</a>
+    <a href="index.html" data-gd="Dachaigh">Home</a>
+    <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+    <a href="tuition.html" class="active" data-gd="Oideachd">Tuition</a>
+    <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+    <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+    <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
+    <a href="faq.html" data-gd="Ceistean">FAQ</a>
+    <a href="contact.html" class="nav__overlay-cta" data-gd="Feòraich">Enquire</a>
+    <div class="nav__overlay-lang">
+      <div class="lang-pill" role="group" aria-label="Language / Cànan">
+        <button class="lang-pill__opt" data-lang-opt="en" aria-pressed="false">EN</button>
+        <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+      </div>
+    </div>
   </div>
 
   <!-- ── Page Header ────────────────────────────────────────────── -->
   <header class="page-header">
     <div class="container">
-      <h1 class="page-header__title">Tuition</h1>
+      <h1 class="page-header__title" data-gd="Oideachd">Tuition</h1>
       <p class="gaelic-subtitle">Oideachd</p>
       <hr class="rule">
     </div>
@@ -97,12 +107,12 @@
     <div class="container">
 
       <div class="section-intro" data-reveal>
-        <p>Ceòlmhor's tuition is built around a four-tier curriculum — structured, cumulative, and rooted in the Gàidhlig tradition. Each tier has defined entry and exit standards, so progress is always measurable and the path forward is always clear. Lessons are available in Edinburgh and online worldwide.</p>
+        <p data-gd="Tha oideachas Ceòlmhor air a thogail mu thimcheall clàr-oideachaidh ceithir-ìre — structarail, cruinneachail, agus freumhaichte ann an traidisean na Gàidhlig. Tha inbhean tachartais agus falbhaidh air an mìneachadh airson gach ìre, mar sin tha adhartas daonnan measail agus tha an t-slighe air adhart daonnan soilleir. Tha leasanan ri fhaotainn ann an Dùn Èideann agus air-loidhne air feadh an t-saoghail.">Ceòlmhor's tuition is built around a four-tier curriculum — structured, cumulative, and rooted in the Gàidhlig tradition. Each tier has defined entry and exit standards, so progress is always measurable and the path forward is always clear. Lessons are available in Edinburgh and online worldwide.</p>
       </div>
 
       <header class="section-header" data-reveal>
-        <span class="section-label">The Curriculum</span>
-        <h2>Four tiers. Defined progression.</h2>
+        <span class="section-label" data-gd="An Clàr-oideachaidh">The Curriculum</span>
+        <h2 data-gd="Ceithir ìrean. Adhartas mìnichte.">Four tiers. Defined progression.</h2>
       </header>
 
       <!-- Tier Grid -->
@@ -111,14 +121,14 @@
         <a class="tier" href="tuition/tier-1.html" role="listitem" data-reveal>
           <span class="tier__bg-num" aria-hidden="true">I</span>
           <span class="tier__label">Tier I</span>
-          <h3>Foundational</h3>
-          <p class="tier__instrument">Instrument: Practice Chanter</p>
-          <p class="tier__desc">
+          <h3 data-gd="Bunasach">Foundational</h3>
+          <p class="tier__instrument" data-gd="Inneal: Cantar Cleachdaidh">Instrument: Practice Chanter</p>
+          <p class="tier__desc" data-gd="Emboicheàr, suidheachadh làimhe, an sgèile ochd-nota, pùirt bhunasach, leughadh ciùil. Ro-ràdh siostamach air meacanigs cluich le dealbh is tòna ceart bhon chiad leasain.">
             Embouchure, hand position, the eight-note scale, basic tunes, reading music.
             Systematic introduction to the mechanics of playing with correct posture and
             tone from the first lesson.
           </p>
-          <p class="tier__marker">
+          <p class="tier__marker" data-gd="Comasach air an sgèile a chluich gu soilleir. Comasach air còig pùirt a chluich le ceòl-clàr.">
             Can play the scale cleanly. Can play five tunes with sheet music.
           </p>
         </a>
@@ -126,14 +136,14 @@
         <a class="tier" href="tuition/tier-2.html" role="listitem" data-reveal data-delay="1">
           <span class="tier__bg-num" aria-hidden="true">II</span>
           <span class="tier__label">Tier II</span>
-          <h3>Developing</h3>
-          <p class="tier__instrument">Instrument: Practice Chanter</p>
-          <p class="tier__desc">
+          <h3 data-gd="A' Leasachadh">Developing</h3>
+          <p class="tier__instrument" data-gd="Inneal: Cantar Cleachdaidh">Instrument: Practice Chanter</p>
+          <p class="tier__desc" data-gd="Notaichean grinn, dùblaidhean, togail chlàr-cluich, ro-ràdh air pìosan co-fharpais. Bidh an t-oileanach a' leasachadh fileantachd agus a' tòiseachadh a' togail a' stòr-fhaclair chiùil a tha riatanach airson taisbeantas.">
             Gracenotes, doublings, repertoire building, introduction to competition pieces.
             The student develops fluency and begins to build the musical vocabulary required
             for performance.
           </p>
-          <p class="tier__marker">
+          <p class="tier__marker" data-gd="A' cur an gnìomh gach nòta grinn gu cunbhalach. Clàr-cluich de 15 pìos no barrachd.">
             Executes all gracenotes consistently. Repertoire of 15 or more tunes.
           </p>
         </a>
@@ -141,14 +151,14 @@
         <a class="tier" href="tuition/tier-3.html" role="listitem" data-reveal data-delay="2">
           <span class="tier__bg-num" aria-hidden="true">III</span>
           <span class="tier__label">Tier III</span>
-          <h3>Proficient</h3>
-          <p class="tier__instrument">Instrument: Bagpipes</p>
-          <p class="tier__desc">
+          <h3 data-gd="Comasach">Proficient</h3>
+          <p class="tier__instrument" data-gd="Inneal: Piob-mhòr">Instrument: Bagpipes</p>
+          <p class="tier__desc" data-gd="Gluasad iomlan dhan inneal, dòigh sèididh, bunaitsean gleasaidh, clàr-cluich còmhlain, misneachd taisbeanaidh. Thathar a' dèiligeadh gu meadhonach ri iarrtasan corporra agus teicnigeach na pioba-mòire.">
             Full instrument transition, blowing technique, tuning basics, band repertoire,
             performance confidence. The physical and technical demands of the full bagpipe
             are addressed methodically.
           </p>
-          <p class="tier__marker">
+          <p class="tier__marker" data-gd="A' cumail cuideam cunbhalach. A' coileanadh gu poblach gun chuideachadh.">
             Sustains steady pressure. Performs publicly without assistance.
           </p>
         </a>
@@ -156,14 +166,14 @@
         <a class="tier" href="tuition/tier-4.html" role="listitem" data-reveal data-delay="3">
           <span class="tier__bg-num" aria-hidden="true">IV</span>
           <span class="tier__label">Tier IV</span>
-          <h3>Advanced</h3>
-          <p class="tier__instrument">Instrument: Bagpipes</p>
-          <p class="tier__desc">
+          <h3 data-gd="Àrd-ìre">Advanced</h3>
+          <p class="tier__instrument" data-gd="Inneal: Piob-mhòr">Instrument: Bagpipes</p>
+          <p class="tier__desc" data-gd="MSR, ro-ràdh Pìobaireachd, pìosan deiseil airson co-fharpais, cruth Maighstir-chlasaich. Bidh an t-oileanach a' dèiligeadh ri na h-ìrean as àirde den traidisean agus air ullachadh airson coileanadh co-fharpais neo-eisimeileach.">
             MSR, Pìobaireachd introduction, competition-ready pieces, Masterclass format.
             The student engages with the highest levels of the tradition and is prepared for
             independent competitive performance.
           </p>
-          <p class="tier__marker">
+          <p class="tier__marker" data-gd="A' co-fharpais gu neo-eisimeileach.">
             Competes independently.
           </p>
         </a>
@@ -172,22 +182,22 @@
 
       <!-- Pricing -->
       <header class="section-header" data-reveal>
-        <span class="section-label">Fees</span>
-        <h2>Transparent pricing.</h2>
+        <span class="section-label" data-gd="Cisean">Fees</span>
+        <h2 data-gd="Prìsean soilleir.">Transparent pricing.</h2>
       </header>
 
       <div class="pricing-grid" data-reveal>
 
         <div class="pricing-item">
           <span class="pricing-item__value">£30<span style="font-size: 1.5rem; color: var(--silver-dk);">/hour</span></span>
-          <span class="pricing-item__name">Regular Tuition</span>
-          <p class="pricing-item__desc">Standard hourly rate. Lessons of 30 or 90 minutes can be arranged on request.</p>
+          <span class="pricing-item__name" data-gd="Oideachd Àbhaisteach">Regular Tuition</span>
+          <p class="pricing-item__desc" data-gd="Ìre uair-a-thìde àbhaisteach. Faodar leasanan de 30 no 90 mionaid a rèiteach air iarrtas.">Standard hourly rate. Lessons of 30 or 90 minutes can be arranged on request.</p>
         </div>
 
         <div class="pricing-item">
-          <span class="pricing-item__value">Free</span>
-          <span class="pricing-item__name">Trial Lesson</span>
-          <p class="pricing-item__desc">
+          <span class="pricing-item__value" data-gd="An Asgaidh">Free</span>
+          <span class="pricing-item__name" data-gd="Leasain Deuchainn">Trial Lesson</span>
+          <p class="pricing-item__desc" data-gd="Ciad leasain an asgaidh. Leasain iomlan structarail — chan e co-chomhairle. Gun dleastanas seachad air an t-seisean fhèin.">
             Complimentary first lesson.<br>
             A full structured lesson — not a consultation.<br>
             No obligation beyond the session itself.
@@ -198,52 +208,47 @@
 
       <div class="pricing-item pricing-item--wide" data-reveal>
         <div>
-          <span class="pricing-item__name">Block Booking</span>
+          <span class="pricing-item__name" data-gd="Cùmhnant Blocaidh">Block Booking</span>
           <p class="pricing-item__value" style="font-size: 2.5rem; margin-top: 0.4rem;">10 for 9</p>
         </div>
         <div>
-          <p class="pricing-item__desc">Book ten lessons and pay for nine. Applicable at the standard hourly rate — no separate arrangement required. Simply commit to a block of ten and the discount is applied from the outset.</p>
+          <p class="pricing-item__desc" data-gd="Cùmhnaich deich leasain agus pàigh airson naoi. Buntainneach ris an ìre uair-a-thìde àbhaisteach — chan eil rèiteach air leth a dhìth. Dìreach geall air bloc de dheich agus bidh an lùghdachadh air a chur an sàs bhon toiseach.">Book ten lessons and pay for nine. Applicable at the standard hourly rate — no separate arrangement required. Simply commit to a block of ten and the discount is applied from the outset.</p>
         </div>
       </div>
 
-      <!-- Delivery note -->
-      <p class="tuition-delivery" data-reveal>Lessons are available in-person in Edinburgh at a mutually agreed location, and via video call for students anywhere in the world. All four tiers are available through both formats. Equipment guidance is provided for students outside the UK.</p>
+      <p class="tuition-delivery" data-reveal data-gd="Tha leasanan ri fhaotainn aghaidh ri aghaidh ann an Dùn Èideann aig àite air a chomhaontachadh, agus tro ghairm bhidio airson oileanaich àit sam bith air an t-saoghal. Tha na ceithir ìrean gu lèir ri fhaotainn tro an dà chruth. Thathar a' toirt stiùireadh mu dheidhinn uidheam airson oileanaich taobh a-muigh na RA.">Lessons are available in-person in Edinburgh at a mutually agreed location, and via video call for students anywhere in the world. All four tiers are available through both formats. Equipment guidance is provided for students outside the UK.</p>
 
-      <!-- What is included -->
-      <span class="section-sub-label" data-reveal>What is included</span>
+      <span class="section-sub-label" data-reveal data-gd="Dè tha air a ghabhail a-steach">What is included</span>
       <div class="includes-list" data-reveal data-delay="1">
 
         <div class="includes-item">
           <span class="includes-item__dot" aria-hidden="true"></span>
-          <p>Welcome pack for all new students</p>
+          <p data-gd="Pacaid fàilte airson gach oileanach ùr">Welcome pack for all new students</p>
         </div>
 
         <div class="includes-item">
           <span class="includes-item__dot" aria-hidden="true"></span>
-          <p>Progress tracking and written feedback after each lesson</p>
+          <p data-gd="Lorgadh adhartais agus fios air ais sgrìobhte às dèidh gach leasain">Progress tracking and written feedback after each lesson</p>
         </div>
 
         <div class="includes-item">
           <span class="includes-item__dot" aria-hidden="true"></span>
-          <p>Sheet music, reference recordings, and written lesson notes</p>
+          <p data-gd="Ceòl-clàr, clàraidhean tùsail, agus notaichean leasain sgrìobhte">Sheet music, reference recordings, and written lesson notes</p>
         </div>
 
       </div>
 
-      <!-- Testimonial -->
       <div class="testimonial-placeholder" data-reveal style="margin-top: 4rem;">
-        <p>"I had no experience whatsoever when I started. The structure of the lessons made everything feel achievable from the very first session. I would not have progressed half as quickly without that framework."</p>
-        <span class="testimonial__attr">— Molly Reay, Tuition Student &nbsp;·&nbsp; February 2026</span>
+        <p data-gd="&quot;Cha robh eòlas sam bith agam nuair a thòisich mi. Thug structar nan leasanan orm gach rud a bhith a' faireachdainn comasach bhon chiad sheassan fhèin. Cha bhithinn air adhartas a dhèanamh leth cho luath às aonais an fhrèam sin.&quot;">"I had no experience whatsoever when I started. The structure of the lessons made everything feel achievable from the very first session. I would not have progressed half as quickly without that framework."</p>
+        <span class="testimonial__attr" data-gd="— Molly Reay, Oileanach Oideachd · An Gearran 2026">— Molly Reay, Tuition Student &nbsp;·&nbsp; February 2026</span>
       </div>
 
-      <!-- FAQ prompt -->
       <div class="faq-link-prompt" data-reveal>
-        <a href="faq.html" class="faq-link">Common questions — view FAQ</a>
+        <a href="faq.html" class="faq-link" data-gd="Ceistean cumanta — faic Ceistean">Common questions — view FAQ</a>
       </div>
 
-      <!-- CTA -->
       <div class="text-center" data-reveal>
-        <a href="contact.html" class="btn-primary">Book a Trial Lesson</a>
+        <a href="contact.html" class="btn-primary" data-gd="Cùmhnaich Leasain Deuchainn">Book a Trial Lesson</a>
       </div>
 
     </div>
@@ -257,41 +262,41 @@
         <img src="images/Ceolmhor_logo_transparent.png" alt="" class="footer__brand-img" aria-hidden="true">
         <div class="footer__brand-text">
           <span class="footer__logo">Ceòlmhor</span>
-          <p class="footer__tagline">Scottish Excellence · Piping Tuition and Performance</p>
+          <p class="footer__tagline" data-gd="Sàr-mhathais na h-Alba · Oideachd is Taisbeantas Pìobaireachd">Scottish Excellence · Piping Tuition and Performance</p>
         </div>
       </div>
 
       <nav class="footer__nav" aria-label="Footer navigation">
-        <span class="footer__col-title">Navigation</span>
+        <span class="footer__col-title" data-gd="Seòladh">Navigation</span>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="tuition.html">Tuition</a></li>
-          <li><a href="performance.html">Performance</a></li>
-          <li><a href="compositions.html">Compositions</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Enquire</a></li>
+          <li><a href="index.html" data-gd="Dachaigh">Home</a></li>
+          <li><a href="about.html" data-gd="Mu Dhèidhinn">About</a></li>
+          <li><a href="tuition.html" data-gd="Oideachd">Tuition</a></li>
+          <li><a href="performance.html" data-gd="Taisbeantas">Performance</a></li>
+          <li><a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a></li>
+          <li><a href="gallery.html" data-gd="Gailearaidh">Gallery</a></li>
+          <li><a href="contact.html" data-gd="Feòraich">Enquire</a></li>
         </ul>
       </nav>
 
       <div class="footer__contact">
-        <span class="footer__col-title">Contact &amp; Social</span>
+        <span class="footer__col-title" data-gd="Conaltradh">Contact &amp; Social</span>
         <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
-        <p>Edinburgh, Scotland</p>
-
-              </div>
+        <p data-gd="Dùn Èideann, Alba">Edinburgh, Scotland</p>
+      </div>
 
     </div>
     <div class="footer__bottom">
-      <p>© Ceòlmhor 2026. All rights reserved.</p>
+      <p data-gd="© Ceòlmhor 2026. Gach còir glèidhte.">© Ceòlmhor 2026. All rights reserved.</p>
       <div class="footer__bottom-links">
-        <a href="faq.html">FAQ</a>
-        <a href="privacy.html">Privacy Notice</a>
+        <a href="faq.html" data-gd="Ceistean">FAQ</a>
+        <a href="privacy.html" data-gd="Brath Dìomhaireachd">Privacy Notice</a>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js" defer></script>
+  <script src="lang.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>

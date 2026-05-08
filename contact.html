@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
@@ -46,19 +46,23 @@
   <nav class="nav" aria-label="Main navigation">
     <div class="nav__inner">
       <div class="nav__left">
+        <div class="lang-pill" role="group" aria-label="Language / Cànan">
+          <button class="lang-pill__opt active" data-lang-opt="en" aria-pressed="true">EN</button>
+          <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+        </div>
         <a href="index.html" class="nav__logo" aria-label="Ceòlmhor — home"><img src="images/Ceolmhor_logo_transparent.png" alt="Ceòlmhor" class="site-logo"></a>
-        <a href="index.html" class="nav__home">Home</a>
+        <a href="index.html" class="nav__home" data-gd="Dachaigh">Home</a>
       </div>
       <div class="nav__links">
-        <a href="about.html">About</a>
-        <a href="tuition.html">Tuition</a>
-        <a href="performance.html">Performance</a>
-        <a href="compositions.html">Compositions</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+        <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+        <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+        <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+        <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
       </div>
       <div class="nav__right">
-        <a href="faq.html" class="nav__faq">FAQ</a>
-        <a href="contact.html" class="nav__cta active">Enquire</a>
+        <a href="faq.html" class="nav__faq" data-gd="Ceistean">FAQ</a>
+        <a href="contact.html" class="nav__cta active" data-gd="Feòraich">Enquire</a>
       </div>
       <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -68,20 +72,26 @@
 
   <!-- Mobile overlay -->
   <div class="nav__overlay" role="dialog" aria-label="Navigation menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="tuition.html">Tuition</a>
-    <a href="performance.html">Performance</a>
-    <a href="compositions.html">Compositions</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html" class="nav__overlay-cta">Enquire</a>
+    <a href="index.html" data-gd="Dachaigh">Home</a>
+    <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+    <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+    <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+    <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+    <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
+    <a href="faq.html" data-gd="Ceistean">FAQ</a>
+    <a href="contact.html" class="nav__overlay-cta" data-gd="Feòraich">Enquire</a>
+    <div class="nav__overlay-lang">
+      <div class="lang-pill" role="group" aria-label="Language / Cànan">
+        <button class="lang-pill__opt" data-lang-opt="en" aria-pressed="false">EN</button>
+        <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+      </div>
+    </div>
   </div>
 
   <!-- ── Page Header ────────────────────────────────────────────── -->
   <header class="page-header page-header--charcoal">
     <div class="container">
-      <h1 class="page-header__title">Enquire</h1>
+      <h1 class="page-header__title" data-gd="Faighnich">Enquire</h1>
       <p class="gaelic-subtitle">Faighnich</p>
       <hr class="rule">
     </div>
@@ -96,17 +106,17 @@
         <!-- Contact Details -->
         <aside data-reveal>
           <dl class="contact-details">
-            <dt>Email</dt>
+            <dt data-gd="Post-d">Email</dt>
             <dd><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></dd>
 
-            <dt>Location</dt>
-            <dd>Edinburgh, Scotland</dd>
+            <dt data-gd="Àite">Location</dt>
+            <dd data-gd="Dùn Èideann, Alba">Edinburgh, Scotland</dd>
 
-            <dt>Response time</dt>
-            <dd>Within 24 hours</dd>
+            <dt data-gd="Àm freagairt">Response time</dt>
+            <dd data-gd="Taobh a-staigh 24 uairean">Within 24 hours</dd>
 
-            <dt>Common questions</dt>
-            <dd><a href="faq.html" class="contact-faq-link">View FAQ</a></dd>
+            <dt data-gd="Ceistean cumanta">Common questions</dt>
+            <dd><a href="faq.html" class="contact-faq-link" data-gd="Faic na Ceistean">View FAQ</a></dd>
           </dl>
         </aside>
 
@@ -127,7 +137,7 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label for="first-name">First Name</label>
+                <label for="first-name" data-gd="Ainm Toisich">First Name</label>
                 <input
                   type="text"
                   id="first-name"
@@ -137,7 +147,7 @@
                 >
               </div>
               <div class="form-group">
-                <label for="last-name">Last Name</label>
+                <label for="last-name" data-gd="Sloinneadh">Last Name</label>
                 <input
                   type="text"
                   id="last-name"
@@ -149,7 +159,7 @@
             </div>
 
             <div class="form-group">
-              <label for="email">Email Address</label>
+              <label for="email" data-gd="Seòladh Post-d">Email Address</label>
               <input
                 type="email"
                 id="email"
@@ -161,7 +171,7 @@
             </div>
 
             <div class="form-group" id="phone-group">
-              <label for="phone">Phone Number <span style="font-size:0.82em;opacity:0.55;font-weight:300;">(optional)</span></label>
+              <label for="phone"><span data-gd="Àireamh Fòn">Phone Number</span> <span style="font-size:0.82em;opacity:0.55;font-weight:300;" data-gd="(roghainneil)">(optional)</span></label>
               <input
                 type="tel"
                 id="phone"
@@ -171,36 +181,36 @@
                 placeholder="optional"
               >
               <input type="hidden" name="phone-cleaned" id="phone-cleaned">
-              <span class="field-error-msg" id="phone-error" role="alert" aria-live="polite">Please enter a valid UK or international phone number</span>
+              <span class="field-error-msg" id="phone-error" role="alert" aria-live="polite" data-gd="Cuir a-steach àireamh fòn ceart sa RA no eadar-nàiseanta">Please enter a valid UK or international phone number</span>
             </div>
 
             <div class="form-group">
-              <label id="enquiry-type-label">Enquiry Type</label>
+              <label id="enquiry-type-label" data-gd="Seòrsa Ceist">Enquiry Type</label>
 
               <!-- Primary: Tuition / Performance / Composition / Other -->
               <div class="enquiry-type-grid enquiry-primary-grid" role="group" aria-labelledby="enquiry-type-label">
-                <button type="button" class="enquiry-type-btn" data-primary="tuition" aria-pressed="false">Tuition</button>
-                <button type="button" class="enquiry-type-btn" data-primary="performance" aria-pressed="false">Performance</button>
-                <button type="button" class="enquiry-type-btn" data-primary="composition" aria-pressed="false">Composition</button>
-                <button type="button" class="enquiry-type-btn" data-primary="other" aria-pressed="false">Other</button>
+                <button type="button" class="enquiry-type-btn" data-primary="tuition" aria-pressed="false" data-gd="Oideachd">Tuition</button>
+                <button type="button" class="enquiry-type-btn" data-primary="performance" aria-pressed="false" data-gd="Taisbeantas">Performance</button>
+                <button type="button" class="enquiry-type-btn" data-primary="composition" aria-pressed="false" data-gd="Sgrìobhadh">Composition</button>
+                <button type="button" class="enquiry-type-btn" data-primary="other" aria-pressed="false" data-gd="Eile">Other</button>
               </div>
 
               <!-- Tuition sub-options -->
               <div class="sub-options" id="sub-tuition">
                 <hr class="enquiry-separator">
                 <div class="enquiry-type-grid" role="group" aria-label="Tuition type">
-                  <button type="button" class="enquiry-type-btn" data-sub="trial" aria-pressed="false">Trial Lesson</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="regular" aria-pressed="false">Regular Tuition</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="trial" aria-pressed="false" data-gd="Leasain Deuchainn">Trial Lesson</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="regular" aria-pressed="false" data-gd="Oideachd Àbhaisteach">Regular Tuition</button>
                 </div>
 
                 <!-- Tier — shown when Regular is selected -->
                 <div class="sub-options" id="sub-tier">
                   <hr class="enquiry-separator">
                   <div class="enquiry-type-grid" role="group" aria-label="Tuition tier">
-                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="beginner" aria-pressed="false"><span class="tier-tag">Tier 1</span>Beginner</button>
-                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="intermediate" aria-pressed="false"><span class="tier-tag">Tier 2</span>Intermediate</button>
-                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="advanced" aria-pressed="false"><span class="tier-tag">Tier 3</span>Advanced</button>
-                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="piobaireachd" aria-pressed="false"><span class="tier-tag">Tier 4</span>Pìobaireachd</button>
+                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="beginner" aria-pressed="false"><span class="tier-tag">Tier 1</span><span data-gd="Tòiseachair">Beginner</span></button>
+                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="intermediate" aria-pressed="false"><span class="tier-tag">Tier 2</span><span data-gd="Eadar-mheadhanach">Intermediate</span></button>
+                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="advanced" aria-pressed="false"><span class="tier-tag">Tier 3</span><span data-gd="Àrd-ìre">Advanced</span></button>
+                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="piobaireachd" aria-pressed="false"><span class="tier-tag">Tier 4</span><span>Pìobaireachd</span></button>
                   </div>
                 </div>
 
@@ -208,33 +218,33 @@
                 <div class="sub-options" id="sub-delivery">
                   <hr class="enquiry-separator">
                   <div class="enquiry-type-grid" role="group" aria-label="Lesson delivery">
-                    <button type="button" class="enquiry-type-btn" data-delivery="in-person" aria-pressed="false">In-Person (Edinburgh)</button>
-                    <button type="button" class="enquiry-type-btn" data-delivery="online" aria-pressed="false">Online</button>
+                    <button type="button" class="enquiry-type-btn" data-delivery="in-person" aria-pressed="false" data-gd="An Làthair (Dùn Èideann)">In-Person (Edinburgh)</button>
+                    <button type="button" class="enquiry-type-btn" data-delivery="online" aria-pressed="false" data-gd="Air-loidhne">Online</button>
                   </div>
                 </div>
 
                 <label class="child-enquiry-checkbox">
                   <input type="checkbox" id="child-enquiry-check" name="child-enquiry" value="yes">
-                  I am applying on behalf of a child
+                  <span data-gd="Tha mi a' cur a-steach air son leanabh">I am applying on behalf of a child</span>
                 </label>
               </div>
 
               <!-- Performance sub-options -->
               <div class="sub-options" id="sub-performance">
-                <p class="enquiry-context-note">
+                <p class="enquiry-context-note" data-gd="Gheibh thu luach-sgrìobhte taobh a-staigh 24 uairean. Chan eil pàigheadh riatanach aig an ìre seo.">
                   You will receive a written quote within 24 hours. No payment is required at this stage.
                 </p>
                 <hr class="enquiry-separator">
                 <div class="performance-grid" aria-label="Performance type">
-                  <button type="button" class="enquiry-type-btn" data-sub="wedding" aria-pressed="false">Wedding &amp; Civil Ceremony</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="funeral" aria-pressed="false">Funeral &amp; Memorial</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="burns" aria-pressed="false">Burns Suppers &amp; Traditional Gatherings</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="corporate" aria-pressed="false">Corporate &amp; Business Dinner</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="festival" aria-pressed="false">Ceilidh &amp; Cultural Events</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="graduation" aria-pressed="false">Graduation &amp; Civic Ceremony</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="wedding" aria-pressed="false" data-gd="Banais & Deasachd Shìobhalta">Wedding &amp; Civil Ceremony</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="funeral" aria-pressed="false" data-gd="Tiodhlacadh & Cuimhneachan">Funeral &amp; Memorial</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="burns" aria-pressed="false" data-gd="Suipearan Burns & Cruinneachaidhean Traidiseanta">Burns Suppers &amp; Traditional Gatherings</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="corporate" aria-pressed="false" data-gd="Dìnnear Corporra & Gnìomhachais">Corporate &amp; Business Dinner</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="festival" aria-pressed="false" data-gd="Tachartasan Cèilidh & Cultarail">Ceilidh &amp; Cultural Events</button>
+                  <button type="button" class="enquiry-type-btn" data-sub="graduation" aria-pressed="false" data-gd="Ceumnachadh & Deasachd Chathrannach">Graduation &amp; Civic Ceremony</button>
                 </div>
                 <div class="performance-custom-row">
-                  <button type="button" class="enquiry-type-btn performance-custom-btn" data-sub="custom" aria-pressed="false">Custom Engagement</button>
+                  <button type="button" class="enquiry-type-btn performance-custom-btn" data-sub="custom" aria-pressed="false" data-gd="Gabhadh-Ris Gnàthach">Custom Engagement</button>
                 </div>
               </div>
 
@@ -242,17 +252,17 @@
               <div class="sub-options" id="sub-composition">
                 <hr class="enquiry-separator">
                 <div class="enquiry-type-grid" role="group" aria-label="Commission type">
-                  <button type="button" class="enquiry-type-btn" data-comp-type="private" aria-pressed="false">Private Commission</button>
-                  <button type="button" class="enquiry-type-btn" data-comp-type="media" aria-pressed="false">Media &amp; Commercial</button>
-                  <button type="button" class="enquiry-type-btn" data-comp-type="institutional" aria-pressed="false">Heritage &amp; Institutional</button>
+                  <button type="button" class="enquiry-type-btn" data-comp-type="private" aria-pressed="false" data-gd="Coimisean Prìobhaideach">Private Commission</button>
+                  <button type="button" class="enquiry-type-btn" data-comp-type="media" aria-pressed="false" data-gd="Meadhanan & Malairteach">Media &amp; Commercial</button>
+                  <button type="button" class="enquiry-type-btn" data-comp-type="institutional" aria-pressed="false" data-gd="Dualchas & Institiùideach">Heritage &amp; Institutional</button>
                 </div>
 
                 <!-- Format — shown when commission type is selected -->
                 <div class="sub-options" id="sub-comp-format">
                   <hr class="enquiry-separator">
                   <div class="enquiry-type-grid" role="group" aria-label="Composition format">
-                    <button type="button" class="enquiry-type-btn" data-comp-format="solo" aria-pressed="false">Solo Pipe</button>
-                    <button type="button" class="enquiry-type-btn" data-comp-format="band" aria-pressed="false">Pipe Band</button>
+                    <button type="button" class="enquiry-type-btn" data-comp-format="solo" aria-pressed="false" data-gd="Pìob Singilte">Solo Pipe</button>
+                    <button type="button" class="enquiry-type-btn" data-comp-format="band" aria-pressed="false" data-gd="Bann-pìoba">Pipe Band</button>
                   </div>
                 </div>
               </div>
@@ -269,7 +279,7 @@
             <!-- Event Date — conditionally shown -->
             <div class="form-group hidden" id="event-date-group">
               <fieldset style="border:none;padding:0;margin:0;">
-              <legend class="form-label" style="float:none;width:100%;margin-bottom:0.5rem;">Event Date</legend>
+              <legend class="form-label" style="float:none;width:100%;margin-bottom:0.5rem;" data-gd="Ceann-latha Tachartais">Event Date</legend>
               <div class="date-input-group">
                 <input type="text" inputmode="numeric" placeholder="DD" maxlength="2" id="event-day" name="event-day" class="date-field">
                 <span class="date-separator">/</span>
@@ -281,29 +291,31 @@
             </div>
 
             <div class="form-group" id="message-group">
-              <label for="message">Message / Additional Details</label>
+              <label for="message" data-gd="Teachdaireachd / Mion-fhiosrachadh">Message / Additional Details</label>
               <textarea
                 id="message"
                 name="message"
                 rows="4"
                 placeholder="Please include any relevant details — location, time, level of experience, or specific requirements."
+                data-gd-placeholder="Thoir a-steach mion-fhiosrachadh sam bith — àite, àm, ìre eòlais, no riatanasan sònraichte."
               ></textarea>
             </div>
 
             <div class="form-submit">
-              <button type="submit" class="btn-primary">Send Enquiry</button>
+              <button type="submit" class="btn-primary" data-gd="Cuir Ceist a-steach">Send Enquiry</button>
             </div>
 
           </form>
 
           <!-- Inline success message -->
           <div class="form-success" id="form-success" role="status" aria-live="polite">
-            <p>Your enquiry has been received.</p>
-            <p>You will hear back within 24 hours.</p>
+            <p data-gd="Chaidh do cheist fhaighinn.">Your enquiry has been received.</p>
+            <p data-gd="Cluinnidh tu bhuainn taobh a-staigh 24 uairean.">You will hear back within 24 hours.</p>
           </div>
 
           <div class="form-error" id="form-error" role="alert" aria-live="assertive" style="display:none;">
-            <p>Something went wrong sending your enquiry. Please email us directly at
+            <p data-gd="Chaidh rudeigin ceàrr le bhith a' cur do cheist.">Something went wrong sending your enquiry.</p>
+            <p>Please email us directly at
             <a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a> and we will
             respond within 24 hours.</p>
           </div>
@@ -322,41 +334,41 @@
         <img src="images/Ceolmhor_logo_transparent.png" alt="" class="footer__brand-img" aria-hidden="true">
         <div class="footer__brand-text">
           <span class="footer__logo">Ceòlmhor</span>
-          <p class="footer__tagline">Scottish Excellence · Piping Tuition and Performance</p>
+          <p class="footer__tagline" data-gd="Sàr-mhathais na h-Alba · Oideachd is Taisbeantas Pìobaireachd">Scottish Excellence · Piping Tuition and Performance</p>
         </div>
       </div>
 
       <nav class="footer__nav" aria-label="Footer navigation">
-        <span class="footer__col-title">Navigation</span>
+        <span class="footer__col-title" data-gd="Seòladh">Navigation</span>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="tuition.html">Tuition</a></li>
-          <li><a href="performance.html">Performance</a></li>
-          <li><a href="compositions.html">Compositions</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Enquire</a></li>
+          <li><a href="index.html" data-gd="Dachaigh">Home</a></li>
+          <li><a href="about.html" data-gd="Mu Dhèidhinn">About</a></li>
+          <li><a href="tuition.html" data-gd="Oideachd">Tuition</a></li>
+          <li><a href="performance.html" data-gd="Taisbeantas">Performance</a></li>
+          <li><a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a></li>
+          <li><a href="gallery.html" data-gd="Gailearaidh">Gallery</a></li>
+          <li><a href="contact.html" data-gd="Feòraich">Enquire</a></li>
         </ul>
       </nav>
 
       <div class="footer__contact">
-        <span class="footer__col-title">Contact &amp; Social</span>
+        <span class="footer__col-title" data-gd="Conaltradh & Meadhanan Sòisealta">Contact &amp; Social</span>
         <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
-        <p>Edinburgh, Scotland</p>
-
-              </div>
+        <p data-gd="Dùn Èideann, Alba">Edinburgh, Scotland</p>
+      </div>
 
     </div>
     <div class="footer__bottom">
-      <p>© Ceòlmhor 2026. All rights reserved.</p>
+      <p data-gd="© Ceòlmhor 2026. Gach còir glèidhte.">© Ceòlmhor 2026. All rights reserved.</p>
       <div class="footer__bottom-links">
-        <a href="faq.html">FAQ</a>
-        <a href="privacy.html">Privacy Notice</a>
+        <a href="faq.html" data-gd="Ceistean">FAQ</a>
+        <a href="privacy.html" data-gd="Brath Dìomhaireachd">Privacy Notice</a>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js" defer></script>
+  <script src="lang.js" defer></script>
   <script src="main.js" defer></script>
   <script>
     (function () {
@@ -725,7 +737,7 @@
         var btn = contactForm.querySelector('[type="submit"]');
         var originalText = btn.textContent;
         btn.disabled = true;
-        btn.textContent = 'Sending\u2026';
+        btn.textContent = 'Sending…';
 
         fetch(WORKER_URL, {
           method: 'POST',

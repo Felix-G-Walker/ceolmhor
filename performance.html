@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
@@ -55,19 +55,23 @@
   <nav class="nav" aria-label="Main navigation">
     <div class="nav__inner">
       <div class="nav__left">
+        <div class="lang-pill" role="group" aria-label="Language / Cànan">
+          <button class="lang-pill__opt active" data-lang-opt="en" aria-pressed="true">EN</button>
+          <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+        </div>
         <a href="index.html" class="nav__logo" aria-label="Ceòlmhor — home"><img src="images/Ceolmhor_logo_transparent.png" alt="Ceòlmhor" class="site-logo"></a>
-        <a href="index.html" class="nav__home">Home</a>
+        <a href="index.html" class="nav__home" data-gd="Dachaigh">Home</a>
       </div>
       <div class="nav__links">
-        <a href="about.html">About</a>
-        <a href="tuition.html">Tuition</a>
-        <a href="performance.html" class="active">Performance</a>
-        <a href="compositions.html">Compositions</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+        <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+        <a href="performance.html" class="active" data-gd="Taisbeantas">Performance</a>
+        <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+        <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
       </div>
       <div class="nav__right">
-        <a href="faq.html" class="nav__faq">FAQ</a>
-        <a href="contact.html" class="nav__cta">Enquire</a>
+        <a href="faq.html" class="nav__faq" data-gd="Ceistean">FAQ</a>
+        <a href="contact.html" class="nav__cta" data-gd="Feòraich">Enquire</a>
       </div>
       <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -77,20 +81,26 @@
 
   <!-- Mobile overlay -->
   <div class="nav__overlay" role="dialog" aria-label="Navigation menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="tuition.html">Tuition</a>
-    <a href="performance.html" class="active">Performance</a>
-    <a href="compositions.html">Compositions</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html" class="nav__overlay-cta">Enquire</a>
+    <a href="index.html" data-gd="Dachaigh">Home</a>
+    <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+    <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+    <a href="performance.html" class="active" data-gd="Taisbeantas">Performance</a>
+    <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+    <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
+    <a href="faq.html" data-gd="Ceistean">FAQ</a>
+    <a href="contact.html" class="nav__overlay-cta" data-gd="Feòraich">Enquire</a>
+    <div class="nav__overlay-lang">
+      <div class="lang-pill" role="group" aria-label="Language / Cànan">
+        <button class="lang-pill__opt" data-lang-opt="en" aria-pressed="false">EN</button>
+        <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+      </div>
+    </div>
   </div>
 
   <!-- ── Page Header ────────────────────────────────────────────── -->
   <header class="page-header page-header--charcoal">
     <div class="container">
-      <h1 class="page-header__title">Performance</h1>
+      <h1 class="page-header__title" data-gd="Taisbeantas">Performance</h1>
       <p class="gaelic-subtitle">Taisbeantas</p>
       <hr class="rule">
     </div>
@@ -101,146 +111,102 @@
     <div class="container">
 
       <div class="section-intro" data-reveal>
-        <p>Ceòlmhor performs at weddings, funerals, Burns Nights, corporate dinners, ceilidhs, and civic ceremonies across Edinburgh and Scotland — including the Royal Edinburgh Military Tattoo and the Armistice Day Service at the Scottish National War Memorial. Every engagement is handled professionally from first contact to final note.</p>
+        <p data-gd="Bidh Ceòlmhor a' coileanadh aig bainnsean, tiodhlacaidhean, oidhcheannan Burns, dinnearan corporra, céilidhean, agus deasachaidhean catharra air feadh Dhùn Èideann agus na h-Alba — a' gabhail a-steach Tatù Militairidh Rìoghail Dhùn Èideann agus Seirbheis Latha na h-Armistice aig Cuimhneachan Nàiseanta Cogaidh na h-Alba. Bidh gach cùmhnant air a làimhseachadh gu proifeiseanta bhon chiad fhiosrachadh gu nòta deireannach.">Ceòlmhor performs at weddings, funerals, Burns Nights, corporate dinners, ceilidhs, and civic ceremonies across Edinburgh and Scotland — including the Royal Edinburgh Military Tattoo and the Armistice Day Service at the Scottish National War Memorial. Every engagement is handled professionally from first contact to final note.</p>
       </div>
 
       <header class="section-header" data-reveal>
-        <span class="section-label">Services</span>
-        <h2>Professional piping for every occasion.</h2>
+        <span class="section-label" data-gd="Seirbheisean">Services</span>
+        <h2 data-gd="Pìobaireachd proifeiseanta airson gach cothrom.">Professional piping for every occasion.</h2>
       </header>
 
       <div class="events-grid" role="list" aria-label="Performance types and pricing">
 
         <article class="event-card" role="listitem" data-reveal>
           <a href="performance/wedding.html" class="event-card__link">
-            <span class="event-card__type">Ceremony</span>
-            <h3>Wedding &amp; Civil Ceremony</h3>
+            <span class="event-card__type" data-gd="Deasachd">Ceremony</span>
+            <h3 data-gd="Banais &amp; Deasachd Shìobhalta">Wedding &amp; Civil Ceremony</h3>
             <p class="event-card__price">from £225</p>
           </a>
         </article>
 
         <article class="event-card" role="listitem" data-reveal data-delay="1">
           <a href="performance/funeral.html" class="event-card__link">
-            <span class="event-card__type">Ceremony</span>
-            <h3>Funeral &amp; Memorial</h3>
+            <span class="event-card__type" data-gd="Deasachd">Ceremony</span>
+            <h3 data-gd="Tiodhlacadh &amp; Cuimhneachan">Funeral &amp; Memorial</h3>
             <p class="event-card__price">from £125</p>
           </a>
         </article>
 
         <article class="event-card" role="listitem" data-reveal data-delay="2">
           <a href="performance/burns.html" class="event-card__link">
-            <span class="event-card__type">Cultural</span>
-            <h3>Burns Night</h3>
+            <span class="event-card__type" data-gd="Cultarach">Cultural</span>
+            <h3 data-gd="Oidhche Burns">Burns Night</h3>
             <p class="event-card__price">from £200</p>
           </a>
         </article>
 
         <article class="event-card" role="listitem" data-reveal>
           <a href="performance/corporate.html" class="event-card__link">
-            <span class="event-card__type">Corporate</span>
-            <h3>Corporate &amp; Business Dinner</h3>
+            <span class="event-card__type" data-gd="Corporra">Corporate</span>
+            <h3 data-gd="Dinnear Corporra &amp; Gnothachais">Corporate &amp; Business Dinner</h3>
             <p class="event-card__price">from £200</p>
           </a>
         </article>
 
         <article class="event-card" role="listitem" data-reveal data-delay="1">
           <a href="performance/ceilidh-cultural.html" class="event-card__link">
-            <span class="event-card__type">Cultural</span>
-            <h3>Ceilidh &amp; Dance Events</h3>
+            <span class="event-card__type" data-gd="Cultarach">Cultural</span>
+            <h3 data-gd="Céilidh &amp; Tachartasan Dannsa">Ceilidh &amp; Dance Events</h3>
             <p class="event-card__price">from £200</p>
           </a>
         </article>
 
         <article class="event-card" role="listitem" data-reveal data-delay="2">
           <a href="performance/hogmanay.html" class="event-card__link">
-            <span class="event-card__type">Cultural</span>
-            <h3>Hogmanay &amp; the Scottish Calendar</h3>
+            <span class="event-card__type" data-gd="Cultarach">Cultural</span>
+            <h3 data-gd="Oidhche na Bliadhna Ùire &amp; Mìosachan na h-Alba">Hogmanay &amp; the Scottish Calendar</h3>
             <p class="event-card__price">from £200</p>
           </a>
         </article>
 
         <article class="event-card event-card--bespoke" role="listitem" data-reveal>
           <div>
-            <span class="event-card__type">Bespoke</span>
-            <h3>Custom Engagement</h3>
+            <span class="event-card__type" data-gd="Sònraichte">Bespoke</span>
+            <h3 data-gd="Cùmhnant Gnàthach">Custom Engagement</h3>
           </div>
           <div>
-            <p>Every occasion is different. If your event does not fit neatly into a standard category — or if you have something specific in mind — Ceòlmhor is happy to discuss a bespoke arrangement. Pricing is agreed individually based on the nature, duration, and location of the engagement.</p>
+            <p data-gd="Tha gach cothrom eadar-dhealaichte. Mura h-eil an tachartas agad a' freagairt gu rèidh ri roinn àbhaisteach — no ma tha dad sònraichte nad inntinn — tha Ceòlmhor toilichte dèiligeadh ri rèiteach sònraichte. Thathar a' dealbhadh prìsean gu neo-àbhaisteach a rèir nàdair, faid, agus àite an cùmhnant.">Every occasion is different. If your event does not fit neatly into a standard category — or if you have something specific in mind — Ceòlmhor is happy to discuss a bespoke arrangement. Pricing is agreed individually based on the nature, duration, and location of the engagement.</p>
           </div>
         </article>
 
       </div>
 
-      <!-- Booking Process -->
-      <p class="performance-location-note" data-reveal>
+      <p class="performance-location-note" data-reveal data-gd="Stèidhichte ann an Dùn Èideann. Ri fhaotainn air feadh na h-Alba. Bidh tàilleabh siubhail de £0.50 am mile a' buntainn seachad air a' chòig mìle ciad. Thathar a' toirt ceanglaichean pàighidh le dearbhadh do chùmhnant — chan eil pàigheadh a dhìth airson fiosrachadh.">
         Based in Edinburgh. Available across Scotland. A travel surcharge of £0.50 per mile
         applies beyond the first five miles. Payment links are provided with your booking
         confirmation — no payment is required to enquire.
       </p>
-      <header class="section-header" data-reveal>
-        <span class="section-label">Process</span>
-        <h2>From enquiry to confirmed booking.</h2>
-      </header>
 
-      <div class="booking-steps" data-reveal>
-
-        <div class="booking-step">
-          <p class="booking-step__num" aria-hidden="true">1</p>
-          <p class="booking-step__name">Enquiry</p>
-          <p class="booking-step__desc">
-            Submit details via the contact form. Include your performance date, type, and location.
-          </p>
-        </div>
-
-        <div class="booking-step">
-          <p class="booking-step__num" aria-hidden="true">2</p>
-          <p class="booking-step__name">Quote</p>
-          <p class="booking-step__desc">
-            A written quote is issued within 24 hours. Valid for 14 days from the date of issue.
-          </p>
-        </div>
-
-        <div class="booking-step">
-          <p class="booking-step__num" aria-hidden="true">3</p>
-          <p class="booking-step__name">Contract &amp; Deposit</p>
-          <p class="booking-step__desc">
-            A written contract is issued. A 50% non-refundable deposit secures the date.
-          </p>
-        </div>
-
-        <div class="booking-step">
-          <p class="booking-step__num" aria-hidden="true">4</p>
-          <p class="booking-step__name">Confirmed</p>
-          <p class="booking-step__desc">
-            Your date is confirmed once contract is signed and deposit received. Remaining balance due 7 days before the performance.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Terms -->
       <div class="terms" data-reveal>
-        <span class="terms__title">Booking Terms</span>
+        <span class="terms__title" data-gd="Teirmichean Cùmhnantaidh">Booking Terms</span>
         <ul>
-          <li>50% non-refundable deposit required within 7 days of confirmation to secure the date</li>
-          <li>Remaining balance due 7 days before the performance.</li>
-          <li>Travel surcharge: £0.50 per mile beyond the first five miles</li>
-          <li>No performance without a signed contract and deposit received</li>
+          <li data-gd="50% de thasgadh neo-aisig riatanach taobh a-staigh 7 latha de dhearbhadh gus an latha a dhèanamh tèarainte">50% non-refundable deposit required within 7 days of confirmation to secure the date</li>
+          <li data-gd="An t-iarmad air fhàgail ri phàigheadh 7 latha mus tèid an taisbeantas.">Remaining balance due 7 days before the performance.</li>
+          <li data-gd="Tàilleabh siubhail: £0.50 am mile seachad air a' chòig mìle ciad">Travel surcharge: £0.50 per mile beyond the first five miles</li>
+          <li data-gd="Gun taisbeantas às aonais cùmhnant air a shoidhneadh agus tasgadh air fhaotainn">No performance without a signed contract and deposit received</li>
         </ul>
       </div>
 
-      <!-- Testimonial -->
       <div class="testimonial-placeholder" data-reveal style="margin-top: 4rem;">
-        <p>&#8220;The pipes brought the whole evening together in a way nothing else could have. An exceptional performance &#8212; the music was perfectly chosen and impeccably played.&#8221;</p>
-        <span class="testimonial__attr">&#8212; Alex Moir-Barnetson, Ceilidh &nbsp;&#183;&nbsp; January 2026</span>
+        <p data-gd="&quot;Thug na pìoban an fheasgar gu lèir ri chèile ann an dòigh nach b' urrainn do nì sam bith eile. Coileanadh air leth — chaidh an ceòl a thaghadh gu foirfe agus a chluich gun ghainne.&quot;">&#8220;The pipes brought the whole evening together in a way nothing else could have. An exceptional performance &#8212; the music was perfectly chosen and impeccably played.&#8221;</p>
+        <span class="testimonial__attr" data-gd="— Alex Moir-Barnetson, Céilidh · Am Faoilleach 2026">&#8212; Alex Moir-Barnetson, Ceilidh &nbsp;&#183;&nbsp; January 2026</span>
       </div>
 
-      <!-- FAQ prompt + CTA -->
       <div class="faq-link-prompt" data-reveal>
-        <a href="faq.html" class="faq-link">Common questions — view FAQ</a>
+        <a href="faq.html" class="faq-link" data-gd="Ceistean cumanta — faic Ceistean">Common questions — view FAQ</a>
       </div>
       <div class="text-center" data-reveal>
-        <a href="contact.html" class="btn-primary">Enquire About a Performance</a>
+        <a href="contact.html" class="btn-primary" data-gd="Feòraich mu Thaisbeantas">Enquire About a Performance</a>
       </div>
 
     </div>
@@ -254,41 +220,41 @@
         <img src="images/Ceolmhor_logo_transparent.png" alt="" class="footer__brand-img" aria-hidden="true">
         <div class="footer__brand-text">
           <span class="footer__logo">Ceòlmhor</span>
-          <p class="footer__tagline">Scottish Excellence · Piping Tuition and Performance</p>
+          <p class="footer__tagline" data-gd="Sàr-mhathais na h-Alba · Oideachd is Taisbeantas Pìobaireachd">Scottish Excellence · Piping Tuition and Performance</p>
         </div>
       </div>
 
       <nav class="footer__nav" aria-label="Footer navigation">
-        <span class="footer__col-title">Navigation</span>
+        <span class="footer__col-title" data-gd="Seòladh">Navigation</span>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="tuition.html">Tuition</a></li>
-          <li><a href="performance.html">Performance</a></li>
-          <li><a href="compositions.html">Compositions</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Enquire</a></li>
+          <li><a href="index.html" data-gd="Dachaigh">Home</a></li>
+          <li><a href="about.html" data-gd="Mu Dhèidhinn">About</a></li>
+          <li><a href="tuition.html" data-gd="Oideachd">Tuition</a></li>
+          <li><a href="performance.html" data-gd="Taisbeantas">Performance</a></li>
+          <li><a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a></li>
+          <li><a href="gallery.html" data-gd="Gailearaidh">Gallery</a></li>
+          <li><a href="contact.html" data-gd="Feòraich">Enquire</a></li>
         </ul>
       </nav>
 
       <div class="footer__contact">
-        <span class="footer__col-title">Contact &amp; Social</span>
+        <span class="footer__col-title" data-gd="Conaltradh">Contact &amp; Social</span>
         <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
-        <p>Edinburgh, Scotland</p>
-
-              </div>
+        <p data-gd="Dùn Èideann, Alba">Edinburgh, Scotland</p>
+      </div>
 
     </div>
     <div class="footer__bottom">
-      <p>© Ceòlmhor 2026. All rights reserved.</p>
+      <p data-gd="© Ceòlmhor 2026. Gach còir glèidhte.">© Ceòlmhor 2026. All rights reserved.</p>
       <div class="footer__bottom-links">
-        <a href="faq.html">FAQ</a>
-        <a href="privacy.html">Privacy Notice</a>
+        <a href="faq.html" data-gd="Ceistean">FAQ</a>
+        <a href="privacy.html" data-gd="Brath Dìomhaireachd">Privacy Notice</a>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js" defer></script>
+  <script src="lang.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>

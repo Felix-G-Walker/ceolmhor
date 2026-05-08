@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
@@ -46,19 +46,23 @@
   <nav class="nav" aria-label="Main navigation">
     <div class="nav__inner">
       <div class="nav__left">
+        <div class="lang-pill" role="group" aria-label="Language / Cànan">
+          <button class="lang-pill__opt active" data-lang-opt="en" aria-pressed="true">EN</button>
+          <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+        </div>
         <a href="index.html" class="nav__logo" aria-label="Ceòlmhor — home"><img src="images/Ceolmhor_logo_transparent.png" alt="Ceòlmhor" class="site-logo"></a>
-        <a href="index.html" class="nav__home">Home</a>
+        <a href="index.html" class="nav__home" data-gd="Dachaigh">Home</a>
       </div>
       <div class="nav__links">
-        <a href="about.html">About</a>
-        <a href="tuition.html">Tuition</a>
-        <a href="performance.html">Performance</a>
-        <a href="compositions.html">Compositions</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+        <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+        <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+        <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+        <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
       </div>
       <div class="nav__right">
-        <a href="faq.html" class="nav__faq active">FAQ</a>
-        <a href="contact.html" class="nav__cta">Enquire</a>
+        <a href="faq.html" class="nav__faq active" data-gd="Ceistean">FAQ</a>
+        <a href="contact.html" class="nav__cta" data-gd="Feòraich">Enquire</a>
       </div>
       <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -68,20 +72,26 @@
 
   <!-- Mobile overlay -->
   <div class="nav__overlay" role="dialog" aria-label="Navigation menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="tuition.html">Tuition</a>
-    <a href="performance.html">Performance</a>
-    <a href="compositions.html">Compositions</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html" class="nav__overlay-cta">Enquire</a>
+    <a href="index.html" data-gd="Dachaigh">Home</a>
+    <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+    <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+    <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+    <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+    <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
+    <a href="faq.html" data-gd="Ceistean">FAQ</a>
+    <a href="contact.html" class="nav__overlay-cta" data-gd="Feòraich">Enquire</a>
+    <div class="nav__overlay-lang">
+      <div class="lang-pill" role="group" aria-label="Language / Cànan">
+        <button class="lang-pill__opt" data-lang-opt="en" aria-pressed="false">EN</button>
+        <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+      </div>
+    </div>
   </div>
 
   <!-- ── Page Header ────────────────────────────────────────────── -->
   <header class="page-header page-header--charcoal">
     <div class="container">
-      <h1 class="page-header__title">FAQ</h1>
+      <h1 class="page-header__title" data-gd="Ceistean Cumanta">FAQ</h1>
       <p class="gaelic-subtitle">Ceistean Cumanta</p>
       <hr class="rule">
     </div>
@@ -93,372 +103,372 @@
       <div class="faq-content">
 
         <!-- ── Section 1: General ─────────────────────────────── -->
-        <p class="faq-section-label">General</p>
+        <p class="faq-section-label" data-gd="Coitcheann">General</p>
         <hr class="faq-section-rule">
 
         <div class="faq" data-reveal>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>What is Ceòlmhor?</span>
+              <span data-gd="Dè a th' ann an Ceòlmhor?">What is Ceòlmhor?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Ceòlmhor is an Edinburgh-based Highland bagpipe tuition and performance business founded on the conviction that the instrument cannot be taught or performed without the Gàidhlig culture and tradition that created it. Tuition is available in person in Edinburgh and online worldwide. Professional performance is available for weddings, funerals, Burns Suppers, corporate dinners, graduations, ceilidhs, and other occasions across Scotland and beyond. The name means resonant or melodious in Scottish Gaelic — pronounced kyawl-vor.</p>
+              <p data-gd="Is e gnìomhachas oideachd agus taisbeantas pìoba Gàidhealach stèidhichte ann an Dùn Èideann a th' ann an Ceòlmhor, air a thogail air a' chreideamh nach faodar an t-inneal a theagasg no a thaisbeanadh gun chultar agus traidisean na Gàidhlig a chruthaich e. Tha oideachd rim faotainn aig aghaidh ri aghaidh ann an Dùn Èideann agus air-loidhne air feadh an t-saoghail. Tha taisbeantas proifeiseanta rim faotainn airson bainnseachan, tiodhlacaidhean, Suipearan Burns, dìnnearaichean corporach, ceumnaichean, cèilidhean, agus tachartasan eile air feadh Alba agus nas fhaide air falbh. Tha an t-ainm a' ciallachadh ceòlmhor no binn ann an Gàidhlig na h-Alba — air a fuaimneachadh kyawl-vor.">Ceòlmhor is an Edinburgh-based Highland bagpipe tuition and performance business founded on the conviction that the instrument cannot be taught or performed without the Gàidhlig culture and tradition that created it. Tuition is available in person in Edinburgh and online worldwide. Professional performance is available for weddings, funerals, Burns Suppers, corporate dinners, graduations, ceilidhs, and other occasions across Scotland and beyond. The name means resonant or melodious in Scottish Gaelic — pronounced kyawl-vor.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Where are you based?</span>
+              <span data-gd="Càit a bheil thu stèidhichte?">Where are you based?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Ceòlmhor is based in Edinburgh, Scotland. In-person tuition is available in Edinburgh. Online tuition is available worldwide via Zoom. Performance engagements are taken across Scotland and further afield — travel beyond the first five miles from Edinburgh city centre is subject to a surcharge of £0.50 per mile.</p>
+              <p data-gd="Tha Ceòlmhor stèidhichte ann an Dùn Èideann, Alba. Tha oideachd aig aghaidh ri aghaidh rim faotainn ann an Dùn Èideann. Tha oideachd air-loidhne rim faotainn air feadh an t-saoghail tro Zoom. Tha gabhalaichean taisbeantas rim faotainn air feadh Alba agus nas fhaide air falbh — tha fo-phàigheadh siubhail de £0.50 gach mìle a' buntainn thar na còig mìltean toisich o mheadhan baile Dhùn Èideann.">Ceòlmhor is based in Edinburgh, Scotland. In-person tuition is available in Edinburgh. Online tuition is available worldwide via Zoom. Performance engagements are taken across Scotland and further afield — travel beyond the first five miles from Edinburgh city centre is subject to a surcharge of £0.50 per mile.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>How far do you travel for performances?</span>
+              <span data-gd="Dè cho fada 's a bhios tu a' siubhal airson taisbeantasan?">How far do you travel for performances?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Ceòlmhor is available for performance engagements across Scotland and internationally. There is no fixed limit on travel distance — engagements in the Highlands, the Borders, and beyond Edinburgh are all considered. A travel surcharge of £0.50 per mile applies beyond the first five miles from Edinburgh city centre. For destinations requiring overnight accommodation, costs are discussed individually at the enquiry stage.</p>
+              <p data-gd="Tha Ceòlmhor rim faotainn airson gabhalaichean taisbeantas air feadh Alba agus eadar-nàiseanta. Chan eil crìoch sheasmhach air astar siubhail — tha gabhalaichean anns na Gàidhealtachd, na Crìochan, agus thar Dhùn Èideann uile air am beachdachadh. Tha fo-phàigheadh siubhail de £0.50 gach mìle a' buntainn thar na còig mìltean toisich. Airson ceann-uidhe a tha a' feumachadh àite-fuirich, tha cosgaisean air an deasbad fa leth aig àm na ceiste.">Ceòlmhor is available for performance engagements across Scotland and internationally. There is no fixed limit on travel distance — engagements in the Highlands, the Borders, and beyond Edinburgh are all considered. A travel surcharge of £0.50 per mile applies beyond the first five miles from Edinburgh city centre. For destinations requiring overnight accommodation, costs are discussed individually at the enquiry stage.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>How quickly will you respond to an enquiry?</span>
+              <span data-gd="Dè cho luath 's a fhreagras tu ceist?">How quickly will you respond to an enquiry?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>All enquiries submitted via the contact form are responded to within 24 hours. For urgent enquiries — particularly those relating to funerals or time-sensitive bookings — please note your urgency in the message field and a response will be prioritised.</p>
+              <p data-gd="Tha gach ceist air a chuir a-steach tron fhoirm conaltraidh air a freagairt taobh a-staigh 24 uairean. Airson ceistean èiginneach — gu sònraichte ceistean mu thiodhlacaidhean no bùcainnean tìm-mothachail — thoir an aire do d' èiginneachd ann an raon na teachdaireachd agus bithidh freagairt air a thoirt seachad cho luath 's a ghabhas.">All enquiries submitted via the contact form are responded to within 24 hours. For urgent enquiries — particularly those relating to funerals or time-sensitive bookings — please note your urgency in the message field and a response will be prioritised.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>How do I make a booking?</span>
+              <span data-gd="Ciamar a nì mi bùcainn?">How do I make a booking?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>All bookings begin with an enquiry via the contact form. A written quote is issued within 24 hours, valid for 14 days. Once agreed, a written contract is issued and a 50% non-refundable deposit secures the date. The remaining balance is due 7 days before the engagement. No performance or tuition arrangement is confirmed without a signed agreement.</p>
+              <p data-gd="Bidh gach bùcainn a' tòiseachadh le ceist tron fhoirm conaltraidh. Tha còtas sgrìobhte air a thoirt a-mach taobh a-staigh 24 uairean, dligheach airson 14 latha. Nuair a dheach aontachadh, thèid cùnradh sgrìobhte a thoirt a-mach agus bidh tasgadh neo-aisighte de 50% a' glasadh a' cheann-latha. Tha am balanns a dhfhanas air iasad 7 latha mus tòisich an gabhadh-ris. Chan eil taisbeantas no rèiteachadh oideachd air a dhearbhadh gun chùnradh soidhnichte.">All bookings begin with an enquiry via the contact form. A written quote is issued within 24 hours, valid for 14 days. Once agreed, a written contract is issued and a 50% non-refundable deposit secures the date. The remaining balance is due 7 days before the engagement. No performance or tuition arrangement is confirmed without a signed agreement.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Do you offer gift vouchers?</span>
+              <span data-gd="A bheil dearbh-thiodhlac agaibh?">Do you offer gift vouchers?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Gift vouchers are not currently available but are planned for future introduction. If you are interested in gifting a trial lesson or a performance booking, please get in touch directly via the contact form and a bespoke arrangement can be discussed.</p>
+              <p data-gd="Chan eil dearbh-thiodhlacaichean rim faotainn an-dràsta ach tha iad air an dealbhadh airson an toirt a-steach san àm ri teachd. Ma tha ùidh agad ann a bhith a' toirt seachad leasain deuchainn no bùcainn taisbeantas mar thiodhlac, cuir fios oirnn gu dìreach tron fhoirm conaltraidh agus faodar rèiteachadh bespoke a dheasbad.">Gift vouchers are not currently available but are planned for future introduction. If you are interested in gifting a trial lesson or a performance booking, please get in touch directly via the contact form and a bespoke arrangement can be discussed.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Are you qualified to teach?</span>
+              <span data-gd="A bheil thu teisteanasach airson teagasg?">Are you qualified to teach?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Yes. Ceòlmhor is run by an experienced piping instructor with three years of structured tuition delivery. Please get in touch directly if you have specific questions about qualifications or requirements.</p>
+              <p data-gd="Tha. Tha Ceòlmhor air a ruith le neach-teagaisg pìobaireachd eòlach le trì bliadhna de lìbhrigeadh oideachd structaraichte. Cuir fios oirnn gu dìreach ma tha ceistean sònraichte agad mu theisteanas no riatanasan.">Yes. Ceòlmhor is run by an experienced piping instructor with three years of structured tuition delivery. Please get in touch directly if you have specific questions about qualifications or requirements.</p>
             </div>
           </div>
 
         </div>
 
         <!-- ── Section 2: Tuition ─────────────────────────────── -->
-        <p class="faq-section-label">Tuition</p>
+        <p class="faq-section-label" data-gd="Oideachd">Tuition</p>
         <hr class="faq-section-rule">
 
         <div class="faq" data-reveal>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Do I need any experience to start learning the bagpipes?</span>
+              <span data-gd="A bheil feum agam air eòlas sam bith gus tòiseachadh ag ionnsachadh na pìoba?">Do I need any experience to start learning the bagpipes?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>No prior musical experience is required. The most important thing is a willingness to learn. Tuition begins on the practice chanter — a small, quiet instrument on which every Highland piper learns the fundamentals — and progresses to the full Highland bagpipe at Tier III. Bagpipes are not required until that stage.</p>
+              <p data-gd="Chan eil feum air eòlas ciùil roimhe. Is e an rud as cudromaiche deòin ionnsachaidh. Bidh oideachd a' tòiseachadh air am feadan cleachdaidh — inneal beag, sàmhach air a bheil gach pìobaire Gàidhealach ag ionnsachadh na bunaitsean — agus a' gluasad chun a' phìob-mhòir iomlainn aig Ìre III. Chan eil pìoban a dhìth gus an ìre sin.">No prior musical experience is required. The most important thing is a willingness to learn. Tuition begins on the practice chanter — a small, quiet instrument on which every Highland piper learns the fundamentals — and progresses to the full Highland bagpipe at Tier III. Bagpipes are not required until that stage.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Do I need to buy a practice chanter before my first lesson?</span>
+              <span data-gd="A bheil feum agam air feadan cleachdaidh a cheannach ron chiad leasain?">Do I need to buy a practice chanter before my first lesson?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Yes — a practice chanter is required from the first lesson. If you do not already own one, guidance on purchasing a suitable instrument is provided at enrolment. A basic practice chanter typically costs between £20 and £50 and is available from most Scottish music retailers and online. Bagpipes are not required until Tier III of the curriculum.</p>
+              <p data-gd="Tha — tha feadan cleachdaidh a dhìth bhon chiad leasain. Mura bheil fear agad mar-thà, bithidh stiùireadh air ceannach inneil iomchaidh air a thoirt seachad aig àm clàraidh. Tha feadan cleachdaidh bunasach mar as trice eadar £20 agus £50 agus rim faotainn bho mhòr-chuid de mhàileid-ciùil Albannach agus air-loidhne. Chan eil pìoban a dhìth gus Ìre III den churraicealam.">Yes — a practice chanter is required from the first lesson. If you do not already own one, guidance on purchasing a suitable instrument is provided at enrolment. A basic practice chanter typically costs between £20 and £50 and is available from most Scottish music retailers and online. Bagpipes are not required until Tier III of the curriculum.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>How much do lessons cost?</span>
+              <span data-gd="Dè cho mòr 's a chosgail leasain?">How much do lessons cost?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>The first trial lesson is complimentary — a full structured lesson with no obligation to continue. Regular tuition is £30 per hour. A block booking of 10 lessons is available at the price of 9, representing a saving of £30. Sessions of 30 minutes and 90 minutes can be arranged upon request — 90-minute sessions are recommended in the run-up to a competition or performance.</p>
+              <p data-gd="Is e an ciad leasain deuchainn an asgaidh — leasain slàn structaraichte gun dùmhlachadh leantainn. Tha oideachd àbhaisteach £30 gach uair. Tha bùcainn bloc de 10 leasain rim faotainn aig prìs 9, a' riochdachadh sàbhaladh de £30. Faodar seiseanan de 30 mionaid agus 90 mionaid a rèiteachadh air iarrtas — tha seiseanan 90 mionaid air am moladh ann an run-up gu co-fharpais no taisbeantas.">The first trial lesson is complimentary — a full structured lesson with no obligation to continue. Regular tuition is £30 per hour. A block booking of 10 lessons is available at the price of 9, representing a saving of £30. Sessions of 30 minutes and 90 minutes can be arranged upon request — 90-minute sessions are recommended in the run-up to a competition or performance.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>How long does it take to learn the bagpipes?</span>
+              <span data-gd="Dè cho fada 's a bhios e gus a' phìob ionnsachadh?">How long does it take to learn the bagpipes?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Progress depends on the individual student, the regularity of practice, and the standard being aimed for. Most students reach the full Highland bagpipe at Tier III within one to two years of consistent weekly lessons. Reaching competition standard at Tier IV typically takes several years of dedicated study. The practice chanter alone can be a rewarding instrument in its own right — many students enjoy years of progress before transitioning to the full pipes.</p>
+              <p data-gd="Bidh adhartas an urra ris an oileanach fa leth, rèitealachd a' chleachdaidh, agus an ìre a thathar ag amas air. Bidh mòr-chuid de dh'oileanaich a' ruighinn a' phìob-mhòir Gàidhealach aig Ìre III taobh a-staigh aon gu dhà bhliadhna de leasain seachdaineil cunbhalach. Bidh ruighinn ìre co-fharpais aig Ìre IV mar as trice a' toirt grunn bliadhnaichean de sgrùdadh dìcheallach. Faodar am feadan cleachdaidh a bhith na inneal buannachdail na aonar — bidh mòran oileanach a' mealtainn bliadhnaichean de dh'adhartas mus tionndaidh iad chun na pìoban iomlainn.">Progress depends on the individual student, the regularity of practice, and the standard being aimed for. Most students reach the full Highland bagpipe at Tier III within one to two years of consistent weekly lessons. Reaching competition standard at Tier IV typically takes several years of dedicated study. The practice chanter alone can be a rewarding instrument in its own right — many students enjoy years of progress before transitioning to the full pipes.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>What is the difference between the four tuition tiers?</span>
+              <span data-gd="Dè an eadar-dhealachadh eadar na ceithir ìrean oideachd?">What is the difference between the four tuition tiers?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>The Ceòlmhor curriculum is structured across four progressive tiers. Tier I (Foundational) covers the practice chanter, basic scale, posture, and five tunes. Tier II (Developing) introduces gracenotes, doublings, and repertoire building. Tier III (Proficient) covers the transition to the full Highland bagpipe, blowing technique, tuning, and public performance. Tier IV (Advanced) covers March, Strathspey and Reel sets, Pìobaireachd, and competition preparation. Each tier has defined progression markers and students advance when they are ready.</p>
+              <p data-gd="Tha curraicealam Ceòlmhor air a structaradh thar ceithir ìrean adhartach. Tha Ìre I (Bunasach) a' còmhdach am feadan cleachdaidh, sgèile bunasach, deagh dhèanamh-suas, agus còig puirt. Tha Ìre II (A' Leasachadh) a' toirt a-steach gracenotes, doublings, agus togail clàr-puing. Tha Ìre III (Comasach) a' còmhdach an tionndaidh chun a' phìob-mhòir Gàidhealach iomlainn, teicneòlas sèididh, gleusadh, agus taisbeantas poblach. Tha Ìre IV (Àrd-ìre) a' còmhdach seataichean Màrsaich, Strathspey agus Ruidhle, Pìobaireachd, agus ullachadh co-fharpais. Tha comharran adhartais mìnichte aig gach ìre agus bidh oileanaich a' gluasad nuair a tha iad deiseil.">The Ceòlmhor curriculum is structured across four progressive tiers. Tier I (Foundational) covers the practice chanter, basic scale, posture, and five tunes. Tier II (Developing) introduces gracenotes, doublings, and repertoire building. Tier III (Proficient) covers the transition to the full Highland bagpipe, blowing technique, tuning, and public performance. Tier IV (Advanced) covers March, Strathspey and Reel sets, Pìobaireachd, and competition preparation. Each tier has defined progression markers and students advance when they are ready.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Do you teach children?</span>
+              <span data-gd="A bheil thu a' teagasg chloinne?">Do you teach children?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Yes. Ceòlmhor teaches junior students. A parent or guardian must provide written consent before the first lesson, covering data collection, lesson recording policy, and communication channels. The practice chanter is an ideal first instrument for younger students — it is quiet, affordable, and can be learned at any age.</p>
+              <p data-gd="Tha. Tha Ceòlmhor a' teagasg oileanaich òga. Feumaidh pàrant no fear-gleidhidh cead sgrìobhte a thoirt seachad ron chiad leasain, a' còmhdach cruinneachadh dàta, poileasaidh clàraidh leasain, agus canalan conaltraidh. Is e am feadan cleachdaidh an t-inneal tòiseachaidh iomchaidh airson oileanaich nas òige — tha e sàmhach, ruigsinneach, agus faodar ionnsachadh aig aois sam bith.">Yes. Ceòlmhor teaches junior students. A parent or guardian must provide written consent before the first lesson, covering data collection, lesson recording policy, and communication channels. The practice chanter is an ideal first instrument for younger students — it is quiet, affordable, and can be learned at any age.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Do you teach online?</span>
+              <span data-gd="A bheil thu a' teagasg air-loidhne?">Do you teach online?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Yes. Online tuition is available worldwide via Zoom. A stable internet connection and a device with a camera and microphone are required. A link is sent in advance of each session. Online lessons follow the same structured curriculum as in-person lessons and are available at all four tiers.</p>
+              <p data-gd="Tha. Tha oideachd air-loidhne rim faotainn air feadh an t-saoghail tro Zoom. Tha feum air ceangal eadar-lìn seasmhach agus inneal le camara agus miocrophone. Thèid ceangal a chur air adhart mus tòisich gach seisean. Tha leasain air-loidhne a' leantainn an aon churraicealam structaraichte ris na leasain aig aghaidh ri aghaidh agus rim faotainn aig na ceithir ìrean uile.">Yes. Online tuition is available worldwide via Zoom. A stable internet connection and a device with a camera and microphone are required. A link is sent in advance of each session. Online lessons follow the same structured curriculum as in-person lessons and are available at all four tiers.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Can I switch between online and in-person lessons?</span>
+              <span data-gd="Am faod mi atharrachadh eadar leasain air-loidhne agus aig aghaidh ri aghaidh?">Can I switch between online and in-person lessons?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Yes, subject to availability. Students who begin online and subsequently move to Edinburgh, or who prefer to alternate between formats, can arrange this at enrolment or at any point during their tuition. Both formats follow the same curriculum and progression structure.</p>
+              <p data-gd="Tha, fo chuingealachadh ruigsinneachd. Faodar seo a rèiteachadh aig àm clàraidh no aig àm sam bith rè na h-oideachd. Tha an dà fhòrmat a' leantainn an aon churraicealam agus structar adhartais.">Yes, subject to availability. Students who begin online and subsequently move to Edinburgh, or who prefer to alternate between formats, can arrange this at enrolment or at any point during their tuition. Both formats follow the same curriculum and progression structure.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>What is your cancellation policy for tuition?</span>
+              <span data-gd="Dè am poileasaidh cansalaidh airson oideachd?">What is your cancellation policy for tuition?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Cancellations with more than 48 hours notice will be rescheduled at no charge. Cancellations within 48 hours are charged at the full lesson rate unless the slot can be filled. Repeated late cancellations may result in the end of the tuition arrangement.</p>
+              <p data-gd="Bithidh cansalaidhean le còrr is 48 uair de dh'fhios air an ath-sgeòilleadh gun chosgais. Bithidh cansalaidhean taobh a-staigh 48 uair air am pàigheadh aig reat iomlan an leasain mura faodar an slot a lìonadh. Dh'fhaodadh cansalaidhean deireadach ath-choirichte leantainn gu crìochnachadh an rèiteachaidh oideachd.">Cancellations with more than 48 hours notice will be rescheduled at no charge. Cancellations within 48 hours are charged at the full lesson rate unless the slot can be filled. Repeated late cancellations may result in the end of the tuition arrangement.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Do you teach Pìobaireachd?</span>
+              <span data-gd="A bheil thu a' teagasg Pìobaireachd?">Do you teach Pìobaireachd?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Yes — Pìobaireachd (the great music of the Highland bagpipe, also known as ceòl mór) is introduced at Tier IV of the Ceòlmhor curriculum. It is the oldest and most complex form of pipe music, rooted in the Gàidhlig tradition, and is taught with full attention to its cultural and historical context. Pìobaireachd is among the most distinctive and demanding repertoire in any musical tradition.</p>
+              <p data-gd="Tha — tha Pìobaireachd (ceòl mòr na pìoba Gàidhealach, ris an canar cuideachd ceòl mòr) air a thoirt a-steach aig Ìre IV de churraicealam Ceòlmhor. Is e an seòrsa ceòl pìoba as sine agus as iom-fhillte, freumhaichte ann an traidisean na Gàidhlig, agus air a theagasg le aire iomlan dha cho-theacsa cultarail agus eachdraidheil. Tha Pìobaireachd am measg nan clàr-puing as sònraichte agus as èiginneach ann an traidisean ciùil sam bith.">Yes — Pìobaireachd (the great music of the Highland bagpipe, also known as ceòl mór) is introduced at Tier IV of the Ceòlmhor curriculum. It is the oldest and most complex form of pipe music, rooted in the Gàidhlig tradition, and is taught with full attention to its cultural and historical context. Pìobaireachd is among the most distinctive and demanding repertoire in any musical tradition.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>What is included with tuition?</span>
+              <span data-gd="Dè tha air a ghabhail a-steach le oideachd?">What is included with tuition?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>All tuition includes a welcome pack for new students, progress tracking and written feedback after every lesson, access to practice resources, a response within 24 hours to any queries between lessons.</p>
+              <p data-gd="Tha a h-uile oideachd a' gabhail a-steach pacaid fàilte airson oileanaich ùra, lorg adhartais agus fios-air-ais sgrìobhte às dèidh gach leasain, ruigsinneachd air goireasan cleachdaidh, freagairt taobh a-staigh 24 uairean do cheistean sam bith eadar leasain.">All tuition includes a welcome pack for new students, progress tracking and written feedback after every lesson, access to practice resources, a response within 24 hours to any queries between lessons.</p>
             </div>
           </div>
 
         </div>
 
         <!-- ── Section 3: Performance ─────────────────────────── -->
-        <p class="faq-section-label">Performance</p>
+        <p class="faq-section-label" data-gd="Taisbeantas">Performance</p>
         <hr class="faq-section-rule">
 
         <div class="faq" data-reveal>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>How much does a wedding piper cost in Edinburgh?</span>
+              <span data-gd="Dè na cosgaisean airson pìobaire bainnse ann an Dùn Èideann?">How much does a wedding piper cost in Edinburgh?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Ceòlmhor offers three wedding packages. The Ceremony Piper package covers the full ceremonial role — arrival music, bridal procession, signing of the register, and recessional — at £225. The Reception Piper package adds drinks reception piping and photograph background music at £300. The Full Wedding Piper package includes the complete day from arrival to grand entrance at £350. An additional performance set is available at £75. All prices are subject to a travel surcharge of £0.50 per mile beyond the first five miles from Edinburgh city centre.</p>
+              <p data-gd="Tha Ceòlmhor a' tabhann trì pacaidean bainnse. Tha pacaid Pìobaire na Deasachd a' còmhdach an rò-obair deasachail iomlainn — ceòl tighinn a-steach, mòr-shluagh bride, soidhnigeadh a' chlàir, agus caismeachd — aig £225. Tha pacaid Pìobaire Gabhail-ri-Aoighean a' cur pìobaireachd gabhail-ri-aoighean agus ceòl cùl-raoin dealbhan ris aig £300. Tha pacaid Pìobaire Slàn na Bainnse a' gabhail a-steach an latha iomlan bho thighinn a-steach gu tighinn a-steach mòr aig £350. Tha suidheachadh taisbeantas àraidh rim faotainn aig £75.">Ceòlmhor offers three wedding packages. The Ceremony Piper package covers the full ceremonial role — arrival music, bridal procession, signing of the register, and recessional — at £225. The Reception Piper package adds drinks reception piping and photograph background music at £300. The Full Wedding Piper package includes the complete day from arrival to grand entrance at £350. An additional performance set is available at £75. All prices are subject to a travel surcharge of £0.50 per mile beyond the first five miles from Edinburgh city centre.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>What occasions do you perform at?</span>
+              <span data-gd="Dè na tachartasan air a bheil thu a' taisbeanadh?">What occasions do you perform at?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Ceòlmhor provides professional piping for weddings and civil ceremonies, funerals and memorials, Burns Suppers and traditional gatherings, St Andrew's Night and Hogmanay celebrations, corporate dinners and receptions, ceilidhs and cultural events, graduations and civic ceremonies, and bespoke occasions arranged on enquiry. Performance engagements are available across Scotland and internationally.</p>
+              <p data-gd="Tha Ceòlmhor a' tabhann pìobaireachd proifeiseanta airson bainnseachan agus deasachdan sìobhalta, tiodhlacaidhean agus cuimhneachain, Suipearan Burns agus cruinneachaidhean traidiseanta, cuirmean Oidhche Naomh Anndra agus Oidhche Challainn, dìnnearaichean agus gabhalaichean corporach, cèilidhean agus tachartasan cultarail, ceumnaichean agus deasachdan cathrannaich, agus tachartasan bespoke air an rèiteachadh air ceist. Tha gabhalaichean taisbeantas rim faotainn air feadh Alba agus eadar-nàiseanta.">Ceòlmhor provides professional piping for weddings and civil ceremonies, funerals and memorials, Burns Suppers and traditional gatherings, St Andrew's Night and Hogmanay celebrations, corporate dinners and receptions, ceilidhs and cultural events, graduations and civic ceremonies, and bespoke occasions arranged on enquiry. Performance engagements are available across Scotland and internationally.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>What will you wear at a performance?</span>
+              <span data-gd="Dè a bhios tu a' caitheamh aig taisbeantas?">What will you wear at a performance?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Full Highland dress is worn for all formal performance engagements — including weddings, funerals, Burns Suppers, corporate dinners, and civic ceremonies. Dress is considered and appropriate to the occasion in every case.</p>
+              <p data-gd="Tha aodach Gàidhealach slàn air a chaitheamh airson gach gabhadh-ris taisbeantas foirmeil — a' gabhail a-steach bainnseachan, tiodhlacaidhean, Suipearan Burns, dìnnearaichean corporach, agus deasachdan cathrannaich. Tha an t-aodach beachdaichte agus iomchaidh dhan tachartas anns gach cùis.">Full Highland dress is worn for all formal performance engagements — including weddings, funerals, Burns Suppers, corporate dinners, and civic ceremonies. Dress is considered and appropriate to the occasion in every case.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Can I request specific tunes?</span>
+              <span data-gd="Am faod mi puirt shònraichte iarraidh?">Can I request specific tunes?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Yes. Repertoire requests are discussed and agreed in advance of every engagement. Ceòlmhor maintains a full repertoire spanning marches, airs, laments, jigs, reels, strathspeys, and Pìobaireachd. If you have a specific tune in mind — for a processional, a lament, or a celebratory piece — please include it in your enquiry and availability within the repertoire will be confirmed.</p>
+              <p data-gd="Tha. Thèid iarraidh clàr-puing a dheasbad agus aontachadh ro làimh airson gach gabhadh-ris. Tha clàr-puing slàn aig Ceòlmhor a' còmhdach màrsaichean, aidhrichean, caoidhean, siogaichean, ruidhlean, strathspeys, agus Pìobaireachd. Ma tha port sònraichte agad san amharc — airson mòr-shluagh, caoidh, no pìos cuirme — cuir sin ann an do cheist agus bithidh ruigsinneachd taobh a-staigh a' chlàir-puing air a dhearbhadh.">Yes. Repertoire requests are discussed and agreed in advance of every engagement. Ceòlmhor maintains a full repertoire spanning marches, airs, laments, jigs, reels, strathspeys, and Pìobaireachd. If you have a specific tune in mind — for a processional, a lament, or a celebratory piece — please include it in your enquiry and availability within the repertoire will be confirmed.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>How far in advance should I book a piper?</span>
+              <span data-gd="Dè cho tràth 's bu chòir dhomh pìobaire a bhùcainn?">How far in advance should I book a piper?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>For weddings, bookings are recommended at least six to twelve months in advance, particularly for peak summer weekends and popular venues. For funerals, Ceòlmhor operates a priority response policy and will always endeavour to accommodate short-notice bookings. For Burns Suppers and corporate events, two to three months notice is generally sufficient, though earlier is always better for preferred dates.</p>
+              <p data-gd="Airson bainnseachan, moltar bùcainnean co-dhiù sia gu dhà mhìos deug ro làimh, gu sònraichte airson deireadh-seachdain samhraidh às-dèidh agus làraichean ainmeil. Airson tiodhlacaidhean, tha Ceòlmhor ag obair le poileasaidh prìomhachais freagairt agus bithidh daonnan a' feuchainn ri bùcainnean ghoirid a ghabhail. Airson Suipearan Burns agus tachartasan corporach, tha dà gu trì mìosan de dh'fhios mar as trice gu leòr, ged a tha tràithe daonnan nas fheàrr airson ceann-laithean rùnaichte.">For weddings, bookings are recommended at least six to twelve months in advance, particularly for peak summer weekends and popular venues. For funerals, Ceòlmhor operates a priority response policy and will always endeavour to accommodate short-notice bookings. For Burns Suppers and corporate events, two to three months notice is generally sufficient, though earlier is always better for preferred dates.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>What happens if you are unable to perform on the day?</span>
+              <span data-gd="Dè thachras mura h-urrainn dhut taisbeanadh air an latha?">What happens if you are unable to perform on the day?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>In the event of illness or an unforeseen circumstance preventing performance, Ceòlmhor will make every effort to source a replacement piper of equivalent standard. If a replacement cannot be found, a full refund of all monies paid will be issued. This commitment is included in the written contract issued for every booking.</p>
+              <p data-gd="Ann an cùis tinnis no hoaim-neoil gun fhiosta a' cur casg air taisbeantas, nì Ceòlmhor gach oidhirp gus pìobaire ìre co-ionann a lorg mar ionadach. Mura faodar ionadach a lorg, thèid aisig iomlan gach airgid a phàigheadh a thoirt seachad. Tha an geallachd seo air a ghabhail a-steach sa chùnradh sgrìobhte air a thoirt seachad airson gach bùcainn.">In the event of illness or an unforeseen circumstance preventing performance, Ceòlmhor will make every effort to source a replacement piper of equivalent standard. If a replacement cannot be found, a full refund of all monies paid will be issued. This commitment is included in the written contract issued for every booking.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>What is your cancellation policy for performances?</span>
+              <span data-gd="Dè am poileasaidh cansalaidh airson taisbeantasan?">What is your cancellation policy for performances?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>A 50% non-refundable deposit is required to secure the date. If the booking is cancelled by the client, the deposit is retained. If the cancellation occurs within 14 days of the engagement, the full balance may be charged at Ceòlmhor's discretion. All cancellation terms are set out in the written contract issued at the time of booking.</p>
+              <p data-gd="Tha 50% de thasgadh neo-aisighte a dhìth gus an ceann-latha a ghlasadh. Ma dheach an cansaladh le an neach-ceannaich, cumaidh Ceòlmhor an tasgadh. Ma thachair an cansaladh taobh a-staigh 14 latha den ghabhadh-ris, dh'fhaodadh a' bhuilleach-phrìs iomlan a bhith air a ghearradh a rèir beachd Ceòlmhor. Tha na teirmean cansalaidh uile air an cur ann an cùnradh sgrìobhte air a thoirt a-mach aig àm na bùcainn.">A 50% non-refundable deposit is required to secure the date. If the booking is cancelled by the client, the deposit is retained. If the cancellation occurs within 14 days of the engagement, the full balance may be charged at Ceòlmhor's discretion. All cancellation terms are set out in the written contract issued at the time of booking.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Do you perform at funerals at short notice?</span>
+              <span data-gd="A bheil thu a' taisbeanadh aig tiodhlacaidhean aig geàrr-fhios?">Do you perform at funerals at short notice?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Yes. Ceòlmhor understands that funeral arrangements are often made at short notice and treats all funeral enquiries as a priority. Please contact directly via the enquiry form noting the urgency and a response will be issued as quickly as possible. The funeral and memorial rate starts from £125.</p>
+              <p data-gd="Tha. Tha Ceòlmhor a' tuigsinn gu bheil rèiteachaidhean tiodhlacaidh gu tric air an dèanamh aig geàrr-fhios agus a' làimhseachadh nan ceistean tiodhlacaidh uile mar phrìomhachas. Cuir fios gu dìreach tron fhoirm ceiste ag innse an èiginneachd agus bithidh freagairt air a thoirt seachad cho luath 's a ghabhas. Tha an reat tiodhlacaidh agus cuimhneachain a' tòiseachadh bho £125.">Yes. Ceòlmhor understands that funeral arrangements are often made at short notice and treats all funeral enquiries as a priority. Please contact directly via the enquiry form noting the urgency and a response will be issued as quickly as possible. The funeral and memorial rate starts from £125.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Do you perform outside Scotland?</span>
+              <span data-gd="A bheil thu a' taisbeanadh taobh a-muigh Alba?">Do you perform outside Scotland?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Yes. Ceòlmhor has performed internationally and is available for engagements outside Scotland. For engagements requiring travel beyond driving distance, accommodation and travel costs are discussed individually at the enquiry stage. Destination weddings, overseas Burns Suppers, and international corporate events are all considered.</p>
+              <p data-gd="Tha. Tha Ceòlmhor air taisbeanadh eadar-nàiseanta agus rim faotainn airson gabhalaichean taobh a-muigh Alba. Airson gabhalaichean a tha a' feumachadh siubhal thar astar dràibhidh, thèid cosgaisean àite-fuirich agus siubhail a dheasbad fa leth aig àm na ceiste. Tha bainnseachan cèin, Suipearan Burns thall thairis, agus tachartasan corporach eadar-nàiseanta uile air am beachdachadh.">Yes. Ceòlmhor has performed internationally and is available for engagements outside Scotland. For engagements requiring travel beyond driving distance, accommodation and travel costs are discussed individually at the enquiry stage. Destination weddings, overseas Burns Suppers, and international corporate events are all considered.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Is a contract required for all performances?</span>
+              <span data-gd="A bheil cùnradh a dhìth airson gach taisbeantas?">Is a contract required for all performances?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Yes. A written contract is issued for every performance engagement without exception. No performance takes place without a signed contract and deposit received. The contract covers repertoire, timings, travel, cancellation terms, and all other relevant details. This protects both parties and ensures complete clarity before the engagement.</p>
+              <p data-gd="Tha. Thèid cùnradh sgrìobhte a thoirt a-mach airson gach gabhadh-ris taisbeantas gun eisgeachd. Chan eil taisbeantas ann gun chùnradh soidhnichte agus tasgadh faighte. Tha an cùnradh a' còmhdach clàr-puing, amannan, siubhal, teirmean cansalaidh, agus gach mion-fhiosrachadh iomchaidh eile. Tha seo a' dìon an dà phàrtaidh agus a' dèanamh cinnteach gu bheil soilleireachd iomlan mus tòisich an gabhadh-ris.">Yes. A written contract is issued for every performance engagement without exception. No performance takes place without a signed contract and deposit received. The contract covers repertoire, timings, travel, cancellation terms, and all other relevant details. This protects both parties and ensures complete clarity before the engagement.</p>
             </div>
           </div>
 
         </div>
 
         <!-- ── Section 4: Compositions ───────────────────────── -->
-        <p class="faq-section-label">Compositions</p>
+        <p class="faq-section-label" data-gd="Sgrìobhaidhean">Compositions</p>
         <hr class="faq-section-rule">
 
         <div class="faq" data-reveal>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Can I buy or download the sheet music for catalogue pieces?</span>
+              <span data-gd="Am faod mi ceòl-sgrìobhte a cheannach no a luchdachadh a-nuas airson puirt catalog?">Can I buy or download the sheet music for catalogue pieces?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Scores for catalogue pieces are available on enquiry via the compositions page. On purchase, the score is delivered as a typeset PDF. All catalogue pieces are licensed for personal and private performance use only — commercial recording, broadcast, competitive performance, or any other use requires a separate licensing arrangement. Please get in touch to discuss.</p>
+              <p data-gd="Tha sgòraichean airson puirt catalog rim faotainn air ceist tron duilleag sgrìobhaidhean. Air ceannach, thèid an sgòr a lìbhrigeadh mar PDF clò-sgeadaichte. Tha gach pìos catalog air a cheadachadh airson cleachdadh pearsanta agus taisbeantas prìobhaideach a-mhàin — tha clàradh malairteach, craoladh, taisbeantas co-fharpais, no cleachdadh sam bith eile a' feumachadh rèiteachadh ceadachaidh fa leth. Cuir fios oirnn gus deasbad.">Scores for catalogue pieces are available on enquiry via the compositions page. On purchase, the score is delivered as a typeset PDF. All catalogue pieces are licensed for personal and private performance use only — commercial recording, broadcast, competitive performance, or any other use requires a separate licensing arrangement. Please get in touch to discuss.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>How do I commission a piece?</span>
+              <span data-gd="Ciamar a nì mi coimisean airson pìos?">How do I commission a piece?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Commissions follow a four-step process. First, submit an enquiry via the commission form on the compositions page — describe the occasion, the type of piece, and how you intend to use it. A brief consultation follows by phone or email to agree the mood, cultural references, and scope. The piece is then composed to the agreed brief, with a reference recording shared for feedback and one round of revisions incorporated. The final typeset score and audio recording are delivered on completion, with licensing terms confirmed in writing.</p>
+              <p data-gd="Bidh coimiseanan a' leantainn pròiseas ceithir-ceum. An toiseach, cuir a-steach ceist tron fhoirm coimisein air an duilleag sgrìobhaidhean — mìnich an tachartas, an seòrsa pìos, agus mar a tha rùn agad a chleachdadh. Bidh comhairleachadh goirid a' leantainn air fòn no post-d airson aontachadh mun ghiùlan, na h-iomraidhean cultarail, agus raon. Bidh am pìos an uairsin air a dhèanamh dhan bhriof aontaichte, le clàradh iomraidh air a roinn airson fios-air-ais agus aon chuairt de dheach-leasachaidhean air an toirt a-steach. Thèid sgòr clò-sgeadaichte mu dheireadh agus clàradh fuaim a lìbhrigeadh air crìochnachadh, le teirmean ceadachaidh air an dearbhadh ann an sgrìobhadh.">Commissions follow a four-step process. First, submit an enquiry via the commission form on the compositions page — describe the occasion, the type of piece, and how you intend to use it. A brief consultation follows by phone or email to agree the mood, cultural references, and scope. The piece is then composed to the agreed brief, with a reference recording shared for feedback and one round of revisions incorporated. The final typeset score and audio recording are delivered on completion, with licensing terms confirmed in writing.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>How much does a commission cost?</span>
+              <span data-gd="Dè na cosgaisean airson coimisean?">How much does a commission cost?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Private commissions — for individuals and families marking a personal occasion — start from £250. Media and commercial commissions, covering film, television, documentary, advertising, and branded content, are individually agreed following an initial brief. Heritage and institutional commissions — for civic bodies, military units, cultural organisations, and Burns clubs — are also individually agreed following consultation. All fees are confirmed in writing before work begins.</p>
+              <p data-gd="Tha coimiseanan prìobhaideach — airson daoine fa leth agus teaghlaichean a' comharrachadh tachartas pearsanta — a' tòiseachadh bho £250. Tha coimiseanan meadhanan agus malairteach, a' còmhdach film, telebhisean, documentary, sanasachd, agus susbaint brannda, air an aontachadh fa leth às dèidh briof tòiseachaidh. Tha coimiseanan dualchais agus institiùideach — airson buidhnean cathrannach, aonadan militidheil, buidhnean cultarail, agus clubaichean Burns — cuideachd air an aontachadh fa leth às dèidh comhairleachaidh. Tha na tasgaidhean uile air an dearbhadh ann an sgrìobhadh mus tòisich obair.">Private commissions — for individuals and families marking a personal occasion — start from £250. Media and commercial commissions, covering film, television, documentary, advertising, and branded content, are individually agreed following an initial brief. Heritage and institutional commissions — for civic bodies, military units, cultural organisations, and Burns clubs — are also individually agreed following consultation. All fees are confirmed in writing before work begins.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>How long does a commission take?</span>
+              <span data-gd="Dè cho fada 's a bhios coimisean a' toirt?">How long does a commission take?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Standard commissions — private, performance, and most media commissions — are completed within four to six weeks of confirmed brief and receipt of the commission fee. Timeline for institutional commissions is agreed individually at the consultation stage. If you have a specific deadline, please note it in your enquiry and a realistic timeline will be confirmed before work begins.</p>
+              <p data-gd="Tha coimiseanan àbhaisteach — prìobhaideach, taisbeantas, agus mòr-chuid de choimiseanan meadhanan — air an crìochnachadh taobh a-staigh ceithir gu sia seachdainean de bhriof dearbhte agus faighinn a' choimisein. Tha loidhne-ùine airson coimiseanan institiùideach air aontachadh fa leth aig an ìre comhairleachaidh. Ma tha ceann-latha sònraichte agad, thoir sin air adhart nad cheist agus bithidh loidhne-ùine reusanta air a dhearbhadh mus tòisich obair.">Standard commissions — private, performance, and most media commissions — are completed within four to six weeks of confirmed brief and receipt of the commission fee. Timeline for institutional commissions is agreed individually at the consultation stage. If you have a specific deadline, please note it in your enquiry and a realistic timeline will be confirmed before work begins.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Can a piece be composed for my event and performed on the night?</span>
+              <span data-gd="Am faod pìos a dhèanamh airson mo thachartas agus a thaisbeanadh air an oidhche?">Can a piece be composed for my event and performed on the night?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Yes. An event commission can be added to any premium performance booking — the piece is composed specifically for your occasion, premiered at the event as part of the performance, and the typeset score and reference recording are delivered afterwards. The commission fee starts from £200 and is in addition to the performance package fee. To add a commission to a performance booking, indicate this at the enquiry stage and it will be scoped as part of the booking process.</p>
+              <p data-gd="Tha. Faodar coimisean tachartais a chur ri bùcainn taisbeantas prèimium sam bith — tha am pìos air a dhèanamh gu sònraichte airson do thachartas, air a chiad-thaisbeanadh aig an tachartas mar phàirt den taisbeantas, agus thèid an sgòr clò-sgeadaichte agus clàradh iomraidh a lìbhrigeadh às a dhèidh. Tha am coimisean a' tòiseachadh bho £200 agus a bharrachd air an tasgadh airson pacaid taisbeantas. Gus coimisean a chur ri bùcainn taisbeantas, comharraich seo aig àm na ceiste taisbeantas agus bithidh e air a raon mar phàirt den phròiseas bùcainn.">Yes. An event commission can be added to any premium performance booking — the piece is composed specifically for your occasion, premiered at the event as part of the performance, and the typeset score and reference recording are delivered afterwards. The commission fee starts from £200 and is in addition to the performance package fee. To add a commission to a performance booking, indicate this at the enquiry stage and it will be scoped as part of the booking process.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-item__q" role="button" tabindex="0" aria-expanded="false">
-              <span>Can I use a commissioned piece for competitive performance, recording, or broadcast?</span>
+              <span data-gd="Am faod mi pìos coimiseanta a chleachdadh airson taisbeantas co-fharpais, clàradh, no craoladh?">Can I use a commissioned piece for competitive performance, recording, or broadcast?</span>
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </div>
             <div class="faq-item__a">
-              <p>Licensing beyond personal and private use — including competitive performance, commercial recording, broadcast, and sync rights — is discussed and agreed individually as part of the commission process. The intended use is confirmed in writing before work begins, and any broader licensing is included in the commission terms. If your intended use extends beyond private performance, please describe this clearly in your enquiry so the correct terms can be agreed from the outset.</p>
+              <p data-gd="Tha ceadachadh thar cleachdadh pearsanta agus prìobhaideach — a' gabhail a-steach taisbeantas co-fharpais, clàradh malairteach, craoladh, agus còraichean sync — air a dheasbad agus air aontachadh fa leth mar phàirt den phròiseas coimisein. Tha an cleachdadh a bha san amharc air a dhearbhadh ann an sgrìobhadh mus tòisich obair, agus tha ceadachadh nas fharsaing air a ghabhail a-steach ann an teirmean a' choimisein. Ma tha rùn agad cleachdadh thar taisbeantas prìobhaideach, mìnich seo gu soilleir ann an do cheist.">Licensing beyond personal and private use — including competitive performance, commercial recording, broadcast, and sync rights — is discussed and agreed individually as part of the commission process. The intended use is confirmed in writing before work begins, and any broader licensing is included in the commission terms. If your intended use extends beyond private performance, please describe this clearly in your enquiry so the correct terms can be agreed from the outset.</p>
             </div>
           </div>
 
@@ -466,8 +476,8 @@
 
         <!-- ── Closing CTA ─────────────────────────────────────── -->
         <div class="faq-cta" data-reveal>
-          <p class="faq-cta-text">Still have a question?</p>
-          <a href="contact.html" class="btn-primary">Enquire</a>
+          <p class="faq-cta-text" data-gd="A bheil ceist agad fhathast?">Still have a question?</p>
+          <a href="contact.html" class="btn-primary" data-gd="Feòraich">Enquire</a>
         </div>
 
       </div>
@@ -482,41 +492,41 @@
         <img src="images/Ceolmhor_logo_transparent.png" alt="" class="footer__brand-img" aria-hidden="true">
         <div class="footer__brand-text">
           <span class="footer__logo">Ceòlmhor</span>
-          <p class="footer__tagline">Scottish Excellence · Piping Tuition and Performance</p>
+          <p class="footer__tagline" data-gd="Sàr-mhathais na h-Alba · Oideachd is Taisbeantas Pìobaireachd">Scottish Excellence · Piping Tuition and Performance</p>
         </div>
       </div>
 
       <nav class="footer__nav" aria-label="Footer navigation">
-        <span class="footer__col-title">Navigation</span>
+        <span class="footer__col-title" data-gd="Seòladh">Navigation</span>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="tuition.html">Tuition</a></li>
-          <li><a href="performance.html">Performance</a></li>
-          <li><a href="compositions.html">Compositions</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Enquire</a></li>
+          <li><a href="index.html" data-gd="Dachaigh">Home</a></li>
+          <li><a href="about.html" data-gd="Mu Dhèidhinn">About</a></li>
+          <li><a href="tuition.html" data-gd="Oideachd">Tuition</a></li>
+          <li><a href="performance.html" data-gd="Taisbeantas">Performance</a></li>
+          <li><a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a></li>
+          <li><a href="gallery.html" data-gd="Gailearaidh">Gallery</a></li>
+          <li><a href="contact.html" data-gd="Feòraich">Enquire</a></li>
         </ul>
       </nav>
 
       <div class="footer__contact">
-        <span class="footer__col-title">Contact &amp; Social</span>
+        <span class="footer__col-title" data-gd="Conaltradh &amp; Meadhanan Sòisealta">Contact &amp; Social</span>
         <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
-        <p>Edinburgh, Scotland</p>
-
-              </div>
+        <p data-gd="Dùn Èideann, Alba">Edinburgh, Scotland</p>
+      </div>
 
     </div>
     <div class="footer__bottom">
-      <p>© Ceòlmhor 2026. All rights reserved.</p>
+      <p data-gd="© Ceòlmhor 2026. Gach còir glèidhte.">© Ceòlmhor 2026. All rights reserved.</p>
       <div class="footer__bottom-links">
-        <a href="faq.html">FAQ</a>
-        <a href="privacy.html">Privacy Notice</a>
+        <a href="faq.html" data-gd="Ceistean">FAQ</a>
+        <a href="privacy.html" data-gd="Brath Dìomhaireachd">Privacy Notice</a>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js" defer></script>
+  <script src="lang.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>

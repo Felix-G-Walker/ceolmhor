@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
@@ -50,19 +50,23 @@
   <nav class="nav" aria-label="Main navigation">
     <div class="nav__inner">
       <div class="nav__left">
+        <div class="lang-pill" role="group" aria-label="Language / Cànan">
+          <button class="lang-pill__opt active" data-lang-opt="en" aria-pressed="true">EN</button>
+          <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+        </div>
         <a href="index.html" class="nav__logo" aria-label="Ceòlmhor — home"><img src="images/Ceolmhor_logo_transparent.png" alt="Ceòlmhor" class="site-logo"></a>
-        <a href="index.html" class="nav__home">Home</a>
+        <a href="index.html" class="nav__home" data-gd="Dachaigh">Home</a>
       </div>
       <div class="nav__links">
-        <a href="about.html" class="active">About</a>
-        <a href="tuition.html">Tuition</a>
-        <a href="performance.html">Performance</a>
-        <a href="compositions.html">Compositions</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="about.html" class="active" data-gd="Mu Dhèidhinn">About</a>
+        <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+        <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+        <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+        <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
       </div>
       <div class="nav__right">
-        <a href="faq.html" class="nav__faq">FAQ</a>
-        <a href="contact.html" class="nav__cta">Enquire</a>
+        <a href="faq.html" class="nav__faq" data-gd="Ceistean">FAQ</a>
+        <a href="contact.html" class="nav__cta" data-gd="Feòraich">Enquire</a>
       </div>
       <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -72,20 +76,26 @@
 
   <!-- Mobile overlay -->
   <div class="nav__overlay" role="dialog" aria-label="Navigation menu">
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
-    <a href="tuition.html">Tuition</a>
-    <a href="performance.html">Performance</a>
-    <a href="compositions.html">Compositions</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html" class="nav__overlay-cta">Enquire</a>
+    <a href="index.html" data-gd="Dachaigh">Home</a>
+    <a href="about.html" class="active" data-gd="Mu Dhèidhinn">About</a>
+    <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+    <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+    <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+    <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
+    <a href="faq.html" data-gd="Ceistean">FAQ</a>
+    <a href="contact.html" class="nav__overlay-cta" data-gd="Feòraich">Enquire</a>
+    <div class="nav__overlay-lang">
+      <div class="lang-pill" role="group" aria-label="Language / Cànan">
+        <button class="lang-pill__opt" data-lang-opt="en" aria-pressed="false">EN</button>
+        <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+      </div>
+    </div>
   </div>
 
   <!-- ── Page Header ────────────────────────────────────────────── -->
   <header class="page-header page-header--charcoal">
     <div class="container">
-      <h1 class="page-header__title">About</h1>
+      <h1 class="page-header__title" data-gd="Mu Dhèidhinn">About</h1>
       <p class="gaelic-subtitle">Mu Dhèidhinn</p>
       <hr class="rule">
     </div>
@@ -95,76 +105,68 @@
   <section class="section section--black">
     <div class="container">
 
-      <!-- Company paragraphs — two column -->
       <div class="about-company-grid" data-reveal>
         <div class="about-company-col">
-          <p>The Highland bagpipe is one of the few instruments that carries a culture within it — a language, a history, and a ceremonial weight that most tuition never addresses. Ceòlmhor was founded on the conviction that teaching the instrument without teaching that context is to teach it incompletely. The curriculum is built accordingly: structured, progressive, and rooted in the Gàidhlig tradition from the first lesson to the last.</p>
+          <p data-gd="Is e a' phìob-mhòr aon de na h-innealan ainneamh a ghiùlaineas cultar na bhroinn — cànan, eachdraidh, agus cudrom deasachd nach mòr a bheil oideachas a' dèiligeadh ris. Chaidh Ceòlmhor a stèidheachadh air a' chreideamh nach eil teagasg an inneil gun teagasg a' cho-theacsa sin ach teagasg neo-iomlan. Tha an clàr-oideachaidh air a thogail a rèir sin: structarail, adhartach, agus freumhaichte ann an traidisean na Gàidhlig bhon chiad leasain gu deireannach.">The Highland bagpipe is one of the few instruments that carries a culture within it — a language, a history, and a ceremonial weight that most tuition never addresses. Ceòlmhor was founded on the conviction that teaching the instrument without teaching that context is to teach it incompletely. The curriculum is built accordingly: structured, progressive, and rooted in the Gàidhlig tradition from the first lesson to the last.</p>
         </div>
         <div class="about-company-col">
-          <p>That same conviction extends to performance. Every engagement — whether a wedding ceremony in Edinburgh, a Burns Supper in the Borders, or a corporate occasion anywhere in Scotland — is approached with knowledge of what the music carries and what the occasion demands. Ceòlmhor does not simply provide a piper. It brings the full weight of the tradition to bear on every moment that deserves it.</p>
+          <p data-gd="Tha an aon chreideamh sin a' sgaoileadh gu taisbeantas. Tha gach cùmhnant — ge b' e pòsadh ann an Dùn Èideann, Dinnear Burns anns na Crìochan, no cothrom corporra àit sam bith ann an Alba — air a chur an gnìomh le eòlas air na ghiùlaineas an ceòl agus na tha feum aig a' chothrom. Chan e dìreach pìobaire a bheir Ceòlmhor seachad. Thèid leis a' chuireadh air fad a' chliù a tha dligheach do gach mòmaid a thoill e.">That same conviction extends to performance. Every engagement — whether a wedding ceremony in Edinburgh, a Burns Supper in the Borders, or a corporate occasion anywhere in Scotland — is approached with knowledge of what the music carries and what the occasion demands. Ceòlmhor does not simply provide a piper. It brings the full weight of the tradition to bear on every moment that deserves it.</p>
         </div>
       </div>
 
-      <!-- Pull quote -->
       <blockquote class="about-pull-quote" data-reveal>
-        <p>"The music and its language were never separate things to me."</p>
+        <p data-gd="&quot;Cha robh an ceòl agus a chànan riamh nan rudan air leth dhomh.&quot;">"The music and its language were never separate things to me."</p>
         <cite class="about-pull-quote__attr">— Felix Walker</cite>
       </blockquote>
 
-      <!-- Gàidhlig paragraph -->
       <div class="about-gaelic-para" data-reveal>
-        <p>Gàidhlig is present in the music itself. The cadences of pipe melody, the phrasing of a slow air, and the structure of Pìobaireachd all carry the rhythmic and tonal patterns of spoken Gàidhlig in ways that are not incidental but foundational. To understand the language, even partially, is to hear the music differently. At Ceòlmhor, that relationship is acknowledged throughout the curriculum — not as an academic exercise, but as the living context from which the instrument cannot be separated.</p>
+        <p data-gd="Tha a' Ghàidhlig an làthair anns a' cheòl fhèin. Tha cadansaichean fonn na pìoba, abairtean pùirt mhalla, agus structar Pìobaireachd uile a' giùlan pàtrain ruitheamach agus tòna cainnt na Gàidhlig ann an dòighean nach eil tuairmseach ach bunasach. Fiù is tuigse bhunasach air a' chànan, cluinnidh neach an ceòl gu h-eadar-dhealaichte. Aig Ceòlmhor, tha an dàimh sin air aithneachadh tron chlàr-oideachaidh gu lèir — chan ann mar eacarsaich acadaimigeach, ach mar cho-theacsa beò às nach gabh an t-inneal a sgaradh.">Gàidhlig is present in the music itself. The cadences of pipe melody, the phrasing of a slow air, and the structure of Pìobaireachd all carry the rhythmic and tonal patterns of spoken Gàidhlig in ways that are not incidental but foundational. To understand the language, even partially, is to hear the music differently. At Ceòlmhor, that relationship is acknowledged throughout the curriculum — not as an academic exercise, but as the living context from which the instrument cannot be separated.</p>
       </div>
 
-      <!-- Divider -->
       <hr class="about-divider">
 
-      <!-- Meet Your Piper -->
-      <h2 class="about-meet-heading" data-reveal>Meet Your Piper</h2>
+      <h2 class="about-meet-heading" data-reveal data-gd="Coinnich ri d' Phìobaire">Meet Your Piper</h2>
 
-      <!-- Portrait + personal story split -->
       <div class="about-piper-grid" data-reveal>
         <div class="about-portrait-col">
           <img src="images/about-new-york.jpg" alt="Felix Walker in full Highland dress, New York" class="about-portrait" loading="lazy">
         </div>
         <div class="about-story-col">
-          <p>I began on the practice chanter with Fèis Dhùn Èideann — Edinburgh's Gaelic arts festival and tuition organisation — at a time when I was also attending the Gaelic Medium Education primary school in the city. The two things shaped each other. The language and the music arrived together, and I have never thought of them as separate.</p>
-          <p>The pipes came later — a Christmas present that changed the direction of my musical life. What followed was a balance between school-based tuition, which gave me pipe band grounding and a modern outlook, and Fèis tuition, which kept the traditional and Gàidhlig emphasis at the centre. That balance is what makes me the piper I am today.</p>
-          <p>Ceòlmhor grew out of that formation — a teaching practice built on the conviction that the instrument and its tradition are inseparable, and that students deserve to be taught both.</p>
+          <p data-gd="Thòisich mi air a' chantar-cleachdaidh le Fèis Dhùn Èideann — fèis ealain Gàidhlig agus buidheann oideachaidh Dhùn Èideann — aig àm a bha mi cuideachd a' frithealadh bun-sgoil foghlam tro mheadhan na Gàidhlig sa bhaile. Chum an dà rud cùmadh ri chèile. Thàinig a' chànan agus an ceòl còmhla, agus cha do smaoinich mi riamh orra mar rudan air leth.">I began on the practice chanter with Fèis Dhùn Èideann — Edinburgh's Gaelic arts festival and tuition organisation — at a time when I was also attending the Gaelic Medium Education primary school in the city. The two things shaped each other. The language and the music arrived together, and I have never thought of them as separate.</p>
+          <p data-gd="Thàinig a' phìob nas fhaide air adhart — tiodhlac Nollaige a dh'atharraich stiùireadh mo bheatha-ciùil. B' e a lean sin cothromachadh eadar oideachas stèidhichte air sgoil, a thug dhomh bunait còmhlan-pìoba agus sealladh ùr-nodha, agus oideachas Fèis, a chumail cuideam traidiseanta agus Gàidhlig sa mheadhan. Sin an cothromachadh a nì mise am pìobaire a tha mi an-diugh.">The pipes came later — a Christmas present that changed the direction of my musical life. What followed was a balance between school-based tuition, which gave me pipe band grounding and a modern outlook, and Fèis tuition, which kept the traditional and Gàidhlig emphasis at the centre. That balance is what makes me the piper I am today.</p>
+          <p data-gd="Dh'fhàs Ceòlmhor às a' chruth sin — cleachdadh teagaisg air a thogail air a' chreideamh nach gabh an t-inneal agus a thraidisean a sgaradh, agus gu bheil oileanaich airidh air an dà chuid a bhith air an teagasg.">Ceòlmhor grew out of that formation — a teaching practice built on the conviction that the instrument and its tradition are inseparable, and that students deserve to be taught both.</p>
         </div>
       </div>
 
-      <!-- Credentials section -->
       <div class="credentials-section" data-reveal>
-        <h3 class="credentials-heading">Credentials</h3>
+        <h3 class="credentials-heading" data-gd="Teisteanas">Credentials</h3>
         <div class="credentials-grid">
           <div class="credentials-block">
-            <h4 class="credentials-block__title">Armistice Day — Scottish National War Memorial</h4>
+            <h4 class="credentials-block__title" data-gd="Latha na h-Armistice — Cuimhneachan Nàiseanta Cogaidh na h-Alba">Armistice Day — Scottish National War Memorial</h4>
             <ul class="credentials-list">
-              <li>Lone Piper at the Armistice Day Service, Scottish National War Memorial, Edinburgh Castle — one of the most ceremonially significant piping engagements in Scotland</li>
+              <li data-gd="Pìobaire Aonaranach aig Seirbheis Latha na h-Armistice, Cuimhneachan Nàiseanta Cogaidh na h-Alba, Caisteal Dhùn Èideann — aon de na cùmhnantan pìoba as cudromaiche a thaobh deasachd ann an Alba">Lone Piper at the Armistice Day Service, Scottish National War Memorial, Edinburgh Castle — one of the most ceremonially significant piping engagements in Scotland</li>
             </ul>
           </div>
           <div class="credentials-block">
             <h4 class="credentials-block__title">Royal Edinburgh Military Tattoo</h4>
             <ul class="credentials-list">
-              <li>Performed with the Royal Edinburgh Military Tattoo from 2024, including the 2026 international tour to Australia and New Zealand — one of the world's most prestigious platforms for Scottish piping</li>
+              <li data-gd="Air coileanadh le Tatù Militairidh Rìoghail Dhùn Èideann bho 2024, a' gabhail a-steach turas eadar-nàiseanta 2026 dha Astràilia agus New Zealand — aon de na còmhlain-platfuirm as cliùitiche air an t-saoghal airson pìobaireachd Albannach">Performed with the Royal Edinburgh Military Tattoo from 2024, including the 2026 international tour to Australia and New Zealand — one of the world's most prestigious platforms for Scottish piping</li>
             </ul>
           </div>
           <div class="credentials-block">
-            <h4 class="credentials-block__title">Tartan Day Parades</h4>
+            <h4 class="credentials-block__title" data-gd="Mòrshlòigh Latha an Tartain">Tartan Day Parades</h4>
             <ul class="credentials-list">
-              <li>Selected to perform at the New York Tartan Day Parade and the inaugural Edinburgh Tartan Day Parade — representing Scottish piping tradition on both sides of the Atlantic</li>
+              <li data-gd="Air a thaghadh airson coileanadh aig Mòrshlòigh Latha an Tartain ann an New York agus Mòrshlòigh ciad Latha an Tartain Dhùn Èideann — a' riochdachadh traidisean pìobaireachd Albannach air an dà thaobh den Atlantaig">Selected to perform at the New York Tartan Day Parade and the inaugural Edinburgh Tartan Day Parade — representing Scottish piping tradition on both sides of the Atlantic</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- CTA buttons -->
       <div class="about-cta-buttons" data-reveal>
-        <a href="tuition.html" class="btn-secondary">Explore Tuition</a>
-        <a href="performance.html" class="btn-secondary">Performance Packages</a>
+        <a href="tuition.html" class="btn-secondary" data-gd="Rannsaich Oideachd">Explore Tuition</a>
+        <a href="performance.html" class="btn-secondary" data-gd="Pacaidean Taisbeanaidh">Performance Packages</a>
         <div class="about-cta-enquire">
-          <a href="contact.html" class="nav__cta">Enquire</a>
+          <a href="contact.html" class="nav__cta" data-gd="Feòraich">Enquire</a>
         </div>
       </div>
 
@@ -179,41 +181,41 @@
         <img src="images/Ceolmhor_logo_transparent.png" alt="" class="footer__brand-img" aria-hidden="true">
         <div class="footer__brand-text">
           <span class="footer__logo">Ceòlmhor</span>
-          <p class="footer__tagline">Scottish Excellence · Piping Tuition and Performance</p>
+          <p class="footer__tagline" data-gd="Sàr-mhathais na h-Alba · Oideachd is Taisbeantas Pìobaireachd">Scottish Excellence · Piping Tuition and Performance</p>
         </div>
       </div>
 
       <nav class="footer__nav" aria-label="Footer navigation">
-        <span class="footer__col-title">Navigation</span>
+        <span class="footer__col-title" data-gd="Seòladh">Navigation</span>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="tuition.html">Tuition</a></li>
-          <li><a href="performance.html">Performance</a></li>
-          <li><a href="compositions.html">Compositions</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Enquire</a></li>
+          <li><a href="index.html" data-gd="Dachaigh">Home</a></li>
+          <li><a href="about.html" data-gd="Mu Dhèidhinn">About</a></li>
+          <li><a href="tuition.html" data-gd="Oideachd">Tuition</a></li>
+          <li><a href="performance.html" data-gd="Taisbeantas">Performance</a></li>
+          <li><a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a></li>
+          <li><a href="gallery.html" data-gd="Gailearaidh">Gallery</a></li>
+          <li><a href="contact.html" data-gd="Feòraich">Enquire</a></li>
         </ul>
       </nav>
 
       <div class="footer__contact">
-        <span class="footer__col-title">Contact &amp; Social</span>
+        <span class="footer__col-title" data-gd="Conaltradh">Contact &amp; Social</span>
         <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
-        <p>Edinburgh, Scotland</p>
-
-              </div>
+        <p data-gd="Dùn Èideann, Alba">Edinburgh, Scotland</p>
+      </div>
 
     </div>
     <div class="footer__bottom">
-      <p>© Ceòlmhor 2026. All rights reserved.</p>
+      <p data-gd="© Ceòlmhor 2026. Gach còir glèidhte.">© Ceòlmhor 2026. All rights reserved.</p>
       <div class="footer__bottom-links">
-        <a href="faq.html">FAQ</a>
-        <a href="privacy.html">Privacy Notice</a>
+        <a href="faq.html" data-gd="Ceistean">FAQ</a>
+        <a href="privacy.html" data-gd="Brath Dìomhaireachd">Privacy Notice</a>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js" defer></script>
+  <script src="lang.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>

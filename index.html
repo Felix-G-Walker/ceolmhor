@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
@@ -65,19 +65,23 @@
   <nav class="nav" aria-label="Main navigation">
     <div class="nav__inner">
       <div class="nav__left">
+        <div class="lang-pill" role="group" aria-label="Language / Cànan">
+          <button class="lang-pill__opt active" data-lang-opt="en" aria-pressed="true">EN</button>
+          <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+        </div>
         <a href="index.html" class="nav__logo" aria-label="Ceòlmhor — home"><img src="images/Ceolmhor_logo_transparent.png" alt="Ceòlmhor" class="site-logo"></a>
-        <a href="index.html" class="nav__home active">Home</a>
+        <a href="index.html" class="nav__home active" data-gd="Dachaigh">Home</a>
       </div>
       <div class="nav__links">
-        <a href="about.html">About</a>
-        <a href="tuition.html">Tuition</a>
-        <a href="performance.html">Performance</a>
-        <a href="compositions.html">Compositions</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+        <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+        <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+        <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+        <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
       </div>
       <div class="nav__right">
-        <a href="faq.html" class="nav__faq">FAQ</a>
-        <a href="contact.html" class="nav__cta">Enquire</a>
+        <a href="faq.html" class="nav__faq" data-gd="Ceistean">FAQ</a>
+        <a href="contact.html" class="nav__cta" data-gd="Feòraich">Enquire</a>
       </div>
       <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -87,14 +91,20 @@
 
   <!-- Mobile overlay -->
   <div class="nav__overlay" role="dialog" aria-label="Navigation menu">
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html">About</a>
-    <a href="tuition.html">Tuition</a>
-    <a href="performance.html">Performance</a>
-    <a href="compositions.html">Compositions</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html" class="nav__overlay-cta">Enquire</a>
+    <a href="index.html" class="active" data-gd="Dachaigh">Home</a>
+    <a href="about.html" data-gd="Mu Dhèidhinn">About</a>
+    <a href="tuition.html" data-gd="Oideachd">Tuition</a>
+    <a href="performance.html" data-gd="Taisbeantas">Performance</a>
+    <a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+    <a href="gallery.html" data-gd="Gailearaidh">Gallery</a>
+    <a href="faq.html" data-gd="Ceistean">FAQ</a>
+    <a href="contact.html" class="nav__overlay-cta" data-gd="Feòraich">Enquire</a>
+    <div class="nav__overlay-lang">
+      <div class="lang-pill" role="group" aria-label="Language / Cànan">
+        <button class="lang-pill__opt" data-lang-opt="en" aria-pressed="false">EN</button>
+        <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+      </div>
+    </div>
   </div>
 
   <!-- ── Hero ───────────────────────────────────────────────────── -->
@@ -105,9 +115,9 @@
       <div class="container">
 
         <h1 class="hero__title" data-hero-stagger>Ceòlmhor</h1>
-        <p class="hero__label" data-hero-stagger>Scottish Excellence · Piping Tuition and Performance</p>
+        <p class="hero__label" data-hero-stagger data-gd="Sàr-mhathais na h-Alba · Oideachd is Taisbeantas Pìobaireachd">Scottish Excellence · Piping Tuition and Performance</p>
         <hr class="hero-divider" data-hero-stagger>
-        <p class="hero__estd" data-hero-stagger>Edinburgh · Scotland · Worldwide</p>
+        <p class="hero__estd" data-hero-stagger data-gd="Dùn Èideann · Alba · Air Feadh an t-Saoghail">Edinburgh · Scotland · Worldwide</p>
 
       </div>
     </div>
@@ -117,13 +127,13 @@
       <div class="container">
         <div class="hero__stats-inner">
           <div class="hero-stat hero-stat--solo" data-hero-stagger>
-            <span class="hero-stat__label">Tuition from £30 per hour</span>
+            <span class="hero-stat__label" data-gd="Oideachd bho £30 san uair">Tuition from £30 per hour</span>
           </div>
           <div class="hero-stat hero-stat--solo" data-hero-stagger>
-            <span class="hero-stat__label">Performance Packages from £125</span>
+            <span class="hero-stat__label" data-gd="Pacaidean Taisbeanaidh bho £125">Performance Packages from £125</span>
           </div>
           <div class="hero-stat hero-stat--solo" data-hero-stagger>
-            <span class="hero-stat__label">First Lesson Complimentary</span>
+            <span class="hero-stat__label" data-gd="A' Chiad Leasain an Asgaidh">First Lesson Complimentary</span>
           </div>
         </div>
       </div>
@@ -136,40 +146,40 @@
       <div class="features">
 
         <article class="feature" data-reveal>
-          <h3>Performance</h3>
-          <p>
+          <h3 data-gd="Taisbeantas">Performance</h3>
+          <p data-gd="Bainnsean, tiodhlacaidhean, oidhcheannan Burns, Oidhche na Bliadhna Ùire, dinnearan corporra, agus deasachaidhean militairidh is catharra. Bidh gach cùmhnant a' toirt còmhla teirmichean sgrìobhte soilleir, còmhradh iomlan mu chlàr-cluich, agus prìsean bho £125.">
             Weddings, funerals, Burns Nights, Hogmanay, corporate dinners, military and civic
             ceremonies. Each booking comes with clear written terms, a full repertoire discussion,
             and pricing from £125.
           </p>
-          <p>
+          <p data-gd="Tha gach cothrom eadar-dhealaichte. Faodar pìos sònraichte a sgrìobhadh agus a chluich an toiseach aig an tachartas agad — rud nach cluinnear àit sam bith eile.">
             Every occasion is different. A bespoke piece can be composed and premiered at your
             event — something that will not be played anywhere else.
           </p>
-          <a href="performance.html" class="feature__link">Performance Packages</a>
+          <a href="performance.html" class="feature__link" data-gd="Pacaidean Taisbeanaidh">Performance Packages</a>
         </article>
 
         <article class="feature" data-reveal data-delay="2">
-          <h3>Tuition</h3>
-          <p>
+          <h3 data-gd="Oideachd">Tuition</h3>
+          <p data-gd="Ceithir ìrean adhartach, bho na ciad notaichean air a' chantar-cleachdaidh gu Pìobaireachd ìre-co-fharpais. Tha leasanan structarail, cruinneachail, agus air an teagasg ann an Dùn Èideann no air-loidhne air feadh an t-saoghail.">
             Four progressive tiers, from the first notes on the practice chanter through to
             competition-standard Pìobaireachd. Lessons are structured, cumulative, and
             taught in Edinburgh or online worldwide.
           </p>
-          <p>
+          <p data-gd="Tha a' chiad leasain an asgaidh — gun chosgais, gun dleastanas leantainn.">
             The first lesson is complimentary — no charge, no obligation to continue.
           </p>
-          <a href="tuition.html" class="feature__link">Explore Tuition</a>
+          <a href="tuition.html" class="feature__link" data-gd="Rannsaich Oideachd">Explore Tuition</a>
         </article>
 
         <article class="feature" data-reveal data-delay="4">
-          <h3>Compositions</h3>
-          <p>
+          <h3 data-gd="Sgrìobhaidhean">Compositions</h3>
+          <p data-gd="Catalog a' fàs de dh'obraichean tùsail — màrsaichean, pùirt mhalla, agus Pìobaireachd — ri fhaotainn airson coileanadh agus luchdachadh. Thathar a' gabhail ri coimisein airson ìrean-beatha pearsanta, còmhlain phìoba, agus cùmhnantan institiùideach no dualchasach.">
             A growing catalogue of original pieces — marches, airs, and Pìobaireachd — available
             for performance and download. Commissions accepted for personal milestones, pipe bands,
             and institutional or heritage engagements.
           </p>
-          <a href="compositions.html" class="feature__link">The Catalogue</a>
+          <a href="compositions.html" class="feature__link" data-gd="An Catalog">The Catalogue</a>
         </article>
 
       </div>
@@ -179,7 +189,6 @@
   <!-- ── About Teaser ──────────────────────────────────────────────── -->
   <section class="section about-teaser-section" aria-label="About Felix Walker">
 
-    <!-- Video background — replace inner content with <video autoplay muted loop playsinline src="..."> when available -->
     <div class="section-video-bg" aria-hidden="true">
       <div class="section-video-bg__placeholder">
         <div class="video-placeholder__play">
@@ -194,13 +203,13 @@
 
         <div class="about-teaser__body">
           <h2 class="about-teaser__name">Felix Walker</h2>
-          <p class="about-teaser__role">Piping Instructor &amp; Professional Piper</p>
+          <p class="about-teaser__role" data-gd="Neach-teagaisg Pìobaireachd &amp; Pìobaire Proifeiseanta">Piping Instructor &amp; Professional Piper</p>
           <ul class="about-teaser__credentials">
-            <li>Royal Edinburgh Military Tattoo — performer</li>
-            <li>Lone Piper, Armistice Day Service, Scottish National War Memorial</li>
-            <li>New York &amp; Edinburgh Tartan Day Parades — performer</li>
+            <li data-gd="Tatù Militairidh Rìoghail Dhùn Èideann — neach-coileanaidh">Royal Edinburgh Military Tattoo — performer</li>
+            <li data-gd="Pìobaire Aonaranach, Seirbheis Latha na h-Armistice, Cuimhneachan Nàiseanta a' Chogaidh">Lone Piper, Armistice Day Service, Scottish National War Memorial</li>
+            <li data-gd="Mòrshlòigh Latha an Tartain ann an New York is Dùn Èideann — neach-coileanaidh">New York &amp; Edinburgh Tartan Day Parades — performer</li>
           </ul>
-          <a href="about.html" class="feature__link">About Felix</a>
+          <a href="about.html" class="feature__link" data-gd="Mu Fhelix">About Felix</a>
         </div>
 
       </div>
@@ -211,29 +220,29 @@
   <section class="section section--black" aria-label="Testimonials">
     <div class="container">
       <header class="section-header" data-reveal>
-        <span class="section-label">Testimonials</span>
+        <span class="section-label" data-gd="Fianaisean">Testimonials</span>
       </header>
       <div class="testimonial-placeholder" data-reveal data-delay="2">
-        <p>
+        <p data-gd="&quot;Thug na pìoban an fheasgar gu lèir ri chèile ann an dòigh nach b' urrainn do nì sam bith eile. Coileanadh air leth — chaidh an ceòl a thaghadh gu foirfe agus a chluich gun ghainne.&quot;">
           "The pipes brought the whole evening together in a way nothing else could have.
           An exceptional performance — the music was perfectly chosen and impeccably played."
         </p>
-        <span class="testimonial__attr">— Alex Moir-Barnetson, Ceilidh &nbsp;·&nbsp; January 2026</span>
+        <span class="testimonial__attr" data-gd="— Alex Moir-Barnetson, Céilidh · Am Faoilleach 2026">— Alex Moir-Barnetson, Ceilidh &nbsp;·&nbsp; January 2026</span>
       </div>
       <div class="testimonial-placeholder" data-reveal data-delay="3">
-        <p>
+        <p data-gd="&quot;Cha robh eòlas sam bith agam nuair a thòisich mi. Thug structar nan leasanan orm gach rud a bhith a' faireachdainn comasach bhon chiad sheassan fhèin. Cha bhithinn air adhartas a dhèanamh leth cho luath às aonais an fhrèam sin.&quot;">
           "I had no experience whatsoever when I started. The structure of the lessons made
           everything feel achievable from the very first session. I would not have progressed
           half as quickly without that framework."
         </p>
-        <span class="testimonial__attr">— Molly Reay, Tuition Student &nbsp;·&nbsp; February 2026</span>
+        <span class="testimonial__attr" data-gd="— Molly Reay, Oileanach Oideachd · An Gearran 2026">— Molly Reay, Tuition Student &nbsp;·&nbsp; February 2026</span>
       </div>
       <div class="testimonial-placeholder" data-reveal data-delay="4">
-        <p>
+        <p data-gd="&quot;B' e na pìoban aig ar dinnear corporra cuspair na h-oidhche. Proifeiseanta bhon chiad fhiosrachadh gu nòta deireannach. Dìreach na bha feum aig a' chothrom air.&quot;">
           "The pipes at our corporate dinner were the talking point of the night. Professional
           from first contact to final note. Exactly what the occasion needed."
         </p>
-        <span class="testimonial__attr">— Struan Macdonald, Corporate Client &nbsp;·&nbsp; March 2026</span>
+        <span class="testimonial__attr" data-gd="— Struan MacDhòmhnaill, Neach-gnothachais Corporra · Am Màrt 2026">— Struan Macdonald, Corporate Client &nbsp;·&nbsp; March 2026</span>
       </div>
     </div>
   </section>
@@ -242,9 +251,9 @@
   <section class="section section--black closing-cta" aria-label="Enquire">
     <div class="container">
       <div class="closing-cta__inner" data-reveal>
-        <h2 class="closing-cta__heading">Ready to get in touch?</h2>
-        <p class="closing-cta__sub">Tuition enquiries, performance bookings, and commission requests — all through one form.</p>
-        <a href="contact.html" class="nav__cta closing-cta__btn">Enquire</a>
+        <h2 class="closing-cta__heading" data-gd="Deiseil airson conaltradh?">Ready to get in touch?</h2>
+        <p class="closing-cta__sub" data-gd="Ceistean oideachd, cùmhnantan taisbeanaidh, agus iarrtasan coimisein — uile tro aon fhoirm.">Tuition enquiries, performance bookings, and commission requests — all through one form.</p>
+        <a href="contact.html" class="nav__cta closing-cta__btn" data-gd="Feòraich">Enquire</a>
       </div>
     </div>
   </section>
@@ -257,41 +266,41 @@
         <img src="images/Ceolmhor_logo_transparent.png" alt="" class="footer__brand-img" aria-hidden="true">
         <div class="footer__brand-text">
           <span class="footer__logo">Ceòlmhor</span>
-          <p class="footer__tagline">Scottish Excellence · Piping Tuition and Performance</p>
+          <p class="footer__tagline" data-gd="Sàr-mhathais na h-Alba · Oideachd is Taisbeantas Pìobaireachd">Scottish Excellence · Piping Tuition and Performance</p>
         </div>
       </div>
 
       <nav class="footer__nav" aria-label="Footer navigation">
-        <span class="footer__col-title">Navigation</span>
+        <span class="footer__col-title" data-gd="Seòladh">Navigation</span>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="tuition.html">Tuition</a></li>
-          <li><a href="performance.html">Performance</a></li>
-          <li><a href="compositions.html">Compositions</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Enquire</a></li>
+          <li><a href="index.html" data-gd="Dachaigh">Home</a></li>
+          <li><a href="about.html" data-gd="Mu Dhèidhinn">About</a></li>
+          <li><a href="tuition.html" data-gd="Oideachd">Tuition</a></li>
+          <li><a href="performance.html" data-gd="Taisbeantas">Performance</a></li>
+          <li><a href="compositions.html" data-gd="Sgrìobhaidhean">Compositions</a></li>
+          <li><a href="gallery.html" data-gd="Gailearaidh">Gallery</a></li>
+          <li><a href="contact.html" data-gd="Feòraich">Enquire</a></li>
         </ul>
       </nav>
 
       <div class="footer__contact">
-        <span class="footer__col-title">Contact &amp; Social</span>
+        <span class="footer__col-title" data-gd="Conaltradh">Contact &amp; Social</span>
         <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
-        <p>Edinburgh, Scotland</p>
-
-              </div>
+        <p data-gd="Dùn Èideann, Alba">Edinburgh, Scotland</p>
+      </div>
 
     </div>
     <div class="footer__bottom">
-      <p>© Ceòlmhor 2026. All rights reserved.</p>
+      <p data-gd="© Ceòlmhor 2026. Gach còir glèidhte.">© Ceòlmhor 2026. All rights reserved.</p>
       <div class="footer__bottom-links">
-        <a href="faq.html">FAQ</a>
-        <a href="privacy.html">Privacy Notice</a>
+        <a href="faq.html" data-gd="Ceistean">FAQ</a>
+        <a href="privacy.html" data-gd="Brath Dìomhaireachd">Privacy Notice</a>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js" defer></script>
+  <script src="lang.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>

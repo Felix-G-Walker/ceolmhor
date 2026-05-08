@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
@@ -50,19 +50,23 @@
   <nav class="nav" aria-label="Main navigation">
     <div class="nav__inner">
       <div class="nav__left">
+        <div class="lang-pill" role="group" aria-label="Language / Cànan">
+          <button class="lang-pill__opt active" data-lang-opt="en" aria-pressed="true">EN</button>
+          <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+        </div>
         <a href="../index.html" class="nav__logo" aria-label="Ceòlmhor — home"><img src="../images/Ceolmhor_logo_transparent.png" alt="Ceòlmhor" class="site-logo"></a>
-        <a href="../index.html" class="nav__home">Home</a>
+        <a href="../index.html" class="nav__home" data-gd="Dachaigh">Home</a>
       </div>
       <div class="nav__links">
-        <a href="../about.html">About</a>
-        <a href="../tuition.html">Tuition</a>
-        <a href="../performance.html" class="active">Performance</a>
-        <a href="../compositions.html">Compositions</a>
-        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html" data-gd="Mu Dhèidhinn">About</a>
+        <a href="../tuition.html" data-gd="Oideachd">Tuition</a>
+        <a href="../performance.html" class="active" data-gd="Taisbeantas">Performance</a>
+        <a href="../compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+        <a href="../gallery.html" data-gd="Gailearaidh">Gallery</a>
       </div>
       <div class="nav__right">
-        <a href="../faq.html" class="nav__faq">FAQ</a>
-        <a href="../contact.html" class="nav__cta">Enquire</a>
+        <a href="../faq.html" class="nav__faq" data-gd="Ceistean">FAQ</a>
+        <a href="../contact.html" class="nav__cta" data-gd="Feòraich">Enquire</a>
       </div>
       <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -72,21 +76,27 @@
 
   <!-- Mobile overlay -->
   <div class="nav__overlay" role="dialog" aria-label="Navigation menu">
-    <a href="../index.html">Home</a>
-    <a href="../about.html">About</a>
-    <a href="../tuition.html">Tuition</a>
-    <a href="../performance.html" class="active">Performance</a>
-    <a href="../compositions.html">Compositions</a>
-    <a href="../gallery.html">Gallery</a>
-    <a href="../faq.html">FAQ</a>
-    <a href="../contact.html" class="nav__overlay-cta">Enquire</a>
+    <a href="../index.html" data-gd="Dachaigh">Home</a>
+    <a href="../about.html" data-gd="Mu Dhèidhinn">About</a>
+    <a href="../tuition.html" data-gd="Oideachd">Tuition</a>
+    <a href="../performance.html" class="active" data-gd="Taisbeantas">Performance</a>
+    <a href="../compositions.html" data-gd="Sgrìobhaidhean">Compositions</a>
+    <a href="../gallery.html" data-gd="Gailearaidh">Gallery</a>
+    <a href="../faq.html" data-gd="Ceistean">FAQ</a>
+    <a href="../contact.html" class="nav__overlay-cta" data-gd="Feòraich">Enquire</a>
+    <div class="nav__overlay-lang">
+      <div class="lang-pill" role="group" aria-label="Language / Cànan">
+        <button class="lang-pill__opt" data-lang-opt="en" aria-pressed="false">EN</button>
+        <button class="lang-pill__opt" data-lang-opt="gd" aria-pressed="false">GD</button>
+      </div>
+    </div>
   </div>
 
   <!-- ── Page Header ────────────────────────────────────────────── -->
   <header class="page-header page-header--charcoal performance-page">
     <div class="container">
-      <p class="page-header__label"><a href="../performance.html" class="breadcrumb-back">&#8592; Performance</a></p>
-      <h1 class="page-header__title">Ceilidh &amp; Dance Events</h1>
+      <p class="page-header__label"><a href="../performance.html" class="breadcrumb-back" data-gd="← Taisbeantas">&#8592; Performance</a></p>
+      <h1 class="page-header__title" data-gd="Cèilidh &amp; Tachartasan Dannsa">Ceilidh &amp; Dance Events</h1>
       <hr class="rule">
     </div>
   </header>
@@ -96,77 +106,77 @@
     <div class="container">
 
       <div class="pkg-intro" data-reveal>
-        <h2>Piping for ceilidhs, Highland balls, and evenings where live pipes provide the energy, atmosphere, and momentum of a distinctly Scottish occasion.</h2>
-        <p>Ceòlmhor provides piping for ceilidhs, Highland balls, and dance evenings across Scotland. The repertoire is drawn from the dance tradition — marches, airs, jigs, reels, and strathspeys — performed with the energy and occasion in mind. Coordination with bands, callers, and other performers is standard practice.</p>
+        <h2 data-gd="Pìobaireachd airson cèilidhean, bàlaichean Gàidhealacha, agus oidhcheachan far a bheil pìoban beò a' toirt lùth, atmosfair, agus momentum do thachartas Albannach air leth.">Piping for ceilidhs, Highland balls, and evenings where live pipes provide the energy, atmosphere, and momentum of a distinctly Scottish occasion.</h2>
+        <p data-gd="Tha Ceòlmhor a' tabhann pìobaireachd airson cèilidhean, bàlaichean Gàidhealacha, agus oidhcheachan dannsa air feadh Alba. Tha an clàr-puing air a tharraing bhon traidisean dannsa — màrsaichean, aidhrichean, siogaichean, ruidhlean, agus strathspeys — air an cluich le lùth agus an tachartas san amharc. Is cleachdadh àbhaisteach a th' ann co-òrdanachadh le còmhlain, callers, agus luchd-taisbeantas eile.">Ceòlmhor provides piping for ceilidhs, Highland balls, and dance evenings across Scotland. The repertoire is drawn from the dance tradition — marches, airs, jigs, reels, and strathspeys — performed with the energy and occasion in mind. Coordination with bands, callers, and other performers is standard practice.</p>
       </div>
 
       <div class="pkg-grid" data-reveal>
 
         <!-- Package 1 -->
         <div class="pkg-card">
-          <span class="pkg-card__label">Performance Set</span>
-          <h3 class="pkg-card__title">The Opening Set</h3>
+          <span class="pkg-card__label" data-gd="Suidheachadh Taisbeantas">Performance Set</span>
+          <h3 class="pkg-card__title" data-gd="An Suidheachadh Fosgailteach">The Opening Set</h3>
           <p class="pkg-card__price">£200</p>
           <ul class="pkg-card__includes">
-            <li>One full performance set — marches, airs, jigs, and reels as appropriate</li>
-            <li>Approximately 20–30 minutes of performance</li>
+            <li data-gd="Aon shuidheachadh taisbeantas slàn — màrsaichean, aidhrichean, siogaichean, agus ruidhlean mar a tha iomchaidh">One full performance set — marches, airs, jigs, and reels as appropriate</li>
+            <li data-gd="Mu 20–30 mionaid de thaisbeantas">Approximately 20–30 minutes of performance</li>
           </ul>
-          <p class="pkg-card__note">Suited to events requiring a single focused piping slot — opening performances, interval sets, and occasions where a defined piping moment is required rather than a sustained presence. Includes professional execution of the defined ceremonial moments. Standard repertoire appropriate to the occasion. No advance consultation beyond logistics.</p>
+          <p class="pkg-card__note" data-gd="Freagarrach airson tachartasan a tha a' feumachadh slota pìobaireachd singilte — taisbeantas fosgailteach, suidheachaidhean eadar-ama, agus tachartasan far a bheil mionaid pìobaireachd mìnichte riatanach seach làthaireachd sheasmhach. A' toirt a-steach gnìomhachadh proifeiseanta. Clàr-puing àbhaisteach iomchaidh. Gun chomhairleachadh ro-làimh thar loidsisteachd.">Suited to events requiring a single focused piping slot — opening performances, interval sets, and occasions where a defined piping moment is required rather than a sustained presence. Includes professional execution. Standard repertoire appropriate to the occasion. No advance consultation beyond logistics.</p>
         </div>
 
         <!-- Package 2 -->
         <div class="pkg-card">
-          <span class="pkg-card__label">Standard Package</span>
-          <h3 class="pkg-card__title">The Full Evening</h3>
+          <span class="pkg-card__label" data-gd="Pacaid Àbhaisteach">Standard Package</span>
+          <h3 class="pkg-card__title" data-gd="An Oidhche Slàn">The Full Evening</h3>
           <p class="pkg-card__price">£275</p>
           <ul class="pkg-card__includes">
-            <li>Two performance sets with interval</li>
-            <li>Approximately 45–60 minutes of total performance</li>
-            <li>Repertoire drawn from the dance and ceilidh tradition throughout</li>
-            <li>Pre-event conversation to discuss repertoire preferences and coordinate with any band, caller, or event organiser</li>
+            <li data-gd="Dà shuidheachadh taisbeantas le eadar-àm">Two performance sets with interval</li>
+            <li data-gd="Mu 45–60 mionaid de thaisbeantas iomlan">Approximately 45–60 minutes of total performance</li>
+            <li data-gd="Clàr-puing air a tharraing bhon traidisean dannsa agus cèilidh fad na h-oidhche">Repertoire drawn from the dance and ceilidh tradition throughout</li>
+            <li data-gd="Còmhradh ro-làimh airson roghainnean clàir-puing a dheasbad agus co-òrdanachadh le còmhlan, caller, no neach-eagrachaidh tachartais sam bith">Pre-event conversation to discuss repertoire preferences and coordinate with any band, caller, or event organiser</li>
           </ul>
-          <p class="pkg-card__note">For ceilidhs and dance evenings where the pipes provide energy and atmosphere across the full event. Suitable for Highland balls, ceilidh nights, and extended informal dance evenings. Includes a pre-event repertoire conversation — an opportunity to indicate preferences, request specific tunes, or flag anything of cultural or personal significance to the occasion.</p>
+          <p class="pkg-card__note" data-gd="Airson cèilidhean agus oidhcheachan dannsa far a bheil na pìoban a' toirt lùth agus atmosfair tron tachartas slàn. Freagarrach airson bàlaichean Gàidhealacha, oidhcheachan cèilidh, agus oidhcheachan dannsa neo-fhoirmeil fharsaing. A' toirt a-steach còmhradh clàr-puing ro-làimh.">For ceilidhs and dance evenings where the pipes provide energy and atmosphere across the full event. Suitable for Highland balls, ceilidh nights, and extended informal dance evenings. Includes a pre-event repertoire conversation — an opportunity to indicate preferences, request specific tunes, or flag anything of cultural or personal significance to the occasion.</p>
         </div>
 
         <!-- Package 3 -->
         <div class="pkg-card">
-          <span class="pkg-card__label">Ceilidh</span>
-          <h3 class="pkg-card__title">Ceilidh &amp; Dance Evening</h3>
+          <span class="pkg-card__label" data-gd="Cèilidh">Ceilidh</span>
+          <h3 class="pkg-card__title" data-gd="Oidhche Cèilidh &amp; Dannsa">Ceilidh &amp; Dance Evening</h3>
           <p class="pkg-card__price">£350</p>
           <ul class="pkg-card__includes">
-            <li>Opening piping as guests arrive and the evening begins</li>
-            <li>Sets of marches, jigs, reels, and strathspeys suited to ceilidh dancing</li>
-            <li>Coordination with any band, caller, or other performers present</li>
-            <li>Closing piece to formally end the evening</li>
-            <li>Dedicated pre-event consultation to prepare a programme suited specifically to the occasion, the audience, and any other performers present</li>
+            <li data-gd="Pìobaireachd fosgailteach fhad 's a thig aoighean a-steach agus a bhios an oidhche a' tòiseachadh">Opening piping as guests arrive and the evening begins</li>
+            <li data-gd="Suidheachaidhean de mhàrsaichean, siogaichean, ruidhlean, agus strathspeys freagarrach airson dannsa cèilidh">Sets of marches, jigs, reels, and strathspeys suited to ceilidh dancing</li>
+            <li data-gd="Co-òrdanachadh le còmhlan, caller, no luchd-taisbeantas eile an làthair">Coordination with any band, caller, or other performers present</li>
+            <li data-gd="Pìos dùnaidh airson an oidhche a chrìochnachadh gu foirmeil">Closing piece to formally end the evening</li>
+            <li data-gd="Comhairleachadh sònraichte ro-làimh airson prògram a dheasachadh iomchaidh gu sònraichte dhan tachartas, na h-aoighean, agus luchd-taisbeantas eile an làthair">Dedicated pre-event consultation to prepare a programme suited specifically to the occasion, the audience, and any other performers present</li>
           </ul>
-          <p class="pkg-card__note">The complete piping presence for a ceilidh or Highland dance evening. Repertoire lively, varied, and drawn from the dance tradition. For ceilidh nights, Highland balls, and informal dance evenings where the pipes are central to the atmosphere of the occasion. Includes a dedicated pre-event consultation by phone or email, and a personalised programme prepared specifically for the occasion. A written programme note explaining the repertoire choices is provided to the host.</p>
+          <p class="pkg-card__note" data-gd="Làthaireachd pìobaireachd iomlan airson cèilidh no oidhche dannsa Ghàidhealaich. Clàr-puing beothail, eadar-dhealaichte, agus air a tharraing bhon traidisean dannsa. A' toirt a-steach comhairleachadh sònraichte ro-làimh agus prògram pearsanta air ullachadh gu sònraichte airson an tachartais.">The complete piping presence for a ceilidh or Highland dance evening. Repertoire lively, varied, and drawn from the dance tradition. For ceilidh nights, Highland balls, and informal dance evenings where the pipes are central to the atmosphere of the occasion. Includes a dedicated pre-event consultation by phone or email, and a personalised programme prepared specifically for the occasion. A written programme note explaining the repertoire choices is provided to the host.</p>
         </div>
 
         <!-- Add-on -->
         <div class="pkg-card pkg-card--addon">
           <div class="pkg-addon-meta">
-            <span class="pkg-card__label">Additional Performance Set</span>
+            <span class="pkg-card__label" data-gd="Suidheachadh Taisbeantas Àraidh">Additional Performance Set</span>
             <p class="pkg-card__price pkg-card__price--addon">£75</p>
           </div>
-          <p class="pkg-card__note" style="margin-top: 0;">An additional performance set of approximately 20–25 minutes. Can be added to any package at the time of booking or on request. Repertoire appropriate to the occasion. On ceilidh and dance evenings, the additional set constitutes a defined performance slot and is subject to the overall structure of the evening.</p>
+          <p class="pkg-card__note" style="margin-top: 0;" data-gd="Suidheachadh taisbeantas àraidh de mu 20–25 mionaid. Faodar a chur ri pacaid sam bith. Clàr-puing iomchaidh dhan tachartas. Air oidhcheachan cèilidh agus dannsa, tha an suidheachadh àraidh na slota taisbeantas mìnichte agus tha e fo structar iomlan na h-oidhche.">An additional performance set of approximately 20–25 minutes. Can be added to any package at the time of booking or on request. Repertoire appropriate to the occasion. On ceilidh and dance evenings, the additional set constitutes a defined performance slot and is subject to the overall structure of the evening.</p>
         </div>
 
       </div>
 
       <div class="pkg-booking-terms" data-reveal>
-        <span class="pkg-booking-terms__title">Booking Terms</span>
+        <span class="pkg-booking-terms__title" data-gd="Teirmean Cùnnraidh">Booking Terms</span>
         <ul>
-          <li>50% non-refundable deposit required to secure the date</li>
-          <li>Remaining balance due 7 days before the event</li>
-          <li>Multi-session and full-day engagements priced individually on enquiry</li>
-          <li>Travel surcharge: £0.50 per mile beyond the first five miles from Edinburgh city centre</li>
-          <li>Written contract issued for every booking</li>
+          <li data-gd="Tha 50% de thasgadh neo-aisighte a dhìth gus an ceann-latha a ghlasadh">50% non-refundable deposit required to secure the date</li>
+          <li data-gd="Tha an t-iarmad ri phàigheadh 7 latha ron tachartas">Remaining balance due 7 days before the event</li>
+          <li data-gd="Tha gabhalaichean ioma-sheisean agus latha-làn air an prìsachadh fa leth air iarrtas">Multi-session and full-day engagements priced individually on enquiry</li>
+          <li data-gd="Fo-phàigheadh siubhail: £0.50 gach mìle thar na còig mìltean toisich o mheadhan baile Dhùn Èideann">Travel surcharge: £0.50 per mile beyond the first five miles from Edinburgh city centre</li>
+          <li data-gd="Cùnradh sgrìobhte air a thoirt seachad airson gach bùcainn">Written contract issued for every booking</li>
         </ul>
       </div>
 
       <div class="festival-enquire-wrapper" data-reveal>
-        <a href="../contact.html" class="btn-primary">Enquire</a>
+        <a href="../contact.html" class="btn-primary" data-gd="Feòraich">Enquire</a>
       </div>
 
     </div>
@@ -179,38 +189,38 @@
         <img src="../images/Ceolmhor_logo_transparent.png" alt="" class="footer__brand-img" aria-hidden="true">
         <div class="footer__brand-text">
           <span class="footer__logo">Ceòlmhor</span>
-          <p class="footer__tagline">Scottish Excellence · Piping Tuition and Performance</p>
+          <p class="footer__tagline" data-gd="Sàr-mhathais na h-Alba · Oideachd is Taisbeantas Pìobaireachd">Scottish Excellence · Piping Tuition and Performance</p>
         </div>
       </div>
       <nav class="footer__nav" aria-label="Footer navigation">
-        <span class="footer__col-title">Navigation</span>
+        <span class="footer__col-title" data-gd="Seòladh">Navigation</span>
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../tuition.html">Tuition</a></li>
-          <li><a href="../performance.html">Performance</a></li>
-          <li><a href="../compositions.html">Compositions</a></li>
-          <li><a href="../gallery.html">Gallery</a></li>
-          <li><a href="../contact.html">Enquire</a></li>
+          <li><a href="../index.html" data-gd="Dachaigh">Home</a></li>
+          <li><a href="../about.html" data-gd="Mu Dhèidhinn">About</a></li>
+          <li><a href="../tuition.html" data-gd="Oideachd">Tuition</a></li>
+          <li><a href="../performance.html" data-gd="Taisbeantas">Performance</a></li>
+          <li><a href="../compositions.html" data-gd="Sgrìobhaidhean">Compositions</a></li>
+          <li><a href="../gallery.html" data-gd="Gailearaidh">Gallery</a></li>
+          <li><a href="../contact.html" data-gd="Feòraich">Enquire</a></li>
         </ul>
       </nav>
       <div class="footer__contact">
-        <span class="footer__col-title">Contact &amp; Social</span>
+        <span class="footer__col-title" data-gd="Conaltradh &amp; Meadhanan Sòisealta">Contact &amp; Social</span>
         <p><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></p>
-        <p>Edinburgh, Scotland</p>
-
-              </div>
+        <p data-gd="Dùn Èideann, Alba">Edinburgh, Scotland</p>
+      </div>
     </div>
     <div class="footer__bottom">
-      <p>© Ceòlmhor 2026. All rights reserved.</p>
+      <p data-gd="© Ceòlmhor 2026. Gach còir glèidhte.">© Ceòlmhor 2026. All rights reserved.</p>
       <div class="footer__bottom-links">
-        <a href="../faq.html">FAQ</a>
-        <a href="../privacy.html">Privacy Notice</a>
+        <a href="../faq.html" data-gd="Ceistean">FAQ</a>
+        <a href="../privacy.html" data-gd="Brath Dìomhaireachd">Privacy Notice</a>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js" defer></script>
+  <script src="../lang.js" defer></script>
   <script src="../main.js" defer></script>
 </body>
 </html>
