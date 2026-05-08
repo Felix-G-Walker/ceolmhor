@@ -3476,6 +3476,7 @@ body::after {
   padding: 2.75rem;
   margin-top: 3rem;
   margin-bottom: 4rem;
+  text-align: center;
 }
 .venues-block h2 {
   font-family: var(--font-display);
