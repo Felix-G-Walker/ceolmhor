@@ -234,6 +234,7 @@ p {
   text-transform: uppercase;
   color: var(--text-mid);
   text-decoration: none;
+  text-align: center;
   transition: color 0.2s;
 }
 .nav__links a:hover { color: var(--accent-gold); }
