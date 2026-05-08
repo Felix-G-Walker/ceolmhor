@@ -246,6 +246,9 @@
 
               <!-- Composition sub-options -->
               <div class="sub-options" id="sub-composition">
+                <p class="enquiry-context-note" data-gd="Freaghraidh Ceòlmhor taobh a-staigh 48 uairean gus do phròiseact a cheasnachadh. Chan eil pàigheadh riatanach aig an ìre seo.">
+                  Ceòlmhor will respond within 48 hours to discuss your project. No payment is required at this stage.
+                </p>
                 <hr class="enquiry-separator">
                 <div class="enquiry-type-grid" role="group" aria-label="Commission type">
                   <button type="button" class="enquiry-type-btn" data-comp-type="private" aria-pressed="false" data-gd="Coimisean Prìobhaideach">Private Commission</button>
@@ -259,6 +262,24 @@
                   <div class="enquiry-type-grid" role="group" aria-label="Composition format">
                     <button type="button" class="enquiry-type-btn" data-comp-format="solo" aria-pressed="false" data-gd="Pìob Singilte">Solo Pipe</button>
                     <button type="button" class="enquiry-type-btn" data-comp-format="band" aria-pressed="false" data-gd="Bann-pìoba">Pipe Band</button>
+                  </div>
+                </div>
+
+                <!-- Piece type — shown when format is selected -->
+                <div class="sub-options" id="sub-comp-piece">
+                  <hr class="enquiry-separator">
+                  <div class="enquiry-type-grid" role="group" aria-label="Piece type">
+                    <button type="button" class="enquiry-type-btn" data-comp-piece="march" aria-pressed="false" data-gd="Màrsaidh">March</button>
+                    <button type="button" class="enquiry-type-btn" data-comp-piece="slow-air" aria-pressed="false" data-gd="Uidh Slaodach">Slow Air</button>
+                    <button type="button" class="enquiry-type-btn" data-comp-piece="reel" aria-pressed="false" data-gd="Ruidhle">Reel</button>
+                    <button type="button" class="enquiry-type-btn" data-comp-piece="jig" aria-pressed="false" data-gd="Siog">Jig</button>
+                    <button type="button" class="enquiry-type-btn" data-comp-piece="strathspey" aria-pressed="false" data-gd="Strathspey">Strathspey</button>
+                    <button type="button" class="enquiry-type-btn" data-comp-piece="hornpipe" aria-pressed="false" data-gd="Hornpipe">Hornpipe</button>
+                    <button type="button" class="enquiry-type-btn" data-comp-piece="piobaireachd" aria-pressed="false" data-gd="Pìobaireachd">Pìobaireachd</button>
+                    <button type="button" class="enquiry-type-btn" data-comp-piece="contemporary" aria-pressed="false" data-gd="Co-aimsireil">Contemporary</button>
+                  </div>
+                  <div class="performance-custom-row">
+                    <button type="button" class="enquiry-type-btn performance-custom-btn" data-comp-piece="open" aria-pressed="false" data-gd="Chan eil mi cinnteach — fosgailte do mholadh">Not sure — open to suggestion</button>
                   </div>
                 </div>
               </div>
@@ -277,6 +298,7 @@
               <input type="hidden" name="enquiry-delivery" id="enquiry-delivery-hidden">
               <input type="hidden" name="enquiry-comp-type" id="enquiry-comp-type-hidden">
               <input type="hidden" name="enquiry-comp-format" id="enquiry-comp-format-hidden">
+              <input type="hidden" name="enquiry-comp-piece" id="enquiry-comp-piece-hidden">
             </div>
 
             <!-- Event Date — conditionally shown -->
@@ -381,6 +403,7 @@
       var deliveryHidden   = document.getElementById('enquiry-delivery-hidden');
       var compTypeHidden   = document.getElementById('enquiry-comp-type-hidden');
       var compFormatHidden = document.getElementById('enquiry-comp-format-hidden');
+      var compPieceHidden  = document.getElementById('enquiry-comp-piece-hidden');
       var childCheck       = document.getElementById('child-enquiry-check');
       var messageGroup     = document.getElementById('message-group');
       var dateGroup        = document.getElementById('event-date-group');
@@ -407,6 +430,7 @@
         deliveryHidden.value = '';
         compTypeHidden.value = '';
         compFormatHidden.value = '';
+        compPieceHidden.value = '';
         if (childCheck) childCheck.checked = false;
       }
 
@@ -701,7 +725,10 @@
           btn.setAttribute('aria-pressed', 'true');
           compTypeHidden.value = btn.dataset.compType;
           compFormatHidden.value = '';
+          compPieceHidden.value = '';
           deselect(document.getElementById('sub-comp-format'), '[data-comp-format]');
+          deselect(document.getElementById('sub-comp-piece'), '[data-comp-piece]');
+          document.getElementById('sub-comp-piece').classList.remove('visible');
           document.getElementById('sub-comp-format').classList.add('visible');
         });
       });
@@ -713,6 +740,19 @@
           btn.classList.add('selected');
           btn.setAttribute('aria-pressed', 'true');
           compFormatHidden.value = btn.dataset.compFormat;
+          compPieceHidden.value = '';
+          deselect(document.getElementById('sub-comp-piece'), '[data-comp-piece]');
+          document.getElementById('sub-comp-piece').classList.add('visible');
+        });
+      });
+
+      /* ── Composition piece type buttons ───────────────────────── */
+      document.querySelectorAll('[data-comp-piece]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          deselect(document.getElementById('sub-comp-piece'), '[data-comp-piece]');
+          btn.classList.add('selected');
+          btn.setAttribute('aria-pressed', 'true');
+          compPieceHidden.value = btn.dataset.compPiece;
           flashMessage();
         });
       });

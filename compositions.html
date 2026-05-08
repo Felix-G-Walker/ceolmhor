@@ -354,7 +354,7 @@
         <div class="booking-step">
           <p class="booking-step__num" aria-hidden="true">1</p>
           <p class="booking-step__name" data-gd="Faighnich">Enquire</p>
-          <p class="booking-step__desc" data-gd="Dèan cunntas air do thachartas, an seòrsa pìos a tha thu a' smaoineachadh air, agus mar a tha thu an dùil a chleachdadh. Cleachd am foirm gu h-ìosal.">Describe your occasion, the type of piece you have in mind, and how you intend to use it. Use the form below.</p>
+          <p class="booking-step__desc" data-gd="Dèan cunntas air do thachartas, an seòrsa pìos a tha thu a' smaoineachadh air, agus mar a tha thu an dùil a chleachdadh. Tagh Sgrìobhadh air an duilleag Faighneachd gus tòiseachadh.">Describe your occasion, the type of piece you have in mind, and how you intend to use it. Select Composition on the <a href="contact.html">Enquire page</a> to get started.</p>
         </div>
 
         <div class="booking-step">
@@ -378,6 +378,10 @@
       </div>
 
       <p class="comp-timeline-note" data-reveal data-gd="Tha coimiseanan àbhaisteach air an crìochnachadh taobh a-staigh ceithir gu sia seachdainean bho bhriog dearbhte agus pàigheadh cìs a' choimisein. Tha clàr-ama airson coimiseanan institiùideach air aontachadh gu pearsanta.">Standard commissions are completed within four to six weeks of confirmed brief and payment of the commission fee. Timeline for institutional commissions is agreed individually.</p>
+
+      <div class="text-center" data-reveal>
+        <a href="contact.html" class="btn-primary" data-gd="Faighnich mu Choimisean">Enquire about a Commission</a>
+      </div>
 
     </div>
   </section>
@@ -415,124 +419,6 @@
       <p class="comp-commission-note" data-reveal style="text-align:center;max-width:560px;margin:2.5rem auto;" data-gd="Gus pìos a choimiseanadh mar phàirt de leabharadh taisbeantas, comharraich seo nad iarraidh taisbeantas. Bithidh an coimisean air a dhearbhadh agus air a scoping mar phàirt dhen phròiseas leabharaidh.">To commission a piece as part of a performance booking, indicate this in your performance enquiry. The commission will be confirmed and scoped as part of the booking process.</p>
       <div class="text-center" data-reveal>
         <a href="contact.html" class="btn-primary" data-gd="Faighnich mu Phacaid Taisbeantas">Enquire About a Performance Package</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Commission Enquiry Form ────────────────────────────────── -->
-  <section class="section section--black" id="enquiry">
-    <div class="container">
-
-      <div class="faq-link-prompt" data-reveal>
-        <a href="faq.html" class="faq-link" data-gd="Ceistean cumanta — faic na Ceistean">Common questions — view FAQ</a>
-      </div>
-
-      <header class="section-header" data-reveal>
-        <span class="section-label" data-gd="Cuir Fios">Get in Touch</span>
-        <h2 data-gd="Ceist Coimisein">Commission Enquiry</h2>
-      </header>
-
-      <div class="contact-grid" data-reveal>
-
-        <aside>
-          <p style="font-size:0.9rem;line-height:1.75;color:var(--text-muted);margin-bottom:1.75rem;" data-gd="Tha am foirm seo airson ceistean coimisein fa leth — pearsanta, taisbeantas, agus institiùideach. Gus faighneachd mu phìos mar phàirt de leabharadh pacaid taisbeantas, cleachd a' phutan gu h-àrd no am prìomh fhoirm ceiste.">This form is for standalone commission enquiries — personal, performance, and institutional. To enquire about a piece as part of a performance package booking, use the button above or the main enquiry form.</p>
-          <dl class="contact-details">
-            <dt data-gd="Post-d">Email</dt>
-            <dd><a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a></dd>
-            <dt data-gd="Àm freagairt">Response time</dt>
-            <dd data-gd="Taobh a-staigh 48 uairean">Within 48 hours</dd>
-          </dl>
-        </aside>
-
-        <div>
-
-          <form id="commission-form" name="commission-form" novalidate>
-
-            <!-- Honeypot — do not remove, do not make visible -->
-            <div style="display:none" aria-hidden="true">
-              <input type="text" name="_honeypot" tabindex="-1" autocomplete="off">
-            </div>
-
-            <input type="hidden" name="form_name" value="commission-enquiry">
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="c-first-name" data-gd="Ainm Toisich">First Name</label>
-                <input type="text" id="c-first-name" name="first-name" autocomplete="given-name" required>
-              </div>
-              <div class="form-group">
-                <label for="c-last-name" data-gd="Sloinneadh">Last Name</label>
-                <input type="text" id="c-last-name" name="last-name" autocomplete="family-name" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="c-email" data-gd="Seòladh Post-d">Email Address</label>
-              <input type="email" id="c-email" name="email" autocomplete="email" placeholder="your@email.com" required>
-            </div>
-
-            <div class="form-group">
-              <label for="c-commission-type" data-gd="Seòrsa Coimisein">Commission Type</label>
-              <select id="c-commission-type" name="commission-type" required>
-                <option value="" disabled selected data-gd="Tagh…">Select…</option>
-                <option value="personal" data-gd="Coimisean Pearsanta">Personal Commission</option>
-                <option value="performance" data-gd="Coimisean Taisbeantas">Performance Commission</option>
-                <option value="institutional" data-gd="Coimisean Institiùideach">Institutional Commission</option>
-                <option value="unsure" data-gd="Chan eil mi cinnteach fhathast">Not sure yet</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="c-piece-type" data-gd="Seòrsa Pìos">Piece Type</label>
-              <select id="c-piece-type" name="piece-type" required>
-                <option value="" disabled selected data-gd="Tagh…">Select…</option>
-                <option value="march" data-gd="Màrsaidh">March</option>
-                <option value="slow-air" data-gd="Uidh Slaodach">Slow Air</option>
-                <option value="reel" data-gd="Ruidhle">Reel</option>
-                <option value="jig" data-gd="Siog">Jig</option>
-                <option value="contemporary" data-gd="Sgrìobhadh Co-aimsireil">Contemporary Composition</option>
-                <option value="open" data-gd="Chan eil mi cinnteach — fosgailte do mholadh">Not sure — open to suggestion</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="c-occasion" data-gd="Tachartas no Cleachdadh San Amharc">Occasion or Intended Use</label>
-              <textarea id="c-occasion" name="occasion" rows="4" placeholder="Describe the occasion, event, or context the piece is intended for." data-gd-placeholder="Dèan cunntas air an tachartas, tachartas, no co-theacsa a tha am pìos an dùil airson." required></textarea>
-            </div>
-
-            <div class="form-group">
-              <label for="c-use"><span data-gd="Cleachdadh San Amharc Thar an Tachartais">Intended Use Beyond the Occasion</span> <span style="font-style:italic;text-transform:none;letter-spacing:0;font-size:0.8em;" data-gd="(roghainneil)">(optional)</span></label>
-              <textarea id="c-use" name="intended-use" rows="3" placeholder="Will the piece be performed publicly, recorded commercially, used competitively, or broadcast? Please describe any use beyond private performance." data-gd-placeholder="Am bi am pìos air a thaisbeanadh gu poblach, air a chlàradh gu malairteach, air a chleachdadh gu co-fharpais, no air a chraolaidh? Dèan cunntas air cleachdadh sam bith seach taisbeantas prìobhaideach."></textarea>
-            </div>
-
-            <div class="form-group">
-              <label for="c-timeline"><span data-gd="Clàr-ama Timcheall air">Approximate Timeline</span> <span style="font-style:italic;text-transform:none;letter-spacing:0;font-size:0.8em;" data-gd="(roghainneil)">(optional)</span></label>
-              <input type="text" id="c-timeline" name="timeline" placeholder="When do you need the piece by, if applicable?" data-gd-placeholder="Cuin a tha feum agad air a' phìos, ma tha?">
-            </div>
-
-            <div class="form-group">
-              <label for="c-notes"><span data-gd="Nòtaichean a Bharrachd">Additional Notes</span> <span style="font-style:italic;text-transform:none;letter-spacing:0;font-size:0.8em;" data-gd="(roghainneil)">(optional)</span></label>
-              <textarea id="c-notes" name="notes" rows="3"></textarea>
-            </div>
-
-            <div class="form-submit">
-              <button type="submit" class="btn-primary" data-gd="Cuir Ceist a-steach">Send Enquiry</button>
-            </div>
-
-          </form>
-
-          <div class="form-success" id="commission-success" role="status" aria-live="polite">
-            <p data-gd="Chaidh do cheist coimisein fhaighinn.">Your commission enquiry has been received.</p>
-            <p data-gd="Freaghraidh Ceòlmhor taobh a-staigh 48 uairean gus do phròiseact a cheasnachadh.">Ceòlmhor will respond within 48 hours to discuss your project.</p>
-          </div>
-
-          <div class="form-error" id="commission-error" role="alert" aria-live="assertive" style="display:none;">
-            <p data-gd="Chaidh rudeigin ceàrr le bhith a' cur do cheist.">Something went wrong sending your enquiry.</p>
-            <p>Please email us directly at <a href="mailto:contact@ceolmhor.scot">contact@ceolmhor.scot</a> and we will respond within 48 hours.</p>
-          </div>
-
-        </div>
       </div>
 
     </div>
@@ -604,73 +490,8 @@
         });
       });
 
-      /* ── Commission form ──────────────────────────────────────── */
-      var WORKER_URL = 'https://ceolmhor.scot/api/contact';
-      var form       = document.getElementById('commission-form');
-      var successEl  = document.getElementById('commission-success');
-      var errorEl    = document.getElementById('commission-error');
 
-      /* Auto-expand textareas */
-      form.querySelectorAll('textarea').forEach(function (ta) {
-        ta.addEventListener('input', function () {
-          this.style.height = 'auto';
-          this.style.height = this.scrollHeight + 'px';
-        });
-      });
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        /* Validation */
-        var requiredIds = ['c-first-name', 'c-last-name', 'c-email', 'c-commission-type', 'c-piece-type', 'c-occasion'];
-        var valid = true;
-        requiredIds.forEach(function (id) {
-          var field = document.getElementById(id);
-          var group = field ? field.closest('.form-group') : null;
-          if (!field || !field.value.trim()) {
-            if (field) field.setAttribute('aria-invalid', 'true');
-            if (group) group.classList.add('field-error');
-            if (valid && field) field.focus();
-            valid = false;
-          } else {
-            if (field) field.removeAttribute('aria-invalid');
-            if (group) group.classList.remove('field-error');
-          }
-        });
-        if (!valid) return;
-
-        var btn = form.querySelector('[type="submit"]');
-        var originalText = btn.textContent;
-        btn.disabled = true;
-        btn.textContent = 'Sending…';
-
-        fetch(WORKER_URL, { method: 'POST', body: new FormData(form) })
-          .then(function (res) { return res.json().then(function (json) { return { res: res, json: json }; }); })
-          .then(function (data) {
-            if (data.res.ok && data.json.ok) {
-              form.style.display = 'none';
-              if (successEl) {
-                successEl.style.display = 'block';
-                successEl.setAttribute('tabindex', '-1');
-                successEl.focus();
-              }
-            } else {
-              throw new Error(data.json.error || 'Worker returned error');
-            }
-          })
-          .catch(function (err) {
-            console.error('Commission form error:', err);
-            btn.disabled = false;
-            btn.textContent = originalText;
-            if (errorEl) {
-              errorEl.style.display = 'block';
-              errorEl.setAttribute('tabindex', '-1');
-              errorEl.focus();
-            }
-          });
-      });
-
-    }());
+}());
   </script>
 </body>
 </html>
