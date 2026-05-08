@@ -188,6 +188,9 @@
                 <button type="button" class="enquiry-type-btn" data-primary="composition" aria-pressed="false" data-gd="Sgrìobhadh">Composition</button>
                 <button type="button" class="enquiry-type-btn" data-primary="other" aria-pressed="false" data-gd="Eile">Other</button>
               </div>
+              <div class="enquiry-venue-row">
+                <button type="button" class="enquiry-type-btn" data-primary="venue" aria-pressed="false" data-gd="Àite / Institiùideach">Venue / Institutional</button>
+              </div>
 
               <!-- Tuition sub-options -->
               <div class="sub-options" id="sub-tuition">
@@ -259,6 +262,13 @@
                     <button type="button" class="enquiry-type-btn" data-comp-format="band" aria-pressed="false" data-gd="Bann-pìoba">Pipe Band</button>
                   </div>
                 </div>
+              </div>
+
+              <!-- Venue / Institutional sub-options -->
+              <div class="sub-options" id="sub-venue">
+                <p class="enquiry-context-note" data-gd="Gheibh thu teirmean sgrìobhte agus mion-fhiosrachadh solair taobh a-staigh 24 uairean. Chan eil pàigheadh riatanach aig an ìre seo.">
+                  You will receive written terms and supplier details within 24 hours. No payment is required at this stage.
+                </p>
               </div>
 
               <!-- Hidden fields for form submission -->
@@ -617,7 +627,7 @@
           primaryHidden.value = val;
           resetHidden();
           hideAllSubs();
-          if (dateGroup) dateGroup.classList.toggle('hidden', val !== 'performance');
+          if (dateGroup) dateGroup.classList.toggle('hidden', val !== 'performance' && val !== 'venue');
 
           if (val === 'tuition') {
             document.getElementById('sub-tuition').classList.add('visible');
@@ -627,6 +637,9 @@
             document.getElementById('sub-composition').classList.add('visible');
           } else if (val === 'other') {
             typeHidden.value = 'other';
+            flashMessage();
+          } else if (val === 'venue') {
+            document.getElementById('sub-venue').classList.add('visible');
             flashMessage();
           }
         });

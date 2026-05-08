@@ -3429,3 +3429,56 @@ body::after {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Venues & Institutional ───────────────────────────────────────── */
+.venues-cta {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.venues-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+.venues-cta p {
+  max-width: none;
+  margin-bottom: 1.25rem;
+}
+.venues-cta a { margin-top: 0.5rem; }
+
+.venues-block {
+  border: 1px solid var(--rule);
+  padding: 2.75rem;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+.venues-block h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+.venues-block p { margin-bottom: 1.25rem; }
+.venues-block .venues-block__credit {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.venues-block a { display: inline-block; margin-top: 0.5rem; }
+
+.enquiry-venue-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 600px) {
+  .venues-block { padding: 1.75rem; }
+}
