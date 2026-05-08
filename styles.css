@@ -3496,11 +3496,6 @@ body::after {
   margin-bottom: 1.25rem;
 }
 .venues-block p { margin-bottom: 1.25rem; }
-.venues-block .venues-block__credit {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  font-style: italic;
-}
 .venues-block a { display: inline-block; margin-top: 0.5rem; }
 
 .enquiry-venue-row {
