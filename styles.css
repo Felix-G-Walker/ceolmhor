@@ -185,7 +185,7 @@ p {
 }
 
 .site-logo {
-  height: 48px;
+  height: 72px;
   width: auto;
   display: block;
 }
@@ -196,18 +196,6 @@ p {
   gap: 1.25rem;
 }
 
-.nav__home {
-  font-family: var(--font-ui);
-  font-weight: 400;
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--text-mid);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.nav__home:hover { color: var(--accent-gold); }
-.nav__home.active { color: var(--accent-gold); }
 
 .nav__right {
   display: flex;
