@@ -361,10 +361,6 @@ p {
 html[lang="gd"] .nav__links {
   gap: 1rem;
 }
-html[lang="gd"] .nav__links a,
-html[lang="gd"] .nav__faq {
-  letter-spacing: 0.06em;
-}
 html[lang="gd"] .nav__right {
   gap: 1.5rem;
 }
