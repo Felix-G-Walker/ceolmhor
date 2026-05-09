@@ -194,7 +194,7 @@ p {
 }
 
 .nav__logo.active .site-logo {
-  filter: sepia(1) saturate(3) hue-rotate(5deg);
+  filter: sepia(1) saturate(2) hue-rotate(-20deg) brightness(0.82);
 }
 
 .nav__left {
