@@ -37,6 +37,12 @@
       el.placeholder = isGd ? el.dataset.gdPlaceholder : el.dataset.enPlaceholder;
     });
 
+    /* Photo caption attributes (rendered via CSS content: attr(data-caption)) */
+    document.querySelectorAll('[data-caption-gd]').forEach(function (el) {
+      if (!el.dataset.captionEn) el.dataset.captionEn = el.dataset.caption;
+      el.dataset.caption = isGd ? el.dataset.captionGd : el.dataset.captionEn;
+    });
+
     /* Sync all toggle pills on this page */
     document.querySelectorAll('.lang-toggle').forEach(function (btn) {
       btn.classList.toggle('gd-active', isGd);
