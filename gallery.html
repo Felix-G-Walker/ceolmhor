@@ -268,15 +268,10 @@
       lbClose.className = 'lightbox-btn-close';
       lbClose.setAttribute('aria-label', 'Close gallery');
 
-      var lbZoomHint = document.createElement('p');
-      lbZoomHint.className = 'lightbox-zoom-hint';
-      lbZoomHint.textContent = 'Click image to zoom · drag to pan · Esc to close';
-
       lightbox.appendChild(lbClose);
       lightbox.appendChild(lbPrev);
       lightbox.appendChild(lightboxImg);
       lightbox.appendChild(lbNext);
-      lightbox.appendChild(lbZoomHint);
       document.body.appendChild(lightbox);
 
       var imageItems = Array.from(document.querySelectorAll('.photo-masonry-item[data-src]'));
@@ -306,7 +301,6 @@
         translateY = 0;
         lightboxImg.style.cursor = 'zoom-in';
         applyTransform(animate !== false);
-        lbZoomHint.style.opacity = '1';
       }
 
       function clampPan() {
@@ -326,7 +320,6 @@
           translateY = 0;
           lightboxImg.style.cursor = 'zoom-out';
           applyTransform(true);
-          lbZoomHint.style.opacity = '0';
         } else {
           resetZoom(true);
         }
