@@ -194,7 +194,7 @@ p {
 }
 
 .nav__logo.active .site-logo {
-  filter: sepia(1) saturate(2) hue-rotate(-20deg) brightness(0.82);
+  filter: brightness(0) invert(54%) sepia(1) brightness(0.87) saturate(2.4) hue-rotate(7deg);
 }
 
 .nav__left {
@@ -968,18 +968,6 @@ html[lang="gd"] .nav__right {
   line-height: 1;
 }
 .lightbox-btn-close:hover { background: rgba(255, 255, 255, 0.22); transform: scale(1.1); }
-.lightbox-zoom-hint {
-  position: absolute;
-  bottom: 1.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.35);
-  letter-spacing: 0.05em;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  white-space: nowrap;
-}
 
 .carousel-hint {
   font-size: 0.75rem;
