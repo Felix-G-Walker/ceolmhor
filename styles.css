@@ -474,7 +474,7 @@ html[lang="gd"] .nav__right {
   color: var(--text);
   line-height: 0.92;
   letter-spacing: -0.025em;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.3rem;
   text-align: center;
 }
 
@@ -506,7 +506,7 @@ html[lang="gd"] .nav__right {
   text-transform: uppercase;
   color: var(--text-muted);
   margin-top: 0;
-  margin-bottom: 0.9rem;
+  margin-bottom: 2rem;
   max-width: none;
   text-align: center;
 }
@@ -3547,7 +3547,7 @@ body::after {
   max-width: 640px;
   margin: 0 auto;
 }
-.venues-block p { margin-bottom: 1.25rem; }
+.venues-block p { margin-bottom: 1.25rem; margin-left: auto; margin-right: auto; }
 .venues-block a { display: inline-block; margin-top: 0.5rem; }
 
 .enquiry-venue-row {
