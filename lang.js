@@ -44,6 +44,7 @@
     });
 
     localStorage.setItem(LANG_KEY, lang);
+    document.documentElement.classList.remove('lang-gd');
   }
 
   function init() {

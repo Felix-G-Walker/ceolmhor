@@ -3757,3 +3757,17 @@ body::after {
   .collab-logo__wordmark { font-size: 1rem; }
   .collab-cta { padding: 2.5rem 1.5rem; }
 }
+
+/* Pre-apply Gàidhlig pill state to prevent toggle flash on page load */
+html.lang-gd .lang-toggle::before {
+  transform: translateX(100%);
+  transition: none;
+}
+html.lang-gd .lang-toggle .lang-toggle__en {
+  color: rgba(255, 255, 255, 0.35);
+  transition: none;
+}
+html.lang-gd .lang-toggle .lang-toggle__gd {
+  color: #0d0d0d;
+  transition: none;
+}
