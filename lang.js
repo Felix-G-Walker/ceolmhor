@@ -11,7 +11,7 @@
   var LANG_KEY = 'ceolmhor-lang';
 
   function getLang() {
-    return 'en';
+    return localStorage.getItem(LANG_KEY) || 'en';
   }
 
   function applyLang(lang) {
