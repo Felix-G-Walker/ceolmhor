@@ -52,6 +52,9 @@ html {
   background: #000000;
 }
 
+html:not(.page-ready) body { opacity: 0; }
+html.page-ready body { transition: opacity 0.1s; }
+
 body {
   background: linear-gradient(180deg, #181818 0%, #000000 100%);
   background-attachment: fixed;

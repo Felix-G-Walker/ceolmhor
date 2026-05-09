@@ -54,6 +54,7 @@
       });
     });
     applyLang(getLang());
+    document.documentElement.classList.add('page-ready');
   }
 
   if (document.readyState === 'loading') {
