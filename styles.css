@@ -3757,6 +3757,3 @@ body::after {
   .collab-logo__wordmark { font-size: 1rem; }
   .collab-cta { padding: 2.5rem 1.5rem; }
 }
-
-/* Suppress English flash while Gàidhlig translations are being applied */
-html.lang-loading body { opacity: 0; }

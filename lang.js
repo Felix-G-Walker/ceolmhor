@@ -11,14 +11,13 @@
   var LANG_KEY = 'ceolmhor-lang';
 
   function getLang() {
-    try { return localStorage.getItem(LANG_KEY) || 'en'; } catch (e) { return 'en'; }
+    return localStorage.getItem(LANG_KEY) || 'en';
   }
 
   function applyLang(lang) {
     var isGd = lang === 'gd';
 
     document.documentElement.lang = isGd ? 'gd' : 'en-GB';
-    document.documentElement.classList.remove('lang-loading');
 
     /* Text content */
     document.querySelectorAll('[data-gd]').forEach(function (el) {
@@ -44,13 +43,10 @@
       btn.setAttribute('aria-checked', isGd ? 'true' : 'false');
     });
 
-    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+    localStorage.setItem(LANG_KEY, lang);
   }
 
   function init() {
-    setTimeout(function () {
-      document.documentElement.classList.remove('lang-loading');
-    }, 1500);
     document.querySelectorAll('.lang-toggle').forEach(function (btn) {
       btn.addEventListener('click', function () {
         applyLang(btn.classList.contains('gd-active') ? 'en' : 'gd');
