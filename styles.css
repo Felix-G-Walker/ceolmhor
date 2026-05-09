@@ -194,7 +194,7 @@ p {
 }
 
 .nav__logo.active .site-logo {
-  filter: invert(67%) sepia(22%) saturate(1054%) hue-rotate(1deg) brightness(97%) contrast(93%);
+  filter: sepia(1) saturate(3) hue-rotate(5deg);
 }
 
 .nav__left {
