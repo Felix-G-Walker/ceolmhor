@@ -193,6 +193,10 @@ p {
   display: block;
 }
 
+.nav__logo.active .site-logo {
+  filter: invert(67%) sepia(22%) saturate(1054%) hue-rotate(1deg) brightness(97%) contrast(93%);
+}
+
 .nav__left {
   display: flex;
   align-items: center;
