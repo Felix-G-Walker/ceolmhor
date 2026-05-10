@@ -120,6 +120,7 @@
             id="contact-form"
             name="contact-form"
             data-worker="true"
+            autocomplete="off"
             novalidate
           >
 
@@ -484,23 +485,23 @@
               <div class="form-row">
                 <div class="form-group">
                   <label for="first-name" data-gd="Ainm Toisich">First Name</label>
-                  <input type="text" id="first-name" name="first-name" autocomplete="given-name" required>
+                  <input type="text" id="first-name" name="first-name" autocomplete="off" required>
                   <span class="field-error-msg" id="first-name-error" role="alert" aria-live="polite" data-gd="Cuir a-steach d' ainm toisich">Please enter your first name</span>
                 </div>
                 <div class="form-group">
                   <label for="last-name" data-gd="Sloinneadh">Last Name</label>
-                  <input type="text" id="last-name" name="last-name" autocomplete="family-name" required>
+                  <input type="text" id="last-name" name="last-name" autocomplete="off" required>
                   <span class="field-error-msg" id="last-name-error" role="alert" aria-live="polite" data-gd="Cuir a-steach do sloinneadh">Please enter your last name</span>
                 </div>
               </div>
               <div class="form-group">
                 <label for="email" data-gd="Seòladh Post-d">Email Address</label>
-                <input type="email" id="email" name="email" autocomplete="email" placeholder="your@email.com" required>
+                <input type="email" id="email" name="email" autocomplete="off" placeholder="your@email.com" required>
                 <span class="field-error-msg" id="email-error" role="alert" aria-live="polite" data-gd="Cuir a-steach seòladh post-d ceart">Please enter a valid email address</span>
               </div>
               <div class="form-group" id="phone-group">
                 <label for="phone"><span data-gd="Àireamh Fòn">Phone Number</span> <span style="font-size:0.82em;opacity:0.55;font-weight:300;" data-gd="(roghainneil)">(optional)</span></label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="optional">
+                <input type="tel" id="phone" name="phone" autocomplete="off" inputmode="tel" placeholder="optional">
                 <input type="hidden" name="phone-cleaned" id="phone-cleaned">
                 <span class="field-error-msg" id="phone-error" role="alert" aria-live="polite" data-gd="Cuir a-steach àireamh fòn ceart sa RA no eadar-nàiseanta">Please enter a valid UK or international phone number</span>
               </div>
