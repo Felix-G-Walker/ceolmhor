@@ -129,6 +129,8 @@
               <input type="text" name="_honeypot" tabindex="-1" autocomplete="off">
             </div>
 
+            <div class="wizard-steps-viewport">
+
             <!-- ── Step 1: Service category ───────────────────── -->
             <div class="wizard-step" id="step-1">
               <h2 class="wizard-step__heading" data-gd="Dè tha thu ag iarraidh?">What are you looking for?</h2>
@@ -524,6 +526,8 @@
               </div>
             </div>
 
+            </div><!-- /.wizard-steps-viewport -->
+
             <!-- ── Navigation ─────────────────────────────────── -->
             <div class="wizard-nav" id="wizard-nav">
               <button type="button" class="wizard-back-btn" id="wizard-back" hidden data-gd="← Air ais">← Back</button>
@@ -545,7 +549,8 @@
 
           <!-- Success message -->
           <div class="form-success" id="form-success" role="status" aria-live="polite">
-            <p data-gd="Chaidh do cheist fhaighinn.">Your enquiry has been received.</p>
+            <p data-gd="Chaidh do cheist fhaighinn!">Your enquiry has been received!</p>
+            <p data-gd="Tha sinn a' coimhead air adhart ri bhith ag obair leat!">We look forward to working with you!</p>
           </div>
 
           <!-- Error message -->
@@ -621,6 +626,8 @@
 
     var currentStep  = 1;
     var stepHistory  = [1];
+    var SLIDE_MS     = 320;
+    var slideTimer   = null;
 
     /* ── Hidden fields ────────────────────────────────────────────── */
     var primaryHidden    = document.getElementById('enquiry-primary-hidden');
@@ -681,19 +688,72 @@
     }
 
     /* ── Step display ─────────────────────────────────────────────── */
-    function showStep(n) {
-      document.querySelectorAll('.wizard-step').forEach(function (s) {
-        s.classList.add('hidden');
-        s.setAttribute('aria-hidden', 'true');
-      });
-      var el = document.getElementById('step-' + n);
-      if (el) {
-        el.classList.remove('hidden');
-        el.setAttribute('aria-hidden', 'false');
+    function showStep(n, direction) {
+      if (slideTimer) {
+        clearTimeout(slideTimer);
+        slideTimer = null;
+        document.querySelectorAll('.wizard-step').forEach(function (s) { s.style.cssText = ''; });
+        var vpClean = document.querySelector('.wizard-steps-viewport');
+        if (vpClean) vpClean.style.minHeight = '';
       }
+
+      var viewport = document.querySelector('.wizard-steps-viewport');
+      var oldEl    = document.getElementById('step-' + currentStep);
+      var newEl    = document.getElementById('step-' + n);
+      if (!newEl) return;
+
+      var animate = direction && oldEl && oldEl !== newEl
+        && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!animate) {
+        document.querySelectorAll('.wizard-step').forEach(function (s) {
+          s.classList.add('hidden');
+          s.setAttribute('aria-hidden', 'true');
+        });
+        newEl.classList.remove('hidden');
+        newEl.setAttribute('aria-hidden', 'false');
+        currentStep = n;
+        updateProgress(n);
+        updateNav(n);
+        return;
+      }
+
+      var forward = direction === 'forward';
+      var vp = viewport || document.getElementById('contact-form');
+
+      /* Lock viewport height so it doesn't collapse while both steps are in flight */
+      if (vp) vp.style.minHeight = vp.offsetHeight + 'px';
+
+      /* Old step: pull out of flow so only the new step sets the height */
+      oldEl.style.cssText = 'position:absolute;top:0;left:0;width:100%;transform:translateX(0);';
+
+      /* New step: show in flow but initially off-screen */
+      newEl.classList.remove('hidden');
+      newEl.setAttribute('aria-hidden', 'false');
+      newEl.style.transform = 'translateX(' + (forward ? '100%' : '-100%') + ')';
+
+      /* Force reflow so the browser registers the initial transform */
+      void newEl.offsetWidth;
+
+      var tr = 'transform ' + SLIDE_MS + 'ms cubic-bezier(0.4,0,0.2,1)';
+      oldEl.style.transition = tr;
+      oldEl.style.transform  = 'translateX(' + (forward ? '-100%' : '100%') + ')';
+      newEl.style.transition = tr;
+      newEl.style.transform  = 'translateX(0)';
+
       currentStep = n;
       updateProgress(n);
       updateNav(n);
+
+      slideTimer = setTimeout(function () {
+        slideTimer = null;
+        oldEl.classList.add('hidden');
+        oldEl.setAttribute('aria-hidden', 'true');
+        oldEl.style.cssText    = '';
+        newEl.style.transform  = '';
+        newEl.style.transition = '';
+        if (vp) vp.style.minHeight = '';
+      }, SLIDE_MS + 20);
     }
 
     function setupStep(n) {
@@ -1038,7 +1098,7 @@
         if (stepHistory.length <= 1) return;
         stepHistory.pop();
         var prev = stepHistory[stepHistory.length - 1];
-        showStep(prev);
+        showStep(prev, 'back');
       });
     }
 
@@ -1049,7 +1109,7 @@
         if (!next) return;
         stepHistory.push(next);
         setupStep(next);
-        showStep(next);
+        showStep(next, 'forward');
       });
     }
 

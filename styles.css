@@ -3783,6 +3783,12 @@ body::after {
   margin-bottom: 2rem;
 }
 
+/* Steps viewport: clips the horizontal slide animation */
+.wizard-steps-viewport {
+  position: relative;
+  overflow: hidden;
+}
+
 /* Step containers */
 .wizard-step { }
 .wizard-step.hidden { display: none; }
