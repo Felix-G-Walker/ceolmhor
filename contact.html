@@ -1147,7 +1147,7 @@
         this.removeAttribute('aria-invalid');
       });
       phoneField.addEventListener('focus', function () {
-        if(!this.value.trim()){this.value='+44 ';var len=this.value.length;this.setSelectionRange(len,len);}
+        if(!this.value.trim()){this.value='+';var len=this.value.length;this.setSelectionRange(len,len);}
       });
       phoneField.addEventListener('blur', function () {
         var v=this.value.trim();
