@@ -1145,6 +1145,33 @@
       });
     }
 
+    /* ── Email inline validation ─────────────────────────────────── */
+    var emailField = document.getElementById('email');
+    var emailError = document.getElementById('email-error');
+    if (emailField) {
+      emailField.addEventListener('blur', function () {
+        var v = this.value.trim();
+        var group = this.closest('.form-group');
+        if (v && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
+          this.setAttribute('aria-invalid', 'true');
+          if (group) group.classList.add('field-error');
+          if (emailError) emailError.style.display = '';
+        } else {
+          this.removeAttribute('aria-invalid');
+          if (group) group.classList.remove('field-error');
+          if (emailError) emailError.style.display = 'none';
+        }
+      });
+      emailField.addEventListener('input', function () {
+        if (this.getAttribute('aria-invalid')) {
+          var group = this.closest('.form-group');
+          this.removeAttribute('aria-invalid');
+          if (group) group.classList.remove('field-error');
+          if (emailError) emailError.style.display = 'none';
+        }
+      });
+    }
+
     /* ── Form submission ──────────────────────────────────────────── */
     var contactForm  = document.getElementById('contact-form');
     var WORKER_URL   = 'https://ceolmhor.scot/api/contact';
@@ -1152,16 +1179,20 @@
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
+      function isEmailValid(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+
       var fields = [
         { el: document.getElementById('first-name'), err: document.getElementById('first-name-error') },
         { el: document.getElementById('last-name'),  err: document.getElementById('last-name-error')  },
-        { el: document.getElementById('email'),      err: document.getElementById('email-error')      }
+        { el: document.getElementById('email'),      err: document.getElementById('email-error'), validate: isEmailValid }
       ];
 
       var valid = true;
       fields.forEach(function (f) {
         var group = f.el ? f.el.closest('.form-group') : null;
-        if (!f.el || !f.el.value.trim()) {
+        var val = f.el ? f.el.value.trim() : '';
+        var fieldValid = f.el && val && (!f.validate || f.validate(val));
+        if (!fieldValid) {
           if (f.el) f.el.setAttribute('aria-invalid', 'true');
           if (group) group.classList.add('field-error');
           if (f.err) f.err.style.display = '';
