@@ -145,7 +145,7 @@
                 </button>
                 <button type="button" class="wizard-category-btn" data-primary="composition" aria-pressed="false">
                   <span class="wizard-category-btn__title" data-gd="Sgrìobhadh">Composition</span>
-                  <span class="wizard-category-btn__desc" data-gd="Coimisean pìos ùr airson pìob shingilte no bann-pìoba">Commission an original piece for solo pipe or pipe band</span>
+                  <span class="wizard-category-btn__desc" data-gd="Faighnich mu sgòr bhon chatalog no coimisean pìos ùr">Enquire about a catalogue score or commission an original piece</span>
                 </button>
                 <button type="button" class="wizard-category-btn" data-primary="venue" aria-pressed="false">
                   <span class="wizard-category-btn__title" data-gd="Àiteachan &amp; Sgiobaidhean Tachartasan">Venue or Events Team</span>
@@ -192,8 +192,12 @@
 
               <!-- Composition -->
               <div id="step2-composition" class="wizard-step-panel hidden">
-                <h2 class="wizard-step__heading" data-gd="Dè seòrsa coimisein?">What type of commission?</h2>
+                <h2 class="wizard-step__heading" data-gd="Dè seòrsa ceiste?">What type of enquiry?</h2>
                 <div class="wizard-option-grid">
+                  <button type="button" class="wizard-option-btn" data-comp-type="score" aria-pressed="false">
+                    <span class="wizard-option-btn__title" data-gd="Sgòr bhon Chatalog">Catalogue Score</span>
+                    <span class="wizard-option-btn__desc" data-gd="Faighnich mu phàipear-ciùil airson pìos bhon chatalog">Enquire about sheet music for a catalogue work</span>
+                  </button>
                   <button type="button" class="wizard-option-btn" data-comp-type="private" aria-pressed="false">
                     <span class="wizard-option-btn__title" data-gd="Coimisean Prìobhaideach">Private Commission</span>
                     <span class="wizard-option-btn__desc" data-gd="Bho £250">From £250</span>
@@ -546,6 +550,7 @@
             <input type="hidden" name="enquiry-comp-type"  id="enquiry-comp-type-hidden">
             <input type="hidden" name="enquiry-comp-format" id="enquiry-comp-format-hidden">
             <input type="hidden" name="enquiry-comp-piece" id="enquiry-comp-piece-hidden">
+            <input type="hidden" name="enquiry-comp-title" id="enquiry-comp-title-hidden">
             <input type="hidden" name="enquiry-perf-tier"  id="enquiry-perf-tier-hidden">
             <input type="hidden" name="enquiry-add-set"    id="enquiry-add-set-hidden">
 
@@ -625,6 +630,7 @@
       compType:    '',
       compFormat:  '',
       compPiece:   '',
+      compTitle:   '',
       addSet:      false
     };
 
@@ -641,6 +647,7 @@
     var compTypeHidden   = document.getElementById('enquiry-comp-type-hidden');
     var compFormatHidden = document.getElementById('enquiry-comp-format-hidden');
     var compPieceHidden  = document.getElementById('enquiry-comp-piece-hidden');
+    var compTitleHidden  = document.getElementById('enquiry-comp-title-hidden');
     var perfTierHidden   = document.getElementById('enquiry-perf-tier-hidden');
     var addSetHidden     = document.getElementById('enquiry-add-set-hidden');
 
@@ -650,7 +657,7 @@
     function needsStep3() {
       if (state.primary === 'performance') return TIERED_PERF_SUBS.indexOf(state.sub) !== -1;
       if (state.primary === 'tuition')     return state.sub === 'regular';
-      if (state.primary === 'composition') return true;
+      if (state.primary === 'composition') return state.compType !== 'score';
       return false;
     }
 
@@ -786,6 +793,7 @@
       var p = state.primary, s = state.sub;
       if (p === 'other')       return [1,2,5,6];
       if (p === 'venue')       return [1,2,4,5,6];
+      if (p === 'composition' && state.compType === 'score') return [1,2,5,6];
       if (p === 'composition') return [1,2,3,5,6];
       if (p === 'tuition' && s === 'trial') return [1,2,4,5,6];
       if (p === 'tuition')     return [1,2,3,4,5,6];
@@ -818,7 +826,7 @@
       if (!el) return;
 
       var primaryLabels = { tuition: 'Tuition', performance: 'Performance', composition: 'Composition', venue: 'Venue or Events Team', other: 'Other' };
-      var subLabels     = { wedding: 'Wedding & Civil Ceremony', funeral: 'Funeral & Memorial', burns: 'Burns Night', corporate: 'Corporate & Business Dinner', festival: 'Ceilidh & Dance Events', hogmanay: 'Hogmanay & the Scottish Calendar', graduation: 'Graduation & Civic Ceremony', custom: 'Custom Engagement', trial: 'Trial Lesson', regular: 'Regular Tuition', private: 'Private Commission', media: 'Media & Commercial', institutional: 'Heritage & Institutional' };
+      var subLabels     = { wedding: 'Wedding & Civil Ceremony', funeral: 'Funeral & Memorial', burns: 'Burns Night', corporate: 'Corporate & Business Dinner', festival: 'Ceilidh & Dance Events', hogmanay: 'Hogmanay & the Scottish Calendar', graduation: 'Graduation & Civic Ceremony', custom: 'Custom Engagement', trial: 'Trial Lesson', regular: 'Regular Tuition', private: 'Private Commission', media: 'Media & Commercial', institutional: 'Heritage & Institutional', score: 'Catalogue Score' };
       var tuitionLabels = { beginner: 'Tier I — Foundational', intermediate: 'Tier II — Developing', advanced: 'Tier III — Proficient', piobaireachd: 'Tier IV — Advanced' };
       var deliveryLabels = { 'in-person': 'In-Person (Edinburgh)', online: 'Online' };
       var formatLabels  = { solo: 'Solo Pipe', band: 'Pipe Band' };
@@ -844,7 +852,8 @@
       if (state.addSet)      items.push({ l: 'Additional set', v: '+£75 (approximately 20–25 minutes)' });
       if (state.tuitionTier) items.push({ l: 'Tier', v: tuitionLabels[state.tuitionTier] || state.tuitionTier });
       if (state.delivery)    items.push({ l: 'Lessons', v: deliveryLabels[state.delivery] || state.delivery });
-      if (state.compType)    items.push({ l: 'Commission', v: subLabels[state.compType] || state.compType });
+      if (state.compType)    items.push({ l: state.compType === 'score' ? 'Enquiry' : 'Commission', v: subLabels[state.compType] || state.compType });
+      if (state.compType === 'score' && state.compTitle) items.push({ l: 'Composition', v: state.compTitle });
       if (state.compFormat)  items.push({ l: 'Format', v: formatLabels[state.compFormat] || state.compFormat });
       if (state.compPiece)   items.push({ l: 'Piece type', v: pieceLabels[state.compPiece] || state.compPiece });
 
@@ -889,6 +898,11 @@
         compTypeHidden.value = pSub;
         var compBtn = document.querySelector('#step2-composition [data-comp-type="' + pSub + '"]');
         if (compBtn) { compBtn.classList.add('selected'); compBtn.setAttribute('aria-pressed', 'true'); }
+        var pTitle = params.get('title');
+        if (pTitle && pSub === 'score') {
+          state.compTitle = pTitle;
+          compTitleHidden.value = pTitle;
+        }
       }
 
       /* Decide depth */
@@ -951,9 +965,9 @@
         primaryHidden.value = state.primary;
         /* Reset downstream */
         state.sub = ''; state.perfTier = ''; state.tuitionTier = '';
-        state.delivery = ''; state.compType = ''; state.compFormat = ''; state.compPiece = ''; state.addSet = false;
+        state.delivery = ''; state.compType = ''; state.compFormat = ''; state.compPiece = ''; state.compTitle = ''; state.addSet = false;
         typeHidden.value = ''; tierHidden.value = ''; deliveryHidden.value = '';
-        compTypeHidden.value = ''; compFormatHidden.value = ''; compPieceHidden.value = '';
+        compTypeHidden.value = ''; compFormatHidden.value = ''; compPieceHidden.value = ''; compTitleHidden.value = '';
         perfTierHidden.value = ''; addSetHidden.value = '';
         updateContinueState();
       });
