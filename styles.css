@@ -3772,17 +3772,6 @@ body::after {
 
 /* ── 33. Enquiry Wizard ────────────────────────────────────────────── */
 
-/* Progress indicator */
-.wizard-progress {
-  font-family: var(--font-ui);
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 2rem;
-}
-
 /* Steps viewport: clips the horizontal slide animation */
 .wizard-steps-viewport {
   position: relative;

@@ -115,7 +115,6 @@
         <!-- Wizard -->
         <div class="wizard-wrap" data-reveal data-delay="2">
 
-          <p class="wizard-progress" id="progress-label" aria-live="polite" aria-atomic="true">Step 1</p>
 
           <form
             id="contact-form"
@@ -713,7 +712,7 @@
         newEl.classList.remove('hidden');
         newEl.setAttribute('aria-hidden', 'false');
         currentStep = n;
-        updateProgress(n);
+
         updateNav(n);
         return;
       }
@@ -791,16 +790,6 @@
       return [1,2,3,4,5,6];
     }
 
-    function updateProgress(step) {
-      var el   = document.getElementById('progress-label');
-      if (!el) return;
-      var path = getPath();
-      var pos  = path.indexOf(step);
-      var n    = pos !== -1 ? pos + 1 : step;
-      var of   = path.length;
-      var isGd = document.documentElement.classList.contains('lang-gd');
-      el.textContent = isGd ? 'Ceum ' + n + ' de ' + of : 'Step ' + n + ' of ' + of;
-    }
 
     /* ── Navigation buttons ───────────────────────────────────────── */
     function updateNav(step) {
@@ -1191,8 +1180,7 @@
         .then(function (data) {
           if (data.res.ok && data.json.ok) {
             contactForm.style.display = 'none';
-            var prog = document.getElementById('progress-label');
-            if (prog) prog.style.display = 'none';
+
             var success = document.getElementById('form-success');
             if (success) { success.style.display = 'block'; success.setAttribute('tabindex', '-1'); success.focus(); }
           } else { throw new Error(data.json.error || 'Worker error'); }
