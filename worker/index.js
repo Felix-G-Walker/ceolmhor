@@ -72,9 +72,10 @@ export default {
           (first_name, last_name, email, enquiry_primary, enquiry_type,
            enquiry_tier, enquiry_delivery, enquiry_comp_type, enquiry_comp_format,
            enquiry_comp_piece, enquiry_comp_title, enquiry_perf_tier, enquiry_add_set,
+           enquiry_event_commission,
            event_day, event_month, event_year, child_enquiry, supplier_sheet,
            phone, message, user_agent, ip)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `).bind(
         firstName.trim(),
         lastName.trim(),
@@ -89,6 +90,7 @@ export default {
         data['enquiry-comp-title'] || '',
         data['enquiry-perf-tier'] || '',
         data['enquiry-add-set'] || '',
+        data['enquiry-event-commission'] || '',
         data['event-day'] || '',
         data['event-month'] || '',
         data['event-year'] || '',
@@ -123,7 +125,8 @@ export default {
     const compPieceLine = compPiece  ? `\nPiece:    ${compPiece}` : '';
     const titleLine     = compTitle  ? `\nComposition: ${compTitle}` : '';
     const perfTierLine  = perfTier   ? `\nPackage:  ${perfTier}` : '';
-    const addSetLine    = data['enquiry-add-set'] === 'yes' ? '\nAdd-on:   Additional set' : '';
+    const addSetLine        = data['enquiry-add-set'] === 'yes' ? '\nAdd-on:   Additional set' : '';
+    const eventCommLine     = data['enquiry-event-commission'] === 'yes' ? '\nCommission: Bespoke Event Commission' : '';
 
     const emailText = `
 New Ceòlmhor Enquiry
@@ -131,7 +134,7 @@ ${'─'.repeat(40)}
 
 Name:     ${firstName.trim()} ${lastName.trim()}
 Email:    ${email.trim()}${data['phone']?.trim() ? `\nPhone:    ${data['phone'].trim()}` : ''}
-Type:     ${enquiryType}${tierLine}${deliveryLine}${formatLine}${compPieceLine}${titleLine}${perfTierLine}${addSetLine}${eventDate ? `\nDate:     ${eventDate}` : ''}${childNote}${supplierNote}
+Type:     ${enquiryType}${tierLine}${deliveryLine}${formatLine}${compPieceLine}${titleLine}${perfTierLine}${addSetLine}${eventCommLine}${eventDate ? `\nDate:     ${eventDate}` : ''}${childNote}${supplierNote}
 
 Message:
 ${data['message']?.trim() || '(none provided)'}
@@ -172,6 +175,7 @@ IP: ${ip}
   ${compTitle  ? `<div class="field"><span class="label">Composition</span><span class="value">${escHtml(compTitle)}</span></div>` : ''}
   ${perfTier   ? `<div class="field"><span class="label">Package</span><span class="value">${escHtml(perfTier)}</span></div>` : ''}
   ${data['enquiry-add-set'] === 'yes' ? '<div class="field"><span class="label">Add-on</span><span class="value">Additional set</span></div>' : ''}
+  ${data['enquiry-event-commission'] === 'yes' ? '<div class="field"><span class="label">Commission</span><span class="value">Bespoke Event Commission</span></div>' : ''}
   ${eventDate  ? `<div class="field"><span class="label">Event Date</span><span class="value">${escHtml(eventDate)}</span></div>` : ''}
   ${data['child-enquiry'] === 'yes' ? '<div class="child-note">⚠️ This enquiry is on behalf of a child.</div>' : ''}
   ${data['supplier-sheet'] === 'yes' ? '<div class="child-note">📋 Supplier sheet requested.</div>' : ''}

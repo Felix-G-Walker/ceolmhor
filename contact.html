@@ -260,6 +260,12 @@
                     <span class="wizard-addon-text"><span data-gd="Cuir suidheachadh taisbeantas àraidh ris">Add an additional performance set</span><span class="wizard-addon-price">+£75</span></span>
                   </label>
                 </div>
+                <div class="wizard-addon-row wizard-event-commission-row hidden">
+                  <label class="wizard-addon-label">
+                    <input type="checkbox" class="wizard-event-commission-check">
+                    <span class="wizard-addon-text"><span data-gd="Cuir Coimisean Tachartas Air Mhiadh ris">Add a Bespoke Event Commission</span><span class="wizard-addon-price">+from £200</span></span>
+                  </label>
+                </div>
               </div>
 
               <!-- Burns Night packages -->
@@ -289,6 +295,12 @@
                   <label class="wizard-addon-label">
                     <input type="checkbox" class="wizard-addon-check">
                     <span class="wizard-addon-text"><span data-gd="Cuir suidheachadh taisbeantas àraidh ris">Add an additional performance set</span><span class="wizard-addon-price">+£75</span></span>
+                  </label>
+                </div>
+                <div class="wizard-addon-row wizard-event-commission-row hidden">
+                  <label class="wizard-addon-label">
+                    <input type="checkbox" class="wizard-event-commission-check">
+                    <span class="wizard-addon-text"><span data-gd="Cuir Coimisean Tachartas Air Mhiadh ris">Add a Bespoke Event Commission</span><span class="wizard-addon-price">+from £200</span></span>
                   </label>
                 </div>
               </div>
@@ -322,6 +334,12 @@
                     <span class="wizard-addon-text"><span data-gd="Cuir suidheachadh taisbeantas àraidh ris">Add an additional performance set</span><span class="wizard-addon-price">+£75</span></span>
                   </label>
                 </div>
+                <div class="wizard-addon-row wizard-event-commission-row hidden">
+                  <label class="wizard-addon-label">
+                    <input type="checkbox" class="wizard-event-commission-check">
+                    <span class="wizard-addon-text"><span data-gd="Cuir Coimisean Tachartas Air Mhiadh ris">Add a Bespoke Event Commission</span><span class="wizard-addon-price">+from £200</span></span>
+                  </label>
+                </div>
               </div>
 
               <!-- Ceilidh & Dance packages -->
@@ -353,6 +371,12 @@
                     <span class="wizard-addon-text"><span data-gd="Cuir suidheachadh taisbeantas àraidh ris">Add an additional performance set</span><span class="wizard-addon-price">+£75</span></span>
                   </label>
                 </div>
+                <div class="wizard-addon-row wizard-event-commission-row hidden">
+                  <label class="wizard-addon-label">
+                    <input type="checkbox" class="wizard-event-commission-check">
+                    <span class="wizard-addon-text"><span data-gd="Cuir Coimisean Tachartas Air Mhiadh ris">Add a Bespoke Event Commission</span><span class="wizard-addon-price">+from £200</span></span>
+                  </label>
+                </div>
               </div>
 
               <!-- Hogmanay packages -->
@@ -382,6 +406,12 @@
                   <label class="wizard-addon-label">
                     <input type="checkbox" class="wizard-addon-check">
                     <span class="wizard-addon-text"><span data-gd="Cuir suidheachadh taisbeantas àraidh ris">Add an additional performance set</span><span class="wizard-addon-price">+£75</span></span>
+                  </label>
+                </div>
+                <div class="wizard-addon-row wizard-event-commission-row hidden">
+                  <label class="wizard-addon-label">
+                    <input type="checkbox" class="wizard-event-commission-check">
+                    <span class="wizard-addon-text"><span data-gd="Cuir Coimisean Tachartas Air Mhiadh ris">Add a Bespoke Event Commission</span><span class="wizard-addon-price">+from £200</span></span>
                   </label>
                 </div>
               </div>
@@ -549,7 +579,8 @@
             <input type="hidden" name="enquiry-comp-piece" id="enquiry-comp-piece-hidden">
             <input type="hidden" name="enquiry-comp-title" id="enquiry-comp-title-hidden">
             <input type="hidden" name="enquiry-perf-tier"  id="enquiry-perf-tier-hidden">
-            <input type="hidden" name="enquiry-add-set"    id="enquiry-add-set-hidden">
+            <input type="hidden" name="enquiry-add-set"           id="enquiry-add-set-hidden">
+            <input type="hidden" name="enquiry-event-commission"  id="enquiry-event-commission-hidden">
 
           </form>
 
@@ -628,7 +659,8 @@
       compFormat:  '',
       compPiece:   '',
       compTitle:   '',
-      addSet:      false
+      addSet:      false,
+      eventCommission: false
     };
 
     var currentStep  = 1;
@@ -646,10 +678,15 @@
     var compPieceHidden  = document.getElementById('enquiry-comp-piece-hidden');
     var compTitleHidden  = document.getElementById('enquiry-comp-title-hidden');
     var perfTierHidden   = document.getElementById('enquiry-perf-tier-hidden');
-    var addSetHidden     = document.getElementById('enquiry-add-set-hidden');
+    var addSetHidden          = document.getElementById('enquiry-add-set-hidden');
+    var eventCommissionHidden = document.getElementById('enquiry-event-commission-hidden');
 
     /* ── Navigation logic ─────────────────────────────────────────── */
     var TIERED_PERF_SUBS = ['wedding', 'burns', 'corporate', 'festival', 'hogmanay'];
+
+    function isPremiumPerfTier(sub, tier) {
+      return sub === 'wedding' ? tier === 'full' : tier === 'premium';
+    }
 
     function needsStep3() {
       if (state.primary === 'performance') return TIERED_PERF_SUBS.indexOf(state.sub) !== -1;
@@ -846,7 +883,8 @@
       if (state.sub)         items.push({ l: state.primary === 'composition' ? 'Commission type' : 'Occasion', v: subLabels[state.sub] || state.sub });
       if (state.compType && state.primary === 'composition') { /* already covered by state.sub path in composition */ }
       if (perfTierLabel)     items.push({ l: 'Package', v: perfTierLabel });
-      if (state.addSet)      items.push({ l: 'Additional set', v: '+£75 (approximately 20–25 minutes)' });
+      if (state.addSet)           items.push({ l: 'Additional set',     v: '+£75 (approximately 20–25 minutes)' });
+      if (state.eventCommission)  items.push({ l: 'Event Commission',   v: 'Bespoke Event Commission (+from £200)' });
       if (state.tuitionTier) items.push({ l: 'Tier', v: tuitionLabels[state.tuitionTier] || state.tuitionTier });
       if (state.delivery)    items.push({ l: 'Lessons', v: deliveryLabels[state.delivery] || state.delivery });
       if (state.compType)    items.push({ l: state.compType === 'score' ? 'Enquiry' : 'Commission', v: subLabels[state.compType] || state.compType });
@@ -962,10 +1000,10 @@
         primaryHidden.value = state.primary;
         /* Reset downstream */
         state.sub = ''; state.perfTier = ''; state.tuitionTier = '';
-        state.delivery = ''; state.compType = ''; state.compFormat = ''; state.compPiece = ''; state.compTitle = ''; state.addSet = false;
+        state.delivery = ''; state.compType = ''; state.compFormat = ''; state.compPiece = ''; state.compTitle = ''; state.addSet = false; state.eventCommission = false;
         typeHidden.value = ''; tierHidden.value = ''; deliveryHidden.value = '';
         compTypeHidden.value = ''; compFormatHidden.value = ''; compPieceHidden.value = ''; compTitleHidden.value = '';
-        perfTierHidden.value = ''; addSetHidden.value = '';
+        perfTierHidden.value = ''; addSetHidden.value = ''; eventCommissionHidden.value = '';
         updateContinueState();
       });
     });
@@ -1011,6 +1049,17 @@
           panel.querySelectorAll('[data-perf-tier]').forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
           btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true');
           state.perfTier = btn.dataset.perfTier; perfTierHidden.value = state.perfTier;
+          var commissionRow = panel.querySelector('.wizard-event-commission-row');
+          if (commissionRow) {
+            var premium = isPremiumPerfTier(sub, state.perfTier);
+            commissionRow.classList.toggle('hidden', !premium);
+            if (!premium) {
+              var commCheck = commissionRow.querySelector('.wizard-event-commission-check');
+              if (commCheck) commCheck.checked = false;
+              state.eventCommission = false;
+              eventCommissionHidden.value = '';
+            }
+          }
           updateContinueState();
         });
       });
@@ -1019,6 +1068,13 @@
         addonCheck.addEventListener('change', function () {
           state.addSet = addonCheck.checked;
           addSetHidden.value = addonCheck.checked ? 'yes' : '';
+        });
+      }
+      var commissionCheck = panel.querySelector('.wizard-event-commission-check');
+      if (commissionCheck) {
+        commissionCheck.addEventListener('change', function () {
+          state.eventCommission = commissionCheck.checked;
+          eventCommissionHidden.value = commissionCheck.checked ? 'yes' : '';
         });
       }
     });

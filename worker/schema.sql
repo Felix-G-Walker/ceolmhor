@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS enquiries (
   enquiry_comp_title TEXT,
   enquiry_perf_tier TEXT,
   enquiry_add_set TEXT,
+  enquiry_event_commission TEXT,
   phone TEXT,
   message TEXT,
   user_agent TEXT,
