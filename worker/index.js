@@ -71,8 +71,10 @@ export default {
         INSERT INTO enquiries
           (first_name, last_name, email, enquiry_primary, enquiry_type,
            enquiry_tier, enquiry_delivery, enquiry_comp_type, enquiry_comp_format,
-           event_day, event_month, event_year, child_enquiry, phone, message, user_agent, ip)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+           enquiry_comp_piece, enquiry_comp_title, enquiry_perf_tier, enquiry_add_set,
+           event_day, event_month, event_year, child_enquiry, supplier_sheet,
+           phone, message, user_agent, ip)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `).bind(
         firstName.trim(),
         lastName.trim(),
@@ -83,10 +85,15 @@ export default {
         data['enquiry-delivery'] || '',
         data['enquiry-comp-type'] || '',
         data['enquiry-comp-format'] || '',
+        data['enquiry-comp-piece'] || '',
+        data['enquiry-comp-title'] || '',
+        data['enquiry-perf-tier'] || '',
+        data['enquiry-add-set'] || '',
         data['event-day'] || '',
         data['event-month'] || '',
         data['event-year'] || '',
         data['child-enquiry'] || 'no',
+        data['supplier-sheet'] || 'no',
         data['phone-cleaned'] || data['phone'] || '',
         data['message'] || '',
         userAgent,
@@ -104,14 +111,19 @@ export default {
     const tier         = formatTier(data['enquiry-tier']);
     const delivery     = formatDelivery(data['enquiry-delivery']);
     const compFormat   = formatCompFormat(data['enquiry-comp-format']);
+    const compPiece    = formatCompPiece(data['enquiry-comp-piece']);
+    const perfTier     = formatPerfTier(data['enquiry-perf-tier']);
     const compTitle    = data['enquiry-comp-title'] || '';
-    const childNote        = data['child-enquiry'] === 'yes' ? '\n⚠️  Enquiry on behalf of a child.' : '';
-    const supplierNote     = data['supplier-sheet'] === 'yes' ? '\n📋  Requested supplier sheet.' : '';
+    const childNote    = data['child-enquiry'] === 'yes' ? '\n⚠️  Enquiry on behalf of a child.' : '';
+    const supplierNote = data['supplier-sheet'] === 'yes' ? '\n📋  Requested supplier sheet.' : '';
 
-    const tierLine     = tier     ? `\nTier:     ${tier}`     : '';
-    const deliveryLine = delivery ? `\nDelivery: ${delivery}` : '';
-    const formatLine   = compFormat ? `\nFormat:   ${compFormat}` : '';
-    const titleLine    = compTitle  ? `\nComposition: ${compTitle}` : '';
+    const tierLine      = tier      ? `\nTier:     ${tier}`      : '';
+    const deliveryLine  = delivery  ? `\nDelivery: ${delivery}`  : '';
+    const formatLine    = compFormat ? `\nFormat:   ${compFormat}` : '';
+    const compPieceLine = compPiece  ? `\nPiece:    ${compPiece}` : '';
+    const titleLine     = compTitle  ? `\nComposition: ${compTitle}` : '';
+    const perfTierLine  = perfTier   ? `\nPackage:  ${perfTier}` : '';
+    const addSetLine    = data['enquiry-add-set'] === 'yes' ? '\nAdd-on:   Additional set' : '';
 
     const emailText = `
 New Ceòlmhor Enquiry
@@ -119,7 +131,7 @@ ${'─'.repeat(40)}
 
 Name:     ${firstName.trim()} ${lastName.trim()}
 Email:    ${email.trim()}${data['phone']?.trim() ? `\nPhone:    ${data['phone'].trim()}` : ''}
-Type:     ${enquiryType}${tierLine}${deliveryLine}${formatLine}${titleLine}${eventDate ? `\nDate:     ${eventDate}` : ''}${childNote}${supplierNote}
+Type:     ${enquiryType}${tierLine}${deliveryLine}${formatLine}${compPieceLine}${titleLine}${perfTierLine}${addSetLine}${eventDate ? `\nDate:     ${eventDate}` : ''}${childNote}${supplierNote}
 
 Message:
 ${data['message']?.trim() || '(none provided)'}
@@ -156,7 +168,10 @@ IP: ${ip}
   ${tier     ? `<div class="field"><span class="label">Tier</span><span class="value">${escHtml(tier)}</span></div>` : ''}
   ${delivery ? `<div class="field"><span class="label">Delivery</span><span class="value">${escHtml(delivery)}</span></div>` : ''}
   ${compFormat ? `<div class="field"><span class="label">Format</span><span class="value">${escHtml(compFormat)}</span></div>` : ''}
+  ${compPiece  ? `<div class="field"><span class="label">Piece Type</span><span class="value">${escHtml(compPiece)}</span></div>` : ''}
   ${compTitle  ? `<div class="field"><span class="label">Composition</span><span class="value">${escHtml(compTitle)}</span></div>` : ''}
+  ${perfTier   ? `<div class="field"><span class="label">Package</span><span class="value">${escHtml(perfTier)}</span></div>` : ''}
+  ${data['enquiry-add-set'] === 'yes' ? '<div class="field"><span class="label">Add-on</span><span class="value">Additional set</span></div>' : ''}
   ${eventDate  ? `<div class="field"><span class="label">Event Date</span><span class="value">${escHtml(eventDate)}</span></div>` : ''}
   ${data['child-enquiry'] === 'yes' ? '<div class="child-note">⚠️ This enquiry is on behalf of a child.</div>' : ''}
   ${data['supplier-sheet'] === 'yes' ? '<div class="child-note">📋 Supplier sheet requested.</div>' : ''}
@@ -275,6 +290,33 @@ function formatCompFormat(format) {
   if (format === 'solo') return 'Solo Pipe';
   if (format === 'band') return 'Pipe Band';
   return '';
+}
+
+function formatPerfTier(tier) {
+  const labels = {
+    ceremony:  'Ceremonial Package',
+    reception: 'Reception Package',
+    full:      'Highland Package',
+    base:      'Base Package',
+    standard:  'Standard Package',
+    premium:   'Premium Package',
+  };
+  return labels[tier] || '';
+}
+
+function formatCompPiece(piece) {
+  const labels = {
+    march:        'March',
+    'slow-air':   'Slow Air',
+    reel:         'Reel',
+    jig:          'Jig',
+    strathspey:   'Strathspey',
+    hornpipe:     'Hornpipe',
+    piobaireachd: 'Pìobaireachd',
+    contemporary: 'Contemporary',
+    open:         'Open to suggestion',
+  };
+  return labels[piece] || '';
 }
 
 function formatEventDate(day, month, year) {
