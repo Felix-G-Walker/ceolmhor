@@ -3770,6 +3770,489 @@ body::after {
   .collab-cta { padding: 2.5rem 1.5rem; }
 }
 
+/* ── 33. Enquiry Wizard ────────────────────────────────────────────── */
+
+/* Progress indicator */
+.wizard-progress {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Step containers */
+.wizard-step { }
+.wizard-step.hidden { display: none; }
+
+/* Inner panels within a step (shown based on selections) */
+.wizard-step-panel { }
+.wizard-step-panel.hidden { display: none; }
+
+/* Step heading */
+.wizard-step__heading {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+  color: var(--text);
+  margin: 0 0 1.5rem;
+  line-height: 1.3;
+}
+
+/* Context note (informational text in a step) */
+.wizard-context-note {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin: 0 0 1.5rem;
+}
+
+/* ── Step 1: Category grid ── */
+.wizard-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.wizard-category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.45rem;
+  padding: 1.1rem 1.2rem;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  min-height: 82px;
+  width: 100%;
+}
+
+.wizard-category-btn:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.wizard-category-btn.selected {
+  border-color: rgba(201, 168, 76, 0.7);
+  background: rgba(15, 35, 20, 0.8);
+  color: #fff;
+}
+
+.wizard-category-btn__title {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1;
+}
+
+.wizard-category-btn.selected .wizard-category-btn__title {
+  color: var(--accent-gold);
+}
+
+.wizard-category-btn__desc {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.45;
+}
+
+.wizard-category-btn.selected .wizard-category-btn__desc {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.wizard-other-row {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.wizard-other-btn {
+  padding: 0.55rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  color: rgba(255, 255, 255, 0.42);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.2s, color 0.2s;
+  width: 100%;
+}
+
+.wizard-other-btn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.wizard-other-btn.selected {
+  border-color: rgba(201, 168, 76, 0.6);
+  color: var(--accent-gold);
+  background: rgba(15, 35, 20, 0.8);
+}
+
+/* ── Step 2: Option buttons ── */
+.wizard-option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 0.6rem;
+}
+
+.wizard-perf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+
+.wizard-option-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-ui);
+  font-size: 0.76rem;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.35;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  width: 100%;
+}
+
+.wizard-option-btn:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.wizard-option-btn.selected {
+  border-color: rgba(201, 168, 76, 0.7);
+  color: var(--accent-gold);
+  background: rgba(15, 35, 20, 0.8);
+}
+
+.wizard-option-btn__title {
+  display: block;
+  font-size: 0.76rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.wizard-option-btn.selected .wizard-option-btn__title {
+  color: var(--accent-gold);
+}
+
+.wizard-option-btn__desc {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.4;
+  text-transform: none;
+}
+
+.wizard-option-btn--full {
+  grid-column: 1 / -1;
+}
+
+.wizard-option-btn--sm {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.7rem;
+}
+
+/* ── Step 3: Tier cards ── */
+.wizard-tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.wizard-tier-grid--tuition {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.wizard-tier-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  padding: 1rem 1.1rem;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+}
+
+.wizard-tier-btn:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.wizard-tier-btn.selected {
+  border-color: rgba(201, 168, 76, 0.7);
+  background: rgba(15, 35, 20, 0.8);
+}
+
+.wizard-tier-btn__pkg {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  opacity: 0.65;
+  line-height: 1;
+  margin-bottom: 0.1rem;
+}
+
+.wizard-tier-btn.selected .wizard-tier-btn__pkg { opacity: 1; }
+
+.wizard-tier-btn__title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.wizard-tier-btn__price {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--accent-gold);
+  letter-spacing: 0.04em;
+  margin-top: 0.15rem;
+}
+
+.wizard-tier-btn__desc {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.5;
+  margin-top: 0.25rem;
+}
+
+/* ── Add-on row ── */
+.wizard-addon-row { margin-top: 0.6rem; }
+
+.wizard-addon-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: border-color 0.2s, color 0.2s;
+  user-select: none;
+}
+
+.wizard-addon-label:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.wizard-addon-check {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.wizard-addon-check:checked {
+  background: rgba(201, 168, 76, 0.15);
+  border-color: rgba(201, 168, 76, 0.7);
+}
+
+.wizard-addon-check:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--accent-gold);
+  font-size: 0.6rem;
+  line-height: 1;
+}
+
+.wizard-addon-text {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.wizard-addon-price {
+  color: var(--accent-gold);
+  opacity: 0.8;
+}
+
+/* ── Composition: inner format/piece panel ── */
+.wizard-inner-panel { margin-top: 1.25rem; }
+.wizard-inner-panel.hidden { display: none; }
+
+.wizard-inner-label {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.wizard-inner-label__optional { color: rgba(255, 255, 255, 0.3); }
+
+.wizard-comp-piece-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+  gap: 0.5rem;
+}
+
+/* ── Step navigation ── */
+.wizard-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 3rem;
+}
+
+.wizard-back-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.38);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: color 0.2s;
+}
+
+.wizard-back-btn:hover { color: rgba(255, 255, 255, 0.7); }
+
+.wizard-continue-btn {
+  padding: 0.65rem 1.75rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.28);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: not-allowed;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.wizard-continue-btn--active {
+  border-color: rgba(201, 168, 76, 0.65);
+  color: var(--accent-gold);
+  cursor: pointer;
+}
+
+.wizard-continue-btn--active:hover {
+  background: rgba(15, 35, 20, 0.6);
+  border-color: var(--accent-gold);
+}
+
+/* ── Summary card (Step 6) ── */
+.wizard-summary {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 1.75rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.wizard-summary__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.38rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.wizard-summary__item:last-child { border-bottom: none; }
+
+.wizard-summary__label {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.wizard-summary__value {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--text);
+  text-align: right;
+}
+
+/* ── Mobile overrides ── */
+@media (max-width: 700px) {
+  .wizard-tier-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .wizard-category-grid { grid-template-columns: 1fr; }
+  .wizard-perf-grid { grid-template-columns: 1fr; }
+  .wizard-tier-grid--tuition { grid-template-columns: 1fr; }
+  .wizard-summary__item { flex-direction: column; gap: 0.15rem; }
+  .wizard-summary__value { text-align: left; }
+}
+
 /* Pre-apply Gàidhlig pill state to prevent toggle flash on page load */
 html.lang-gd .lang-toggle::before {
   transform: translateX(100%);

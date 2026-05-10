@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
@@ -98,7 +98,7 @@
 
       <div class="contact-grid">
 
-        <!-- Contact Details -->
+        <!-- Sidebar -->
         <aside data-reveal>
           <dl class="contact-details">
             <dt data-gd="Post-d">Email</dt>
@@ -115,8 +115,10 @@
           </dl>
         </aside>
 
-        <!-- Enquiry Form -->
-        <div data-reveal data-delay="2">
+        <!-- Wizard -->
+        <div class="wizard-wrap" data-reveal data-delay="2">
+
+          <p class="wizard-progress" id="progress-label" aria-live="polite" aria-atomic="true">Step 1</p>
 
           <form
             id="contact-form"
@@ -125,221 +127,432 @@
             novalidate
           >
 
-            <!-- Honeypot — do not remove, do not make visible -->
+            <!-- Honeypot — do not remove -->
             <div style="display:none" aria-hidden="true">
               <input type="text" name="_honeypot" tabindex="-1" autocomplete="off">
             </div>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label for="first-name" data-gd="Ainm Toisich">First Name</label>
-                <input
-                  type="text"
-                  id="first-name"
-                  name="first-name"
-                  autocomplete="given-name"
-                  required
-                >
+            <!-- ── Step 1: Service category ───────────────────── -->
+            <div class="wizard-step" id="step-1">
+              <h2 class="wizard-step__heading" data-gd="Dè tha thu ag iarraidh?">What are you looking for?</h2>
+              <div class="wizard-category-grid">
+                <button type="button" class="wizard-category-btn" data-primary="tuition" aria-pressed="false">
+                  <span class="wizard-category-btn__title" data-gd="Oideachd">Tuition</span>
+                  <span class="wizard-category-btn__desc" data-gd="Leasanan airson a h-uile ìre — leasan deuchainn no oideachd cunbhalach">Lessons for all levels — trial lesson or regular tuition</span>
+                </button>
+                <button type="button" class="wizard-category-btn" data-primary="performance" aria-pressed="false">
+                  <span class="wizard-category-btn__title" data-gd="Taisbeantas">Performance</span>
+                  <span class="wizard-category-btn__desc" data-gd="Bainnsean, tiodhlacaidhean, Oidhche Burns, dìnnearaichean corporra, agus tuilleadh">Weddings, funerals, Burns Nights, corporate dinners, and more</span>
+                </button>
+                <button type="button" class="wizard-category-btn" data-primary="composition" aria-pressed="false">
+                  <span class="wizard-category-btn__title" data-gd="Sgrìobhadh">Composition</span>
+                  <span class="wizard-category-btn__desc" data-gd="Coimisean pìos ùr airson pìob shingilte no bann-pìoba">Commission an original piece for solo pipe or pipe band</span>
+                </button>
+                <button type="button" class="wizard-category-btn" data-primary="venue" aria-pressed="false">
+                  <span class="wizard-category-btn__title" data-gd="Àiteachan &amp; Sgiobaidhean Tachartasan">Venue or Events Team</span>
+                  <span class="wizard-category-btn__desc" data-gd="Rèiteachaidhean solair airson taighean-òsda, institiùidean agus luchd-òstachaidh corporach">Supplier arrangements for hotels, institutions and corporate hosts</span>
+                </button>
               </div>
-              <div class="form-group">
-                <label for="last-name" data-gd="Sloinneadh">Last Name</label>
-                <input
-                  type="text"
-                  id="last-name"
-                  name="last-name"
-                  autocomplete="family-name"
-                  required
-                >
+              <div class="wizard-other-row">
+                <button type="button" class="wizard-other-btn" data-primary="other" aria-pressed="false" data-gd="Eile">Other</button>
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="email" data-gd="Seòladh Post-d">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                autocomplete="email"
-                placeholder="your@email.com"
-                required
-              >
-            </div>
+            <!-- ── Step 2: Sub-type ────────────────────────────── -->
+            <div class="wizard-step hidden" id="step-2" aria-hidden="true">
 
-            <div class="form-group" id="phone-group">
-              <label for="phone"><span data-gd="Àireamh Fòn">Phone Number</span> <span style="font-size:0.82em;opacity:0.55;font-weight:300;" data-gd="(roghainneil)">(optional)</span></label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                autocomplete="tel"
-                inputmode="tel"
-                placeholder="optional"
-              >
-              <input type="hidden" name="phone-cleaned" id="phone-cleaned">
-              <span class="field-error-msg" id="phone-error" role="alert" aria-live="polite" data-gd="Cuir a-steach àireamh fòn ceart sa RA no eadar-nàiseanta">Please enter a valid UK or international phone number</span>
-            </div>
-
-            <div class="form-group">
-              <label id="enquiry-type-label" data-gd="Seòrsa Ceist">Enquiry Type</label>
-
-              <!-- Primary: Tuition / Performance / Composition / Venue -->
-              <div class="enquiry-type-grid enquiry-primary-grid" role="group" aria-labelledby="enquiry-type-label">
-                <button type="button" class="enquiry-type-btn" data-primary="tuition" aria-pressed="false" data-gd="Oideachd">Tuition</button>
-                <button type="button" class="enquiry-type-btn" data-primary="performance" aria-pressed="false" data-gd="Taisbeantas">Performance</button>
-                <button type="button" class="enquiry-type-btn" data-primary="composition" aria-pressed="false" data-gd="Sgrìobhadh">Composition</button>
-                <button type="button" class="enquiry-type-btn" data-primary="venue" aria-pressed="false" data-gd="Àiteachan &amp; Sgiobaidhean Tachartasan">Venues & Events Teams</button>
-              </div>
-              <div class="enquiry-venue-row">
-                <button type="button" class="enquiry-type-btn" data-primary="other" aria-pressed="false" data-gd="Eile">Other</button>
-              </div>
-
-              <!-- Tuition sub-options -->
-              <div class="sub-options" id="sub-tuition">
-                <hr class="enquiry-separator">
-                <div class="enquiry-type-grid" role="group" aria-label="Tuition type">
-                  <button type="button" class="enquiry-type-btn" data-sub="trial" aria-pressed="false" data-gd="Leasain Deuchainn">Trial Lesson</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="regular" aria-pressed="false" data-gd="Oideachd Àbhaisteach">Regular Tuition</button>
+              <!-- Tuition -->
+              <div id="step2-tuition" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Dè seòrsa oideachd?">What kind of tuition?</h2>
+                <div class="wizard-option-grid">
+                  <button type="button" class="wizard-option-btn" data-sub="trial" aria-pressed="false">
+                    <span class="wizard-option-btn__title" data-gd="Leasan Deuchainn">Trial Lesson</span>
+                    <span class="wizard-option-btn__desc" data-gd="An-asgaidh, gun chumhnantas">Free, no commitment</span>
+                  </button>
+                  <button type="button" class="wizard-option-btn" data-sub="regular" aria-pressed="false">
+                    <span class="wizard-option-btn__title" data-gd="Oideachd Àbhaisteach">Regular Tuition</span>
+                    <span class="wizard-option-btn__desc" data-gd="Leasain a' leantainn, tagh an ìre agad">Ongoing lessons — choose your tier</span>
+                  </button>
                 </div>
+              </div>
 
-                <!-- Tier — shown when Regular is selected -->
-                <div class="sub-options" id="sub-tier">
-                  <hr class="enquiry-separator">
-                  <div class="enquiry-type-grid" role="group" aria-label="Tuition tier">
-                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="beginner" aria-pressed="false"><span class="tier-tag">Tier 1</span><span data-gd="Tòiseachair">Beginner</span></button>
-                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="intermediate" aria-pressed="false"><span class="tier-tag">Tier 2</span><span data-gd="Eadar-mheadhanach">Intermediate</span></button>
-                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="advanced" aria-pressed="false"><span class="tier-tag">Tier 3</span><span data-gd="Àrd-ìre">Advanced</span></button>
-                    <button type="button" class="enquiry-type-btn tier-btn" data-tier="piobaireachd" aria-pressed="false"><span class="tier-tag">Tier 4</span><span>Pìobaireachd</span></button>
+              <!-- Performance -->
+              <div id="step2-performance" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Dè seòrsa tachartais?">What kind of occasion?</h2>
+                <div class="wizard-perf-grid">
+                  <button type="button" class="wizard-option-btn" data-sub="wedding" aria-pressed="false" data-gd="Banais &amp; Deasachd Shìobhalta">Wedding &amp; Civil Ceremony</button>
+                  <button type="button" class="wizard-option-btn" data-sub="funeral" aria-pressed="false" data-gd="Tiodhlacadh &amp; Cuimhneachan">Funeral &amp; Memorial</button>
+                  <button type="button" class="wizard-option-btn" data-sub="burns" aria-pressed="false" data-gd="Oidhche Burns">Burns Night</button>
+                  <button type="button" class="wizard-option-btn" data-sub="corporate" aria-pressed="false" data-gd="Dìnnear Corporra &amp; Gnìomhachais">Corporate &amp; Business Dinner</button>
+                  <button type="button" class="wizard-option-btn" data-sub="festival" aria-pressed="false" data-gd="Céilidh &amp; Tachartasan Dannsa">Ceilidh &amp; Dance Events</button>
+                  <button type="button" class="wizard-option-btn" data-sub="hogmanay" aria-pressed="false" data-gd="Oidhche Challainn &amp; Mìosachan na h-Alba">Hogmanay &amp; the Scottish Calendar</button>
+                  <button type="button" class="wizard-option-btn" data-sub="graduation" aria-pressed="false" data-gd="Ceumnachadh &amp; Deasachd Chathrannach">Graduation &amp; Civic Ceremony</button>
+                  <button type="button" class="wizard-option-btn wizard-option-btn--full" data-sub="custom" aria-pressed="false" data-gd="Gabhadh-Ris Gnàthach">Custom Engagement</button>
+                </div>
+              </div>
+
+              <!-- Composition -->
+              <div id="step2-composition" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Dè seòrsa coimisein?">What type of commission?</h2>
+                <div class="wizard-option-grid">
+                  <button type="button" class="wizard-option-btn" data-comp-type="private" aria-pressed="false">
+                    <span class="wizard-option-btn__title" data-gd="Coimisean Prìobhaideach">Private Commission</span>
+                    <span class="wizard-option-btn__desc" data-gd="Bho £250">From £250</span>
+                  </button>
+                  <button type="button" class="wizard-option-btn" data-comp-type="media" aria-pressed="false">
+                    <span class="wizard-option-btn__title" data-gd="Meadhanan &amp; Malairteach">Media &amp; Commercial</span>
+                    <span class="wizard-option-btn__desc" data-gd="Prìs air aontachadh gu pearsanta">Price agreed individually</span>
+                  </button>
+                  <button type="button" class="wizard-option-btn" data-comp-type="institutional" aria-pressed="false">
+                    <span class="wizard-option-btn__title" data-gd="Dualchas &amp; Institiùideach">Heritage &amp; Institutional</span>
+                    <span class="wizard-option-btn__desc" data-gd="Prìs air aontachadh gu pearsanta">Price agreed individually</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Venue -->
+              <div id="step2-venue" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Àiteachan &amp; Sgiobaidhean Tachartasan">Venue &amp; Events Team Enquiry</h2>
+                <p class="wizard-context-note" data-gd="Cuiridh Ceòlmhor teirmean sgrìobhte agus mion-fhiosrachadh solair air adhart taobh a-staigh 24 uairean. Innis dhuinn mu d' àite agus na tachartasan anns am feum thu còmhdach sa teachdaireachd gu h-ìosal.">Ceòlmhor will send written terms and supplier details within 24 hours. Tell us about your venue and the occasions you need coverage for in the message at the end.</p>
+              </div>
+
+              <!-- Other -->
+              <div id="step2-other" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Innis dhomh barrachd">Tell us more</h2>
+                <p class="wizard-context-note" data-gd="Cuir a-steach do mhion-fhiosrachadh gu h-ìosal agus mìnich do cheist sa bhogsa teachdaireachd. Freagairt taobh a-staigh 24 uairean.">Please add your details and describe your enquiry in the message below. We will respond within 24 hours.</p>
+              </div>
+
+            </div>
+
+            <!-- ── Step 3: Package / Tier ──────────────────────── -->
+            <div class="wizard-step hidden" id="step-3" aria-hidden="true">
+
+              <!-- Wedding packages -->
+              <div id="step3-wedding" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Dè am pacaid?">Which package?</h2>
+                <div class="wizard-tier-grid">
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="ceremony" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Pacaid Deasachd">Ceremonial Package</span>
+                    <span class="wizard-tier-btn__title" data-gd="Pìobaire na Deasachd">Ceremony Piper</span>
+                    <span class="wizard-tier-btn__price">£225</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Ceòl tighinn a-steach, mòr-shluagh bride, soidhnigeadh an clàr, caismeachd, agus pìobaireachd aoighean gu gabhail-ri-aoighean">Arrival music, bridal procession, signing of register, recessional, and piping guests to reception</span>
+                  </button>
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="reception" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Pacaid Gabhail-ri-Aoighean">Reception Package</span>
+                    <span class="wizard-tier-btn__title" data-gd="Pìobaire Deasachd &amp; Gabhail-ri-Aoighean">Ceremony &amp; Reception Piper</span>
+                    <span class="wizard-tier-btn__price">£300</span>
+                    <span class="wizard-tier-btn__desc" data-gd="A h-uile rud gu h-àrd, a bharrachd air pìobaireachd gabhail-ri-aoighean (~20–30 mionaid) agus còmhradh clàr-puing ro-làimh">Everything above, plus drinks reception piping (~20–30 min) and pre-event repertoire conversation</span>
+                  </button>
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="full" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Pacaid Ghàidhealachd">Highland Package</span>
+                    <span class="wizard-tier-btn__title" data-gd="Pìobaire Slàn na Bainnse">Full Wedding Piper</span>
+                    <span class="wizard-tier-btn__price">£350</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Pìobaireachd gu dìnnear, tighinn a-steach mòr, suidheachadh ciad-dannsa roghainneil, agus comhairleachadh sònraichte ro-làimh">Piping to dinner, grand entrance, optional first dance set, and dedicated pre-event consultation</span>
+                  </button>
+                </div>
+                <div class="wizard-addon-row">
+                  <label class="wizard-addon-label">
+                    <input type="checkbox" class="wizard-addon-check">
+                    <span class="wizard-addon-text"><span data-gd="Cuir suidheachadh taisbeantas àraidh ris">Add an additional performance set</span><span class="wizard-addon-price">+£75</span></span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Burns Night packages -->
+              <div id="step3-burns" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Dè am pacaid?">Which package?</h2>
+                <div class="wizard-tier-grid">
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="base" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Pacaid Bunasach">Base Package</span>
+                    <span class="wizard-tier-btn__title" data-gd="An Òraid">The Address</span>
+                    <span class="wizard-tier-btn__price">£200</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Pìobaireachd a-steach an taigeis, ceòl Òraid don Taigeis, agus pìos dùnaidh">Piping in of the haggis, Address to a Haggis music, and closing piece</span>
+                  </button>
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="standard" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Pacaid Àbhaisteach">Standard Package</span>
+                    <span class="wizard-tier-btn__title" data-gd="An Suipear Slàn">The Full Supper</span>
+                    <span class="wizard-tier-btn__price">£250</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Ceòl tighinn a-steach farsaing, pìobaireachd eadar chùrsaichean, dàrna pìos suidhichte, còmhradh clàr-puing ro-làimh">Extended arrival music, between-course piping, second set piece, pre-event repertoire conversation</span>
+                  </button>
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="premium" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Pacaid Bàrr">Premium Package</span>
+                    <span class="wizard-tier-btn__title" data-gd="An Suipear Mòr">The Grand Supper</span>
+                    <span class="wizard-tier-btn__price">£325</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Pìos suidhichte pearsanta, comhairleachadh sònraichte, nota prògraim sgrìobhte, tighinn a-steach ro-dhìnnear, pìobaireachd a-mach">Personalised set piece, dedicated consultation, written programme note, pre-dinner arrival, piping out</span>
+                  </button>
+                </div>
+                <div class="wizard-addon-row">
+                  <label class="wizard-addon-label">
+                    <input type="checkbox" class="wizard-addon-check">
+                    <span class="wizard-addon-text"><span data-gd="Cuir suidheachadh taisbeantas àraidh ris">Add an additional performance set</span><span class="wizard-addon-price">+£75</span></span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Corporate packages -->
+              <div id="step3-corporate" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Dè am pacaid?">Which package?</h2>
+                <div class="wizard-tier-grid">
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="base" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Pacaid Bunasach">Base Package</span>
+                    <span class="wizard-tier-btn__title" data-gd="Pìobaire Gabhail-ri-Aoighean">Reception Piper</span>
+                    <span class="wizard-tier-btn__price">£200</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Pìobaireachd tighinn a-steach, pìos tighinn a-steach foirmeil, aon phìos suidhichte rè an gabhail-ri-aoighean">Arrival piping, formal entrance piece, one set piece during the reception</span>
+                  </button>
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="standard" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Pacaid Àbhaisteach">Standard Package</span>
+                    <span class="wizard-tier-btn__title" data-gd="Pìobaire Dìnnear">Dinner Piper</span>
+                    <span class="wizard-tier-btn__price">£275</span>
+                    <span class="wizard-tier-btn__desc" data-gd="A bharrachd air pìobaireachd deoch ro-dhìnnear, tighinn a-steach mòr don bhòrd àrd no luchd-faighinn duaisean, còmhradh ro-làimh">Plus pre-dinner drinks piping, grand entrance for top table or award recipients, pre-event conversation</span>
+                  </button>
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="premium" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Pacaid Bàrr">Premium Package</span>
+                    <span class="wizard-tier-btn__title" data-gd="Pìobaire Slàn na h-Oidhche">Full Evening Piper</span>
+                    <span class="wizard-tier-btn__price">£350</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Pìos suidhichte pearsanta, comhairleachadh sònraichte, nota prògraim sgrìobhte, pìobaireachd farsaing tron oidhche">Personalised set piece, dedicated consultation, written programme, extended piping across the evening</span>
+                  </button>
+                </div>
+                <div class="wizard-addon-row">
+                  <label class="wizard-addon-label">
+                    <input type="checkbox" class="wizard-addon-check">
+                    <span class="wizard-addon-text"><span data-gd="Cuir suidheachadh taisbeantas àraidh ris">Add an additional performance set</span><span class="wizard-addon-price">+£75</span></span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Ceilidh & Dance packages -->
+              <div id="step3-festival" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Dè am pacaid?">Which package?</h2>
+                <div class="wizard-tier-grid">
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="base" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Suidheachadh Taisbeantas">Performance Set</span>
+                    <span class="wizard-tier-btn__title" data-gd="An Suidheachadh Fosgailteach">The Opening Set</span>
+                    <span class="wizard-tier-btn__price">£200</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Aon shuidheachadh taisbeantas slàn — màrsaichean, aidhrichean, siogaichean, agus ruidhlean, mu 20–30 mionaid">One full performance set — marches, airs, jigs, and reels, approximately 20–30 minutes</span>
+                  </button>
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="standard" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Pacaid Àbhaisteach">Standard Package</span>
+                    <span class="wizard-tier-btn__title" data-gd="An Oidhche Slàn">The Full Evening</span>
+                    <span class="wizard-tier-btn__price">£275</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Dà shuidheachadh le eadar-àm (~45–60 mionaid iomlan), còmhradh ro-làimh airson co-òrdanachadh le còmhlan no caller">Two sets with interval (~45–60 min total), pre-event conversation to coordinate with band or caller</span>
+                  </button>
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="premium" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Cèilidh">Ceilidh</span>
+                    <span class="wizard-tier-btn__title" data-gd="Oidhche Cèilidh &amp; Dannsa">Ceilidh &amp; Dance Evening</span>
+                    <span class="wizard-tier-btn__price">£350</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Pìobaireachd fosgailteach, suidheachaidhean slàna, co-òrdanachadh le còmhlan agus caller, pìos dùnaidh, agus comhairleachadh sònraichte">Opening piping, full sets, coordination with band and caller, closing piece, and dedicated consultation</span>
+                  </button>
+                </div>
+                <div class="wizard-addon-row">
+                  <label class="wizard-addon-label">
+                    <input type="checkbox" class="wizard-addon-check">
+                    <span class="wizard-addon-text"><span data-gd="Cuir suidheachadh taisbeantas àraidh ris">Add an additional performance set</span><span class="wizard-addon-price">+£75</span></span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Hogmanay packages -->
+              <div id="step3-hogmanay" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Dè am pacaid?">Which package?</h2>
+                <div class="wizard-tier-grid">
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="base" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Pacaid Bunasach">Base Package</span>
+                    <span class="wizard-tier-btn__title" data-gd="An Cruinneachadh">The Gathering</span>
+                    <span class="wizard-tier-btn__price">£200</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Pìobaireachd tighinn a-steach, pìos fosgailteach deasachail, agus pìos dùnaidh airson comharrachadh deireadh foirmeil nan gnothaichean">Arrival piping, ceremonial opening piece, and closing piece to mark the formal end of proceedings</span>
+                  </button>
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="standard" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Pacaid Àbhaisteach">Standard Package</span>
+                    <span class="wizard-tier-btn__title" data-gd="An Tachartas">The Occasion</span>
+                    <span class="wizard-tier-btn__price">£275</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Pìobaireachd tighinn a-steach farsaing, suidheachadh taisbeantas, dàrna mionaid deasachail tron oidhche, còmhradh ro-làimh">Extended arrival piping, performance set, second ceremonial moment during the evening, pre-event conversation</span>
+                  </button>
+                  <button type="button" class="wizard-tier-btn" data-perf-tier="premium" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg" data-gd="Pacaid Bàrr">Premium Package</span>
+                    <span class="wizard-tier-btn__title" data-gd="An Gabhail-Ris Oidhche Challainn">The Hogmanay Engagement</span>
+                    <span class="wizard-tier-btn__price">£350</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Tighinn a-steach ciad-coise aig meadhan-oidhche, suidheachadh pearsanta, comhairleachadh sònraichte, làthaireachd oidhche fharsaing">First-footing arrival at midnight, personalised set, dedicated consultation, extended evening presence</span>
+                  </button>
+                </div>
+                <div class="wizard-addon-row">
+                  <label class="wizard-addon-label">
+                    <input type="checkbox" class="wizard-addon-check">
+                    <span class="wizard-addon-text"><span data-gd="Cuir suidheachadh taisbeantas àraidh ris">Add an additional performance set</span><span class="wizard-addon-price">+£75</span></span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Tuition tiers -->
+              <div id="step3-tuition" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Dè an ìre?">Which tier?</h2>
+                <div class="wizard-tier-grid wizard-tier-grid--tuition">
+                  <button type="button" class="wizard-tier-btn" data-tier="beginner" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg">Tier I</span>
+                    <span class="wizard-tier-btn__title" data-gd="Bunasach">Foundational</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Ionnsraicheadh-cleachdaidh: beul-chruth, suidheachadh làimh, sgèile, ceòl tòiseachaidh">Practice chanter: embouchure, hand position, scales, first tunes</span>
+                  </button>
+                  <button type="button" class="wizard-tier-btn" data-tier="intermediate" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg">Tier II</span>
+                    <span class="wizard-tier-btn__title" data-gd="Leasachadh">Developing</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Grasnòtan, dùblachadh, togail clàr-puing, tòiseachadh farpaiseachd">Gracenotes, doublings, repertoire building, competition introduction</span>
+                  </button>
+                  <button type="button" class="wizard-tier-btn" data-tier="advanced" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg">Tier III</span>
+                    <span class="wizard-tier-btn__title" data-gd="Fileanta">Proficient</span>
+                    <span class="wizard-tier-btn__desc" data-gd="Pìob-mhòr slàn: teicneag shèididh, clàr-puing bann, MSR">Full bagpipes: blowing technique, band repertoire, MSR</span>
+                  </button>
+                  <button type="button" class="wizard-tier-btn" data-tier="piobaireachd" aria-pressed="false">
+                    <span class="wizard-tier-btn__pkg">Tier IV</span>
+                    <span class="wizard-tier-btn__title">Pìobaireachd</span>
+                    <span class="wizard-tier-btn__desc" data-gd="MSR àrd-ìre, tòiseachadh Ceòl Mòr, deiseil airson farpaiseachd">Advanced MSR, Ceòl Mòr introduction, competition-ready</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Composition: format + piece type -->
+              <div id="step3-composition" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Airson cò an ionnstramaid?">For which instrument?</h2>
+                <div class="wizard-option-grid">
+                  <button type="button" class="wizard-option-btn" data-comp-format="solo" aria-pressed="false">
+                    <span class="wizard-option-btn__title" data-gd="Pìob Singilte">Solo Pipe</span>
+                  </button>
+                  <button type="button" class="wizard-option-btn" data-comp-format="band" aria-pressed="false">
+                    <span class="wizard-option-btn__title" data-gd="Bann-pìoba">Pipe Band</span>
+                  </button>
+                </div>
+                <div id="step3-comp-piece" class="wizard-inner-panel hidden">
+                  <p class="wizard-inner-label" data-gd="Dè an seòrsa puirt?">What kind of piece? <span class="wizard-inner-label__optional" data-gd="(roghainneil)">(optional)</span></p>
+                  <div class="wizard-comp-piece-grid">
+                    <button type="button" class="wizard-option-btn wizard-option-btn--sm" data-comp-piece="march" aria-pressed="false" data-gd="Màrsaidh">March</button>
+                    <button type="button" class="wizard-option-btn wizard-option-btn--sm" data-comp-piece="slow-air" aria-pressed="false" data-gd="Uidh Slaodach">Slow Air</button>
+                    <button type="button" class="wizard-option-btn wizard-option-btn--sm" data-comp-piece="reel" aria-pressed="false" data-gd="Ruidhle">Reel</button>
+                    <button type="button" class="wizard-option-btn wizard-option-btn--sm" data-comp-piece="jig" aria-pressed="false" data-gd="Siog">Jig</button>
+                    <button type="button" class="wizard-option-btn wizard-option-btn--sm" data-comp-piece="strathspey" aria-pressed="false" data-gd="Strathspey">Strathspey</button>
+                    <button type="button" class="wizard-option-btn wizard-option-btn--sm" data-comp-piece="hornpipe" aria-pressed="false" data-gd="Hornpipe">Hornpipe</button>
+                    <button type="button" class="wizard-option-btn wizard-option-btn--sm" data-comp-piece="piobaireachd" aria-pressed="false" data-gd="Pìobaireachd">Pìobaireachd</button>
+                    <button type="button" class="wizard-option-btn wizard-option-btn--sm" data-comp-piece="contemporary" aria-pressed="false" data-gd="Co-aimsireil">Contemporary</button>
+                    <button type="button" class="wizard-option-btn wizard-option-btn--sm wizard-option-btn--full" data-comp-piece="open" aria-pressed="false" data-gd="Chan eil mi cinnteach — fosgailte do mholadh">Not sure — open to suggestion</button>
                   </div>
                 </div>
+              </div>
 
-                <!-- Delivery — shown when any tuition type is selected -->
-                <div class="sub-options" id="sub-delivery">
-                  <hr class="enquiry-separator">
-                  <div class="enquiry-type-grid" role="group" aria-label="Lesson delivery">
-                    <button type="button" class="enquiry-type-btn" data-delivery="in-person" aria-pressed="false" data-gd="An Làthair (Dùn Èideann)">In-Person (Edinburgh)</button>
-                    <button type="button" class="enquiry-type-btn" data-delivery="online" aria-pressed="false" data-gd="Air-loidhne">Online</button>
-                  </div>
+            </div>
+
+            <!-- ── Step 4: Event / Session details ────────────── -->
+            <div class="wizard-step hidden" id="step-4" aria-hidden="true">
+
+              <!-- Performance / Venue: event date -->
+              <div id="step4-date" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Ceann-latha an tachartais">When is the occasion?</h2>
+                <p class="wizard-context-note" data-gd="Gheibh thu luach-sgrìobhte taobh a-staigh 24 uairean. Chan eil pàigheadh riatanach aig an ìre seo.">You will receive a written quote within 24 hours. No payment is required at this stage.</p>
+                <div class="form-group">
+                  <fieldset style="border:none;padding:0;margin:0;">
+                    <legend class="form-label" style="float:none;width:100%;margin-bottom:0.5rem;" data-gd="Ceann-latha Tachartais">Event Date</legend>
+                    <div class="date-input-group">
+                      <input type="text" inputmode="numeric" placeholder="DD" maxlength="2" id="event-day" name="event-day" class="date-field">
+                      <span class="date-separator">/</span>
+                      <input type="text" inputmode="numeric" placeholder="MM" maxlength="2" id="event-month" name="event-month" class="date-field">
+                      <span class="date-separator">/</span>
+                      <input type="text" inputmode="numeric" placeholder="YYYY" maxlength="4" id="event-year" name="event-year" class="date-field date-field-year">
+                    </div>
+                  </fieldset>
                 </div>
+              </div>
 
-                <label class="child-enquiry-checkbox">
+              <!-- Tuition: delivery + child -->
+              <div id="step4-tuition" class="wizard-step-panel hidden">
+                <h2 class="wizard-step__heading" data-gd="Ciamar a b' fheàrr leat ionnsachadh?">How would you like to learn?</h2>
+                <div class="wizard-option-grid">
+                  <button type="button" class="wizard-option-btn" data-delivery="in-person" aria-pressed="false">
+                    <span class="wizard-option-btn__title" data-gd="An Làthair">In-Person</span>
+                    <span class="wizard-option-btn__desc" data-gd="Dùn Èideann">Edinburgh</span>
+                  </button>
+                  <button type="button" class="wizard-option-btn" data-delivery="online" aria-pressed="false">
+                    <span class="wizard-option-btn__title" data-gd="Air-loidhne">Online</span>
+                    <span class="wizard-option-btn__desc" data-gd="Air feadh an t-saoghail">Worldwide</span>
+                  </button>
+                </div>
+                <label class="child-enquiry-checkbox" style="margin-top:1.5rem;">
                   <input type="checkbox" id="child-enquiry-check" name="child-enquiry" value="yes">
                   <span data-gd="Tha mi a' cur a-steach air son leanabh">I am applying on behalf of a child</span>
                 </label>
               </div>
 
-              <!-- Performance sub-options -->
-              <div class="sub-options" id="sub-performance">
-                <p class="enquiry-context-note" data-gd="Gheibh thu luach-sgrìobhte taobh a-staigh 24 uairean. Chan eil pàigheadh riatanach aig an ìre seo.">
-                  You will receive a written quote within 24 hours. No payment is required at this stage.
-                </p>
-                <hr class="enquiry-separator">
-                <div class="performance-grid" aria-label="Performance type">
-                  <button type="button" class="enquiry-type-btn" data-sub="wedding" aria-pressed="false" data-gd="Banais & Deasachd Shìobhalta">Wedding &amp; Civil Ceremony</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="funeral" aria-pressed="false" data-gd="Tiodhlacadh & Cuimhneachan">Funeral &amp; Memorial</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="burns" aria-pressed="false" data-gd="Suipearan Burns & Cruinneachaidhean Traidiseanta">Burns Suppers &amp; Traditional Gatherings</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="corporate" aria-pressed="false" data-gd="Dìnnear Corporra & Gnìomhachais">Corporate &amp; Business Dinner</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="festival" aria-pressed="false" data-gd="Tachartasan Cèilidh & Cultarail">Ceilidh &amp; Cultural Events</button>
-                  <button type="button" class="enquiry-type-btn" data-sub="graduation" aria-pressed="false" data-gd="Ceumnachadh & Deasachd Chathrannach">Graduation &amp; Civic Ceremony</button>
-                </div>
-                <div class="performance-custom-row">
-                  <button type="button" class="enquiry-type-btn performance-custom-btn" data-sub="custom" aria-pressed="false" data-gd="Gabhadh-Ris Gnàthach">Custom Engagement</button>
-                </div>
-              </div>
-
-              <!-- Composition sub-options -->
-              <div class="sub-options" id="sub-composition">
-                <p class="enquiry-context-note" data-gd="Freaghraidh Ceòlmhor taobh a-staigh 48 uairean gus do phròiseact a cheasnachadh. Chan eil pàigheadh riatanach aig an ìre seo.">
-                  Ceòlmhor will respond within 48 hours to discuss your project. No payment is required at this stage.
-                </p>
-                <hr class="enquiry-separator">
-                <div class="enquiry-type-grid" role="group" aria-label="Commission type">
-                  <button type="button" class="enquiry-type-btn" data-comp-type="private" aria-pressed="false" data-gd="Coimisean Prìobhaideach">Private Commission</button>
-                  <button type="button" class="enquiry-type-btn" data-comp-type="media" aria-pressed="false" data-gd="Meadhanan & Malairteach">Media &amp; Commercial</button>
-                  <button type="button" class="enquiry-type-btn" data-comp-type="institutional" aria-pressed="false" data-gd="Dualchas & Institiùideach">Heritage &amp; Institutional</button>
-                </div>
-
-                <!-- Format — shown when commission type is selected -->
-                <div class="sub-options" id="sub-comp-format">
-                  <hr class="enquiry-separator">
-                  <div class="enquiry-type-grid" role="group" aria-label="Composition format">
-                    <button type="button" class="enquiry-type-btn" data-comp-format="solo" aria-pressed="false" data-gd="Pìob Singilte">Solo Pipe</button>
-                    <button type="button" class="enquiry-type-btn" data-comp-format="band" aria-pressed="false" data-gd="Bann-pìoba">Pipe Band</button>
-                  </div>
-                </div>
-
-                <!-- Piece type — shown when format is selected -->
-                <div class="sub-options" id="sub-comp-piece">
-                  <hr class="enquiry-separator">
-                  <div class="enquiry-type-grid" role="group" aria-label="Piece type">
-                    <button type="button" class="enquiry-type-btn" data-comp-piece="march" aria-pressed="false" data-gd="Màrsaidh">March</button>
-                    <button type="button" class="enquiry-type-btn" data-comp-piece="slow-air" aria-pressed="false" data-gd="Uidh Slaodach">Slow Air</button>
-                    <button type="button" class="enquiry-type-btn" data-comp-piece="reel" aria-pressed="false" data-gd="Ruidhle">Reel</button>
-                    <button type="button" class="enquiry-type-btn" data-comp-piece="jig" aria-pressed="false" data-gd="Siog">Jig</button>
-                    <button type="button" class="enquiry-type-btn" data-comp-piece="strathspey" aria-pressed="false" data-gd="Strathspey">Strathspey</button>
-                    <button type="button" class="enquiry-type-btn" data-comp-piece="hornpipe" aria-pressed="false" data-gd="Hornpipe">Hornpipe</button>
-                    <button type="button" class="enquiry-type-btn" data-comp-piece="piobaireachd" aria-pressed="false" data-gd="Pìobaireachd">Pìobaireachd</button>
-                    <button type="button" class="enquiry-type-btn" data-comp-piece="contemporary" aria-pressed="false" data-gd="Co-aimsireil">Contemporary</button>
-                  </div>
-                  <div class="performance-custom-row">
-                    <button type="button" class="enquiry-type-btn performance-custom-btn" data-comp-piece="open" aria-pressed="false" data-gd="Chan eil mi cinnteach — fosgailte do mholadh">Not sure — open to suggestion</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Venue / Institutional sub-options -->
-              <div class="sub-options" id="sub-venue">
-                <p class="enquiry-context-note" data-gd="Gheibh thu teirmean sgrìobhte agus mion-fhiosrachadh solair taobh a-staigh 24 uairean. Chan eil pàigheadh riatanach aig an ìre seo.">
-                  You will receive written terms and supplier details within 24 hours. No payment is required at this stage.
-                </p>
-              </div>
-
-              <!-- Hidden fields for form submission -->
-              <input type="hidden" name="enquiry-primary" id="enquiry-primary-hidden">
-              <input type="hidden" name="enquiry-type" id="enquiry-type-hidden">
-              <input type="hidden" name="enquiry-tier" id="enquiry-tier-hidden">
-              <input type="hidden" name="enquiry-delivery" id="enquiry-delivery-hidden">
-              <input type="hidden" name="enquiry-comp-type" id="enquiry-comp-type-hidden">
-              <input type="hidden" name="enquiry-comp-format" id="enquiry-comp-format-hidden">
-              <input type="hidden" name="enquiry-comp-piece" id="enquiry-comp-piece-hidden">
             </div>
 
-            <!-- Event Date — conditionally shown -->
-            <div class="form-group hidden" id="event-date-group">
-              <fieldset style="border:none;padding:0;margin:0;">
-              <legend class="form-label" style="float:none;width:100%;margin-bottom:0.5rem;" data-gd="Ceann-latha Tachartais">Event Date</legend>
-              <div class="date-input-group">
-                <input type="text" inputmode="numeric" placeholder="DD" maxlength="2" id="event-day" name="event-day" class="date-field">
-                <span class="date-separator">/</span>
-                <input type="text" inputmode="numeric" placeholder="MM" maxlength="2" id="event-month" name="event-month" class="date-field">
-                <span class="date-separator">/</span>
-                <input type="text" inputmode="numeric" placeholder="YYYY" maxlength="4" id="event-year" name="event-year" class="date-field date-field-year">
+            <!-- ── Step 5: Your details ────────────────────────── -->
+            <div class="wizard-step hidden" id="step-5" aria-hidden="true">
+              <h2 class="wizard-step__heading" data-gd="Do mhion-fhiosrachadh">Your details</h2>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name" data-gd="Ainm Toisich">First Name</label>
+                  <input type="text" id="first-name" name="first-name" autocomplete="given-name" required>
+                  <span class="field-error-msg" id="first-name-error" role="alert" aria-live="polite" data-gd="Cuir a-steach d' ainm toisich">Please enter your first name</span>
+                </div>
+                <div class="form-group">
+                  <label for="last-name" data-gd="Sloinneadh">Last Name</label>
+                  <input type="text" id="last-name" name="last-name" autocomplete="family-name" required>
+                  <span class="field-error-msg" id="last-name-error" role="alert" aria-live="polite" data-gd="Cuir a-steach do sloinneadh">Please enter your last name</span>
+                </div>
               </div>
-              </fieldset>
+              <div class="form-group">
+                <label for="email" data-gd="Seòladh Post-d">Email Address</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="your@email.com" required>
+                <span class="field-error-msg" id="email-error" role="alert" aria-live="polite" data-gd="Cuir a-steach seòladh post-d ceart">Please enter a valid email address</span>
+              </div>
+              <div class="form-group" id="phone-group">
+                <label for="phone"><span data-gd="Àireamh Fòn">Phone Number</span> <span style="font-size:0.82em;opacity:0.55;font-weight:300;" data-gd="(roghainneil)">(optional)</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="optional">
+                <input type="hidden" name="phone-cleaned" id="phone-cleaned">
+                <span class="field-error-msg" id="phone-error" role="alert" aria-live="polite" data-gd="Cuir a-steach àireamh fòn ceart sa RA no eadar-nàiseanta">Please enter a valid UK or international phone number</span>
+              </div>
             </div>
 
-            <div class="form-group" id="message-group">
-              <label for="message" data-gd="Teachdaireachd / Mion-fhiosrachadh">Message / Additional Details</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                placeholder="Please include any relevant details — location, time, level of experience, or specific requirements."
-                data-gd-placeholder="Thoir a-steach mion-fhiosrachadh sam bith — àite, àm, ìre eòlais, no riatanasan sònraichte."
-              ></textarea>
+            <!-- ── Step 6: Review and send ─────────────────────── -->
+            <div class="wizard-step hidden" id="step-6" aria-hidden="true">
+              <h2 class="wizard-step__heading" data-gd="Cuir a-steach do cheist">Send your enquiry</h2>
+              <div class="wizard-summary" id="wizard-summary" aria-label="Enquiry summary"></div>
+              <div class="form-group" id="message-group">
+                <label for="message" data-gd="Teachdaireachd / Mion-fhiosrachadh">Message / Additional Details</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Please include any relevant details — location, time, level of experience, or specific requirements."
+                  data-gd-placeholder="Thoir a-steach mion-fhiosrachadh sam bith — àite, àm, ìre eòlais, no riatanasan sònraichte."
+                ></textarea>
+              </div>
+              <div class="form-submit">
+                <button type="submit" class="btn-primary" data-gd="Cuir Ceist a-steach">Send Enquiry</button>
+              </div>
             </div>
 
-            <div class="form-submit">
-              <button type="submit" class="btn-primary" data-gd="Cuir Ceist a-steach">Send Enquiry</button>
+            <!-- ── Navigation ─────────────────────────────────── -->
+            <div class="wizard-nav" id="wizard-nav">
+              <button type="button" class="wizard-back-btn" id="wizard-back" hidden data-gd="← Air ais">← Back</button>
+              <button type="button" class="wizard-continue-btn" id="wizard-continue" hidden data-gd="Lean →">Continue →</button>
             </div>
+
+            <!-- Hidden fields for submission -->
+            <input type="hidden" name="enquiry-primary"    id="enquiry-primary-hidden">
+            <input type="hidden" name="enquiry-type"       id="enquiry-type-hidden">
+            <input type="hidden" name="enquiry-tier"       id="enquiry-tier-hidden">
+            <input type="hidden" name="enquiry-delivery"   id="enquiry-delivery-hidden">
+            <input type="hidden" name="enquiry-comp-type"  id="enquiry-comp-type-hidden">
+            <input type="hidden" name="enquiry-comp-format" id="enquiry-comp-format-hidden">
+            <input type="hidden" name="enquiry-comp-piece" id="enquiry-comp-piece-hidden">
+            <input type="hidden" name="enquiry-perf-tier"  id="enquiry-perf-tier-hidden">
+            <input type="hidden" name="enquiry-add-set"    id="enquiry-add-set-hidden">
 
           </form>
 
-          <!-- Inline success message -->
+          <!-- Success message -->
           <div class="form-success" id="form-success" role="status" aria-live="polite">
             <p data-gd="Chaidh do cheist fhaighinn.">Your enquiry has been received.</p>
             <p data-gd="Cluinnidh tu bhuainn taobh a-staigh 24 uairean.">You will hear back within 24 hours.</p>
           </div>
 
+          <!-- Error message -->
           <div class="form-error" id="form-error" role="alert" aria-live="assertive" style="display:none;">
             <p data-gd="Chaidh rudeigin ceàrr le bhith a' cur do cheist.">Something went wrong sending your enquiry.</p>
             <p>Please email us directly at
@@ -347,10 +560,9 @@
             respond within 24 hours.</p>
           </div>
 
-        </div>
-      </div>
-
-    </div>
+        </div><!-- /.wizard-wrap -->
+      </div><!-- /.contact-grid -->
+    </div><!-- /.container -->
   </section>
 
   <!-- ── Footer ─────────────────────────────────────────────────── -->
@@ -398,426 +610,553 @@
   <script src="lang.js" defer></script>
   <script src="main.js" defer></script>
   <script>
-    (function () {
-      var primaryHidden    = document.getElementById('enquiry-primary-hidden');
-      var typeHidden       = document.getElementById('enquiry-type-hidden');
-      var tierHidden       = document.getElementById('enquiry-tier-hidden');
-      var deliveryHidden   = document.getElementById('enquiry-delivery-hidden');
-      var compTypeHidden   = document.getElementById('enquiry-comp-type-hidden');
-      var compFormatHidden = document.getElementById('enquiry-comp-format-hidden');
-      var compPieceHidden  = document.getElementById('enquiry-comp-piece-hidden');
-      var childCheck       = document.getElementById('child-enquiry-check');
-      var messageGroup     = document.getElementById('message-group');
-      var dateGroup        = document.getElementById('event-date-group');
-      var contactForm      = document.getElementById('contact-form');
-      var flashTimer       = null;
+  (function () {
 
-      /* ── Helpers ──────────────────────────────────────────────── */
-      function deselect(scope, selector) {
-        scope.querySelectorAll(selector).forEach(function (b) {
-          b.classList.remove('selected');
-          b.setAttribute('aria-pressed', 'false');
-        });
+    /* ── State ────────────────────────────────────────────────────── */
+    var state = {
+      primary:     '',
+      sub:         '',
+      perfTier:    '',
+      tuitionTier: '',
+      delivery:    '',
+      compType:    '',
+      compFormat:  '',
+      compPiece:   '',
+      addSet:      false
+    };
+
+    var currentStep  = 1;
+    var stepHistory  = [1];
+
+    /* ── Hidden fields ────────────────────────────────────────────── */
+    var primaryHidden    = document.getElementById('enquiry-primary-hidden');
+    var typeHidden       = document.getElementById('enquiry-type-hidden');
+    var tierHidden       = document.getElementById('enquiry-tier-hidden');
+    var deliveryHidden   = document.getElementById('enquiry-delivery-hidden');
+    var compTypeHidden   = document.getElementById('enquiry-comp-type-hidden');
+    var compFormatHidden = document.getElementById('enquiry-comp-format-hidden');
+    var compPieceHidden  = document.getElementById('enquiry-comp-piece-hidden');
+    var perfTierHidden   = document.getElementById('enquiry-perf-tier-hidden');
+    var addSetHidden     = document.getElementById('enquiry-add-set-hidden');
+
+    /* ── Navigation logic ─────────────────────────────────────────── */
+    var TIERED_PERF_SUBS = ['wedding', 'burns', 'corporate', 'festival', 'hogmanay'];
+
+    function needsStep3() {
+      if (state.primary === 'performance') return TIERED_PERF_SUBS.indexOf(state.sub) !== -1;
+      if (state.primary === 'tuition')     return state.sub === 'regular';
+      if (state.primary === 'composition') return true;
+      return false;
+    }
+
+    function needsStep4() {
+      return state.primary === 'performance' || state.primary === 'venue' || state.primary === 'tuition';
+    }
+
+    function getNextStep() {
+      if (currentStep === 1) return 2;
+      if (currentStep === 2) {
+        if (needsStep3()) return 3;
+        if (needsStep4()) return 4;
+        return 5;
       }
-
-      function hideAllSubs() {
-        document.querySelectorAll('.sub-options').forEach(function (s) {
-          s.classList.remove('visible');
-        });
+      if (currentStep === 3) {
+        if (needsStep4()) return 4;
+        return 5;
       }
+      if (currentStep === 4) return 5;
+      if (currentStep === 5) return 6;
+      return null;
+    }
 
-      function resetHidden() {
-        typeHidden.value = '';
-        tierHidden.value = '';
-        deliveryHidden.value = '';
-        compTypeHidden.value = '';
-        compFormatHidden.value = '';
-        compPieceHidden.value = '';
-        if (childCheck) childCheck.checked = false;
+    function isCurrentStepValid() {
+      if (currentStep === 1) return !!state.primary;
+      if (currentStep === 2) {
+        if (state.primary === 'composition') return !!state.compType;
+        if (state.primary === 'tuition')     return !!state.sub;
+        if (state.primary === 'performance') return !!state.sub;
+        return true; /* venue, other */
       }
-
-      /* ── Date field auto-advance + completion trigger ────────── */
-      var dayField   = document.getElementById('event-day');
-      var monthField = document.getElementById('event-month');
-      var yearField  = document.getElementById('event-year');
-
-      function isDateComplete(d, m, y) {
-        var thisYear = new Date().getFullYear();
-        var dayOk = d.length === 2 && parseInt(d, 10) >= 1  && parseInt(d, 10) <= 31;
-        var monOk = m.length === 2 && parseInt(m, 10) >= 1  && parseInt(m, 10) <= 12;
-        var yrOk  = y.length === 4 && parseInt(y, 10) >= thisYear && parseInt(y, 10) <= thisYear + 10;
-        return dayOk && monOk && yrOk;
+      if (currentStep === 3) {
+        if (state.primary === 'performance')  return !!state.perfTier;
+        if (state.primary === 'tuition')      return !!state.tuitionTier;
+        if (state.primary === 'composition')  return !!state.compFormat;
+        return true;
       }
+      return true;
+    }
 
-      function handleDateInput(nextField) {
-        return function () {
-          this.value = this.value.replace(/\D/g, '');
-          if (nextField && this.value.length >= parseInt(this.getAttribute('maxlength'), 10)) {
-            nextField.focus();
-          }
-          if (primaryHidden.value === 'performance') {
-            var d = dayField   ? dayField.value   : '';
-            var m = monthField ? monthField.value : '';
-            var y = yearField  ? yearField.value  : '';
-            if (isDateComplete(d, m, y)) { flashMessage(); }
-          }
+    /* ── Step display ─────────────────────────────────────────────── */
+    function showStep(n) {
+      document.querySelectorAll('.wizard-step').forEach(function (s) {
+        s.classList.add('hidden');
+        s.setAttribute('aria-hidden', 'true');
+      });
+      var el = document.getElementById('step-' + n);
+      if (el) {
+        el.classList.remove('hidden');
+        el.setAttribute('aria-hidden', 'false');
+      }
+      currentStep = n;
+      updateProgress(n);
+      updateNav(n);
+    }
+
+    function setupStep(n) {
+      if (n === 2) {
+        document.querySelectorAll('#step-2 .wizard-step-panel').forEach(function (p) { p.classList.add('hidden'); });
+        var panel = document.getElementById('step2-' + state.primary);
+        if (panel) panel.classList.remove('hidden');
+      }
+      if (n === 3) {
+        document.querySelectorAll('#step-3 .wizard-step-panel').forEach(function (p) { p.classList.add('hidden'); });
+        var id = state.primary === 'composition' ? 'step3-composition'
+               : state.primary === 'tuition'     ? 'step3-tuition'
+               : 'step3-' + state.sub;
+        var panel = document.getElementById(id);
+        if (panel) panel.classList.remove('hidden');
+      }
+      if (n === 4) {
+        document.querySelectorAll('#step-4 .wizard-step-panel').forEach(function (p) { p.classList.add('hidden'); });
+        var panel = document.getElementById(state.primary === 'tuition' ? 'step4-tuition' : 'step4-date');
+        if (panel) panel.classList.remove('hidden');
+      }
+      if (n === 6) renderSummary();
+    }
+
+    /* ── Progress ─────────────────────────────────────────────────── */
+    function getPath() {
+      var p = state.primary, s = state.sub;
+      if (p === 'other')       return [1,2,5,6];
+      if (p === 'venue')       return [1,2,4,5,6];
+      if (p === 'composition') return [1,2,3,5,6];
+      if (p === 'tuition' && s === 'trial') return [1,2,4,5,6];
+      if (p === 'tuition')     return [1,2,3,4,5,6];
+      if (p === 'performance' && TIERED_PERF_SUBS.indexOf(s) !== -1) return [1,2,3,4,5,6];
+      if (p === 'performance') return [1,2,4,5,6];
+      return [1,2,3,4,5,6];
+    }
+
+    function updateProgress(step) {
+      var el   = document.getElementById('progress-label');
+      if (!el) return;
+      var path = getPath();
+      var pos  = path.indexOf(step);
+      var n    = pos !== -1 ? pos + 1 : step;
+      var of   = path.length;
+      var isGd = document.documentElement.classList.contains('lang-gd');
+      el.textContent = isGd ? 'Ceum ' + n + ' de ' + of : 'Step ' + n + ' of ' + of;
+    }
+
+    /* ── Navigation buttons ───────────────────────────────────────── */
+    function updateNav(step) {
+      var back = document.getElementById('wizard-back');
+      var cont = document.getElementById('wizard-continue');
+      if (back) { if (step > 1) back.removeAttribute('hidden'); else back.setAttribute('hidden', ''); }
+      if (cont) { if (step < 6) cont.removeAttribute('hidden'); else cont.setAttribute('hidden', ''); }
+      updateContinueState();
+    }
+
+    function updateContinueState() {
+      var cont = document.getElementById('wizard-continue');
+      if (!cont) return;
+      var ok = isCurrentStepValid();
+      cont.classList.toggle('wizard-continue-btn--active', ok);
+      cont.disabled = !ok;
+    }
+
+    /* ── Summary (Step 6) ─────────────────────────────────────────── */
+    function renderSummary() {
+      var el = document.getElementById('wizard-summary');
+      if (!el) return;
+
+      var primaryLabels = { tuition: 'Tuition', performance: 'Performance', composition: 'Composition', venue: 'Venue or Events Team', other: 'Other' };
+      var subLabels     = { wedding: 'Wedding & Civil Ceremony', funeral: 'Funeral & Memorial', burns: 'Burns Night', corporate: 'Corporate & Business Dinner', festival: 'Ceilidh & Dance Events', hogmanay: 'Hogmanay & the Scottish Calendar', graduation: 'Graduation & Civic Ceremony', custom: 'Custom Engagement', trial: 'Trial Lesson', regular: 'Regular Tuition', private: 'Private Commission', media: 'Media & Commercial', institutional: 'Heritage & Institutional' };
+      var tuitionLabels = { beginner: 'Tier I — Foundational', intermediate: 'Tier II — Developing', advanced: 'Tier III — Proficient', piobaireachd: 'Tier IV — Pìobaireachd' };
+      var deliveryLabels = { 'in-person': 'In-Person (Edinburgh)', online: 'Online' };
+      var formatLabels  = { solo: 'Solo Pipe', band: 'Pipe Band' };
+      var pieceLabels   = { march: 'March', 'slow-air': 'Slow Air', reel: 'Reel', jig: 'Jig', strathspey: 'Strathspey', hornpipe: 'Hornpipe', piobaireachd: 'Pìobaireachd', contemporary: 'Contemporary', open: 'Open — not sure yet' };
+
+      var perfTierLabel = (function () {
+        var t = state.perfTier, s = state.sub;
+        var maps = {
+          wedding:   { ceremony: 'Ceremony Piper — £225', reception: 'Ceremony & Reception Piper — £300', full: 'Full Wedding Piper — £350' },
+          burns:     { base: 'The Address — £200', standard: 'The Full Supper — £250', premium: 'The Grand Supper — £325' },
+          corporate: { base: 'Reception Piper — £200', standard: 'Dinner Piper — £275', premium: 'Full Evening Piper — £350' },
+          festival:  { base: 'The Opening Set — £200', standard: 'The Full Evening — £275', premium: 'Ceilidh & Dance Evening — £350' },
+          hogmanay:  { base: 'The Gathering — £200', standard: 'The Occasion — £275', premium: 'The Hogmanay Engagement — £350' }
         };
+        return (maps[s] && maps[s][t]) ? maps[s][t] : '';
+      }());
+
+      var items = [];
+      if (state.primary)     items.push({ l: 'Enquiry type', v: primaryLabels[state.primary] || state.primary });
+      if (state.sub)         items.push({ l: state.primary === 'composition' ? 'Commission type' : 'Occasion', v: subLabels[state.sub] || state.sub });
+      if (state.compType && state.primary === 'composition') { /* already covered by state.sub path in composition */ }
+      if (perfTierLabel)     items.push({ l: 'Package', v: perfTierLabel });
+      if (state.addSet)      items.push({ l: 'Additional set', v: '+£75 (approximately 20–25 minutes)' });
+      if (state.tuitionTier) items.push({ l: 'Tier', v: tuitionLabels[state.tuitionTier] || state.tuitionTier });
+      if (state.delivery)    items.push({ l: 'Lessons', v: deliveryLabels[state.delivery] || state.delivery });
+      if (state.compType)    items.push({ l: 'Commission', v: subLabels[state.compType] || state.compType });
+      if (state.compFormat)  items.push({ l: 'Format', v: formatLabels[state.compFormat] || state.compFormat });
+      if (state.compPiece)   items.push({ l: 'Piece type', v: pieceLabels[state.compPiece] || state.compPiece });
+
+      el.innerHTML = items.map(function (i) {
+        return '<div class="wizard-summary__item">'
+          + '<span class="wizard-summary__label">' + i.l + '</span>'
+          + '<span class="wizard-summary__value">'  + i.v + '</span>'
+          + '</div>';
+      }).join('');
+    }
+
+    /* ── URL param prefill ────────────────────────────────────────── */
+    function prefillFromURL() {
+      var params   = new URLSearchParams(window.location.search);
+      var pType    = params.get('type');
+      var pSub     = params.get('sub');
+      var pTier    = params.get('tier');
+      var pDelivery = params.get('delivery');
+      if (!pType) return;
+
+      /* Set primary */
+      state.primary = pType;
+      primaryHidden.value = pType;
+      var primaryBtn = document.querySelector('#step-1 [data-primary="' + pType + '"]');
+      if (primaryBtn) { primaryBtn.classList.add('selected'); primaryBtn.setAttribute('aria-pressed', 'true'); }
+      setupStep(2);
+
+      if (!pSub && pType !== 'venue' && pType !== 'other') {
+        stepHistory = [1]; showStep(2); return;
       }
 
-      if (dayField)   dayField.addEventListener('input',   handleDateInput(monthField));
-      if (monthField) monthField.addEventListener('input', handleDateInput(yearField));
-      if (yearField)  yearField.addEventListener('input',  handleDateInput(null));
-
-      /* ── Auto-expanding textarea ──────────────────────────────── */
-      var textarea = document.getElementById('message');
-      if (textarea) {
-        textarea.addEventListener('input', function () {
-          this.style.height = 'auto';
-          this.style.height = this.scrollHeight + 'px';
-        });
+      /* Set sub */
+      if (pType === 'performance' || pType === 'tuition') {
+        if (pSub) {
+          state.sub = pSub;
+          typeHidden.value = pSub;
+          var subBtn = document.querySelector('#step2-' + pType + ' [data-sub="' + pSub + '"]');
+          if (subBtn) { subBtn.classList.add('selected'); subBtn.setAttribute('aria-pressed', 'true'); }
+        }
+      } else if (pType === 'composition' && pSub) {
+        state.compType = pSub;
+        compTypeHidden.value = pSub;
+        var compBtn = document.querySelector('#step2-composition [data-comp-type="' + pSub + '"]');
+        if (compBtn) { compBtn.classList.add('selected'); compBtn.setAttribute('aria-pressed', 'true'); }
       }
 
-      /* ── Message flash ────────────────────────────────────────── */
-      function flashMessage() {
-        if (!messageGroup) return;
-        clearTimeout(flashTimer);
-        messageGroup.classList.remove('message-flash');
-        void messageGroup.offsetWidth;
-        messageGroup.classList.add('message-flash');
-        flashTimer = setTimeout(function () {
-          messageGroup.classList.remove('message-flash');
-        }, 1800);
-      }
-
-      /* ── Phone number formatting & validation ─────────────────── */
-      var phoneField   = document.getElementById('phone');
-      var phoneCleaned = document.getElementById('phone-cleaned');
-      var phoneError   = document.getElementById('phone-error');
-
-      /* Country calling code → its digit length (1, 2, or 3) */
-      var CC_LEN = {
-        '1':1,'7':1,
-        '20':2,'27':2,'30':2,'31':2,'32':2,'33':2,'34':2,'36':2,'39':2,
-        '40':2,'41':2,'43':2,'44':2,'45':2,'46':2,'47':2,'48':2,'49':2,
-        '51':2,'52':2,'53':2,'54':2,'55':2,'56':2,'57':2,'58':2,
-        '60':2,'61':2,'62':2,'63':2,'64':2,'65':2,'66':2,
-        '81':2,'82':2,'84':2,'86':2,
-        '90':2,'91':2,'92':2,'93':2,'94':2,'95':2,'98':2,
-        '212':3,'213':3,'216':3,'218':3,'220':3,'221':3,'222':3,'223':3,
-        '224':3,'225':3,'226':3,'227':3,'228':3,'229':3,'230':3,'231':3,
-        '232':3,'233':3,'234':3,'235':3,'236':3,'237':3,'238':3,'239':3,
-        '240':3,'241':3,'242':3,'243':3,'244':3,'245':3,'246':3,'247':3,
-        '248':3,'249':3,'250':3,'251':3,'252':3,'253':3,'254':3,'255':3,
-        '256':3,'257':3,'258':3,'260':3,'261':3,'262':3,'263':3,'264':3,
-        '265':3,'266':3,'267':3,'268':3,'269':3,'290':3,'291':3,'297':3,
-        '298':3,'299':3,
-        '350':3,'351':3,'352':3,'353':3,'354':3,'355':3,'356':3,'357':3,
-        '358':3,'359':3,'370':3,'371':3,'372':3,'373':3,'374':3,'375':3,
-        '376':3,'377':3,'378':3,'380':3,'381':3,'382':3,'385':3,'386':3,
-        '387':3,'389':3,'420':3,'421':3,'423':3,
-        '500':3,'501':3,'502':3,'503':3,'504':3,'505':3,'506':3,'507':3,
-        '508':3,'509':3,'590':3,'591':3,'592':3,'593':3,'594':3,'595':3,
-        '596':3,'597':3,'598':3,'599':3,
-        '670':3,'672':3,'673':3,'674':3,'675':3,'676':3,'677':3,'678':3,
-        '679':3,'680':3,'681':3,'682':3,'683':3,'685':3,'686':3,'687':3,
-        '688':3,'689':3,'690':3,'691':3,'692':3,
-        '850':3,'852':3,'853':3,'855':3,'856':3,'880':3,'886':3,
-        '960':3,'961':3,'962':3,'963':3,'964':3,'965':3,'966':3,'967':3,
-        '968':3,'970':3,'971':3,'972':3,'973':3,'974':3,'975':3,'976':3,
-        '977':3,'992':3,'993':3,'994':3,'995':3,'996':3,'998':3
-      };
-
-      function digitsOnly(s) { return s.replace(/\D/g, ''); }
-
-      function detectCC(digits) {
-        var s3 = digits.slice(0, 3), s2 = digits.slice(0, 2), s1 = digits.charAt(0);
-        if (CC_LEN[s3]) return s3;
-        if (CC_LEN[s2]) return s2;
-        if (CC_LEN[s1]) return s1;
-        return s2; /* fallback: treat first 2 digits as CC */
-      }
-
-      function fmtUKSub(s) {
-        if (!s) return '';
-        if (s.charAt(0) === '7')
-          return s.slice(0,4)+(s.length>4?' '+s.slice(4,7):'')+(s.length>7?' '+s.slice(7,10):'');
-        if (s.charAt(0) === '2')
-          return s.slice(0,2)+(s.length>2?' '+s.slice(2,6):'')+(s.length>6?' '+s.slice(6,10):'');
-        return s.slice(0,4)+(s.length>4?' '+s.slice(4,7):'')+(s.length>7?' '+s.slice(7,10):'');
-      }
-
-      function fmtSub(s, cc) {
-        if (!s) return '';
-        if (cc === '44') return fmtUKSub(s);
-        if (cc === '1')
-          return s.slice(0,3)+(s.length>3?' '+s.slice(3,6):'')+(s.length>6?' '+s.slice(6,10):'');
-        /* Generic: groups of 3 */
-        var out = [], i = 0;
-        while (i < s.length) { out.push(s.slice(i, i + 3)); i += 3; }
-        return out.join(' ');
-      }
-
-      function fmtIntl(raw) {
-        var d = digitsOnly(raw.slice(1));
-        if (!d) return '+';
-        var cc  = detectCC(d);
-        var sub = d.slice(cc.length);
-        if (cc === '44' && sub.charAt(0) === '0') sub = sub.slice(1);
-        return '+' + cc + (sub ? ' ' + fmtSub(sub, cc) : '');
-      }
-
-      function fmtDomestic(d) {
-        if (!d) return '';
-        if (d.slice(0, 2) === '02')
-          return d.slice(0,3)+(d.length>3?' '+d.slice(3,7):'')+(d.length>7?' '+d.slice(7,11):'');
-        return d.slice(0,5)+(d.length>5?' '+d.slice(5,8):'')+(d.length>8?' '+d.slice(8,11):'');
-      }
-
-      function fmtPhone(raw) {
-        if (!raw) return '';
-        return raw.charAt(0) === '+' ? fmtIntl(raw) : fmtDomestic(raw);
-      }
-
-      function phoneCleanVal(display) {
-        var v = display.trim();
-        if (!v) return '';
-        return v.charAt(0) === '+' ? '+' + digitsOnly(v.slice(1)) : digitsOnly(v);
-      }
-
-      function normalisePhone(v) {
-        if (!v) return '';
-        var s = v.charAt(0) === '+' ? '+' + digitsOnly(v.slice(1)) : digitsOnly(v);
-        if (!s) return '';
-        if (s.slice(0, 2) === '00') s = '+' + s.slice(2);
-        if (/^0[1-9]/.test(s)) s = '+44' + s.slice(1);
-        if (s.slice(0, 3) === '+44' && s.charAt(3) === '0') s = '+44' + s.slice(4);
-        return fmtIntl(s);
-      }
-
-      function isPhoneValid(display) {
-        var v = display.trim();
-        if (!v) return true;
-        var cl = phoneCleanVal(v);
-        if (!cl) return true;
-        if (/^\+\d{7,15}$/.test(cl)) return true;
-        if (/^0[0-9]\d{6,13}$/.test(cl)) return true;
-        return false;
-      }
-
-      if (phoneField) {
-        phoneField.addEventListener('input', function () {
-          var raw = this.value;
-          var cl = raw.charAt(0) === '+' ? '+' + digitsOnly(raw.slice(1)) : digitsOnly(raw);
-          this.value = fmtPhone(cl);
-          if (phoneCleaned) phoneCleaned.value = phoneCleanVal(this.value);
-          if (phoneError) phoneError.style.display = 'none';
-          this.removeAttribute('aria-invalid');
-        });
-
-        phoneField.addEventListener('focus', function () {
-          if (!this.value.trim()) {
-            this.value = '+44 ';
-            var len = this.value.length;
-            this.setSelectionRange(len, len);
+      /* Decide depth */
+      if (needsStep3()) {
+        setupStep(3);
+        if (pTier) {
+          if (pType === 'performance') {
+            state.perfTier = pTier;
+            perfTierHidden.value = pTier;
+            var tierBtn = document.querySelector('#step3-' + pSub + ' [data-perf-tier="' + pTier + '"]');
+            if (tierBtn) { tierBtn.classList.add('selected'); tierBtn.setAttribute('aria-pressed', 'true'); }
+          } else if (pType === 'tuition') {
+            state.tuitionTier = pTier;
+            tierHidden.value = pTier;
+            var tuitionBtn = document.querySelector('#step3-tuition [data-tier="' + pTier + '"]');
+            if (tuitionBtn) { tuitionBtn.classList.add('selected'); tuitionBtn.setAttribute('aria-pressed', 'true'); }
           }
-        });
-
-        phoneField.addEventListener('blur', function () {
-          var v = this.value.trim();
-          if (!v || /^\+\d{0,2}\s?$/.test(v) || v === '+') {
-            this.value = '';
-            if (phoneCleaned) phoneCleaned.value = '';
-            if (phoneError) phoneError.style.display = 'none';
-            this.removeAttribute('aria-invalid');
-            return;
-          }
-          var norm = normalisePhone(v);
-          this.value = norm;
-          var cl = phoneCleanVal(norm);
-          if (phoneCleaned) phoneCleaned.value = cl;
-          var valid = isPhoneValid(norm);
-          if (phoneError) phoneError.style.display = valid ? 'none' : '';
-          if (valid) this.removeAttribute('aria-invalid');
-          else this.setAttribute('aria-invalid', 'true');
-        });
-      }
-
-      /* ── Primary buttons ──────────────────────────────────────── */
-      document.querySelectorAll('[data-primary]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var val = btn.dataset.primary;
-          deselect(document, '[data-primary]');
-          btn.classList.add('selected');
-          btn.setAttribute('aria-pressed', 'true');
-          primaryHidden.value = val;
-          resetHidden();
-          hideAllSubs();
-          if (dateGroup) dateGroup.classList.toggle('hidden', val !== 'performance' && val !== 'venue');
-
-          if (val === 'tuition') {
-            document.getElementById('sub-tuition').classList.add('visible');
-          } else if (val === 'performance') {
-            document.getElementById('sub-performance').classList.add('visible');
-          } else if (val === 'composition') {
-            document.getElementById('sub-composition').classList.add('visible');
-          } else if (val === 'other') {
-            typeHidden.value = 'other';
-            flashMessage();
-          } else if (val === 'venue') {
-            document.getElementById('sub-venue').classList.add('visible');
-            flashMessage();
-          }
-        });
-      });
-
-      /* ── Tuition type (trial / regular) ───────────────────────── */
-      document.querySelectorAll('#sub-tuition [data-sub]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          deselect(document.getElementById('sub-tuition'), '[data-sub]');
-          btn.classList.add('selected');
-          btn.setAttribute('aria-pressed', 'true');
-          typeHidden.value = btn.dataset.sub;
-          tierHidden.value = '';
-          deliveryHidden.value = '';
-          deselect(document, '[data-tier], [data-delivery]');
-          /* Tier only for regular tuition */
-          document.getElementById('sub-tier').classList.toggle('visible', btn.dataset.sub === 'regular');
-          document.getElementById('sub-delivery').classList.add('visible');
-        });
-      });
-
-      /* ── Tier buttons ─────────────────────────────────────────── */
-      document.querySelectorAll('[data-tier]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          deselect(document.getElementById('sub-tier'), '[data-tier]');
-          btn.classList.add('selected');
-          btn.setAttribute('aria-pressed', 'true');
-          tierHidden.value = btn.dataset.tier;
-          if (deliveryHidden.value) { flashMessage(); }
-        });
-      });
-
-      /* ── Delivery buttons ─────────────────────────────────────── */
-      document.querySelectorAll('[data-delivery]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          deselect(document.getElementById('sub-delivery'), '[data-delivery]');
-          btn.classList.add('selected');
-          btn.setAttribute('aria-pressed', 'true');
-          deliveryHidden.value = btn.dataset.delivery;
-          flashMessage();
-        });
-      });
-
-      /* ── Performance sub-type buttons ─────────────────────────── */
-      document.querySelectorAll('#sub-performance [data-sub]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          deselect(document.getElementById('sub-performance'), '[data-sub]');
-          btn.classList.add('selected');
-          btn.setAttribute('aria-pressed', 'true');
-          typeHidden.value = btn.dataset.sub;
-          /* Performance path: flash after date is complete */
-        });
-      });
-
-      /* ── Composition type buttons ─────────────────────────────── */
-      document.querySelectorAll('[data-comp-type]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          deselect(document.getElementById('sub-composition'), '[data-comp-type]');
-          btn.classList.add('selected');
-          btn.setAttribute('aria-pressed', 'true');
-          compTypeHidden.value = btn.dataset.compType;
-          compFormatHidden.value = '';
-          compPieceHidden.value = '';
-          deselect(document.getElementById('sub-comp-format'), '[data-comp-format]');
-          deselect(document.getElementById('sub-comp-piece'), '[data-comp-piece]');
-          document.getElementById('sub-comp-piece').classList.remove('visible');
-          document.getElementById('sub-comp-format').classList.add('visible');
-        });
-      });
-
-      /* ── Composition format buttons ───────────────────────────── */
-      document.querySelectorAll('[data-comp-format]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          deselect(document.getElementById('sub-comp-format'), '[data-comp-format]');
-          btn.classList.add('selected');
-          btn.setAttribute('aria-pressed', 'true');
-          compFormatHidden.value = btn.dataset.compFormat;
-          compPieceHidden.value = '';
-          deselect(document.getElementById('sub-comp-piece'), '[data-comp-piece]');
-          document.getElementById('sub-comp-piece').classList.add('visible');
-        });
-      });
-
-      /* ── Composition piece type buttons ───────────────────────── */
-      document.querySelectorAll('[data-comp-piece]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          deselect(document.getElementById('sub-comp-piece'), '[data-comp-piece]');
-          btn.classList.add('selected');
-          btn.setAttribute('aria-pressed', 'true');
-          compPieceHidden.value = btn.dataset.compPiece;
-          flashMessage();
-        });
-      });
-
-      /* ── Worker submit handler ────────────────────────────────── */
-      var WORKER_URL = 'https://ceolmhor.scot/api/contact';
-
-      contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        var required = ['first-name', 'last-name', 'email'];
-        var valid = true;
-        required.forEach(function (name) {
-          var field = contactForm.elements[name];
-          var group = field ? field.closest('.form-group') : null;
-          if (!field || !field.value.trim()) {
-            if (field) field.setAttribute('aria-invalid', 'true');
-            if (group) group.classList.add('field-error');
-            if (valid && field) field.focus();
-            valid = false;
+          if (needsStep4()) {
+            setupStep(4);
+            stepHistory = [1, 2, 3]; showStep(4);
           } else {
-            field.removeAttribute('aria-invalid');
-            if (group) group.classList.remove('field-error');
+            stepHistory = [1, 2, 3]; showStep(5);
           }
+        } else {
+          stepHistory = [1, 2]; showStep(3);
+        }
+      } else if (pType === 'venue' || pType === 'other') {
+        /* venue/other: advance to step 2 showing the info panel */
+        if (pType === 'venue' && needsStep4()) {
+          setupStep(4); stepHistory = [1, 2]; showStep(4);
+        } else {
+          stepHistory = [1]; showStep(2);
+        }
+      } else if (needsStep4()) {
+        setupStep(4); stepHistory = [1, 2]; showStep(4);
+      } else {
+        stepHistory = [1, 2]; showStep(5);
+      }
+
+      if (pDelivery) {
+        state.delivery = pDelivery;
+        deliveryHidden.value = pDelivery;
+        var delivBtn = document.querySelector('#step4-tuition [data-delivery="' + pDelivery + '"]');
+        if (delivBtn) { delivBtn.classList.add('selected'); delivBtn.setAttribute('aria-pressed', 'true'); }
+      }
+
+      updateNav(currentStep);
+    }
+
+    /* ── Button event listeners ───────────────────────────────────── */
+
+    /* Step 1: Primary category */
+    document.querySelectorAll('#step-1 [data-primary]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#step-1 [data-primary]').forEach(function (b) {
+          b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false');
         });
-        if (!valid) return;
-
-        var btn = contactForm.querySelector('[type="submit"]');
-        var originalText = btn.textContent;
-        btn.disabled = true;
-        btn.textContent = 'Sending…';
-
-        fetch(WORKER_URL, {
-          method: 'POST',
-          body: new FormData(contactForm),
-        })
-          .then(function (res) { return res.json().then(function (json) { return { res: res, json: json }; }); })
-          .then(function (data) {
-            if (data.res.ok && data.json.ok) {
-              contactForm.style.display = 'none';
-              var success = document.getElementById('form-success');
-              if (success) {
-                success.style.display = 'block';
-                success.setAttribute('tabindex', '-1');
-                success.focus();
-              }
-            } else {
-              throw new Error(data.json.error || 'Worker returned error');
-            }
-          })
-          .catch(function (err) {
-            console.error('Submission error:', err);
-            btn.disabled = false;
-            btn.textContent = originalText;
-            var errDiv = document.getElementById('form-error');
-            if (errDiv) {
-              errDiv.style.display = 'block';
-              errDiv.setAttribute('tabindex', '-1');
-              errDiv.focus();
-            }
-          });
+        btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true');
+        state.primary = btn.dataset.primary;
+        primaryHidden.value = state.primary;
+        /* Reset downstream */
+        state.sub = ''; state.perfTier = ''; state.tuitionTier = '';
+        state.delivery = ''; state.compType = ''; state.compFormat = ''; state.compPiece = ''; state.addSet = false;
+        typeHidden.value = ''; tierHidden.value = ''; deliveryHidden.value = '';
+        compTypeHidden.value = ''; compFormatHidden.value = ''; compPieceHidden.value = '';
+        perfTierHidden.value = ''; addSetHidden.value = '';
+        updateContinueState();
       });
-    }());
+    });
+
+    /* Step 2: Tuition sub-type */
+    document.querySelectorAll('#step2-tuition [data-sub]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#step2-tuition [data-sub]').forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
+        btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true');
+        state.sub = btn.dataset.sub; typeHidden.value = state.sub;
+        updateContinueState();
+      });
+    });
+
+    /* Step 2: Performance occasion */
+    document.querySelectorAll('#step2-performance [data-sub]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#step2-performance [data-sub]').forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
+        btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true');
+        state.sub = btn.dataset.sub; typeHidden.value = state.sub;
+        /* Reset tier when occasion changes */
+        state.perfTier = ''; perfTierHidden.value = '';
+        updateContinueState();
+      });
+    });
+
+    /* Step 2: Composition type */
+    document.querySelectorAll('#step2-composition [data-comp-type]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#step2-composition [data-comp-type]').forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
+        btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true');
+        state.compType = btn.dataset.compType; compTypeHidden.value = state.compType;
+        updateContinueState();
+      });
+    });
+
+    /* Step 3: Performance tier buttons (one listener per package panel) */
+    TIERED_PERF_SUBS.forEach(function (sub) {
+      var panel = document.getElementById('step3-' + sub);
+      if (!panel) return;
+      panel.querySelectorAll('[data-perf-tier]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          panel.querySelectorAll('[data-perf-tier]').forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
+          btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true');
+          state.perfTier = btn.dataset.perfTier; perfTierHidden.value = state.perfTier;
+          updateContinueState();
+        });
+      });
+      var addonCheck = panel.querySelector('.wizard-addon-check');
+      if (addonCheck) {
+        addonCheck.addEventListener('change', function () {
+          state.addSet = addonCheck.checked;
+          addSetHidden.value = addonCheck.checked ? 'yes' : '';
+        });
+      }
+    });
+
+    /* Step 3: Tuition tier */
+    var step3Tuition = document.getElementById('step3-tuition');
+    if (step3Tuition) {
+      step3Tuition.querySelectorAll('[data-tier]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          step3Tuition.querySelectorAll('[data-tier]').forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
+          btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true');
+          state.tuitionTier = btn.dataset.tier; tierHidden.value = state.tuitionTier;
+          updateContinueState();
+        });
+      });
+    }
+
+    /* Step 3: Composition format */
+    var step3Comp = document.getElementById('step3-composition');
+    if (step3Comp) {
+      step3Comp.querySelectorAll('[data-comp-format]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          step3Comp.querySelectorAll('[data-comp-format]').forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
+          btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true');
+          state.compFormat = btn.dataset.compFormat; compFormatHidden.value = state.compFormat;
+          var piecePanel = document.getElementById('step3-comp-piece');
+          if (piecePanel) piecePanel.classList.remove('hidden');
+          updateContinueState();
+        });
+      });
+      step3Comp.querySelectorAll('[data-comp-piece]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          step3Comp.querySelectorAll('[data-comp-piece]').forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
+          btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true');
+          state.compPiece = btn.dataset.compPiece; compPieceHidden.value = state.compPiece;
+        });
+      });
+    }
+
+    /* Step 4: Delivery */
+    var step4Tuition = document.getElementById('step4-tuition');
+    if (step4Tuition) {
+      step4Tuition.querySelectorAll('[data-delivery]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          step4Tuition.querySelectorAll('[data-delivery]').forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
+          btn.classList.add('selected'); btn.setAttribute('aria-pressed', 'true');
+          state.delivery = btn.dataset.delivery; deliveryHidden.value = state.delivery;
+        });
+      });
+    }
+
+    /* Date field auto-advance */
+    var dayField   = document.getElementById('event-day');
+    var monthField = document.getElementById('event-month');
+    var yearField  = document.getElementById('event-year');
+    function handleDateInput(nextField) {
+      return function () {
+        this.value = this.value.replace(/\D/g, '');
+        if (nextField && this.value.length >= parseInt(this.getAttribute('maxlength'), 10)) nextField.focus();
+      };
+    }
+    if (dayField)   dayField.addEventListener('input',   handleDateInput(monthField));
+    if (monthField) monthField.addEventListener('input', handleDateInput(yearField));
+    if (yearField)  yearField.addEventListener('input',  handleDateInput(null));
+
+    /* Auto-expanding textarea */
+    var textarea = document.getElementById('message');
+    if (textarea) {
+      textarea.addEventListener('input', function () {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+      });
+    }
+
+    /* ── Back / Continue buttons ──────────────────────────────────── */
+    var backBtn     = document.getElementById('wizard-back');
+    var continueBtn = document.getElementById('wizard-continue');
+
+    if (backBtn) {
+      backBtn.addEventListener('click', function () {
+        if (stepHistory.length <= 1) return;
+        stepHistory.pop();
+        var prev = stepHistory[stepHistory.length - 1];
+        showStep(prev);
+      });
+    }
+
+    if (continueBtn) {
+      continueBtn.addEventListener('click', function () {
+        if (!isCurrentStepValid()) return;
+        var next = getNextStep();
+        if (!next) return;
+        stepHistory.push(next);
+        setupStep(next);
+        showStep(next);
+      });
+    }
+
+    /* ── Phone formatting (preserved) ────────────────────────────── */
+    var phoneField   = document.getElementById('phone');
+    var phoneCleaned = document.getElementById('phone-cleaned');
+    var phoneError   = document.getElementById('phone-error');
+
+    var CC_LEN = {'1':1,'7':1,'20':2,'27':2,'30':2,'31':2,'32':2,'33':2,'34':2,'36':2,'39':2,'40':2,'41':2,'43':2,'44':2,'45':2,'46':2,'47':2,'48':2,'49':2,'51':2,'52':2,'53':2,'54':2,'55':2,'56':2,'57':2,'58':2,'60':2,'61':2,'62':2,'63':2,'64':2,'65':2,'66':2,'81':2,'82':2,'84':2,'86':2,'90':2,'91':2,'92':2,'93':2,'94':2,'95':2,'98':2,'212':3,'213':3,'216':3,'218':3,'220':3,'221':3,'222':3,'223':3,'224':3,'225':3,'226':3,'227':3,'228':3,'229':3,'230':3,'231':3,'232':3,'233':3,'234':3,'235':3,'236':3,'237':3,'238':3,'239':3,'240':3,'241':3,'242':3,'243':3,'244':3,'245':3,'246':3,'247':3,'248':3,'249':3,'250':3,'251':3,'252':3,'253':3,'254':3,'255':3,'256':3,'257':3,'258':3,'260':3,'261':3,'262':3,'263':3,'264':3,'265':3,'266':3,'267':3,'268':3,'269':3,'290':3,'291':3,'297':3,'298':3,'299':3,'350':3,'351':3,'352':3,'353':3,'354':3,'355':3,'356':3,'357':3,'358':3,'359':3,'370':3,'371':3,'372':3,'373':3,'374':3,'375':3,'376':3,'377':3,'378':3,'380':3,'381':3,'382':3,'385':3,'386':3,'387':3,'389':3,'420':3,'421':3,'423':3,'500':3,'501':3,'502':3,'503':3,'504':3,'505':3,'506':3,'507':3,'508':3,'509':3,'590':3,'591':3,'592':3,'593':3,'594':3,'595':3,'596':3,'597':3,'598':3,'599':3,'670':3,'672':3,'673':3,'674':3,'675':3,'676':3,'677':3,'678':3,'679':3,'680':3,'681':3,'682':3,'683':3,'685':3,'686':3,'687':3,'688':3,'689':3,'690':3,'691':3,'692':3,'850':3,'852':3,'853':3,'855':3,'856':3,'880':3,'886':3,'960':3,'961':3,'962':3,'963':3,'964':3,'965':3,'966':3,'967':3,'968':3,'970':3,'971':3,'972':3,'973':3,'974':3,'975':3,'976':3,'977':3,'992':3,'993':3,'994':3,'995':3,'996':3,'998':3};
+
+    function digitsOnly(s) { return s.replace(/\D/g, ''); }
+    function detectCC(d) { var s3=d.slice(0,3),s2=d.slice(0,2),s1=d.charAt(0); if(CC_LEN[s3])return s3; if(CC_LEN[s2])return s2; if(CC_LEN[s1])return s1; return s2; }
+    function fmtUKSub(s) { if(!s)return ''; if(s.charAt(0)==='7')return s.slice(0,4)+(s.length>4?' '+s.slice(4,7):'')+(s.length>7?' '+s.slice(7,10):''); if(s.charAt(0)==='2')return s.slice(0,2)+(s.length>2?' '+s.slice(2,6):'')+(s.length>6?' '+s.slice(6,10):''); return s.slice(0,4)+(s.length>4?' '+s.slice(4,7):'')+(s.length>7?' '+s.slice(7,10):''); }
+    function fmtSub(s,cc) { if(!s)return ''; if(cc==='44')return fmtUKSub(s); if(cc==='1')return s.slice(0,3)+(s.length>3?' '+s.slice(3,6):'')+(s.length>6?' '+s.slice(6,10):''); var out=[],i=0; while(i<s.length){out.push(s.slice(i,i+3));i+=3;} return out.join(' '); }
+    function fmtIntl(raw) { var d=digitsOnly(raw.slice(1)); if(!d)return '+'; var cc=detectCC(d),sub=d.slice(cc.length); if(cc==='44'&&sub.charAt(0)==='0')sub=sub.slice(1); return '+'+cc+(sub?' '+fmtSub(sub,cc):''); }
+    function fmtDomestic(d) { if(!d)return ''; if(d.slice(0,2)==='02')return d.slice(0,3)+(d.length>3?' '+d.slice(3,7):'')+(d.length>7?' '+d.slice(7,11):''); return d.slice(0,5)+(d.length>5?' '+d.slice(5,8):'')+(d.length>8?' '+d.slice(8,11):''); }
+    function fmtPhone(raw) { if(!raw)return ''; return raw.charAt(0)==='+'?fmtIntl(raw):fmtDomestic(raw); }
+    function phoneCleanVal(display) { var v=display.trim(); if(!v)return ''; return v.charAt(0)==='+'?'+'+digitsOnly(v.slice(1)):digitsOnly(v); }
+    function normalisePhone(v) { if(!v)return ''; var s=v.charAt(0)==='+'?'+'+digitsOnly(v.slice(1)):digitsOnly(v); if(!s)return ''; if(s.slice(0,2)==='00')s='+'+s.slice(2); if(/^0[1-9]/.test(s))s='+44'+s.slice(1); if(s.slice(0,3)==='+44'&&s.charAt(3)==='0')s='+44'+s.slice(4); return fmtIntl(s); }
+    function isPhoneValid(display) { var v=display.trim(); if(!v)return true; var cl=phoneCleanVal(v); if(!cl)return true; if(/^\+\d{7,15}$/.test(cl))return true; if(/^0[0-9]\d{6,13}$/.test(cl))return true; return false; }
+
+    if (phoneField) {
+      phoneField.addEventListener('input', function () {
+        var raw=this.value, cl=raw.charAt(0)==='+'?'+'+digitsOnly(raw.slice(1)):digitsOnly(raw);
+        this.value=fmtPhone(cl);
+        if(phoneCleaned)phoneCleaned.value=phoneCleanVal(this.value);
+        if(phoneError)phoneError.style.display='none';
+        this.removeAttribute('aria-invalid');
+      });
+      phoneField.addEventListener('focus', function () {
+        if(!this.value.trim()){this.value='+44 ';var len=this.value.length;this.setSelectionRange(len,len);}
+      });
+      phoneField.addEventListener('blur', function () {
+        var v=this.value.trim();
+        if(!v||/^\+\d{0,2}\s?$/.test(v)||v==='+'){this.value='';if(phoneCleaned)phoneCleaned.value='';if(phoneError)phoneError.style.display='none';this.removeAttribute('aria-invalid');return;}
+        var norm=normalisePhone(v);this.value=norm;var cl=phoneCleanVal(norm);if(phoneCleaned)phoneCleaned.value=cl;
+        var valid=isPhoneValid(norm);if(phoneError)phoneError.style.display=valid?'none':'';
+        if(valid)this.removeAttribute('aria-invalid');else this.setAttribute('aria-invalid','true');
+      });
+    }
+
+    /* ── Form submission ──────────────────────────────────────────── */
+    var contactForm  = document.getElementById('contact-form');
+    var WORKER_URL   = 'https://ceolmhor.scot/api/contact';
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var fields = [
+        { el: document.getElementById('first-name'), err: document.getElementById('first-name-error') },
+        { el: document.getElementById('last-name'),  err: document.getElementById('last-name-error')  },
+        { el: document.getElementById('email'),      err: document.getElementById('email-error')      }
+      ];
+
+      var valid = true;
+      fields.forEach(function (f) {
+        var group = f.el ? f.el.closest('.form-group') : null;
+        if (!f.el || !f.el.value.trim()) {
+          if (f.el) f.el.setAttribute('aria-invalid', 'true');
+          if (group) group.classList.add('field-error');
+          if (f.err) f.err.style.display = '';
+          if (valid && f.el) { f.el.focus(); }
+          valid = false;
+        } else {
+          f.el.removeAttribute('aria-invalid');
+          if (group) group.classList.remove('field-error');
+          if (f.err) f.err.style.display = 'none';
+        }
+      });
+      if (!valid) return;
+
+      var submitBtn   = contactForm.querySelector('[type="submit"]');
+      var originalTxt = submitBtn.textContent;
+      submitBtn.disabled  = true;
+      submitBtn.textContent = 'Sending…';
+
+      fetch(WORKER_URL, { method: 'POST', body: new FormData(contactForm) })
+        .then(function (res) { return res.json().then(function (json) { return { res: res, json: json }; }); })
+        .then(function (data) {
+          if (data.res.ok && data.json.ok) {
+            contactForm.style.display = 'none';
+            var prog = document.getElementById('progress-label');
+            if (prog) prog.style.display = 'none';
+            var success = document.getElementById('form-success');
+            if (success) { success.style.display = 'block'; success.setAttribute('tabindex', '-1'); success.focus(); }
+          } else { throw new Error(data.json.error || 'Worker error'); }
+        })
+        .catch(function (err) {
+          console.error('Submission error:', err);
+          submitBtn.disabled    = false;
+          submitBtn.textContent = originalTxt;
+          var errDiv = document.getElementById('form-error');
+          if (errDiv) { errDiv.style.display = 'block'; errDiv.setAttribute('tabindex', '-1'); errDiv.focus(); }
+        });
+    });
+
+    /* ── Init ─────────────────────────────────────────────────────── */
+    showStep(1);
+    prefillFromURL();
+
+  }());
   </script>
 </body>
 </html>
