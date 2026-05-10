@@ -104,7 +104,8 @@ export default {
     const tier         = formatTier(data['enquiry-tier']);
     const delivery     = formatDelivery(data['enquiry-delivery']);
     const compFormat   = formatCompFormat(data['enquiry-comp-format']);
-    const childNote    = data['child-enquiry'] === 'yes' ? '\n⚠️  Enquiry on behalf of a child.' : '';
+    const childNote        = data['child-enquiry'] === 'yes' ? '\n⚠️  Enquiry on behalf of a child.' : '';
+    const supplierNote     = data['supplier-sheet'] === 'yes' ? '\n📋  Requested supplier sheet.' : '';
 
     const tierLine     = tier     ? `\nTier:     ${tier}`     : '';
     const deliveryLine = delivery ? `\nDelivery: ${delivery}` : '';
@@ -116,7 +117,7 @@ ${'─'.repeat(40)}
 
 Name:     ${firstName.trim()} ${lastName.trim()}
 Email:    ${email.trim()}${data['phone']?.trim() ? `\nPhone:    ${data['phone'].trim()}` : ''}
-Type:     ${enquiryType}${tierLine}${deliveryLine}${formatLine}${eventDate ? `\nDate:     ${eventDate}` : ''}${childNote}
+Type:     ${enquiryType}${tierLine}${deliveryLine}${formatLine}${eventDate ? `\nDate:     ${eventDate}` : ''}${childNote}${supplierNote}
 
 Message:
 ${data['message']?.trim() || '(none provided)'}
@@ -155,6 +156,7 @@ IP: ${ip}
   ${compFormat ? `<div class="field"><span class="label">Format</span><span class="value">${escHtml(compFormat)}</span></div>` : ''}
   ${eventDate  ? `<div class="field"><span class="label">Event Date</span><span class="value">${escHtml(eventDate)}</span></div>` : ''}
   ${data['child-enquiry'] === 'yes' ? '<div class="child-note">⚠️ This enquiry is on behalf of a child.</div>' : ''}
+  ${data['supplier-sheet'] === 'yes' ? '<div class="child-note">📋 Supplier sheet requested.</div>' : ''}
   <hr>
   <div class="message-box">
     <span class="label">Message</span>
