@@ -373,23 +373,6 @@ html[lang="gd"] .nav__right {
   gap: 1.5rem;
 }
 
-/* Mobile overlay variant */
-.nav__overlay-lang {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-.nav__overlay-lang .lang-toggle {
-  background: rgba(8, 8, 8, 0.85);
-  border-color: rgba(201, 168, 76, 0.28);
-}
-.nav__overlay-lang .lang-toggle__en,
-.nav__overlay-lang .lang-toggle__gd {
-  font-size: 0.68rem;
-  padding: 7px 12px;
-}
-
 /* Full-screen overlay menu */
 .nav__overlay {
   display: none;
