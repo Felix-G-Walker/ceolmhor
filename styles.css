@@ -2607,6 +2607,7 @@ html[lang="gd"] .nav__right {
   .terms { padding: 1.75rem; }
   .btn-primary,
   .btn-secondary { font-size: 0.72rem; }
+  .hero-knot { display: none; }
 }
 
 /* ── 28. Section-level visibility boost (below hero) ─────────────── */
