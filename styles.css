@@ -4063,6 +4063,7 @@ body::after {
 
 /* ── Add-on row ── */
 .wizard-addon-row { margin-top: 0.6rem; }
+.wizard-event-commission-row.hidden { display: none; }
 
 .wizard-addon-label {
   display: flex;
