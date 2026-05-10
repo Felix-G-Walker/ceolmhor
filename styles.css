@@ -2557,16 +2557,28 @@ html[lang="gd"] .nav__right {
     --nav-h: 64px;
   }
 
+  /* Nav */
   .nav__home,
   .nav__links,
-  .nav__cta { display: none; }
-  .nav__hamburger { display: flex; }
+  .nav__cta,
+  .nav__right { display: none; }
+  .nav__hamburger { display: flex; padding: 10px; }
+  .site-logo { height: 44px; }
+
+  /* Overlay — scrollable for short/landscape viewports */
+  .nav__overlay {
+    justify-content: flex-start;
+    padding-top: calc(var(--nav-h) + 1.5rem);
+    padding-bottom: 2rem;
+    overflow-y: auto;
+  }
 
   .tiers { grid-template-columns: 1fr; }
   .events-grid { grid-template-columns: 1fr; }
   .booking-steps { grid-template-columns: 1fr; }
   .hero__stats-inner { grid-template-columns: 1fr; }
-  .hero-stat { border-right: none; }
+  .hero-stat { border-right: none; padding: 1.25rem 1.5rem; }
+  .hero-stat__label { font-size: 0.7rem; letter-spacing: 0.15em; }
 
   .footer__inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .footer__brand { grid-column: auto; }
@@ -2581,7 +2593,8 @@ html[lang="gd"] .nav__right {
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   .pricing-grid { grid-template-columns: 1fr; }
   .pricing-item--wide { grid-template-columns: 1fr; gap: 1rem; }
-  .about-split { grid-template-columns: 1fr; }
+  .feature { padding: 2rem 1.5rem; }
+  .about-split { grid-template-columns: 1fr; min-height: unset; }
   .about-split__image { min-height: 70vw; }
   .about-split__content { padding: var(--pad-v) var(--pad-h); }
   .about-company-grid { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -2592,6 +2605,8 @@ html[lang="gd"] .nav__right {
   .about-cta-buttons { flex-direction: column; align-items: center; }
   .testimonial-placeholder { padding: 2rem; }
   .terms { padding: 1.75rem; }
+  .btn-primary,
+  .btn-secondary { font-size: 0.72rem; }
 }
 
 /* ── 28. Section-level visibility boost (below hero) ─────────────── */
