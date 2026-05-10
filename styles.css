@@ -3341,7 +3341,6 @@ body::after {
   color: var(--text-body);
   line-height: 1.7;
   margin-bottom: 1.25rem;
-  flex: 1;
 }
 
 .comp-card__audio {
@@ -3359,7 +3358,7 @@ body::after {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: auto;
+  margin-top: 1.25rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--rule);
 }
@@ -3370,6 +3369,43 @@ body::after {
   font-weight: 300;
   color: var(--accent-gold);
 }
+
+.comp-card__header {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  position: relative;
+}
+.comp-card__header:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.comp-card__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: var(--font-ui);
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  transition: transform 0.35s ease;
+  line-height: 1;
+}
+.comp-card.open .comp-card__toggle { transform: rotate(45deg); }
+
+.comp-card__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+}
+.comp-card.open .comp-card__body { max-height: 600px; }
 
 .comp-copyright {
   font-size: 0.82rem;
