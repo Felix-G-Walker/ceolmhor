@@ -1151,7 +1151,8 @@
       });
       phoneField.addEventListener('blur', function () {
         var v=this.value.trim();
-        if(!v||/^\+\d{0,2}\s?$/.test(v)||v==='+'){this.value='';if(phoneCleaned)phoneCleaned.value='';if(phoneError)phoneError.style.display='none';this.removeAttribute('aria-invalid');return;}
+        var isBareCC=v.charAt(0)==='+'&&(function(){var d=digitsOnly(v.slice(1));return !d||d===detectCC(d);})();
+        if(!v||v==='+'||isBareCC){this.value='';if(phoneCleaned)phoneCleaned.value='';if(phoneError)phoneError.style.display='none';this.removeAttribute('aria-invalid');return;}
         var norm=normalisePhone(v);this.value=norm;var cl=phoneCleanVal(norm);if(phoneCleaned)phoneCleaned.value=cl;
         var valid=isPhoneValid(norm);if(phoneError)phoneError.style.display=valid?'none':'';
         if(valid)this.removeAttribute('aria-invalid');else this.setAttribute('aria-invalid','true');
