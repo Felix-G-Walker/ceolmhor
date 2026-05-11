@@ -3609,15 +3609,13 @@ body::after {
 }
 
 .collab-logo {
-  opacity: 0.3;
-  filter: grayscale(1);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .collab-logo:hover {
-  opacity: 0.75;
-  filter: grayscale(0.1);
-  transform: scale(1.06);
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 .collab-logo__wordmark {
@@ -3634,10 +3632,10 @@ body::after {
 
 .collab-logo__img {
   display: block;
-  max-height: 55px;
-  max-width: 200px;
-  width: auto;
-  height: auto;
+  width: 180px;
+  height: 80px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .collab-logo__img--invert {
