@@ -3632,6 +3632,18 @@ body::after {
   line-height: 1;
 }
 
+.collab-logo__img {
+  display: block;
+  max-height: 55px;
+  max-width: 200px;
+  width: auto;
+  height: auto;
+}
+
+.collab-logo__img--invert {
+  filter: invert(1);
+}
+
 /* Featured partnership cards */
 .collab-cards-wrap {
   margin-bottom: 4rem;
