@@ -1153,6 +1153,14 @@
       });
     }
 
+    /* Contact detail fields — re-evaluate continue button as user types */
+    var firstNameField = document.getElementById('first-name');
+    var lastNameField  = document.getElementById('last-name');
+    if (firstNameField) firstNameField.addEventListener('input', updateContinueState);
+    if (lastNameField)  lastNameField.addEventListener('input',  updateContinueState);
+    var emailFieldContact = document.getElementById('email');
+    if (emailFieldContact) emailFieldContact.addEventListener('input', updateContinueState);
+
     /* Date field auto-advance */
     var dayField   = document.getElementById('event-day');
     var monthField = document.getElementById('event-month');
