@@ -3598,14 +3598,15 @@ body::after {
 /* Logo strip */
 .collab-logos {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem 4rem;
+  gap: 1.5rem 3rem;
   padding: 2.75rem 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin: 0 0 4rem;
+  overflow-x: auto;
 }
 
 .collab-logo {
@@ -3632,10 +3633,12 @@ body::after {
 
 .collab-logo__img {
   display: block;
-  width: 180px;
-  height: 80px;
-  object-fit: contain;
-  object-position: center;
+  height: 72px;
+  width: auto;
+}
+
+.collab-logo__img--lg {
+  height: 110px;
 }
 
 .collab-logo__img--invert {
