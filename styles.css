@@ -3644,6 +3644,12 @@ body::after {
   filter: invert(1);
 }
 
+.collab-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
 /* Featured partnership cards */
 .collab-cards-wrap {
   margin-bottom: 4rem;
