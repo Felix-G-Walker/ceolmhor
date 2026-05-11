@@ -715,6 +715,8 @@
       return null;
     }
 
+    function isEmailValid(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+
     function isCurrentStepValid() {
       if (currentStep === 1) return !!state.primary;
       if (currentStep === 2) {
@@ -728,6 +730,31 @@
         if (state.primary === 'tuition')      return !!state.tuitionTier;
         if (state.primary === 'composition')  return !!state.compFormat;
         return true;
+      }
+      if (currentStep === 5) {
+        var contactFields = [
+          { el: document.getElementById('first-name'), err: document.getElementById('first-name-error') },
+          { el: document.getElementById('last-name'),  err: document.getElementById('last-name-error')  },
+          { el: document.getElementById('email'),      err: document.getElementById('email-error'), validate: isEmailValid }
+        ];
+        var valid = true;
+        contactFields.forEach(function (f) {
+          var group = f.el ? f.el.closest('.form-group') : null;
+          var val = f.el ? f.el.value.trim() : '';
+          var fieldValid = f.el && val && (!f.validate || f.validate(val));
+          if (!fieldValid) {
+            if (f.el) f.el.setAttribute('aria-invalid', 'true');
+            if (group) group.classList.add('field-error');
+            if (f.err) f.err.style.display = '';
+            if (valid && f.el) f.el.focus();
+            valid = false;
+          } else {
+            if (f.el) f.el.removeAttribute('aria-invalid');
+            if (group) group.classList.remove('field-error');
+            if (f.err) f.err.style.display = 'none';
+          }
+        });
+        return valid;
       }
       return true;
     }
@@ -1245,8 +1272,6 @@
 
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
-
-      function isEmailValid(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
 
       var fields = [
         { el: document.getElementById('first-name'), err: document.getElementById('first-name-error') },
