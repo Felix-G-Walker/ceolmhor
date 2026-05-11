@@ -125,8 +125,8 @@ export default {
     const compPieceLine = compPiece  ? `\nPiece:    ${compPiece}` : '';
     const titleLine     = compTitle  ? `\nComposition: ${compTitle}` : '';
     const perfTierLine  = perfTier   ? `\nPackage:  ${perfTier}` : '';
-    const addSetLine        = data['enquiry-add-set'] === 'yes' ? '\nAdd-on:   Additional set' : '';
-    const eventCommLine     = data['enquiry-event-commission'] === 'yes' ? '\nCommission: Bespoke Event Commission' : '';
+    const addSetLine    = perfTier ? `\nAdd-on:   Additional set — ${data['enquiry-add-set'] === 'yes' ? 'Yes' : 'No'}` : '';
+    const eventCommLine = perfTier ? `\nCommission: Bespoke Event Commission — ${data['enquiry-event-commission'] === 'yes' ? 'Yes' : 'No'}` : '';
 
     const emailText = `
 New Ceòlmhor Enquiry
@@ -174,8 +174,8 @@ IP: ${ip}
   ${compPiece  ? `<div class="field"><span class="label">Piece Type</span><span class="value">${escHtml(compPiece)}</span></div>` : ''}
   ${compTitle  ? `<div class="field"><span class="label">Composition</span><span class="value">${escHtml(compTitle)}</span></div>` : ''}
   ${perfTier   ? `<div class="field"><span class="label">Package</span><span class="value">${escHtml(perfTier)}</span></div>` : ''}
-  ${data['enquiry-add-set'] === 'yes' ? '<div class="field"><span class="label">Add-on</span><span class="value">Additional set</span></div>' : ''}
-  ${data['enquiry-event-commission'] === 'yes' ? '<div class="field"><span class="label">Commission</span><span class="value">Bespoke Event Commission</span></div>' : ''}
+  ${perfTier ? `<div class="field"><span class="label">Additional set</span><span class="value">${data['enquiry-add-set'] === 'yes' ? 'Yes' : 'No'}</span></div>` : ''}
+  ${perfTier ? `<div class="field"><span class="label">Bespoke commission</span><span class="value">${data['enquiry-event-commission'] === 'yes' ? 'Yes' : 'No'}</span></div>` : ''}
   ${eventDate  ? `<div class="field"><span class="label">Event Date</span><span class="value">${escHtml(eventDate)}</span></div>` : ''}
   ${data['child-enquiry'] === 'yes' ? '<div class="child-note">⚠️ This enquiry is on behalf of a child.</div>' : ''}
   ${data['supplier-sheet'] === 'yes' ? '<div class="child-note">📋 Supplier sheet requested.</div>' : ''}
