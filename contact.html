@@ -717,7 +717,7 @@
 
     function isEmailValid(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
 
-    function isCurrentStepValid() {
+    function isCurrentStepValid(quiet) {
       if (currentStep === 1) return !!state.primary;
       if (currentStep === 2) {
         if (state.primary === 'composition') return !!state.compType;
@@ -743,10 +743,12 @@
           var val = f.el ? f.el.value.trim() : '';
           var fieldValid = f.el && val && (!f.validate || f.validate(val));
           if (!fieldValid) {
-            if (f.el) f.el.setAttribute('aria-invalid', 'true');
-            if (group) group.classList.add('field-error');
-            if (f.err) f.err.style.display = '';
-            if (valid && f.el) f.el.focus();
+            if (!quiet) {
+              if (f.el) f.el.setAttribute('aria-invalid', 'true');
+              if (group) group.classList.add('field-error');
+              if (f.err) f.err.style.display = '';
+              if (valid && f.el) f.el.focus();
+            }
             valid = false;
           } else {
             if (f.el) f.el.removeAttribute('aria-invalid');
@@ -876,7 +878,7 @@
     function updateContinueState() {
       var cont = document.getElementById('wizard-continue');
       if (!cont) return;
-      var ok = isCurrentStepValid();
+      var ok = isCurrentStepValid(true);
       cont.classList.toggle('wizard-continue-btn--active', ok);
       cont.disabled = !ok;
     }
